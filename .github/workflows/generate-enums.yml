@@ -41,7 +41,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: 'chore: update enum constants from aws-sdk-go-v2'
           title: 'chore: update enum constants from aws-sdk-go-v2'
