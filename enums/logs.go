@@ -4,11 +4,347 @@ package enums
 
 // Logs enum constants
 const (
+	// ActionStatus values
+	LogsActionStatusInProgress  = "IN_PROGRESS"
+	LogsActionStatusClientError = "CLIENT_ERROR"
+	LogsActionStatusFailed      = "FAILED"
+	LogsActionStatusComplete    = "COMPLETE"
+
+	// AnomalyDetectorStatus values
+	LogsAnomalyDetectorStatusInitializing = "INITIALIZING"
+	LogsAnomalyDetectorStatusTraining     = "TRAINING"
+	LogsAnomalyDetectorStatusAnalyzing    = "ANALYZING"
+	LogsAnomalyDetectorStatusFailed       = "FAILED"
+	LogsAnomalyDetectorStatusDeleted      = "DELETED"
+	LogsAnomalyDetectorStatusPaused       = "PAUSED"
+
+	// DataProtectionStatus values
+	LogsDataProtectionStatusActivated = "ACTIVATED"
+	LogsDataProtectionStatusDeleted   = "DELETED"
+	LogsDataProtectionStatusArchived  = "ARCHIVED"
+	LogsDataProtectionStatusDisabled  = "DISABLED"
+
+	// DeliveryDestinationType values
+	LogsDeliveryDestinationTypeS3   = "S3"
+	LogsDeliveryDestinationTypeCwl  = "CWL"
+	LogsDeliveryDestinationTypeFh   = "FH"
+	LogsDeliveryDestinationTypeXray = "XRAY"
+
+	// Distribution values
+	LogsDistributionRandom      = "Random"
+	LogsDistributionBylogstream = "ByLogStream"
+
+	// EntityRejectionErrorType values
+	LogsEntityRejectionErrorTypeInvalidentity           = "InvalidEntity"
+	LogsEntityRejectionErrorTypeInvalidtypevalue        = "InvalidTypeValue"
+	LogsEntityRejectionErrorTypeInvalidkeyattributes    = "InvalidKeyAttributes"
+	LogsEntityRejectionErrorTypeInvalidattributes       = "InvalidAttributes"
+	LogsEntityRejectionErrorTypeEntitysizetoolarge      = "EntitySizeTooLarge"
+	LogsEntityRejectionErrorTypeUnsupportedloggrouptype = "UnsupportedLogGroupType"
+	LogsEntityRejectionErrorTypeMissingrequiredfields   = "MissingRequiredFields"
+
+	// EvaluationFrequency values
+	LogsEvaluationFrequencyOneMin     = "ONE_MIN"
+	LogsEvaluationFrequencyFiveMin    = "FIVE_MIN"
+	LogsEvaluationFrequencyTenMin     = "TEN_MIN"
+	LogsEvaluationFrequencyFifteenMin = "FIFTEEN_MIN"
+	LogsEvaluationFrequencyThirtyMin  = "THIRTY_MIN"
+	LogsEvaluationFrequencyOneHour    = "ONE_HOUR"
+
+	// EventSource values
+	LogsEventSourceCloudtrail      = "CloudTrail"
+	LogsEventSourceRoute53resolver = "Route53Resolver"
+	LogsEventSourceVpcflow         = "VPCFlow"
+	LogsEventSourceEksaudit        = "EKSAudit"
+	LogsEventSourceAwswaf          = "AWSWAF"
+
+	// ExecutionStatus values
+	LogsExecutionStatusRunning      = "Running"
+	LogsExecutionStatusInvalidquery = "InvalidQuery"
+	LogsExecutionStatusComplete     = "Complete"
+	LogsExecutionStatusFailed       = "Failed"
+	LogsExecutionStatusTimeout      = "Timeout"
+
+	// ExportTaskStatusCode values
+	LogsExportTaskStatusCodeCancelled     = "CANCELLED"
+	LogsExportTaskStatusCodeCompleted     = "COMPLETED"
+	LogsExportTaskStatusCodeFailed        = "FAILED"
+	LogsExportTaskStatusCodePending       = "PENDING"
+	LogsExportTaskStatusCodePendingCancel = "PENDING_CANCEL"
+	LogsExportTaskStatusCodeRunning       = "RUNNING"
+
+	// FlattenedElement values
+	LogsFlattenedElementFirst = "first"
+	LogsFlattenedElementLast  = "last"
+
+	// ImportStatus values
+	LogsImportStatusInProgress = "IN_PROGRESS"
+	LogsImportStatusCancelled  = "CANCELLED"
+	LogsImportStatusCompleted  = "COMPLETED"
+	LogsImportStatusFailed     = "FAILED"
+
+	// IndexSource values
+	LogsIndexSourceAccount  = "ACCOUNT"
+	LogsIndexSourceLogGroup = "LOG_GROUP"
+
+	// IndexType values
+	LogsIndexTypeFacet      = "FACET"
+	LogsIndexTypeFieldIndex = "FIELD_INDEX"
+
+	// InheritedProperty values
+	LogsInheritedPropertyAccountDataProtection = "ACCOUNT_DATA_PROTECTION"
+
+	// IntegrationStatus values
+	LogsIntegrationStatusProvisioning = "PROVISIONING"
+	LogsIntegrationStatusActive       = "ACTIVE"
+	LogsIntegrationStatusFailed       = "FAILED"
+
+	// IntegrationType values
+	LogsIntegrationTypeOpensearch = "OPENSEARCH"
+
+	// ListAggregateLogGroupSummariesGroupBy values
+	LogsListAggregateLogGroupSummariesGroupByDataSourceNameTypeAndFormat = "DATA_SOURCE_NAME_TYPE_AND_FORMAT"
+	LogsListAggregateLogGroupSummariesGroupByDataSourceNameAndType       = "DATA_SOURCE_NAME_AND_TYPE"
+
 	// LogGroupClass values
 	LogsLogGroupClassStandard         = "STANDARD"
 	LogsLogGroupClassInfrequentAccess = "INFREQUENT_ACCESS"
 	LogsLogGroupClassDelivery         = "DELIVERY"
+
+	// OCSFVersion values
+	LogsOCSFVersionV11 = "V1.1"
+	LogsOCSFVersionV15 = "V1.5"
+
+	// OpenSearchResourceStatusType values
+	LogsOpenSearchResourceStatusTypeActive   = "ACTIVE"
+	LogsOpenSearchResourceStatusTypeNotFound = "NOT_FOUND"
+	LogsOpenSearchResourceStatusTypeError    = "ERROR"
+
+	// OrderBy values
+	LogsOrderByLogstreamname = "LogStreamName"
+	LogsOrderByLasteventtime = "LastEventTime"
+
+	// OutputFormat values
+	LogsOutputFormatJson    = "json"
+	LogsOutputFormatPlain   = "plain"
+	LogsOutputFormatW3c     = "w3c"
+	LogsOutputFormatRaw     = "raw"
+	LogsOutputFormatParquet = "parquet"
+
+	// PolicyScope values
+	LogsPolicyScopeAccount  = "ACCOUNT"
+	LogsPolicyScopeResource = "RESOURCE"
+
+	// PolicyType values
+	LogsPolicyTypeDataProtectionPolicy     = "DATA_PROTECTION_POLICY"
+	LogsPolicyTypeSubscriptionFilterPolicy = "SUBSCRIPTION_FILTER_POLICY"
+	LogsPolicyTypeFieldIndexPolicy         = "FIELD_INDEX_POLICY"
+	LogsPolicyTypeTransformerPolicy        = "TRANSFORMER_POLICY"
+	LogsPolicyTypeMetricExtractionPolicy   = "METRIC_EXTRACTION_POLICY"
+
+	// QueryLanguage values
+	LogsQueryLanguageCwli = "CWLI"
+	LogsQueryLanguageSql  = "SQL"
+	LogsQueryLanguagePpl  = "PPL"
+
+	// QueryStatus values
+	LogsQueryStatusScheduled = "Scheduled"
+	LogsQueryStatusRunning   = "Running"
+	LogsQueryStatusComplete  = "Complete"
+	LogsQueryStatusFailed    = "Failed"
+	LogsQueryStatusCancelled = "Cancelled"
+	LogsQueryStatusTimeout   = "Timeout"
+	LogsQueryStatusUnknown   = "Unknown"
+
+	// S3TableIntegrationSourceStatus values
+	LogsS3TableIntegrationSourceStatusActive                     = "ACTIVE"
+	LogsS3TableIntegrationSourceStatusUnhealthy                  = "UNHEALTHY"
+	LogsS3TableIntegrationSourceStatusFailed                     = "FAILED"
+	LogsS3TableIntegrationSourceStatusDataSourceDeleteInProgress = "DATA_SOURCE_DELETE_IN_PROGRESS"
+
+	// ScheduledQueryDestinationType values
+	LogsScheduledQueryDestinationTypeS3 = "S3"
+
+	// ScheduledQueryState values
+	LogsScheduledQueryStateEnabled  = "ENABLED"
+	LogsScheduledQueryStateDisabled = "DISABLED"
+
+	// Scope values
+	LogsScopeAll = "ALL"
+
+	// StandardUnit values
+	LogsStandardUnitSeconds         = "Seconds"
+	LogsStandardUnitMicroseconds    = "Microseconds"
+	LogsStandardUnitMilliseconds    = "Milliseconds"
+	LogsStandardUnitBytes           = "Bytes"
+	LogsStandardUnitKilobytes       = "Kilobytes"
+	LogsStandardUnitMegabytes       = "Megabytes"
+	LogsStandardUnitGigabytes       = "Gigabytes"
+	LogsStandardUnitTerabytes       = "Terabytes"
+	LogsStandardUnitBits            = "Bits"
+	LogsStandardUnitKilobits        = "Kilobits"
+	LogsStandardUnitMegabits        = "Megabits"
+	LogsStandardUnitGigabits        = "Gigabits"
+	LogsStandardUnitTerabits        = "Terabits"
+	LogsStandardUnitPercent         = "Percent"
+	LogsStandardUnitCount           = "Count"
+	LogsStandardUnitBytesSecond     = "Bytes/Second"
+	LogsStandardUnitKilobytesSecond = "Kilobytes/Second"
+	LogsStandardUnitMegabytesSecond = "Megabytes/Second"
+	LogsStandardUnitGigabytesSecond = "Gigabytes/Second"
+	LogsStandardUnitTerabytesSecond = "Terabytes/Second"
+	LogsStandardUnitBitsSecond      = "Bits/Second"
+	LogsStandardUnitKilobitsSecond  = "Kilobits/Second"
+	LogsStandardUnitMegabitsSecond  = "Megabits/Second"
+	LogsStandardUnitGigabitsSecond  = "Gigabits/Second"
+	LogsStandardUnitTerabitsSecond  = "Terabits/Second"
+	LogsStandardUnitCountSecond     = "Count/Second"
+	LogsStandardUnitNone            = "None"
+
+	// State values
+	LogsStateActive     = "Active"
+	LogsStateSuppressed = "Suppressed"
+	LogsStateBaseline   = "Baseline"
+
+	// SuppressionState values
+	LogsSuppressionStateSuppressed   = "SUPPRESSED"
+	LogsSuppressionStateUnsuppressed = "UNSUPPRESSED"
+
+	// SuppressionType values
+	LogsSuppressionTypeLimited  = "LIMITED"
+	LogsSuppressionTypeInfinite = "INFINITE"
+
+	// SuppressionUnit values
+	LogsSuppressionUnitSeconds = "SECONDS"
+	LogsSuppressionUnitMinutes = "MINUTES"
+	LogsSuppressionUnitHours   = "HOURS"
+
+	// Type values
+	LogsTypeBoolean = "boolean"
+	LogsTypeInteger = "integer"
+	LogsTypeDouble  = "double"
+	LogsTypeString  = "string"
 )
+
+var logsActionStatusValues = []string{
+	"IN_PROGRESS",
+	"CLIENT_ERROR",
+	"FAILED",
+	"COMPLETE",
+}
+
+var logsAnomalyDetectorStatusValues = []string{
+	"INITIALIZING",
+	"TRAINING",
+	"ANALYZING",
+	"FAILED",
+	"DELETED",
+	"PAUSED",
+}
+
+var logsDataProtectionStatusValues = []string{
+	"ACTIVATED",
+	"DELETED",
+	"ARCHIVED",
+	"DISABLED",
+}
+
+var logsDeliveryDestinationTypeValues = []string{
+	"S3",
+	"CWL",
+	"FH",
+	"XRAY",
+}
+
+var logsDistributionValues = []string{
+	"Random",
+	"ByLogStream",
+}
+
+var logsEntityRejectionErrorTypeValues = []string{
+	"InvalidEntity",
+	"InvalidTypeValue",
+	"InvalidKeyAttributes",
+	"InvalidAttributes",
+	"EntitySizeTooLarge",
+	"UnsupportedLogGroupType",
+	"MissingRequiredFields",
+}
+
+var logsEvaluationFrequencyValues = []string{
+	"ONE_MIN",
+	"FIVE_MIN",
+	"TEN_MIN",
+	"FIFTEEN_MIN",
+	"THIRTY_MIN",
+	"ONE_HOUR",
+}
+
+var logsEventSourceValues = []string{
+	"CloudTrail",
+	"Route53Resolver",
+	"VPCFlow",
+	"EKSAudit",
+	"AWSWAF",
+}
+
+var logsExecutionStatusValues = []string{
+	"Running",
+	"InvalidQuery",
+	"Complete",
+	"Failed",
+	"Timeout",
+}
+
+var logsExportTaskStatusCodeValues = []string{
+	"CANCELLED",
+	"COMPLETED",
+	"FAILED",
+	"PENDING",
+	"PENDING_CANCEL",
+	"RUNNING",
+}
+
+var logsFlattenedElementValues = []string{
+	"first",
+	"last",
+}
+
+var logsImportStatusValues = []string{
+	"IN_PROGRESS",
+	"CANCELLED",
+	"COMPLETED",
+	"FAILED",
+}
+
+var logsIndexSourceValues = []string{
+	"ACCOUNT",
+	"LOG_GROUP",
+}
+
+var logsIndexTypeValues = []string{
+	"FACET",
+	"FIELD_INDEX",
+}
+
+var logsInheritedPropertyValues = []string{
+	"ACCOUNT_DATA_PROTECTION",
+}
+
+var logsIntegrationStatusValues = []string{
+	"PROVISIONING",
+	"ACTIVE",
+	"FAILED",
+}
+
+var logsIntegrationTypeValues = []string{
+	"OPENSEARCH",
+}
+
+var logsListAggregateLogGroupSummariesGroupByValues = []string{
+	"DATA_SOURCE_NAME_TYPE_AND_FORMAT",
+	"DATA_SOURCE_NAME_AND_TYPE",
+}
 
 var logsLogGroupClassValues = []string{
 	"STANDARD",
@@ -16,16 +352,256 @@ var logsLogGroupClassValues = []string{
 	"DELIVERY",
 }
 
+var logsOCSFVersionValues = []string{
+	"V1.1",
+	"V1.5",
+}
+
+var logsOpenSearchResourceStatusTypeValues = []string{
+	"ACTIVE",
+	"NOT_FOUND",
+	"ERROR",
+}
+
+var logsOrderByValues = []string{
+	"LogStreamName",
+	"LastEventTime",
+}
+
+var logsOutputFormatValues = []string{
+	"json",
+	"plain",
+	"w3c",
+	"raw",
+	"parquet",
+}
+
+var logsPolicyScopeValues = []string{
+	"ACCOUNT",
+	"RESOURCE",
+}
+
+var logsPolicyTypeValues = []string{
+	"DATA_PROTECTION_POLICY",
+	"SUBSCRIPTION_FILTER_POLICY",
+	"FIELD_INDEX_POLICY",
+	"TRANSFORMER_POLICY",
+	"METRIC_EXTRACTION_POLICY",
+}
+
+var logsQueryLanguageValues = []string{
+	"CWLI",
+	"SQL",
+	"PPL",
+}
+
+var logsQueryStatusValues = []string{
+	"Scheduled",
+	"Running",
+	"Complete",
+	"Failed",
+	"Cancelled",
+	"Timeout",
+	"Unknown",
+}
+
+var logsS3TableIntegrationSourceStatusValues = []string{
+	"ACTIVE",
+	"UNHEALTHY",
+	"FAILED",
+	"DATA_SOURCE_DELETE_IN_PROGRESS",
+}
+
+var logsScheduledQueryDestinationTypeValues = []string{
+	"S3",
+}
+
+var logsScheduledQueryStateValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var logsScopeValues = []string{
+	"ALL",
+}
+
+var logsStandardUnitValues = []string{
+	"Seconds",
+	"Microseconds",
+	"Milliseconds",
+	"Bytes",
+	"Kilobytes",
+	"Megabytes",
+	"Gigabytes",
+	"Terabytes",
+	"Bits",
+	"Kilobits",
+	"Megabits",
+	"Gigabits",
+	"Terabits",
+	"Percent",
+	"Count",
+	"Bytes/Second",
+	"Kilobytes/Second",
+	"Megabytes/Second",
+	"Gigabytes/Second",
+	"Terabytes/Second",
+	"Bits/Second",
+	"Kilobits/Second",
+	"Megabits/Second",
+	"Gigabits/Second",
+	"Terabits/Second",
+	"Count/Second",
+	"None",
+}
+
+var logsStateValues = []string{
+	"Active",
+	"Suppressed",
+	"Baseline",
+}
+
+var logsSuppressionStateValues = []string{
+	"SUPPRESSED",
+	"UNSUPPRESSED",
+}
+
+var logsSuppressionTypeValues = []string{
+	"LIMITED",
+	"INFINITE",
+}
+
+var logsSuppressionUnitValues = []string{
+	"SECONDS",
+	"MINUTES",
+	"HOURS",
+}
+
+var logsTypeValues = []string{
+	"boolean",
+	"integer",
+	"double",
+	"string",
+}
+
 func getLogsEnum(name string) []string {
 	switch name {
+	case "ActionStatus":
+		return logsActionStatusValues
+	case "AnomalyDetectorStatus":
+		return logsAnomalyDetectorStatusValues
+	case "DataProtectionStatus":
+		return logsDataProtectionStatusValues
+	case "DeliveryDestinationType":
+		return logsDeliveryDestinationTypeValues
+	case "Distribution":
+		return logsDistributionValues
+	case "EntityRejectionErrorType":
+		return logsEntityRejectionErrorTypeValues
+	case "EvaluationFrequency":
+		return logsEvaluationFrequencyValues
+	case "EventSource":
+		return logsEventSourceValues
+	case "ExecutionStatus":
+		return logsExecutionStatusValues
+	case "ExportTaskStatusCode":
+		return logsExportTaskStatusCodeValues
+	case "FlattenedElement":
+		return logsFlattenedElementValues
+	case "ImportStatus":
+		return logsImportStatusValues
+	case "IndexSource":
+		return logsIndexSourceValues
+	case "IndexType":
+		return logsIndexTypeValues
+	case "InheritedProperty":
+		return logsInheritedPropertyValues
+	case "IntegrationStatus":
+		return logsIntegrationStatusValues
+	case "IntegrationType":
+		return logsIntegrationTypeValues
+	case "ListAggregateLogGroupSummariesGroupBy":
+		return logsListAggregateLogGroupSummariesGroupByValues
 	case "LogGroupClass":
 		return logsLogGroupClassValues
+	case "OCSFVersion":
+		return logsOCSFVersionValues
+	case "OpenSearchResourceStatusType":
+		return logsOpenSearchResourceStatusTypeValues
+	case "OrderBy":
+		return logsOrderByValues
+	case "OutputFormat":
+		return logsOutputFormatValues
+	case "PolicyScope":
+		return logsPolicyScopeValues
+	case "PolicyType":
+		return logsPolicyTypeValues
+	case "QueryLanguage":
+		return logsQueryLanguageValues
+	case "QueryStatus":
+		return logsQueryStatusValues
+	case "S3TableIntegrationSourceStatus":
+		return logsS3TableIntegrationSourceStatusValues
+	case "ScheduledQueryDestinationType":
+		return logsScheduledQueryDestinationTypeValues
+	case "ScheduledQueryState":
+		return logsScheduledQueryStateValues
+	case "Scope":
+		return logsScopeValues
+	case "StandardUnit":
+		return logsStandardUnitValues
+	case "State":
+		return logsStateValues
+	case "SuppressionState":
+		return logsSuppressionStateValues
+	case "SuppressionType":
+		return logsSuppressionTypeValues
+	case "SuppressionUnit":
+		return logsSuppressionUnitValues
+	case "Type":
+		return logsTypeValues
 	}
 	return nil
 }
 
 func getLogsEnumNames() []string {
 	return []string{
+		"ActionStatus",
+		"AnomalyDetectorStatus",
+		"DataProtectionStatus",
+		"DeliveryDestinationType",
+		"Distribution",
+		"EntityRejectionErrorType",
+		"EvaluationFrequency",
+		"EventSource",
+		"ExecutionStatus",
+		"ExportTaskStatusCode",
+		"FlattenedElement",
+		"ImportStatus",
+		"IndexSource",
+		"IndexType",
+		"InheritedProperty",
+		"IntegrationStatus",
+		"IntegrationType",
+		"ListAggregateLogGroupSummariesGroupBy",
 		"LogGroupClass",
+		"OCSFVersion",
+		"OpenSearchResourceStatusType",
+		"OrderBy",
+		"OutputFormat",
+		"PolicyScope",
+		"PolicyType",
+		"QueryLanguage",
+		"QueryStatus",
+		"S3TableIntegrationSourceStatus",
+		"ScheduledQueryDestinationType",
+		"ScheduledQueryState",
+		"Scope",
+		"StandardUnit",
+		"State",
+		"SuppressionState",
+		"SuppressionType",
+		"SuppressionUnit",
+		"Type",
 	}
 }

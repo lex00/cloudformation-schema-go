@@ -43,61 +43,11 @@ type EnumValue struct {
 	PyName string `json:"pyName"`
 }
 
-// priorityServices lists which services and enums to generate Go constants for.
-// We don't generate for all 400+ services to keep binary size reasonable.
-// Service names must match botocore service names (e.g., "elbv2" not "elasticloadbalancingv2").
-var priorityServices = map[string][]string{
-	"lambda": {
-		"Runtime",
-		"Architecture",
-		"PackageType",
-	},
-	"ec2": {
-		"VolumeType",
-		// Note: InstanceType is not an enum in botocore (just strings)
-	},
-	"ecs": {
-		"LaunchType",
-		"SchedulingStrategy",
-		"NetworkMode",
-	},
-	"s3": {
-		"StorageClass",
-		"ObjectCannedACL",
-		"BucketCannedACL",
-		"ServerSideEncryption",
-		"ObjectLockRetentionMode",
-		"BucketVersioningStatus",
-		"Protocol",
-	},
-	"dynamodb": {
-		"BillingMode",
-		"StreamViewType",
-		"TableClass",
-	},
-	"apigateway": {
-		"IntegrationType",
-	},
-	"elbv2": {
-		"ProtocolEnum",
-		"TargetTypeEnum",
-	},
-	"logs": {
-		"LogGroupClass",
-	},
-	"acm": {
-		"ValidationMethod",
-		"CertificateStatus",
-	},
-	"events": {
-		"RuleState",
-	},
-}
-
 // ServiceData represents data for generating a service enum file.
 type ServiceData struct {
-	Service     string
-	ServiceName string // Capitalized service name for Go
+	Service     string // Original service name (e.g., "acm-pca") - used for file names
+	ServiceName string // PascalCase service name for Go (e.g., "AcmPca") - used for function names
+	ServiceID   string // Lowercase service name without hyphens (e.g., "acmpca") - used for variable names
 	Enums       []EnumInfo
 }
 
@@ -144,29 +94,38 @@ func main() {
 	var allServices []string
 	serviceEnumNames := make(map[string][]string)
 
-	for service, enumNames := range priorityServices {
-		serviceEnums, ok := enums.Services[service]
-		if !ok {
-			fmt.Printf("Warning: service %s not found in enums.json\n", service)
-			continue
-		}
+	// Get sorted list of all services for deterministic output
+	var services []string
+	for service := range enums.Services {
+		services = append(services, service)
+	}
+	sort.Strings(services)
+
+	for _, service := range services {
+		serviceEnums := enums.Services[service]
 
 		svcData := ServiceData{
 			Service:     service,
 			ServiceName: capitalize(service),
+			ServiceID:   strings.ReplaceAll(service, "-", ""),
 		}
 
+		// Get sorted list of enum names for deterministic output
+		var enumNames []string
+		for enumName := range serviceEnums {
+			enumNames = append(enumNames, enumName)
+		}
+		sort.Strings(enumNames)
+
 		for _, enumName := range enumNames {
-			enumType, ok := serviceEnums[enumName]
-			if !ok {
-				fmt.Printf("Warning: enum %s.%s not found in enums.json\n", service, enumName)
-				continue
-			}
+			enumType := serviceEnums[enumName]
 
 			info := EnumInfo{Name: enumName}
 			for _, v := range enumType.Values {
+				// Sanitize goName by removing hyphens (service names like "acm-pca" have hyphens)
+				goName := strings.ReplaceAll(v.GoName, "-", "")
 				info.Constants = append(info.Constants, ConstantInfo{
-					Name:  v.GoName,
+					Name:  goName,
 					Value: v.Value,
 				})
 			}
@@ -198,7 +157,18 @@ func capitalize(s string) string {
 	if s == "" {
 		return s
 	}
-	// Handle service names that need special casing
+
+	// Handle hyphenated names by converting to PascalCase
+	if strings.Contains(s, "-") {
+		parts := strings.Split(s, "-")
+		var result strings.Builder
+		for _, part := range parts {
+			result.WriteString(capitalize(part))
+		}
+		return result.String()
+	}
+
+	// Handle common acronyms and short names
 	switch s {
 	case "ec2":
 		return "Ec2"
@@ -210,6 +180,68 @@ func capitalize(s string) string {
 		return "S3"
 	case "acm":
 		return "Acm"
+	case "sns":
+		return "Sns"
+	case "sqs":
+		return "Sqs"
+	case "iam":
+		return "Iam"
+	case "kms":
+		return "Kms"
+	case "ses":
+		return "Ses"
+	case "waf":
+		return "Waf"
+	case "efs":
+		return "Efs"
+	case "emr":
+		return "Emr"
+	case "elb":
+		return "Elb"
+	case "ebs":
+		return "Ebs"
+	case "vpc":
+		return "Vpc"
+	case "iot":
+		return "Iot"
+	case "mq":
+		return "Mq"
+	case "ds":
+		return "Ds"
+	case "ecr":
+		return "Ecr"
+	case "eks":
+		return "Eks"
+	case "ram":
+		return "Ram"
+	case "fsx":
+		return "Fsx"
+	case "dax":
+		return "Dax"
+	case "dms":
+		return "Dms"
+	case "dlm":
+		return "Dlm"
+	case "fms":
+		return "Fms"
+	case "ssm":
+		return "Ssm"
+	case "sts":
+		return "Sts"
+	case "amp":
+		return "Amp"
+	case "aps":
+		return "Aps"
+	case "aoss":
+		return "Aoss"
+	case "b2bi":
+		return "B2bi"
+	case "pca":
+		return "Pca"
+	case "sdk":
+		return "Sdk"
+	case "idp":
+		return "Idp"
 	default:
 		return strings.ToUpper(s[:1]) + s[1:]
 	}
@@ -230,7 +262,7 @@ const (
 )
 
 {{range .Enums}}
-var {{$.Service}}{{.Name}}Values = []string{
+var {{$.ServiceID}}{{.Name}}Values = []string{
 {{- range .Constants}}
 	"{{.Value}}",
 {{- end}}
@@ -241,7 +273,7 @@ func get{{.ServiceName}}Enum(name string) []string {
 	switch name {
 {{- range .Enums}}
 	case "{{.Name}}":
-		return {{$.Service}}{{.Name}}Values
+		return {{$.ServiceID}}{{.Name}}Values
 {{- end}}
 	}
 	return nil

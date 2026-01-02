@@ -6,26 +6,798 @@ package enums
 // Returns nil if the service or enum is not found.
 func GetAllowedValues(service, enumName string) []string {
 	switch service {
+	case "accessanalyzer":
+		return getAccessanalyzerEnum(enumName)
+	case "account":
+		return getAccountEnum(enumName)
 	case "acm":
 		return getAcmEnum(enumName)
+	case "acm-pca":
+		return getAcmPcaEnum(enumName)
+	case "aiops":
+		return getAiopsEnum(enumName)
+	case "amp":
+		return getAmpEnum(enumName)
+	case "amplify":
+		return getAmplifyEnum(enumName)
+	case "amplifybackend":
+		return getAmplifybackendEnum(enumName)
+	case "amplifyuibuilder":
+		return getAmplifyuibuilderEnum(enumName)
 	case "apigateway":
 		return getApigatewayEnum(enumName)
+	case "apigatewayv2":
+		return getApigatewayv2Enum(enumName)
+	case "appconfig":
+		return getAppconfigEnum(enumName)
+	case "appconfigdata":
+		return getAppconfigdataEnum(enumName)
+	case "appfabric":
+		return getAppfabricEnum(enumName)
+	case "appflow":
+		return getAppflowEnum(enumName)
+	case "appintegrations":
+		return getAppintegrationsEnum(enumName)
+	case "application-autoscaling":
+		return getApplicationAutoscalingEnum(enumName)
+	case "application-insights":
+		return getApplicationInsightsEnum(enumName)
+	case "application-signals":
+		return getApplicationSignalsEnum(enumName)
+	case "applicationcostprofiler":
+		return getApplicationcostprofilerEnum(enumName)
+	case "appmesh":
+		return getAppmeshEnum(enumName)
+	case "apprunner":
+		return getApprunnerEnum(enumName)
+	case "appstream":
+		return getAppstreamEnum(enumName)
+	case "appsync":
+		return getAppsyncEnum(enumName)
+	case "arc-region-switch":
+		return getArcRegionSwitchEnum(enumName)
+	case "arc-zonal-shift":
+		return getArcZonalShiftEnum(enumName)
+	case "artifact":
+		return getArtifactEnum(enumName)
+	case "athena":
+		return getAthenaEnum(enumName)
+	case "auditmanager":
+		return getAuditmanagerEnum(enumName)
+	case "autoscaling":
+		return getAutoscalingEnum(enumName)
+	case "autoscaling-plans":
+		return getAutoscalingPlansEnum(enumName)
+	case "b2bi":
+		return getB2biEnum(enumName)
+	case "backup":
+		return getBackupEnum(enumName)
+	case "backup-gateway":
+		return getBackupGatewayEnum(enumName)
+	case "backupsearch":
+		return getBackupsearchEnum(enumName)
+	case "batch":
+		return getBatchEnum(enumName)
+	case "bcm-dashboards":
+		return getBcmDashboardsEnum(enumName)
+	case "bcm-data-exports":
+		return getBcmDataExportsEnum(enumName)
+	case "bcm-pricing-calculator":
+		return getBcmPricingCalculatorEnum(enumName)
+	case "bcm-recommended-actions":
+		return getBcmRecommendedActionsEnum(enumName)
+	case "bedrock":
+		return getBedrockEnum(enumName)
+	case "bedrock-agent":
+		return getBedrockAgentEnum(enumName)
+	case "bedrock-agent-runtime":
+		return getBedrockAgentRuntimeEnum(enumName)
+	case "bedrock-agentcore":
+		return getBedrockAgentcoreEnum(enumName)
+	case "bedrock-agentcore-control":
+		return getBedrockAgentcoreControlEnum(enumName)
+	case "bedrock-data-automation":
+		return getBedrockDataAutomationEnum(enumName)
+	case "bedrock-data-automation-runtime":
+		return getBedrockDataAutomationRuntimeEnum(enumName)
+	case "bedrock-runtime":
+		return getBedrockRuntimeEnum(enumName)
+	case "billing":
+		return getBillingEnum(enumName)
+	case "billingconductor":
+		return getBillingconductorEnum(enumName)
+	case "braket":
+		return getBraketEnum(enumName)
+	case "budgets":
+		return getBudgetsEnum(enumName)
+	case "ce":
+		return getCeEnum(enumName)
+	case "chatbot":
+		return getChatbotEnum(enumName)
+	case "chime":
+		return getChimeEnum(enumName)
+	case "chime-sdk-identity":
+		return getChimeSdkIdentityEnum(enumName)
+	case "chime-sdk-media-pipelines":
+		return getChimeSdkMediaPipelinesEnum(enumName)
+	case "chime-sdk-meetings":
+		return getChimeSdkMeetingsEnum(enumName)
+	case "chime-sdk-messaging":
+		return getChimeSdkMessagingEnum(enumName)
+	case "chime-sdk-voice":
+		return getChimeSdkVoiceEnum(enumName)
+	case "cleanrooms":
+		return getCleanroomsEnum(enumName)
+	case "cleanroomsml":
+		return getCleanroomsmlEnum(enumName)
+	case "cloud9":
+		return getCloud9Enum(enumName)
+	case "cloudcontrol":
+		return getCloudcontrolEnum(enumName)
+	case "clouddirectory":
+		return getClouddirectoryEnum(enumName)
+	case "cloudformation":
+		return getCloudformationEnum(enumName)
+	case "cloudfront":
+		return getCloudfrontEnum(enumName)
+	case "cloudhsm":
+		return getCloudhsmEnum(enumName)
+	case "cloudhsmv2":
+		return getCloudhsmv2Enum(enumName)
+	case "cloudsearch":
+		return getCloudsearchEnum(enumName)
+	case "cloudsearchdomain":
+		return getCloudsearchdomainEnum(enumName)
+	case "cloudtrail":
+		return getCloudtrailEnum(enumName)
+	case "cloudwatch":
+		return getCloudwatchEnum(enumName)
+	case "codeartifact":
+		return getCodeartifactEnum(enumName)
+	case "codebuild":
+		return getCodebuildEnum(enumName)
+	case "codecatalyst":
+		return getCodecatalystEnum(enumName)
+	case "codecommit":
+		return getCodecommitEnum(enumName)
+	case "codeconnections":
+		return getCodeconnectionsEnum(enumName)
+	case "codedeploy":
+		return getCodedeployEnum(enumName)
+	case "codeguru-reviewer":
+		return getCodeguruReviewerEnum(enumName)
+	case "codeguru-security":
+		return getCodeguruSecurityEnum(enumName)
+	case "codeguruprofiler":
+		return getCodeguruprofilerEnum(enumName)
+	case "codepipeline":
+		return getCodepipelineEnum(enumName)
+	case "codestar-connections":
+		return getCodestarConnectionsEnum(enumName)
+	case "codestar-notifications":
+		return getCodestarNotificationsEnum(enumName)
+	case "cognito-identity":
+		return getCognitoIdentityEnum(enumName)
+	case "cognito-idp":
+		return getCognitoIdpEnum(enumName)
+	case "cognito-sync":
+		return getCognitoSyncEnum(enumName)
+	case "comprehend":
+		return getComprehendEnum(enumName)
+	case "comprehendmedical":
+		return getComprehendmedicalEnum(enumName)
+	case "compute-optimizer":
+		return getComputeOptimizerEnum(enumName)
+	case "compute-optimizer-automation":
+		return getComputeOptimizerAutomationEnum(enumName)
+	case "config":
+		return getConfigEnum(enumName)
+	case "connect":
+		return getConnectEnum(enumName)
+	case "connect-contact-lens":
+		return getConnectContactLensEnum(enumName)
+	case "connectcampaigns":
+		return getConnectcampaignsEnum(enumName)
+	case "connectcampaignsv2":
+		return getConnectcampaignsv2Enum(enumName)
+	case "connectcases":
+		return getConnectcasesEnum(enumName)
+	case "connectparticipant":
+		return getConnectparticipantEnum(enumName)
+	case "controlcatalog":
+		return getControlcatalogEnum(enumName)
+	case "controltower":
+		return getControltowerEnum(enumName)
+	case "cost-optimization-hub":
+		return getCostOptimizationHubEnum(enumName)
+	case "cur":
+		return getCurEnum(enumName)
+	case "customer-profiles":
+		return getCustomerProfilesEnum(enumName)
+	case "databrew":
+		return getDatabrewEnum(enumName)
+	case "dataexchange":
+		return getDataexchangeEnum(enumName)
+	case "datapipeline":
+		return getDatapipelineEnum(enumName)
+	case "datasync":
+		return getDatasyncEnum(enumName)
+	case "datazone":
+		return getDatazoneEnum(enumName)
+	case "dax":
+		return getDaxEnum(enumName)
+	case "deadline":
+		return getDeadlineEnum(enumName)
+	case "detective":
+		return getDetectiveEnum(enumName)
+	case "devicefarm":
+		return getDevicefarmEnum(enumName)
+	case "devops-guru":
+		return getDevopsGuruEnum(enumName)
+	case "directconnect":
+		return getDirectconnectEnum(enumName)
+	case "discovery":
+		return getDiscoveryEnum(enumName)
+	case "dlm":
+		return getDlmEnum(enumName)
+	case "dms":
+		return getDmsEnum(enumName)
+	case "docdb":
+		return getDocdbEnum(enumName)
+	case "docdb-elastic":
+		return getDocdbElasticEnum(enumName)
+	case "drs":
+		return getDrsEnum(enumName)
+	case "ds":
+		return getDsEnum(enumName)
+	case "ds-data":
+		return getDsDataEnum(enumName)
+	case "dsql":
+		return getDsqlEnum(enumName)
 	case "dynamodb":
 		return getDynamodbEnum(enumName)
+	case "dynamodbstreams":
+		return getDynamodbstreamsEnum(enumName)
+	case "ebs":
+		return getEbsEnum(enumName)
 	case "ec2":
 		return getEc2Enum(enumName)
+	case "ecr":
+		return getEcrEnum(enumName)
+	case "ecr-public":
+		return getEcrPublicEnum(enumName)
 	case "ecs":
 		return getEcsEnum(enumName)
+	case "efs":
+		return getEfsEnum(enumName)
+	case "eks":
+		return getEksEnum(enumName)
+	case "elasticache":
+		return getElasticacheEnum(enumName)
+	case "elasticbeanstalk":
+		return getElasticbeanstalkEnum(enumName)
 	case "elbv2":
 		return getElbv2Enum(enumName)
+	case "emr":
+		return getEmrEnum(enumName)
+	case "emr-containers":
+		return getEmrContainersEnum(enumName)
+	case "emr-serverless":
+		return getEmrServerlessEnum(enumName)
+	case "entityresolution":
+		return getEntityresolutionEnum(enumName)
+	case "es":
+		return getEsEnum(enumName)
 	case "events":
 		return getEventsEnum(enumName)
+	case "evidently":
+		return getEvidentlyEnum(enumName)
+	case "evs":
+		return getEvsEnum(enumName)
+	case "finspace":
+		return getFinspaceEnum(enumName)
+	case "finspace-data":
+		return getFinspaceDataEnum(enumName)
+	case "firehose":
+		return getFirehoseEnum(enumName)
+	case "fis":
+		return getFisEnum(enumName)
+	case "fms":
+		return getFmsEnum(enumName)
+	case "forecast":
+		return getForecastEnum(enumName)
+	case "frauddetector":
+		return getFrauddetectorEnum(enumName)
+	case "freetier":
+		return getFreetierEnum(enumName)
+	case "fsx":
+		return getFsxEnum(enumName)
+	case "gamelift":
+		return getGameliftEnum(enumName)
+	case "gameliftstreams":
+		return getGameliftstreamsEnum(enumName)
+	case "geo-maps":
+		return getGeoMapsEnum(enumName)
+	case "geo-places":
+		return getGeoPlacesEnum(enumName)
+	case "geo-routes":
+		return getGeoRoutesEnum(enumName)
+	case "glacier":
+		return getGlacierEnum(enumName)
+	case "globalaccelerator":
+		return getGlobalacceleratorEnum(enumName)
+	case "glue":
+		return getGlueEnum(enumName)
+	case "grafana":
+		return getGrafanaEnum(enumName)
+	case "greengrass":
+		return getGreengrassEnum(enumName)
+	case "greengrassv2":
+		return getGreengrassv2Enum(enumName)
+	case "groundstation":
+		return getGroundstationEnum(enumName)
+	case "guardduty":
+		return getGuarddutyEnum(enumName)
+	case "health":
+		return getHealthEnum(enumName)
+	case "healthlake":
+		return getHealthlakeEnum(enumName)
+	case "iam":
+		return getIamEnum(enumName)
+	case "identitystore":
+		return getIdentitystoreEnum(enumName)
+	case "imagebuilder":
+		return getImagebuilderEnum(enumName)
+	case "importexport":
+		return getImportexportEnum(enumName)
+	case "inspector":
+		return getInspectorEnum(enumName)
+	case "inspector-scan":
+		return getInspectorScanEnum(enumName)
+	case "inspector2":
+		return getInspector2Enum(enumName)
+	case "internetmonitor":
+		return getInternetmonitorEnum(enumName)
+	case "invoicing":
+		return getInvoicingEnum(enumName)
+	case "iot":
+		return getIotEnum(enumName)
+	case "iot-data":
+		return getIotDataEnum(enumName)
+	case "iot-jobs-data":
+		return getIotJobsDataEnum(enumName)
+	case "iot-managed-integrations":
+		return getIotManagedIntegrationsEnum(enumName)
+	case "iotanalytics":
+		return getIotanalyticsEnum(enumName)
+	case "iotdeviceadvisor":
+		return getIotdeviceadvisorEnum(enumName)
+	case "iotevents":
+		return getIoteventsEnum(enumName)
+	case "iotevents-data":
+		return getIoteventsDataEnum(enumName)
+	case "iotfleetwise":
+		return getIotfleetwiseEnum(enumName)
+	case "iotsecuretunneling":
+		return getIotsecuretunnelingEnum(enumName)
+	case "iotsitewise":
+		return getIotsitewiseEnum(enumName)
+	case "iotthingsgraph":
+		return getIotthingsgraphEnum(enumName)
+	case "iottwinmaker":
+		return getIottwinmakerEnum(enumName)
+	case "iotwireless":
+		return getIotwirelessEnum(enumName)
+	case "ivs":
+		return getIvsEnum(enumName)
+	case "ivs-realtime":
+		return getIvsRealtimeEnum(enumName)
+	case "ivschat":
+		return getIvschatEnum(enumName)
+	case "kafka":
+		return getKafkaEnum(enumName)
+	case "kafkaconnect":
+		return getKafkaconnectEnum(enumName)
+	case "kendra":
+		return getKendraEnum(enumName)
+	case "kendra-ranking":
+		return getKendraRankingEnum(enumName)
+	case "keyspaces":
+		return getKeyspacesEnum(enumName)
+	case "keyspacesstreams":
+		return getKeyspacesstreamsEnum(enumName)
+	case "kinesis":
+		return getKinesisEnum(enumName)
+	case "kinesis-video-archived-media":
+		return getKinesisVideoArchivedMediaEnum(enumName)
+	case "kinesis-video-media":
+		return getKinesisVideoMediaEnum(enumName)
+	case "kinesis-video-signaling":
+		return getKinesisVideoSignalingEnum(enumName)
+	case "kinesisanalytics":
+		return getKinesisanalyticsEnum(enumName)
+	case "kinesisanalyticsv2":
+		return getKinesisanalyticsv2Enum(enumName)
+	case "kinesisvideo":
+		return getKinesisvideoEnum(enumName)
+	case "kms":
+		return getKmsEnum(enumName)
+	case "lakeformation":
+		return getLakeformationEnum(enumName)
 	case "lambda":
 		return getLambdaEnum(enumName)
+	case "launch-wizard":
+		return getLaunchWizardEnum(enumName)
+	case "lex-models":
+		return getLexModelsEnum(enumName)
+	case "lex-runtime":
+		return getLexRuntimeEnum(enumName)
+	case "lexv2-models":
+		return getLexv2ModelsEnum(enumName)
+	case "lexv2-runtime":
+		return getLexv2RuntimeEnum(enumName)
+	case "license-manager":
+		return getLicenseManagerEnum(enumName)
+	case "license-manager-linux-subscriptions":
+		return getLicenseManagerLinuxSubscriptionsEnum(enumName)
+	case "license-manager-user-subscriptions":
+		return getLicenseManagerUserSubscriptionsEnum(enumName)
+	case "lightsail":
+		return getLightsailEnum(enumName)
+	case "location":
+		return getLocationEnum(enumName)
 	case "logs":
 		return getLogsEnum(enumName)
+	case "lookoutequipment":
+		return getLookoutequipmentEnum(enumName)
+	case "m2":
+		return getM2Enum(enumName)
+	case "machinelearning":
+		return getMachinelearningEnum(enumName)
+	case "macie2":
+		return getMacie2Enum(enumName)
+	case "mailmanager":
+		return getMailmanagerEnum(enumName)
+	case "managedblockchain":
+		return getManagedblockchainEnum(enumName)
+	case "managedblockchain-query":
+		return getManagedblockchainQueryEnum(enumName)
+	case "marketplace-agreement":
+		return getMarketplaceAgreementEnum(enumName)
+	case "marketplace-catalog":
+		return getMarketplaceCatalogEnum(enumName)
+	case "marketplace-entitlement":
+		return getMarketplaceEntitlementEnum(enumName)
+	case "marketplacecommerceanalytics":
+		return getMarketplacecommerceanalyticsEnum(enumName)
+	case "mediaconnect":
+		return getMediaconnectEnum(enumName)
+	case "mediaconvert":
+		return getMediaconvertEnum(enumName)
+	case "medialive":
+		return getMedialiveEnum(enumName)
+	case "mediapackage":
+		return getMediapackageEnum(enumName)
+	case "mediapackage-vod":
+		return getMediapackageVodEnum(enumName)
+	case "mediapackagev2":
+		return getMediapackagev2Enum(enumName)
+	case "mediastore":
+		return getMediastoreEnum(enumName)
+	case "mediastore-data":
+		return getMediastoreDataEnum(enumName)
+	case "mediatailor":
+		return getMediatailorEnum(enumName)
+	case "medical-imaging":
+		return getMedicalImagingEnum(enumName)
+	case "memorydb":
+		return getMemorydbEnum(enumName)
+	case "meteringmarketplace":
+		return getMeteringmarketplaceEnum(enumName)
+	case "mgh":
+		return getMghEnum(enumName)
+	case "mgn":
+		return getMgnEnum(enumName)
+	case "migration-hub-refactor-spaces":
+		return getMigrationHubRefactorSpacesEnum(enumName)
+	case "migrationhub-config":
+		return getMigrationhubConfigEnum(enumName)
+	case "migrationhuborchestrator":
+		return getMigrationhuborchestratorEnum(enumName)
+	case "migrationhubstrategy":
+		return getMigrationhubstrategyEnum(enumName)
+	case "mpa":
+		return getMpaEnum(enumName)
+	case "mq":
+		return getMqEnum(enumName)
+	case "mturk":
+		return getMturkEnum(enumName)
+	case "mwaa":
+		return getMwaaEnum(enumName)
+	case "mwaa-serverless":
+		return getMwaaServerlessEnum(enumName)
+	case "neptune":
+		return getNeptuneEnum(enumName)
+	case "neptune-graph":
+		return getNeptuneGraphEnum(enumName)
+	case "neptunedata":
+		return getNeptunedataEnum(enumName)
+	case "network-firewall":
+		return getNetworkFirewallEnum(enumName)
+	case "networkflowmonitor":
+		return getNetworkflowmonitorEnum(enumName)
+	case "networkmanager":
+		return getNetworkmanagerEnum(enumName)
+	case "networkmonitor":
+		return getNetworkmonitorEnum(enumName)
+	case "notifications":
+		return getNotificationsEnum(enumName)
+	case "notificationscontacts":
+		return getNotificationscontactsEnum(enumName)
+	case "nova-act":
+		return getNovaActEnum(enumName)
+	case "oam":
+		return getOamEnum(enumName)
+	case "observabilityadmin":
+		return getObservabilityadminEnum(enumName)
+	case "odb":
+		return getOdbEnum(enumName)
+	case "omics":
+		return getOmicsEnum(enumName)
+	case "opensearch":
+		return getOpensearchEnum(enumName)
+	case "opensearchserverless":
+		return getOpensearchserverlessEnum(enumName)
+	case "organizations":
+		return getOrganizationsEnum(enumName)
+	case "osis":
+		return getOsisEnum(enumName)
+	case "outposts":
+		return getOutpostsEnum(enumName)
+	case "panorama":
+		return getPanoramaEnum(enumName)
+	case "partnercentral-account":
+		return getPartnercentralAccountEnum(enumName)
+	case "partnercentral-benefits":
+		return getPartnercentralBenefitsEnum(enumName)
+	case "partnercentral-channel":
+		return getPartnercentralChannelEnum(enumName)
+	case "partnercentral-selling":
+		return getPartnercentralSellingEnum(enumName)
+	case "payment-cryptography":
+		return getPaymentCryptographyEnum(enumName)
+	case "payment-cryptography-data":
+		return getPaymentCryptographyDataEnum(enumName)
+	case "pca-connector-ad":
+		return getPcaConnectorAdEnum(enumName)
+	case "pca-connector-scep":
+		return getPcaConnectorScepEnum(enumName)
+	case "pcs":
+		return getPcsEnum(enumName)
+	case "personalize":
+		return getPersonalizeEnum(enumName)
+	case "pi":
+		return getPiEnum(enumName)
+	case "pinpoint":
+		return getPinpointEnum(enumName)
+	case "pinpoint-email":
+		return getPinpointEmailEnum(enumName)
+	case "pinpoint-sms-voice":
+		return getPinpointSmsVoiceEnum(enumName)
+	case "pinpoint-sms-voice-v2":
+		return getPinpointSmsVoiceV2Enum(enumName)
+	case "pipes":
+		return getPipesEnum(enumName)
+	case "polly":
+		return getPollyEnum(enumName)
+	case "pricing":
+		return getPricingEnum(enumName)
+	case "proton":
+		return getProtonEnum(enumName)
+	case "qapps":
+		return getQappsEnum(enumName)
+	case "qbusiness":
+		return getQbusinessEnum(enumName)
+	case "qconnect":
+		return getQconnectEnum(enumName)
+	case "quicksight":
+		return getQuicksightEnum(enumName)
+	case "ram":
+		return getRamEnum(enumName)
+	case "rbin":
+		return getRbinEnum(enumName)
+	case "rds":
+		return getRdsEnum(enumName)
+	case "rds-data":
+		return getRdsDataEnum(enumName)
+	case "redshift":
+		return getRedshiftEnum(enumName)
+	case "redshift-data":
+		return getRedshiftDataEnum(enumName)
+	case "redshift-serverless":
+		return getRedshiftServerlessEnum(enumName)
+	case "rekognition":
+		return getRekognitionEnum(enumName)
+	case "repostspace":
+		return getRepostspaceEnum(enumName)
+	case "resiliencehub":
+		return getResiliencehubEnum(enumName)
+	case "resource-explorer-2":
+		return getResourceExplorer2Enum(enumName)
+	case "resource-groups":
+		return getResourceGroupsEnum(enumName)
+	case "resourcegroupstaggingapi":
+		return getResourcegroupstaggingapiEnum(enumName)
+	case "rolesanywhere":
+		return getRolesanywhereEnum(enumName)
+	case "route53":
+		return getRoute53Enum(enumName)
+	case "route53-recovery-cluster":
+		return getRoute53RecoveryClusterEnum(enumName)
+	case "route53-recovery-control-config":
+		return getRoute53RecoveryControlConfigEnum(enumName)
+	case "route53-recovery-readiness":
+		return getRoute53RecoveryReadinessEnum(enumName)
+	case "route53domains":
+		return getRoute53domainsEnum(enumName)
+	case "route53globalresolver":
+		return getRoute53globalresolverEnum(enumName)
+	case "route53profiles":
+		return getRoute53profilesEnum(enumName)
+	case "route53resolver":
+		return getRoute53resolverEnum(enumName)
+	case "rtbfabric":
+		return getRtbfabricEnum(enumName)
+	case "rum":
+		return getRumEnum(enumName)
 	case "s3":
 		return getS3Enum(enumName)
+	case "s3control":
+		return getS3controlEnum(enumName)
+	case "s3outposts":
+		return getS3outpostsEnum(enumName)
+	case "s3tables":
+		return getS3tablesEnum(enumName)
+	case "s3vectors":
+		return getS3vectorsEnum(enumName)
+	case "sagemaker":
+		return getSagemakerEnum(enumName)
+	case "sagemaker-a2i-runtime":
+		return getSagemakerA2iRuntimeEnum(enumName)
+	case "sagemaker-edge":
+		return getSagemakerEdgeEnum(enumName)
+	case "sagemaker-featurestore-runtime":
+		return getSagemakerFeaturestoreRuntimeEnum(enumName)
+	case "sagemaker-geospatial":
+		return getSagemakerGeospatialEnum(enumName)
+	case "sagemaker-metrics":
+		return getSagemakerMetricsEnum(enumName)
+	case "savingsplans":
+		return getSavingsplansEnum(enumName)
+	case "scheduler":
+		return getSchedulerEnum(enumName)
+	case "schemas":
+		return getSchemasEnum(enumName)
+	case "secretsmanager":
+		return getSecretsmanagerEnum(enumName)
+	case "security-ir":
+		return getSecurityIrEnum(enumName)
+	case "securityhub":
+		return getSecurityhubEnum(enumName)
+	case "securitylake":
+		return getSecuritylakeEnum(enumName)
+	case "serverlessrepo":
+		return getServerlessrepoEnum(enumName)
+	case "service-quotas":
+		return getServiceQuotasEnum(enumName)
+	case "servicecatalog":
+		return getServicecatalogEnum(enumName)
+	case "servicecatalog-appregistry":
+		return getServicecatalogAppregistryEnum(enumName)
+	case "servicediscovery":
+		return getServicediscoveryEnum(enumName)
+	case "ses":
+		return getSesEnum(enumName)
+	case "sesv2":
+		return getSesv2Enum(enumName)
+	case "shield":
+		return getShieldEnum(enumName)
+	case "signer":
+		return getSignerEnum(enumName)
+	case "signin":
+		return getSigninEnum(enumName)
+	case "simspaceweaver":
+		return getSimspaceweaverEnum(enumName)
+	case "sms-voice":
+		return getSmsVoiceEnum(enumName)
+	case "snow-device-management":
+		return getSnowDeviceManagementEnum(enumName)
+	case "snowball":
+		return getSnowballEnum(enumName)
+	case "sns":
+		return getSnsEnum(enumName)
+	case "socialmessaging":
+		return getSocialmessagingEnum(enumName)
+	case "sqs":
+		return getSqsEnum(enumName)
+	case "ssm":
+		return getSsmEnum(enumName)
+	case "ssm-contacts":
+		return getSsmContactsEnum(enumName)
+	case "ssm-incidents":
+		return getSsmIncidentsEnum(enumName)
+	case "ssm-quicksetup":
+		return getSsmQuicksetupEnum(enumName)
+	case "ssm-sap":
+		return getSsmSapEnum(enumName)
+	case "sso-admin":
+		return getSsoAdminEnum(enumName)
+	case "sso-oidc":
+		return getSsoOidcEnum(enumName)
+	case "stepfunctions":
+		return getStepfunctionsEnum(enumName)
+	case "storagegateway":
+		return getStoragegatewayEnum(enumName)
+	case "supplychain":
+		return getSupplychainEnum(enumName)
+	case "support-app":
+		return getSupportAppEnum(enumName)
+	case "swf":
+		return getSwfEnum(enumName)
+	case "synthetics":
+		return getSyntheticsEnum(enumName)
+	case "taxsettings":
+		return getTaxsettingsEnum(enumName)
+	case "textract":
+		return getTextractEnum(enumName)
+	case "timestream-influxdb":
+		return getTimestreamInfluxdbEnum(enumName)
+	case "timestream-query":
+		return getTimestreamQueryEnum(enumName)
+	case "timestream-write":
+		return getTimestreamWriteEnum(enumName)
+	case "tnb":
+		return getTnbEnum(enumName)
+	case "transcribe":
+		return getTranscribeEnum(enumName)
+	case "transfer":
+		return getTransferEnum(enumName)
+	case "translate":
+		return getTranslateEnum(enumName)
+	case "trustedadvisor":
+		return getTrustedadvisorEnum(enumName)
+	case "verifiedpermissions":
+		return getVerifiedpermissionsEnum(enumName)
+	case "voice-id":
+		return getVoiceIdEnum(enumName)
+	case "vpc-lattice":
+		return getVpcLatticeEnum(enumName)
+	case "waf":
+		return getWafEnum(enumName)
+	case "waf-regional":
+		return getWafRegionalEnum(enumName)
+	case "wafv2":
+		return getWafv2Enum(enumName)
+	case "wellarchitected":
+		return getWellarchitectedEnum(enumName)
+	case "wickr":
+		return getWickrEnum(enumName)
+	case "wisdom":
+		return getWisdomEnum(enumName)
+	case "workdocs":
+		return getWorkdocsEnum(enumName)
+	case "workmail":
+		return getWorkmailEnum(enumName)
+	case "workspaces":
+		return getWorkspacesEnum(enumName)
+	case "workspaces-instances":
+		return getWorkspacesInstancesEnum(enumName)
+	case "workspaces-thin-client":
+		return getWorkspacesThinClientEnum(enumName)
+	case "workspaces-web":
+		return getWorkspacesWebEnum(enumName)
+	case "xray":
+		return getXrayEnum(enumName)
 	}
 	return nil
 }
@@ -45,26 +817,798 @@ func IsValidValue(service, enumName, value string) bool {
 // Returns nil if the service is not found.
 func GetEnumNames(service string) []string {
 	switch service {
+	case "accessanalyzer":
+		return getAccessanalyzerEnumNames()
+	case "account":
+		return getAccountEnumNames()
 	case "acm":
 		return getAcmEnumNames()
+	case "acm-pca":
+		return getAcmPcaEnumNames()
+	case "aiops":
+		return getAiopsEnumNames()
+	case "amp":
+		return getAmpEnumNames()
+	case "amplify":
+		return getAmplifyEnumNames()
+	case "amplifybackend":
+		return getAmplifybackendEnumNames()
+	case "amplifyuibuilder":
+		return getAmplifyuibuilderEnumNames()
 	case "apigateway":
 		return getApigatewayEnumNames()
+	case "apigatewayv2":
+		return getApigatewayv2EnumNames()
+	case "appconfig":
+		return getAppconfigEnumNames()
+	case "appconfigdata":
+		return getAppconfigdataEnumNames()
+	case "appfabric":
+		return getAppfabricEnumNames()
+	case "appflow":
+		return getAppflowEnumNames()
+	case "appintegrations":
+		return getAppintegrationsEnumNames()
+	case "application-autoscaling":
+		return getApplicationAutoscalingEnumNames()
+	case "application-insights":
+		return getApplicationInsightsEnumNames()
+	case "application-signals":
+		return getApplicationSignalsEnumNames()
+	case "applicationcostprofiler":
+		return getApplicationcostprofilerEnumNames()
+	case "appmesh":
+		return getAppmeshEnumNames()
+	case "apprunner":
+		return getApprunnerEnumNames()
+	case "appstream":
+		return getAppstreamEnumNames()
+	case "appsync":
+		return getAppsyncEnumNames()
+	case "arc-region-switch":
+		return getArcRegionSwitchEnumNames()
+	case "arc-zonal-shift":
+		return getArcZonalShiftEnumNames()
+	case "artifact":
+		return getArtifactEnumNames()
+	case "athena":
+		return getAthenaEnumNames()
+	case "auditmanager":
+		return getAuditmanagerEnumNames()
+	case "autoscaling":
+		return getAutoscalingEnumNames()
+	case "autoscaling-plans":
+		return getAutoscalingPlansEnumNames()
+	case "b2bi":
+		return getB2biEnumNames()
+	case "backup":
+		return getBackupEnumNames()
+	case "backup-gateway":
+		return getBackupGatewayEnumNames()
+	case "backupsearch":
+		return getBackupsearchEnumNames()
+	case "batch":
+		return getBatchEnumNames()
+	case "bcm-dashboards":
+		return getBcmDashboardsEnumNames()
+	case "bcm-data-exports":
+		return getBcmDataExportsEnumNames()
+	case "bcm-pricing-calculator":
+		return getBcmPricingCalculatorEnumNames()
+	case "bcm-recommended-actions":
+		return getBcmRecommendedActionsEnumNames()
+	case "bedrock":
+		return getBedrockEnumNames()
+	case "bedrock-agent":
+		return getBedrockAgentEnumNames()
+	case "bedrock-agent-runtime":
+		return getBedrockAgentRuntimeEnumNames()
+	case "bedrock-agentcore":
+		return getBedrockAgentcoreEnumNames()
+	case "bedrock-agentcore-control":
+		return getBedrockAgentcoreControlEnumNames()
+	case "bedrock-data-automation":
+		return getBedrockDataAutomationEnumNames()
+	case "bedrock-data-automation-runtime":
+		return getBedrockDataAutomationRuntimeEnumNames()
+	case "bedrock-runtime":
+		return getBedrockRuntimeEnumNames()
+	case "billing":
+		return getBillingEnumNames()
+	case "billingconductor":
+		return getBillingconductorEnumNames()
+	case "braket":
+		return getBraketEnumNames()
+	case "budgets":
+		return getBudgetsEnumNames()
+	case "ce":
+		return getCeEnumNames()
+	case "chatbot":
+		return getChatbotEnumNames()
+	case "chime":
+		return getChimeEnumNames()
+	case "chime-sdk-identity":
+		return getChimeSdkIdentityEnumNames()
+	case "chime-sdk-media-pipelines":
+		return getChimeSdkMediaPipelinesEnumNames()
+	case "chime-sdk-meetings":
+		return getChimeSdkMeetingsEnumNames()
+	case "chime-sdk-messaging":
+		return getChimeSdkMessagingEnumNames()
+	case "chime-sdk-voice":
+		return getChimeSdkVoiceEnumNames()
+	case "cleanrooms":
+		return getCleanroomsEnumNames()
+	case "cleanroomsml":
+		return getCleanroomsmlEnumNames()
+	case "cloud9":
+		return getCloud9EnumNames()
+	case "cloudcontrol":
+		return getCloudcontrolEnumNames()
+	case "clouddirectory":
+		return getClouddirectoryEnumNames()
+	case "cloudformation":
+		return getCloudformationEnumNames()
+	case "cloudfront":
+		return getCloudfrontEnumNames()
+	case "cloudhsm":
+		return getCloudhsmEnumNames()
+	case "cloudhsmv2":
+		return getCloudhsmv2EnumNames()
+	case "cloudsearch":
+		return getCloudsearchEnumNames()
+	case "cloudsearchdomain":
+		return getCloudsearchdomainEnumNames()
+	case "cloudtrail":
+		return getCloudtrailEnumNames()
+	case "cloudwatch":
+		return getCloudwatchEnumNames()
+	case "codeartifact":
+		return getCodeartifactEnumNames()
+	case "codebuild":
+		return getCodebuildEnumNames()
+	case "codecatalyst":
+		return getCodecatalystEnumNames()
+	case "codecommit":
+		return getCodecommitEnumNames()
+	case "codeconnections":
+		return getCodeconnectionsEnumNames()
+	case "codedeploy":
+		return getCodedeployEnumNames()
+	case "codeguru-reviewer":
+		return getCodeguruReviewerEnumNames()
+	case "codeguru-security":
+		return getCodeguruSecurityEnumNames()
+	case "codeguruprofiler":
+		return getCodeguruprofilerEnumNames()
+	case "codepipeline":
+		return getCodepipelineEnumNames()
+	case "codestar-connections":
+		return getCodestarConnectionsEnumNames()
+	case "codestar-notifications":
+		return getCodestarNotificationsEnumNames()
+	case "cognito-identity":
+		return getCognitoIdentityEnumNames()
+	case "cognito-idp":
+		return getCognitoIdpEnumNames()
+	case "cognito-sync":
+		return getCognitoSyncEnumNames()
+	case "comprehend":
+		return getComprehendEnumNames()
+	case "comprehendmedical":
+		return getComprehendmedicalEnumNames()
+	case "compute-optimizer":
+		return getComputeOptimizerEnumNames()
+	case "compute-optimizer-automation":
+		return getComputeOptimizerAutomationEnumNames()
+	case "config":
+		return getConfigEnumNames()
+	case "connect":
+		return getConnectEnumNames()
+	case "connect-contact-lens":
+		return getConnectContactLensEnumNames()
+	case "connectcampaigns":
+		return getConnectcampaignsEnumNames()
+	case "connectcampaignsv2":
+		return getConnectcampaignsv2EnumNames()
+	case "connectcases":
+		return getConnectcasesEnumNames()
+	case "connectparticipant":
+		return getConnectparticipantEnumNames()
+	case "controlcatalog":
+		return getControlcatalogEnumNames()
+	case "controltower":
+		return getControltowerEnumNames()
+	case "cost-optimization-hub":
+		return getCostOptimizationHubEnumNames()
+	case "cur":
+		return getCurEnumNames()
+	case "customer-profiles":
+		return getCustomerProfilesEnumNames()
+	case "databrew":
+		return getDatabrewEnumNames()
+	case "dataexchange":
+		return getDataexchangeEnumNames()
+	case "datapipeline":
+		return getDatapipelineEnumNames()
+	case "datasync":
+		return getDatasyncEnumNames()
+	case "datazone":
+		return getDatazoneEnumNames()
+	case "dax":
+		return getDaxEnumNames()
+	case "deadline":
+		return getDeadlineEnumNames()
+	case "detective":
+		return getDetectiveEnumNames()
+	case "devicefarm":
+		return getDevicefarmEnumNames()
+	case "devops-guru":
+		return getDevopsGuruEnumNames()
+	case "directconnect":
+		return getDirectconnectEnumNames()
+	case "discovery":
+		return getDiscoveryEnumNames()
+	case "dlm":
+		return getDlmEnumNames()
+	case "dms":
+		return getDmsEnumNames()
+	case "docdb":
+		return getDocdbEnumNames()
+	case "docdb-elastic":
+		return getDocdbElasticEnumNames()
+	case "drs":
+		return getDrsEnumNames()
+	case "ds":
+		return getDsEnumNames()
+	case "ds-data":
+		return getDsDataEnumNames()
+	case "dsql":
+		return getDsqlEnumNames()
 	case "dynamodb":
 		return getDynamodbEnumNames()
+	case "dynamodbstreams":
+		return getDynamodbstreamsEnumNames()
+	case "ebs":
+		return getEbsEnumNames()
 	case "ec2":
 		return getEc2EnumNames()
+	case "ecr":
+		return getEcrEnumNames()
+	case "ecr-public":
+		return getEcrPublicEnumNames()
 	case "ecs":
 		return getEcsEnumNames()
+	case "efs":
+		return getEfsEnumNames()
+	case "eks":
+		return getEksEnumNames()
+	case "elasticache":
+		return getElasticacheEnumNames()
+	case "elasticbeanstalk":
+		return getElasticbeanstalkEnumNames()
 	case "elbv2":
 		return getElbv2EnumNames()
+	case "emr":
+		return getEmrEnumNames()
+	case "emr-containers":
+		return getEmrContainersEnumNames()
+	case "emr-serverless":
+		return getEmrServerlessEnumNames()
+	case "entityresolution":
+		return getEntityresolutionEnumNames()
+	case "es":
+		return getEsEnumNames()
 	case "events":
 		return getEventsEnumNames()
+	case "evidently":
+		return getEvidentlyEnumNames()
+	case "evs":
+		return getEvsEnumNames()
+	case "finspace":
+		return getFinspaceEnumNames()
+	case "finspace-data":
+		return getFinspaceDataEnumNames()
+	case "firehose":
+		return getFirehoseEnumNames()
+	case "fis":
+		return getFisEnumNames()
+	case "fms":
+		return getFmsEnumNames()
+	case "forecast":
+		return getForecastEnumNames()
+	case "frauddetector":
+		return getFrauddetectorEnumNames()
+	case "freetier":
+		return getFreetierEnumNames()
+	case "fsx":
+		return getFsxEnumNames()
+	case "gamelift":
+		return getGameliftEnumNames()
+	case "gameliftstreams":
+		return getGameliftstreamsEnumNames()
+	case "geo-maps":
+		return getGeoMapsEnumNames()
+	case "geo-places":
+		return getGeoPlacesEnumNames()
+	case "geo-routes":
+		return getGeoRoutesEnumNames()
+	case "glacier":
+		return getGlacierEnumNames()
+	case "globalaccelerator":
+		return getGlobalacceleratorEnumNames()
+	case "glue":
+		return getGlueEnumNames()
+	case "grafana":
+		return getGrafanaEnumNames()
+	case "greengrass":
+		return getGreengrassEnumNames()
+	case "greengrassv2":
+		return getGreengrassv2EnumNames()
+	case "groundstation":
+		return getGroundstationEnumNames()
+	case "guardduty":
+		return getGuarddutyEnumNames()
+	case "health":
+		return getHealthEnumNames()
+	case "healthlake":
+		return getHealthlakeEnumNames()
+	case "iam":
+		return getIamEnumNames()
+	case "identitystore":
+		return getIdentitystoreEnumNames()
+	case "imagebuilder":
+		return getImagebuilderEnumNames()
+	case "importexport":
+		return getImportexportEnumNames()
+	case "inspector":
+		return getInspectorEnumNames()
+	case "inspector-scan":
+		return getInspectorScanEnumNames()
+	case "inspector2":
+		return getInspector2EnumNames()
+	case "internetmonitor":
+		return getInternetmonitorEnumNames()
+	case "invoicing":
+		return getInvoicingEnumNames()
+	case "iot":
+		return getIotEnumNames()
+	case "iot-data":
+		return getIotDataEnumNames()
+	case "iot-jobs-data":
+		return getIotJobsDataEnumNames()
+	case "iot-managed-integrations":
+		return getIotManagedIntegrationsEnumNames()
+	case "iotanalytics":
+		return getIotanalyticsEnumNames()
+	case "iotdeviceadvisor":
+		return getIotdeviceadvisorEnumNames()
+	case "iotevents":
+		return getIoteventsEnumNames()
+	case "iotevents-data":
+		return getIoteventsDataEnumNames()
+	case "iotfleetwise":
+		return getIotfleetwiseEnumNames()
+	case "iotsecuretunneling":
+		return getIotsecuretunnelingEnumNames()
+	case "iotsitewise":
+		return getIotsitewiseEnumNames()
+	case "iotthingsgraph":
+		return getIotthingsgraphEnumNames()
+	case "iottwinmaker":
+		return getIottwinmakerEnumNames()
+	case "iotwireless":
+		return getIotwirelessEnumNames()
+	case "ivs":
+		return getIvsEnumNames()
+	case "ivs-realtime":
+		return getIvsRealtimeEnumNames()
+	case "ivschat":
+		return getIvschatEnumNames()
+	case "kafka":
+		return getKafkaEnumNames()
+	case "kafkaconnect":
+		return getKafkaconnectEnumNames()
+	case "kendra":
+		return getKendraEnumNames()
+	case "kendra-ranking":
+		return getKendraRankingEnumNames()
+	case "keyspaces":
+		return getKeyspacesEnumNames()
+	case "keyspacesstreams":
+		return getKeyspacesstreamsEnumNames()
+	case "kinesis":
+		return getKinesisEnumNames()
+	case "kinesis-video-archived-media":
+		return getKinesisVideoArchivedMediaEnumNames()
+	case "kinesis-video-media":
+		return getKinesisVideoMediaEnumNames()
+	case "kinesis-video-signaling":
+		return getKinesisVideoSignalingEnumNames()
+	case "kinesisanalytics":
+		return getKinesisanalyticsEnumNames()
+	case "kinesisanalyticsv2":
+		return getKinesisanalyticsv2EnumNames()
+	case "kinesisvideo":
+		return getKinesisvideoEnumNames()
+	case "kms":
+		return getKmsEnumNames()
+	case "lakeformation":
+		return getLakeformationEnumNames()
 	case "lambda":
 		return getLambdaEnumNames()
+	case "launch-wizard":
+		return getLaunchWizardEnumNames()
+	case "lex-models":
+		return getLexModelsEnumNames()
+	case "lex-runtime":
+		return getLexRuntimeEnumNames()
+	case "lexv2-models":
+		return getLexv2ModelsEnumNames()
+	case "lexv2-runtime":
+		return getLexv2RuntimeEnumNames()
+	case "license-manager":
+		return getLicenseManagerEnumNames()
+	case "license-manager-linux-subscriptions":
+		return getLicenseManagerLinuxSubscriptionsEnumNames()
+	case "license-manager-user-subscriptions":
+		return getLicenseManagerUserSubscriptionsEnumNames()
+	case "lightsail":
+		return getLightsailEnumNames()
+	case "location":
+		return getLocationEnumNames()
 	case "logs":
 		return getLogsEnumNames()
+	case "lookoutequipment":
+		return getLookoutequipmentEnumNames()
+	case "m2":
+		return getM2EnumNames()
+	case "machinelearning":
+		return getMachinelearningEnumNames()
+	case "macie2":
+		return getMacie2EnumNames()
+	case "mailmanager":
+		return getMailmanagerEnumNames()
+	case "managedblockchain":
+		return getManagedblockchainEnumNames()
+	case "managedblockchain-query":
+		return getManagedblockchainQueryEnumNames()
+	case "marketplace-agreement":
+		return getMarketplaceAgreementEnumNames()
+	case "marketplace-catalog":
+		return getMarketplaceCatalogEnumNames()
+	case "marketplace-entitlement":
+		return getMarketplaceEntitlementEnumNames()
+	case "marketplacecommerceanalytics":
+		return getMarketplacecommerceanalyticsEnumNames()
+	case "mediaconnect":
+		return getMediaconnectEnumNames()
+	case "mediaconvert":
+		return getMediaconvertEnumNames()
+	case "medialive":
+		return getMedialiveEnumNames()
+	case "mediapackage":
+		return getMediapackageEnumNames()
+	case "mediapackage-vod":
+		return getMediapackageVodEnumNames()
+	case "mediapackagev2":
+		return getMediapackagev2EnumNames()
+	case "mediastore":
+		return getMediastoreEnumNames()
+	case "mediastore-data":
+		return getMediastoreDataEnumNames()
+	case "mediatailor":
+		return getMediatailorEnumNames()
+	case "medical-imaging":
+		return getMedicalImagingEnumNames()
+	case "memorydb":
+		return getMemorydbEnumNames()
+	case "meteringmarketplace":
+		return getMeteringmarketplaceEnumNames()
+	case "mgh":
+		return getMghEnumNames()
+	case "mgn":
+		return getMgnEnumNames()
+	case "migration-hub-refactor-spaces":
+		return getMigrationHubRefactorSpacesEnumNames()
+	case "migrationhub-config":
+		return getMigrationhubConfigEnumNames()
+	case "migrationhuborchestrator":
+		return getMigrationhuborchestratorEnumNames()
+	case "migrationhubstrategy":
+		return getMigrationhubstrategyEnumNames()
+	case "mpa":
+		return getMpaEnumNames()
+	case "mq":
+		return getMqEnumNames()
+	case "mturk":
+		return getMturkEnumNames()
+	case "mwaa":
+		return getMwaaEnumNames()
+	case "mwaa-serverless":
+		return getMwaaServerlessEnumNames()
+	case "neptune":
+		return getNeptuneEnumNames()
+	case "neptune-graph":
+		return getNeptuneGraphEnumNames()
+	case "neptunedata":
+		return getNeptunedataEnumNames()
+	case "network-firewall":
+		return getNetworkFirewallEnumNames()
+	case "networkflowmonitor":
+		return getNetworkflowmonitorEnumNames()
+	case "networkmanager":
+		return getNetworkmanagerEnumNames()
+	case "networkmonitor":
+		return getNetworkmonitorEnumNames()
+	case "notifications":
+		return getNotificationsEnumNames()
+	case "notificationscontacts":
+		return getNotificationscontactsEnumNames()
+	case "nova-act":
+		return getNovaActEnumNames()
+	case "oam":
+		return getOamEnumNames()
+	case "observabilityadmin":
+		return getObservabilityadminEnumNames()
+	case "odb":
+		return getOdbEnumNames()
+	case "omics":
+		return getOmicsEnumNames()
+	case "opensearch":
+		return getOpensearchEnumNames()
+	case "opensearchserverless":
+		return getOpensearchserverlessEnumNames()
+	case "organizations":
+		return getOrganizationsEnumNames()
+	case "osis":
+		return getOsisEnumNames()
+	case "outposts":
+		return getOutpostsEnumNames()
+	case "panorama":
+		return getPanoramaEnumNames()
+	case "partnercentral-account":
+		return getPartnercentralAccountEnumNames()
+	case "partnercentral-benefits":
+		return getPartnercentralBenefitsEnumNames()
+	case "partnercentral-channel":
+		return getPartnercentralChannelEnumNames()
+	case "partnercentral-selling":
+		return getPartnercentralSellingEnumNames()
+	case "payment-cryptography":
+		return getPaymentCryptographyEnumNames()
+	case "payment-cryptography-data":
+		return getPaymentCryptographyDataEnumNames()
+	case "pca-connector-ad":
+		return getPcaConnectorAdEnumNames()
+	case "pca-connector-scep":
+		return getPcaConnectorScepEnumNames()
+	case "pcs":
+		return getPcsEnumNames()
+	case "personalize":
+		return getPersonalizeEnumNames()
+	case "pi":
+		return getPiEnumNames()
+	case "pinpoint":
+		return getPinpointEnumNames()
+	case "pinpoint-email":
+		return getPinpointEmailEnumNames()
+	case "pinpoint-sms-voice":
+		return getPinpointSmsVoiceEnumNames()
+	case "pinpoint-sms-voice-v2":
+		return getPinpointSmsVoiceV2EnumNames()
+	case "pipes":
+		return getPipesEnumNames()
+	case "polly":
+		return getPollyEnumNames()
+	case "pricing":
+		return getPricingEnumNames()
+	case "proton":
+		return getProtonEnumNames()
+	case "qapps":
+		return getQappsEnumNames()
+	case "qbusiness":
+		return getQbusinessEnumNames()
+	case "qconnect":
+		return getQconnectEnumNames()
+	case "quicksight":
+		return getQuicksightEnumNames()
+	case "ram":
+		return getRamEnumNames()
+	case "rbin":
+		return getRbinEnumNames()
+	case "rds":
+		return getRdsEnumNames()
+	case "rds-data":
+		return getRdsDataEnumNames()
+	case "redshift":
+		return getRedshiftEnumNames()
+	case "redshift-data":
+		return getRedshiftDataEnumNames()
+	case "redshift-serverless":
+		return getRedshiftServerlessEnumNames()
+	case "rekognition":
+		return getRekognitionEnumNames()
+	case "repostspace":
+		return getRepostspaceEnumNames()
+	case "resiliencehub":
+		return getResiliencehubEnumNames()
+	case "resource-explorer-2":
+		return getResourceExplorer2EnumNames()
+	case "resource-groups":
+		return getResourceGroupsEnumNames()
+	case "resourcegroupstaggingapi":
+		return getResourcegroupstaggingapiEnumNames()
+	case "rolesanywhere":
+		return getRolesanywhereEnumNames()
+	case "route53":
+		return getRoute53EnumNames()
+	case "route53-recovery-cluster":
+		return getRoute53RecoveryClusterEnumNames()
+	case "route53-recovery-control-config":
+		return getRoute53RecoveryControlConfigEnumNames()
+	case "route53-recovery-readiness":
+		return getRoute53RecoveryReadinessEnumNames()
+	case "route53domains":
+		return getRoute53domainsEnumNames()
+	case "route53globalresolver":
+		return getRoute53globalresolverEnumNames()
+	case "route53profiles":
+		return getRoute53profilesEnumNames()
+	case "route53resolver":
+		return getRoute53resolverEnumNames()
+	case "rtbfabric":
+		return getRtbfabricEnumNames()
+	case "rum":
+		return getRumEnumNames()
 	case "s3":
 		return getS3EnumNames()
+	case "s3control":
+		return getS3controlEnumNames()
+	case "s3outposts":
+		return getS3outpostsEnumNames()
+	case "s3tables":
+		return getS3tablesEnumNames()
+	case "s3vectors":
+		return getS3vectorsEnumNames()
+	case "sagemaker":
+		return getSagemakerEnumNames()
+	case "sagemaker-a2i-runtime":
+		return getSagemakerA2iRuntimeEnumNames()
+	case "sagemaker-edge":
+		return getSagemakerEdgeEnumNames()
+	case "sagemaker-featurestore-runtime":
+		return getSagemakerFeaturestoreRuntimeEnumNames()
+	case "sagemaker-geospatial":
+		return getSagemakerGeospatialEnumNames()
+	case "sagemaker-metrics":
+		return getSagemakerMetricsEnumNames()
+	case "savingsplans":
+		return getSavingsplansEnumNames()
+	case "scheduler":
+		return getSchedulerEnumNames()
+	case "schemas":
+		return getSchemasEnumNames()
+	case "secretsmanager":
+		return getSecretsmanagerEnumNames()
+	case "security-ir":
+		return getSecurityIrEnumNames()
+	case "securityhub":
+		return getSecurityhubEnumNames()
+	case "securitylake":
+		return getSecuritylakeEnumNames()
+	case "serverlessrepo":
+		return getServerlessrepoEnumNames()
+	case "service-quotas":
+		return getServiceQuotasEnumNames()
+	case "servicecatalog":
+		return getServicecatalogEnumNames()
+	case "servicecatalog-appregistry":
+		return getServicecatalogAppregistryEnumNames()
+	case "servicediscovery":
+		return getServicediscoveryEnumNames()
+	case "ses":
+		return getSesEnumNames()
+	case "sesv2":
+		return getSesv2EnumNames()
+	case "shield":
+		return getShieldEnumNames()
+	case "signer":
+		return getSignerEnumNames()
+	case "signin":
+		return getSigninEnumNames()
+	case "simspaceweaver":
+		return getSimspaceweaverEnumNames()
+	case "sms-voice":
+		return getSmsVoiceEnumNames()
+	case "snow-device-management":
+		return getSnowDeviceManagementEnumNames()
+	case "snowball":
+		return getSnowballEnumNames()
+	case "sns":
+		return getSnsEnumNames()
+	case "socialmessaging":
+		return getSocialmessagingEnumNames()
+	case "sqs":
+		return getSqsEnumNames()
+	case "ssm":
+		return getSsmEnumNames()
+	case "ssm-contacts":
+		return getSsmContactsEnumNames()
+	case "ssm-incidents":
+		return getSsmIncidentsEnumNames()
+	case "ssm-quicksetup":
+		return getSsmQuicksetupEnumNames()
+	case "ssm-sap":
+		return getSsmSapEnumNames()
+	case "sso-admin":
+		return getSsoAdminEnumNames()
+	case "sso-oidc":
+		return getSsoOidcEnumNames()
+	case "stepfunctions":
+		return getStepfunctionsEnumNames()
+	case "storagegateway":
+		return getStoragegatewayEnumNames()
+	case "supplychain":
+		return getSupplychainEnumNames()
+	case "support-app":
+		return getSupportAppEnumNames()
+	case "swf":
+		return getSwfEnumNames()
+	case "synthetics":
+		return getSyntheticsEnumNames()
+	case "taxsettings":
+		return getTaxsettingsEnumNames()
+	case "textract":
+		return getTextractEnumNames()
+	case "timestream-influxdb":
+		return getTimestreamInfluxdbEnumNames()
+	case "timestream-query":
+		return getTimestreamQueryEnumNames()
+	case "timestream-write":
+		return getTimestreamWriteEnumNames()
+	case "tnb":
+		return getTnbEnumNames()
+	case "transcribe":
+		return getTranscribeEnumNames()
+	case "transfer":
+		return getTransferEnumNames()
+	case "translate":
+		return getTranslateEnumNames()
+	case "trustedadvisor":
+		return getTrustedadvisorEnumNames()
+	case "verifiedpermissions":
+		return getVerifiedpermissionsEnumNames()
+	case "voice-id":
+		return getVoiceIdEnumNames()
+	case "vpc-lattice":
+		return getVpcLatticeEnumNames()
+	case "waf":
+		return getWafEnumNames()
+	case "waf-regional":
+		return getWafRegionalEnumNames()
+	case "wafv2":
+		return getWafv2EnumNames()
+	case "wellarchitected":
+		return getWellarchitectedEnumNames()
+	case "wickr":
+		return getWickrEnumNames()
+	case "wisdom":
+		return getWisdomEnumNames()
+	case "workdocs":
+		return getWorkdocsEnumNames()
+	case "workmail":
+		return getWorkmailEnumNames()
+	case "workspaces":
+		return getWorkspacesEnumNames()
+	case "workspaces-instances":
+		return getWorkspacesInstancesEnumNames()
+	case "workspaces-thin-client":
+		return getWorkspacesThinClientEnumNames()
+	case "workspaces-web":
+		return getWorkspacesWebEnumNames()
+	case "xray":
+		return getXrayEnumNames()
 	}
 	return nil
 }
@@ -72,15 +1616,401 @@ func GetEnumNames(service string) []string {
 // Services returns the list of services with enums.
 func Services() []string {
 	return []string{
+		"accessanalyzer",
+		"account",
 		"acm",
+		"acm-pca",
+		"aiops",
+		"amp",
+		"amplify",
+		"amplifybackend",
+		"amplifyuibuilder",
 		"apigateway",
+		"apigatewayv2",
+		"appconfig",
+		"appconfigdata",
+		"appfabric",
+		"appflow",
+		"appintegrations",
+		"application-autoscaling",
+		"application-insights",
+		"application-signals",
+		"applicationcostprofiler",
+		"appmesh",
+		"apprunner",
+		"appstream",
+		"appsync",
+		"arc-region-switch",
+		"arc-zonal-shift",
+		"artifact",
+		"athena",
+		"auditmanager",
+		"autoscaling",
+		"autoscaling-plans",
+		"b2bi",
+		"backup",
+		"backup-gateway",
+		"backupsearch",
+		"batch",
+		"bcm-dashboards",
+		"bcm-data-exports",
+		"bcm-pricing-calculator",
+		"bcm-recommended-actions",
+		"bedrock",
+		"bedrock-agent",
+		"bedrock-agent-runtime",
+		"bedrock-agentcore",
+		"bedrock-agentcore-control",
+		"bedrock-data-automation",
+		"bedrock-data-automation-runtime",
+		"bedrock-runtime",
+		"billing",
+		"billingconductor",
+		"braket",
+		"budgets",
+		"ce",
+		"chatbot",
+		"chime",
+		"chime-sdk-identity",
+		"chime-sdk-media-pipelines",
+		"chime-sdk-meetings",
+		"chime-sdk-messaging",
+		"chime-sdk-voice",
+		"cleanrooms",
+		"cleanroomsml",
+		"cloud9",
+		"cloudcontrol",
+		"clouddirectory",
+		"cloudformation",
+		"cloudfront",
+		"cloudhsm",
+		"cloudhsmv2",
+		"cloudsearch",
+		"cloudsearchdomain",
+		"cloudtrail",
+		"cloudwatch",
+		"codeartifact",
+		"codebuild",
+		"codecatalyst",
+		"codecommit",
+		"codeconnections",
+		"codedeploy",
+		"codeguru-reviewer",
+		"codeguru-security",
+		"codeguruprofiler",
+		"codepipeline",
+		"codestar-connections",
+		"codestar-notifications",
+		"cognito-identity",
+		"cognito-idp",
+		"cognito-sync",
+		"comprehend",
+		"comprehendmedical",
+		"compute-optimizer",
+		"compute-optimizer-automation",
+		"config",
+		"connect",
+		"connect-contact-lens",
+		"connectcampaigns",
+		"connectcampaignsv2",
+		"connectcases",
+		"connectparticipant",
+		"controlcatalog",
+		"controltower",
+		"cost-optimization-hub",
+		"cur",
+		"customer-profiles",
+		"databrew",
+		"dataexchange",
+		"datapipeline",
+		"datasync",
+		"datazone",
+		"dax",
+		"deadline",
+		"detective",
+		"devicefarm",
+		"devops-guru",
+		"directconnect",
+		"discovery",
+		"dlm",
+		"dms",
+		"docdb",
+		"docdb-elastic",
+		"drs",
+		"ds",
+		"ds-data",
+		"dsql",
 		"dynamodb",
+		"dynamodbstreams",
+		"ebs",
 		"ec2",
+		"ecr",
+		"ecr-public",
 		"ecs",
+		"efs",
+		"eks",
+		"elasticache",
+		"elasticbeanstalk",
 		"elbv2",
+		"emr",
+		"emr-containers",
+		"emr-serverless",
+		"entityresolution",
+		"es",
 		"events",
+		"evidently",
+		"evs",
+		"finspace",
+		"finspace-data",
+		"firehose",
+		"fis",
+		"fms",
+		"forecast",
+		"frauddetector",
+		"freetier",
+		"fsx",
+		"gamelift",
+		"gameliftstreams",
+		"geo-maps",
+		"geo-places",
+		"geo-routes",
+		"glacier",
+		"globalaccelerator",
+		"glue",
+		"grafana",
+		"greengrass",
+		"greengrassv2",
+		"groundstation",
+		"guardduty",
+		"health",
+		"healthlake",
+		"iam",
+		"identitystore",
+		"imagebuilder",
+		"importexport",
+		"inspector",
+		"inspector-scan",
+		"inspector2",
+		"internetmonitor",
+		"invoicing",
+		"iot",
+		"iot-data",
+		"iot-jobs-data",
+		"iot-managed-integrations",
+		"iotanalytics",
+		"iotdeviceadvisor",
+		"iotevents",
+		"iotevents-data",
+		"iotfleetwise",
+		"iotsecuretunneling",
+		"iotsitewise",
+		"iotthingsgraph",
+		"iottwinmaker",
+		"iotwireless",
+		"ivs",
+		"ivs-realtime",
+		"ivschat",
+		"kafka",
+		"kafkaconnect",
+		"kendra",
+		"kendra-ranking",
+		"keyspaces",
+		"keyspacesstreams",
+		"kinesis",
+		"kinesis-video-archived-media",
+		"kinesis-video-media",
+		"kinesis-video-signaling",
+		"kinesisanalytics",
+		"kinesisanalyticsv2",
+		"kinesisvideo",
+		"kms",
+		"lakeformation",
 		"lambda",
+		"launch-wizard",
+		"lex-models",
+		"lex-runtime",
+		"lexv2-models",
+		"lexv2-runtime",
+		"license-manager",
+		"license-manager-linux-subscriptions",
+		"license-manager-user-subscriptions",
+		"lightsail",
+		"location",
 		"logs",
+		"lookoutequipment",
+		"m2",
+		"machinelearning",
+		"macie2",
+		"mailmanager",
+		"managedblockchain",
+		"managedblockchain-query",
+		"marketplace-agreement",
+		"marketplace-catalog",
+		"marketplace-entitlement",
+		"marketplacecommerceanalytics",
+		"mediaconnect",
+		"mediaconvert",
+		"medialive",
+		"mediapackage",
+		"mediapackage-vod",
+		"mediapackagev2",
+		"mediastore",
+		"mediastore-data",
+		"mediatailor",
+		"medical-imaging",
+		"memorydb",
+		"meteringmarketplace",
+		"mgh",
+		"mgn",
+		"migration-hub-refactor-spaces",
+		"migrationhub-config",
+		"migrationhuborchestrator",
+		"migrationhubstrategy",
+		"mpa",
+		"mq",
+		"mturk",
+		"mwaa",
+		"mwaa-serverless",
+		"neptune",
+		"neptune-graph",
+		"neptunedata",
+		"network-firewall",
+		"networkflowmonitor",
+		"networkmanager",
+		"networkmonitor",
+		"notifications",
+		"notificationscontacts",
+		"nova-act",
+		"oam",
+		"observabilityadmin",
+		"odb",
+		"omics",
+		"opensearch",
+		"opensearchserverless",
+		"organizations",
+		"osis",
+		"outposts",
+		"panorama",
+		"partnercentral-account",
+		"partnercentral-benefits",
+		"partnercentral-channel",
+		"partnercentral-selling",
+		"payment-cryptography",
+		"payment-cryptography-data",
+		"pca-connector-ad",
+		"pca-connector-scep",
+		"pcs",
+		"personalize",
+		"pi",
+		"pinpoint",
+		"pinpoint-email",
+		"pinpoint-sms-voice",
+		"pinpoint-sms-voice-v2",
+		"pipes",
+		"polly",
+		"pricing",
+		"proton",
+		"qapps",
+		"qbusiness",
+		"qconnect",
+		"quicksight",
+		"ram",
+		"rbin",
+		"rds",
+		"rds-data",
+		"redshift",
+		"redshift-data",
+		"redshift-serverless",
+		"rekognition",
+		"repostspace",
+		"resiliencehub",
+		"resource-explorer-2",
+		"resource-groups",
+		"resourcegroupstaggingapi",
+		"rolesanywhere",
+		"route53",
+		"route53-recovery-cluster",
+		"route53-recovery-control-config",
+		"route53-recovery-readiness",
+		"route53domains",
+		"route53globalresolver",
+		"route53profiles",
+		"route53resolver",
+		"rtbfabric",
+		"rum",
 		"s3",
+		"s3control",
+		"s3outposts",
+		"s3tables",
+		"s3vectors",
+		"sagemaker",
+		"sagemaker-a2i-runtime",
+		"sagemaker-edge",
+		"sagemaker-featurestore-runtime",
+		"sagemaker-geospatial",
+		"sagemaker-metrics",
+		"savingsplans",
+		"scheduler",
+		"schemas",
+		"secretsmanager",
+		"security-ir",
+		"securityhub",
+		"securitylake",
+		"serverlessrepo",
+		"service-quotas",
+		"servicecatalog",
+		"servicecatalog-appregistry",
+		"servicediscovery",
+		"ses",
+		"sesv2",
+		"shield",
+		"signer",
+		"signin",
+		"simspaceweaver",
+		"sms-voice",
+		"snow-device-management",
+		"snowball",
+		"sns",
+		"socialmessaging",
+		"sqs",
+		"ssm",
+		"ssm-contacts",
+		"ssm-incidents",
+		"ssm-quicksetup",
+		"ssm-sap",
+		"sso-admin",
+		"sso-oidc",
+		"stepfunctions",
+		"storagegateway",
+		"supplychain",
+		"support-app",
+		"swf",
+		"synthetics",
+		"taxsettings",
+		"textract",
+		"timestream-influxdb",
+		"timestream-query",
+		"timestream-write",
+		"tnb",
+		"transcribe",
+		"transfer",
+		"translate",
+		"trustedadvisor",
+		"verifiedpermissions",
+		"voice-id",
+		"vpc-lattice",
+		"waf",
+		"waf-regional",
+		"wafv2",
+		"wellarchitected",
+		"wickr",
+		"wisdom",
+		"workdocs",
+		"workmail",
+		"workspaces",
+		"workspaces-instances",
+		"workspaces-thin-client",
+		"workspaces-web",
+		"xray",
 	}
 }

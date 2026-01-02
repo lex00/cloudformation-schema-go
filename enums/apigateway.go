@@ -4,13 +4,289 @@ package enums
 
 // Apigateway enum constants
 const (
+	// AccessAssociationSourceType values
+	ApigatewayAccessAssociationSourceTypeVpce = "VPCE"
+
+	// ApiKeySourceType values
+	ApigatewayApiKeySourceTypeHeader     = "HEADER"
+	ApigatewayApiKeySourceTypeAuthorizer = "AUTHORIZER"
+
+	// ApiKeysFormat values
+	ApigatewayApiKeysFormatCsv = "csv"
+
+	// ApiStatus values
+	ApigatewayApiStatusUpdating  = "UPDATING"
+	ApigatewayApiStatusAvailable = "AVAILABLE"
+	ApigatewayApiStatusPending   = "PENDING"
+	ApigatewayApiStatusFailed    = "FAILED"
+
+	// AuthorizerType values
+	ApigatewayAuthorizerTypeToken            = "TOKEN"
+	ApigatewayAuthorizerTypeRequest          = "REQUEST"
+	ApigatewayAuthorizerTypeCognitoUserPools = "COGNITO_USER_POOLS"
+
+	// CacheClusterSize values
+	ApigatewayCacheClusterSize05  = "0.5"
+	ApigatewayCacheClusterSize16  = "1.6"
+	ApigatewayCacheClusterSize61  = "6.1"
+	ApigatewayCacheClusterSize135 = "13.5"
+	ApigatewayCacheClusterSize284 = "28.4"
+	ApigatewayCacheClusterSize582 = "58.2"
+	ApigatewayCacheClusterSize118 = "118"
+	ApigatewayCacheClusterSize237 = "237"
+
+	// CacheClusterStatus values
+	ApigatewayCacheClusterStatusCreateInProgress = "CREATE_IN_PROGRESS"
+	ApigatewayCacheClusterStatusAvailable        = "AVAILABLE"
+	ApigatewayCacheClusterStatusDeleteInProgress = "DELETE_IN_PROGRESS"
+	ApigatewayCacheClusterStatusNotAvailable     = "NOT_AVAILABLE"
+	ApigatewayCacheClusterStatusFlushInProgress  = "FLUSH_IN_PROGRESS"
+
+	// ConnectionType values
+	ApigatewayConnectionTypeInternet = "INTERNET"
+	ApigatewayConnectionTypeVpcLink  = "VPC_LINK"
+
+	// ContentHandlingStrategy values
+	ApigatewayContentHandlingStrategyConvertToBinary = "CONVERT_TO_BINARY"
+	ApigatewayContentHandlingStrategyConvertToText   = "CONVERT_TO_TEXT"
+
+	// DocumentationPartType values
+	ApigatewayDocumentationPartTypeApi            = "API"
+	ApigatewayDocumentationPartTypeAuthorizer     = "AUTHORIZER"
+	ApigatewayDocumentationPartTypeModel          = "MODEL"
+	ApigatewayDocumentationPartTypeResource       = "RESOURCE"
+	ApigatewayDocumentationPartTypeMethod         = "METHOD"
+	ApigatewayDocumentationPartTypePathParameter  = "PATH_PARAMETER"
+	ApigatewayDocumentationPartTypeQueryParameter = "QUERY_PARAMETER"
+	ApigatewayDocumentationPartTypeRequestHeader  = "REQUEST_HEADER"
+	ApigatewayDocumentationPartTypeRequestBody    = "REQUEST_BODY"
+	ApigatewayDocumentationPartTypeResponse       = "RESPONSE"
+	ApigatewayDocumentationPartTypeResponseHeader = "RESPONSE_HEADER"
+	ApigatewayDocumentationPartTypeResponseBody   = "RESPONSE_BODY"
+
+	// DomainNameStatus values
+	ApigatewayDomainNameStatusAvailable                    = "AVAILABLE"
+	ApigatewayDomainNameStatusUpdating                     = "UPDATING"
+	ApigatewayDomainNameStatusPending                      = "PENDING"
+	ApigatewayDomainNameStatusPendingCertificateReimport   = "PENDING_CERTIFICATE_REIMPORT"
+	ApigatewayDomainNameStatusPendingOwnershipVerification = "PENDING_OWNERSHIP_VERIFICATION"
+	ApigatewayDomainNameStatusFailed                       = "FAILED"
+
+	// EndpointAccessMode values
+	ApigatewayEndpointAccessModeBasic  = "BASIC"
+	ApigatewayEndpointAccessModeStrict = "STRICT"
+
+	// EndpointType values
+	ApigatewayEndpointTypeRegional = "REGIONAL"
+	ApigatewayEndpointTypeEdge     = "EDGE"
+	ApigatewayEndpointTypePrivate  = "PRIVATE"
+
+	// GatewayResponseType values
+	ApigatewayGatewayResponseTypeDefault4xx                   = "DEFAULT_4XX"
+	ApigatewayGatewayResponseTypeDefault5xx                   = "DEFAULT_5XX"
+	ApigatewayGatewayResponseTypeResourceNotFound             = "RESOURCE_NOT_FOUND"
+	ApigatewayGatewayResponseTypeUnauthorized                 = "UNAUTHORIZED"
+	ApigatewayGatewayResponseTypeInvalidApiKey                = "INVALID_API_KEY"
+	ApigatewayGatewayResponseTypeAccessDenied                 = "ACCESS_DENIED"
+	ApigatewayGatewayResponseTypeAuthorizerFailure            = "AUTHORIZER_FAILURE"
+	ApigatewayGatewayResponseTypeAuthorizerConfigurationError = "AUTHORIZER_CONFIGURATION_ERROR"
+	ApigatewayGatewayResponseTypeInvalidSignature             = "INVALID_SIGNATURE"
+	ApigatewayGatewayResponseTypeExpiredToken                 = "EXPIRED_TOKEN"
+	ApigatewayGatewayResponseTypeMissingAuthenticationToken   = "MISSING_AUTHENTICATION_TOKEN"
+	ApigatewayGatewayResponseTypeIntegrationFailure           = "INTEGRATION_FAILURE"
+	ApigatewayGatewayResponseTypeIntegrationTimeout           = "INTEGRATION_TIMEOUT"
+	ApigatewayGatewayResponseTypeApiConfigurationError        = "API_CONFIGURATION_ERROR"
+	ApigatewayGatewayResponseTypeUnsupportedMediaType         = "UNSUPPORTED_MEDIA_TYPE"
+	ApigatewayGatewayResponseTypeBadRequestParameters         = "BAD_REQUEST_PARAMETERS"
+	ApigatewayGatewayResponseTypeBadRequestBody               = "BAD_REQUEST_BODY"
+	ApigatewayGatewayResponseTypeRequestTooLarge              = "REQUEST_TOO_LARGE"
+	ApigatewayGatewayResponseTypeThrottled                    = "THROTTLED"
+	ApigatewayGatewayResponseTypeQuotaExceeded                = "QUOTA_EXCEEDED"
+	ApigatewayGatewayResponseTypeWafFiltered                  = "WAF_FILTERED"
+
 	// IntegrationType values
 	ApigatewayIntegrationTypeHttp      = "HTTP"
 	ApigatewayIntegrationTypeAws       = "AWS"
 	ApigatewayIntegrationTypeMock      = "MOCK"
 	ApigatewayIntegrationTypeHttpProxy = "HTTP_PROXY"
 	ApigatewayIntegrationTypeAwsProxy  = "AWS_PROXY"
+
+	// IpAddressType values
+	ApigatewayIpAddressTypeIpv4      = "ipv4"
+	ApigatewayIpAddressTypeDualstack = "dualstack"
+
+	// LocationStatusType values
+	ApigatewayLocationStatusTypeDocumented   = "DOCUMENTED"
+	ApigatewayLocationStatusTypeUndocumented = "UNDOCUMENTED"
+
+	// Op values
+	ApigatewayOpAdd     = "add"
+	ApigatewayOpRemove  = "remove"
+	ApigatewayOpReplace = "replace"
+	ApigatewayOpMove    = "move"
+	ApigatewayOpCopy    = "copy"
+	ApigatewayOpTest    = "test"
+
+	// PutMode values
+	ApigatewayPutModeMerge     = "merge"
+	ApigatewayPutModeOverwrite = "overwrite"
+
+	// QuotaPeriodType values
+	ApigatewayQuotaPeriodTypeDay   = "DAY"
+	ApigatewayQuotaPeriodTypeWeek  = "WEEK"
+	ApigatewayQuotaPeriodTypeMonth = "MONTH"
+
+	// ResourceOwner values
+	ApigatewayResourceOwnerSelf          = "SELF"
+	ApigatewayResourceOwnerOtherAccounts = "OTHER_ACCOUNTS"
+
+	// ResponseTransferMode values
+	ApigatewayResponseTransferModeBuffered = "BUFFERED"
+	ApigatewayResponseTransferModeStream   = "STREAM"
+
+	// RoutingMode values
+	ApigatewayRoutingModeBasePathMappingOnly            = "BASE_PATH_MAPPING_ONLY"
+	ApigatewayRoutingModeRoutingRuleOnly                = "ROUTING_RULE_ONLY"
+	ApigatewayRoutingModeRoutingRuleThenBasePathMapping = "ROUTING_RULE_THEN_BASE_PATH_MAPPING"
+
+	// SecurityPolicy values
+	ApigatewaySecurityPolicyTls10                             = "TLS_1_0"
+	ApigatewaySecurityPolicyTls12                             = "TLS_1_2"
+	ApigatewaySecurityPolicySecuritypolicyTls1313202509       = "SecurityPolicy_TLS13_1_3_2025_09"
+	ApigatewaySecurityPolicySecuritypolicyTls1313Fips202509   = "SecurityPolicy_TLS13_1_3_FIPS_2025_09"
+	ApigatewaySecurityPolicySecuritypolicyTls1312PfsPq202509  = "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"
+	ApigatewaySecurityPolicySecuritypolicyTls1312FipsPq202509 = "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"
+	ApigatewaySecurityPolicySecuritypolicyTls1312Pq202509     = "SecurityPolicy_TLS13_1_2_PQ_2025_09"
+	ApigatewaySecurityPolicySecuritypolicyTls1312202106       = "SecurityPolicy_TLS13_1_2_2021_06"
+	ApigatewaySecurityPolicySecuritypolicyTls132025Edge       = "SecurityPolicy_TLS13_2025_EDGE"
+	ApigatewaySecurityPolicySecuritypolicyTls12Pfs2025Edge    = "SecurityPolicy_TLS12_PFS_2025_EDGE"
+	ApigatewaySecurityPolicySecuritypolicyTls122018Edge       = "SecurityPolicy_TLS12_2018_EDGE"
+
+	// UnauthorizedCacheControlHeaderStrategy values
+	ApigatewayUnauthorizedCacheControlHeaderStrategyFailWith403                  = "FAIL_WITH_403"
+	ApigatewayUnauthorizedCacheControlHeaderStrategySucceedWithResponseHeader    = "SUCCEED_WITH_RESPONSE_HEADER"
+	ApigatewayUnauthorizedCacheControlHeaderStrategySucceedWithoutResponseHeader = "SUCCEED_WITHOUT_RESPONSE_HEADER"
+
+	// VpcLinkStatus values
+	ApigatewayVpcLinkStatusAvailable = "AVAILABLE"
+	ApigatewayVpcLinkStatusPending   = "PENDING"
+	ApigatewayVpcLinkStatusDeleting  = "DELETING"
+	ApigatewayVpcLinkStatusFailed    = "FAILED"
 )
+
+var apigatewayAccessAssociationSourceTypeValues = []string{
+	"VPCE",
+}
+
+var apigatewayApiKeySourceTypeValues = []string{
+	"HEADER",
+	"AUTHORIZER",
+}
+
+var apigatewayApiKeysFormatValues = []string{
+	"csv",
+}
+
+var apigatewayApiStatusValues = []string{
+	"UPDATING",
+	"AVAILABLE",
+	"PENDING",
+	"FAILED",
+}
+
+var apigatewayAuthorizerTypeValues = []string{
+	"TOKEN",
+	"REQUEST",
+	"COGNITO_USER_POOLS",
+}
+
+var apigatewayCacheClusterSizeValues = []string{
+	"0.5",
+	"1.6",
+	"6.1",
+	"13.5",
+	"28.4",
+	"58.2",
+	"118",
+	"237",
+}
+
+var apigatewayCacheClusterStatusValues = []string{
+	"CREATE_IN_PROGRESS",
+	"AVAILABLE",
+	"DELETE_IN_PROGRESS",
+	"NOT_AVAILABLE",
+	"FLUSH_IN_PROGRESS",
+}
+
+var apigatewayConnectionTypeValues = []string{
+	"INTERNET",
+	"VPC_LINK",
+}
+
+var apigatewayContentHandlingStrategyValues = []string{
+	"CONVERT_TO_BINARY",
+	"CONVERT_TO_TEXT",
+}
+
+var apigatewayDocumentationPartTypeValues = []string{
+	"API",
+	"AUTHORIZER",
+	"MODEL",
+	"RESOURCE",
+	"METHOD",
+	"PATH_PARAMETER",
+	"QUERY_PARAMETER",
+	"REQUEST_HEADER",
+	"REQUEST_BODY",
+	"RESPONSE",
+	"RESPONSE_HEADER",
+	"RESPONSE_BODY",
+}
+
+var apigatewayDomainNameStatusValues = []string{
+	"AVAILABLE",
+	"UPDATING",
+	"PENDING",
+	"PENDING_CERTIFICATE_REIMPORT",
+	"PENDING_OWNERSHIP_VERIFICATION",
+	"FAILED",
+}
+
+var apigatewayEndpointAccessModeValues = []string{
+	"BASIC",
+	"STRICT",
+}
+
+var apigatewayEndpointTypeValues = []string{
+	"REGIONAL",
+	"EDGE",
+	"PRIVATE",
+}
+
+var apigatewayGatewayResponseTypeValues = []string{
+	"DEFAULT_4XX",
+	"DEFAULT_5XX",
+	"RESOURCE_NOT_FOUND",
+	"UNAUTHORIZED",
+	"INVALID_API_KEY",
+	"ACCESS_DENIED",
+	"AUTHORIZER_FAILURE",
+	"AUTHORIZER_CONFIGURATION_ERROR",
+	"INVALID_SIGNATURE",
+	"EXPIRED_TOKEN",
+	"MISSING_AUTHENTICATION_TOKEN",
+	"INTEGRATION_FAILURE",
+	"INTEGRATION_TIMEOUT",
+	"API_CONFIGURATION_ERROR",
+	"UNSUPPORTED_MEDIA_TYPE",
+	"BAD_REQUEST_PARAMETERS",
+	"BAD_REQUEST_BODY",
+	"REQUEST_TOO_LARGE",
+	"THROTTLED",
+	"QUOTA_EXCEEDED",
+	"WAF_FILTERED",
+}
 
 var apigatewayIntegrationTypeValues = []string{
 	"HTTP",
@@ -20,16 +296,164 @@ var apigatewayIntegrationTypeValues = []string{
 	"AWS_PROXY",
 }
 
+var apigatewayIpAddressTypeValues = []string{
+	"ipv4",
+	"dualstack",
+}
+
+var apigatewayLocationStatusTypeValues = []string{
+	"DOCUMENTED",
+	"UNDOCUMENTED",
+}
+
+var apigatewayOpValues = []string{
+	"add",
+	"remove",
+	"replace",
+	"move",
+	"copy",
+	"test",
+}
+
+var apigatewayPutModeValues = []string{
+	"merge",
+	"overwrite",
+}
+
+var apigatewayQuotaPeriodTypeValues = []string{
+	"DAY",
+	"WEEK",
+	"MONTH",
+}
+
+var apigatewayResourceOwnerValues = []string{
+	"SELF",
+	"OTHER_ACCOUNTS",
+}
+
+var apigatewayResponseTransferModeValues = []string{
+	"BUFFERED",
+	"STREAM",
+}
+
+var apigatewayRoutingModeValues = []string{
+	"BASE_PATH_MAPPING_ONLY",
+	"ROUTING_RULE_ONLY",
+	"ROUTING_RULE_THEN_BASE_PATH_MAPPING",
+}
+
+var apigatewaySecurityPolicyValues = []string{
+	"TLS_1_0",
+	"TLS_1_2",
+	"SecurityPolicy_TLS13_1_3_2025_09",
+	"SecurityPolicy_TLS13_1_3_FIPS_2025_09",
+	"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09",
+	"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09",
+	"SecurityPolicy_TLS13_1_2_PQ_2025_09",
+	"SecurityPolicy_TLS13_1_2_2021_06",
+	"SecurityPolicy_TLS13_2025_EDGE",
+	"SecurityPolicy_TLS12_PFS_2025_EDGE",
+	"SecurityPolicy_TLS12_2018_EDGE",
+}
+
+var apigatewayUnauthorizedCacheControlHeaderStrategyValues = []string{
+	"FAIL_WITH_403",
+	"SUCCEED_WITH_RESPONSE_HEADER",
+	"SUCCEED_WITHOUT_RESPONSE_HEADER",
+}
+
+var apigatewayVpcLinkStatusValues = []string{
+	"AVAILABLE",
+	"PENDING",
+	"DELETING",
+	"FAILED",
+}
+
 func getApigatewayEnum(name string) []string {
 	switch name {
+	case "AccessAssociationSourceType":
+		return apigatewayAccessAssociationSourceTypeValues
+	case "ApiKeySourceType":
+		return apigatewayApiKeySourceTypeValues
+	case "ApiKeysFormat":
+		return apigatewayApiKeysFormatValues
+	case "ApiStatus":
+		return apigatewayApiStatusValues
+	case "AuthorizerType":
+		return apigatewayAuthorizerTypeValues
+	case "CacheClusterSize":
+		return apigatewayCacheClusterSizeValues
+	case "CacheClusterStatus":
+		return apigatewayCacheClusterStatusValues
+	case "ConnectionType":
+		return apigatewayConnectionTypeValues
+	case "ContentHandlingStrategy":
+		return apigatewayContentHandlingStrategyValues
+	case "DocumentationPartType":
+		return apigatewayDocumentationPartTypeValues
+	case "DomainNameStatus":
+		return apigatewayDomainNameStatusValues
+	case "EndpointAccessMode":
+		return apigatewayEndpointAccessModeValues
+	case "EndpointType":
+		return apigatewayEndpointTypeValues
+	case "GatewayResponseType":
+		return apigatewayGatewayResponseTypeValues
 	case "IntegrationType":
 		return apigatewayIntegrationTypeValues
+	case "IpAddressType":
+		return apigatewayIpAddressTypeValues
+	case "LocationStatusType":
+		return apigatewayLocationStatusTypeValues
+	case "Op":
+		return apigatewayOpValues
+	case "PutMode":
+		return apigatewayPutModeValues
+	case "QuotaPeriodType":
+		return apigatewayQuotaPeriodTypeValues
+	case "ResourceOwner":
+		return apigatewayResourceOwnerValues
+	case "ResponseTransferMode":
+		return apigatewayResponseTransferModeValues
+	case "RoutingMode":
+		return apigatewayRoutingModeValues
+	case "SecurityPolicy":
+		return apigatewaySecurityPolicyValues
+	case "UnauthorizedCacheControlHeaderStrategy":
+		return apigatewayUnauthorizedCacheControlHeaderStrategyValues
+	case "VpcLinkStatus":
+		return apigatewayVpcLinkStatusValues
 	}
 	return nil
 }
 
 func getApigatewayEnumNames() []string {
 	return []string{
+		"AccessAssociationSourceType",
+		"ApiKeySourceType",
+		"ApiKeysFormat",
+		"ApiStatus",
+		"AuthorizerType",
+		"CacheClusterSize",
+		"CacheClusterStatus",
+		"ConnectionType",
+		"ContentHandlingStrategy",
+		"DocumentationPartType",
+		"DomainNameStatus",
+		"EndpointAccessMode",
+		"EndpointType",
+		"GatewayResponseType",
 		"IntegrationType",
+		"IpAddressType",
+		"LocationStatusType",
+		"Op",
+		"PutMode",
+		"QuotaPeriodType",
+		"ResourceOwner",
+		"ResponseTransferMode",
+		"RoutingMode",
+		"SecurityPolicy",
+		"UnauthorizedCacheControlHeaderStrategy",
+		"VpcLinkStatus",
 	}
 }

@@ -4,22 +4,761 @@ package enums
 
 // Ecs enum constants
 const (
+	// AcceleratorManufacturer values
+	EcsAcceleratorManufacturerAmazonWebServices = "amazon-web-services"
+	EcsAcceleratorManufacturerAmd               = "amd"
+	EcsAcceleratorManufacturerNvidia            = "nvidia"
+	EcsAcceleratorManufacturerXilinx            = "xilinx"
+	EcsAcceleratorManufacturerHabana            = "habana"
+
+	// AcceleratorName values
+	EcsAcceleratorNameA100          = "a100"
+	EcsAcceleratorNameInferentia    = "inferentia"
+	EcsAcceleratorNameK520          = "k520"
+	EcsAcceleratorNameK80           = "k80"
+	EcsAcceleratorNameM60           = "m60"
+	EcsAcceleratorNameRadeonProV520 = "radeon-pro-v520"
+	EcsAcceleratorNameT4            = "t4"
+	EcsAcceleratorNameVu9p          = "vu9p"
+	EcsAcceleratorNameV100          = "v100"
+	EcsAcceleratorNameA10g          = "a10g"
+	EcsAcceleratorNameH100          = "h100"
+	EcsAcceleratorNameT4g           = "t4g"
+
+	// AcceleratorType values
+	EcsAcceleratorTypeGpu       = "gpu"
+	EcsAcceleratorTypeFpga      = "fpga"
+	EcsAcceleratorTypeInference = "inference"
+
+	// AccessType values
+	EcsAccessTypePublic  = "PUBLIC"
+	EcsAccessTypePrivate = "PRIVATE"
+
+	// AgentUpdateStatus values
+	EcsAgentUpdateStatusPending  = "PENDING"
+	EcsAgentUpdateStatusStaging  = "STAGING"
+	EcsAgentUpdateStatusStaged   = "STAGED"
+	EcsAgentUpdateStatusUpdating = "UPDATING"
+	EcsAgentUpdateStatusUpdated  = "UPDATED"
+	EcsAgentUpdateStatusFailed   = "FAILED"
+
+	// ApplicationProtocol values
+	EcsApplicationProtocolHttp  = "http"
+	EcsApplicationProtocolHttp2 = "http2"
+	EcsApplicationProtocolGrpc  = "grpc"
+
+	// AssignPublicIp values
+	EcsAssignPublicIpEnabled  = "ENABLED"
+	EcsAssignPublicIpDisabled = "DISABLED"
+
+	// AvailabilityZoneRebalancing values
+	EcsAvailabilityZoneRebalancingEnabled  = "ENABLED"
+	EcsAvailabilityZoneRebalancingDisabled = "DISABLED"
+
+	// BareMetal values
+	EcsBareMetalIncluded = "included"
+	EcsBareMetalRequired = "required"
+	EcsBareMetalExcluded = "excluded"
+
+	// BurstablePerformance values
+	EcsBurstablePerformanceIncluded = "included"
+	EcsBurstablePerformanceRequired = "required"
+	EcsBurstablePerformanceExcluded = "excluded"
+
+	// CPUArchitecture values
+	EcsCPUArchitectureX8664 = "X86_64"
+	EcsCPUArchitectureArm64 = "ARM64"
+
+	// CapacityOptionType values
+	EcsCapacityOptionTypeOnDemand = "ON_DEMAND"
+	EcsCapacityOptionTypeSpot     = "SPOT"
+
+	// CapacityProviderField values
+	EcsCapacityProviderFieldTags = "TAGS"
+
+	// CapacityProviderStatus values
+	EcsCapacityProviderStatusProvisioning   = "PROVISIONING"
+	EcsCapacityProviderStatusActive         = "ACTIVE"
+	EcsCapacityProviderStatusDeprovisioning = "DEPROVISIONING"
+	EcsCapacityProviderStatusInactive       = "INACTIVE"
+
+	// CapacityProviderType values
+	EcsCapacityProviderTypeEc2Autoscaling   = "EC2_AUTOSCALING"
+	EcsCapacityProviderTypeManagedInstances = "MANAGED_INSTANCES"
+	EcsCapacityProviderTypeFargate          = "FARGATE"
+	EcsCapacityProviderTypeFargateSpot      = "FARGATE_SPOT"
+
+	// CapacityProviderUpdateStatus values
+	EcsCapacityProviderUpdateStatusCreateInProgress = "CREATE_IN_PROGRESS"
+	EcsCapacityProviderUpdateStatusCreateComplete   = "CREATE_COMPLETE"
+	EcsCapacityProviderUpdateStatusCreateFailed     = "CREATE_FAILED"
+	EcsCapacityProviderUpdateStatusDeleteInProgress = "DELETE_IN_PROGRESS"
+	EcsCapacityProviderUpdateStatusDeleteComplete   = "DELETE_COMPLETE"
+	EcsCapacityProviderUpdateStatusDeleteFailed     = "DELETE_FAILED"
+	EcsCapacityProviderUpdateStatusUpdateInProgress = "UPDATE_IN_PROGRESS"
+	EcsCapacityProviderUpdateStatusUpdateComplete   = "UPDATE_COMPLETE"
+	EcsCapacityProviderUpdateStatusUpdateFailed     = "UPDATE_FAILED"
+
+	// ClusterField values
+	EcsClusterFieldAttachments    = "ATTACHMENTS"
+	EcsClusterFieldConfigurations = "CONFIGURATIONS"
+	EcsClusterFieldSettings       = "SETTINGS"
+	EcsClusterFieldStatistics     = "STATISTICS"
+	EcsClusterFieldTags           = "TAGS"
+
+	// ClusterSettingName values
+	EcsClusterSettingNameContainerinsights = "containerInsights"
+
+	// Compatibility values
+	EcsCompatibilityEc2              = "EC2"
+	EcsCompatibilityFargate          = "FARGATE"
+	EcsCompatibilityExternal         = "EXTERNAL"
+	EcsCompatibilityManagedInstances = "MANAGED_INSTANCES"
+
+	// Connectivity values
+	EcsConnectivityConnected    = "CONNECTED"
+	EcsConnectivityDisconnected = "DISCONNECTED"
+
+	// ContainerCondition values
+	EcsContainerConditionStart    = "START"
+	EcsContainerConditionComplete = "COMPLETE"
+	EcsContainerConditionSuccess  = "SUCCESS"
+	EcsContainerConditionHealthy  = "HEALTHY"
+
+	// ContainerInstanceField values
+	EcsContainerInstanceFieldTags                    = "TAGS"
+	EcsContainerInstanceFieldContainerInstanceHealth = "CONTAINER_INSTANCE_HEALTH"
+
+	// ContainerInstanceStatus values
+	EcsContainerInstanceStatusActive             = "ACTIVE"
+	EcsContainerInstanceStatusDraining           = "DRAINING"
+	EcsContainerInstanceStatusRegistering        = "REGISTERING"
+	EcsContainerInstanceStatusDeregistering      = "DEREGISTERING"
+	EcsContainerInstanceStatusRegistrationFailed = "REGISTRATION_FAILED"
+
+	// CpuManufacturer values
+	EcsCpuManufacturerIntel             = "intel"
+	EcsCpuManufacturerAmd               = "amd"
+	EcsCpuManufacturerAmazonWebServices = "amazon-web-services"
+
+	// DeploymentControllerType values
+	EcsDeploymentControllerTypeEcs        = "ECS"
+	EcsDeploymentControllerTypeCodeDeploy = "CODE_DEPLOY"
+	EcsDeploymentControllerTypeExternal   = "EXTERNAL"
+
+	// DeploymentLifecycleHookStage values
+	EcsDeploymentLifecycleHookStageReconcileService           = "RECONCILE_SERVICE"
+	EcsDeploymentLifecycleHookStagePreScaleUp                 = "PRE_SCALE_UP"
+	EcsDeploymentLifecycleHookStagePostScaleUp                = "POST_SCALE_UP"
+	EcsDeploymentLifecycleHookStageTestTrafficShift           = "TEST_TRAFFIC_SHIFT"
+	EcsDeploymentLifecycleHookStagePostTestTrafficShift       = "POST_TEST_TRAFFIC_SHIFT"
+	EcsDeploymentLifecycleHookStageProductionTrafficShift     = "PRODUCTION_TRAFFIC_SHIFT"
+	EcsDeploymentLifecycleHookStagePostProductionTrafficShift = "POST_PRODUCTION_TRAFFIC_SHIFT"
+
+	// DeploymentRolloutState values
+	EcsDeploymentRolloutStateCompleted  = "COMPLETED"
+	EcsDeploymentRolloutStateFailed     = "FAILED"
+	EcsDeploymentRolloutStateInProgress = "IN_PROGRESS"
+
+	// DeploymentStrategy values
+	EcsDeploymentStrategyRolling   = "ROLLING"
+	EcsDeploymentStrategyBlueGreen = "BLUE_GREEN"
+	EcsDeploymentStrategyLinear    = "LINEAR"
+	EcsDeploymentStrategyCanary    = "CANARY"
+
+	// DesiredStatus values
+	EcsDesiredStatusRunning = "RUNNING"
+	EcsDesiredStatusPending = "PENDING"
+	EcsDesiredStatusStopped = "STOPPED"
+
+	// DeviceCgroupPermission values
+	EcsDeviceCgroupPermissionRead  = "read"
+	EcsDeviceCgroupPermissionWrite = "write"
+	EcsDeviceCgroupPermissionMknod = "mknod"
+
+	// EBSResourceType values
+	EcsEBSResourceTypeVolume = "volume"
+
+	// EFSAuthorizationConfigIAM values
+	EcsEFSAuthorizationConfigIAMEnabled  = "ENABLED"
+	EcsEFSAuthorizationConfigIAMDisabled = "DISABLED"
+
+	// EFSTransitEncryption values
+	EcsEFSTransitEncryptionEnabled  = "ENABLED"
+	EcsEFSTransitEncryptionDisabled = "DISABLED"
+
+	// EnvironmentFileType values
+	EcsEnvironmentFileTypeS3 = "s3"
+
+	// ExecuteCommandLogging values
+	EcsExecuteCommandLoggingNone     = "NONE"
+	EcsExecuteCommandLoggingDefault  = "DEFAULT"
+	EcsExecuteCommandLoggingOverride = "OVERRIDE"
+
+	// ExpressGatewayServiceInclude values
+	EcsExpressGatewayServiceIncludeTags = "TAGS"
+
+	// ExpressGatewayServiceScalingMetric values
+	EcsExpressGatewayServiceScalingMetricAverageCpu            = "AVERAGE_CPU"
+	EcsExpressGatewayServiceScalingMetricAverageMemory         = "AVERAGE_MEMORY"
+	EcsExpressGatewayServiceScalingMetricRequestCountPerTarget = "REQUEST_COUNT_PER_TARGET"
+
+	// ExpressGatewayServiceStatusCode values
+	EcsExpressGatewayServiceStatusCodeActive   = "ACTIVE"
+	EcsExpressGatewayServiceStatusCodeDraining = "DRAINING"
+	EcsExpressGatewayServiceStatusCodeInactive = "INACTIVE"
+
+	// FirelensConfigurationType values
+	EcsFirelensConfigurationTypeFluentd   = "fluentd"
+	EcsFirelensConfigurationTypeFluentbit = "fluentbit"
+
+	// HealthStatus values
+	EcsHealthStatusHealthy   = "HEALTHY"
+	EcsHealthStatusUnhealthy = "UNHEALTHY"
+	EcsHealthStatusUnknown   = "UNKNOWN"
+
+	// InstanceGeneration values
+	EcsInstanceGenerationCurrent  = "current"
+	EcsInstanceGenerationPrevious = "previous"
+
+	// InstanceHealthCheckState values
+	EcsInstanceHealthCheckStateOk               = "OK"
+	EcsInstanceHealthCheckStateImpaired         = "IMPAIRED"
+	EcsInstanceHealthCheckStateInsufficientData = "INSUFFICIENT_DATA"
+	EcsInstanceHealthCheckStateInitializing     = "INITIALIZING"
+
+	// InstanceHealthCheckType values
+	EcsInstanceHealthCheckTypeContainerRuntime = "CONTAINER_RUNTIME"
+
+	// IpcMode values
+	EcsIpcModeHost = "host"
+	EcsIpcModeTask = "task"
+	EcsIpcModeNone = "none"
+
 	// LaunchType values
 	EcsLaunchTypeEc2              = "EC2"
 	EcsLaunchTypeFargate          = "FARGATE"
 	EcsLaunchTypeExternal         = "EXTERNAL"
 	EcsLaunchTypeManagedInstances = "MANAGED_INSTANCES"
 
-	// SchedulingStrategy values
-	EcsSchedulingStrategyReplica = "REPLICA"
-	EcsSchedulingStrategyDaemon  = "DAEMON"
+	// LocalStorage values
+	EcsLocalStorageIncluded = "included"
+	EcsLocalStorageRequired = "required"
+	EcsLocalStorageExcluded = "excluded"
+
+	// LocalStorageType values
+	EcsLocalStorageTypeHdd = "hdd"
+	EcsLocalStorageTypeSsd = "ssd"
+
+	// LogDriver values
+	EcsLogDriverJsonFile    = "json-file"
+	EcsLogDriverSyslog      = "syslog"
+	EcsLogDriverJournald    = "journald"
+	EcsLogDriverGelf        = "gelf"
+	EcsLogDriverFluentd     = "fluentd"
+	EcsLogDriverAwslogs     = "awslogs"
+	EcsLogDriverSplunk      = "splunk"
+	EcsLogDriverAwsfirelens = "awsfirelens"
+
+	// ManagedAgentName values
+	EcsManagedAgentNameExecutecommandagent = "ExecuteCommandAgent"
+
+	// ManagedDraining values
+	EcsManagedDrainingEnabled  = "ENABLED"
+	EcsManagedDrainingDisabled = "DISABLED"
+
+	// ManagedInstancesMonitoringOptions values
+	EcsManagedInstancesMonitoringOptionsBasic    = "BASIC"
+	EcsManagedInstancesMonitoringOptionsDetailed = "DETAILED"
+
+	// ManagedResourceStatus values
+	EcsManagedResourceStatusProvisioning   = "PROVISIONING"
+	EcsManagedResourceStatusActive         = "ACTIVE"
+	EcsManagedResourceStatusDeprovisioning = "DEPROVISIONING"
+	EcsManagedResourceStatusDeleted        = "DELETED"
+	EcsManagedResourceStatusFailed         = "FAILED"
+
+	// ManagedScalingStatus values
+	EcsManagedScalingStatusEnabled  = "ENABLED"
+	EcsManagedScalingStatusDisabled = "DISABLED"
+
+	// ManagedTerminationProtection values
+	EcsManagedTerminationProtectionEnabled  = "ENABLED"
+	EcsManagedTerminationProtectionDisabled = "DISABLED"
 
 	// NetworkMode values
 	EcsNetworkModeBridge = "bridge"
 	EcsNetworkModeHost   = "host"
 	EcsNetworkModeAwsvpc = "awsvpc"
 	EcsNetworkModeNone   = "none"
+
+	// OSFamily values
+	EcsOSFamilyWindowsServer2019Full = "WINDOWS_SERVER_2019_FULL"
+	EcsOSFamilyWindowsServer2019Core = "WINDOWS_SERVER_2019_CORE"
+	EcsOSFamilyWindowsServer2016Full = "WINDOWS_SERVER_2016_FULL"
+	EcsOSFamilyWindowsServer2004Core = "WINDOWS_SERVER_2004_CORE"
+	EcsOSFamilyWindowsServer2022Core = "WINDOWS_SERVER_2022_CORE"
+	EcsOSFamilyWindowsServer2022Full = "WINDOWS_SERVER_2022_FULL"
+	EcsOSFamilyWindowsServer2025Core = "WINDOWS_SERVER_2025_CORE"
+	EcsOSFamilyWindowsServer2025Full = "WINDOWS_SERVER_2025_FULL"
+	EcsOSFamilyWindowsServer20h2Core = "WINDOWS_SERVER_20H2_CORE"
+	EcsOSFamilyLinux                 = "LINUX"
+
+	// PidMode values
+	EcsPidModeHost = "host"
+	EcsPidModeTask = "task"
+
+	// PlacementConstraintType values
+	EcsPlacementConstraintTypeDistinctinstance = "distinctInstance"
+	EcsPlacementConstraintTypeMemberof         = "memberOf"
+
+	// PlacementStrategyType values
+	EcsPlacementStrategyTypeRandom  = "random"
+	EcsPlacementStrategyTypeSpread  = "spread"
+	EcsPlacementStrategyTypeBinpack = "binpack"
+
+	// PlatformDeviceType values
+	EcsPlatformDeviceTypeGpu = "GPU"
+
+	// PropagateMITags values
+	EcsPropagateMITagsCapacityProvider = "CAPACITY_PROVIDER"
+	EcsPropagateMITagsNone             = "NONE"
+
+	// PropagateTags values
+	EcsPropagateTagsTaskDefinition = "TASK_DEFINITION"
+	EcsPropagateTagsService        = "SERVICE"
+	EcsPropagateTagsNone           = "NONE"
+
+	// ProxyConfigurationType values
+	EcsProxyConfigurationTypeAppmesh = "APPMESH"
+
+	// ResourceManagementType values
+	EcsResourceManagementTypeCustomer = "CUSTOMER"
+	EcsResourceManagementTypeEcs      = "ECS"
+
+	// ResourceType values
+	EcsResourceTypeGpu                  = "GPU"
+	EcsResourceTypeInferenceaccelerator = "InferenceAccelerator"
+
+	// ScaleUnit values
+	EcsScaleUnitPercent = "PERCENT"
+
+	// SchedulingStrategy values
+	EcsSchedulingStrategyReplica = "REPLICA"
+	EcsSchedulingStrategyDaemon  = "DAEMON"
+
+	// Scope values
+	EcsScopeTask   = "task"
+	EcsScopeShared = "shared"
+
+	// ServiceConnectAccessLoggingFormat values
+	EcsServiceConnectAccessLoggingFormatText = "TEXT"
+	EcsServiceConnectAccessLoggingFormatJson = "JSON"
+
+	// ServiceConnectIncludeQueryParameters values
+	EcsServiceConnectIncludeQueryParametersDisabled = "DISABLED"
+	EcsServiceConnectIncludeQueryParametersEnabled  = "ENABLED"
+
+	// ServiceDeploymentLifecycleStage values
+	EcsServiceDeploymentLifecycleStageReconcileService           = "RECONCILE_SERVICE"
+	EcsServiceDeploymentLifecycleStagePreScaleUp                 = "PRE_SCALE_UP"
+	EcsServiceDeploymentLifecycleStageScaleUp                    = "SCALE_UP"
+	EcsServiceDeploymentLifecycleStagePostScaleUp                = "POST_SCALE_UP"
+	EcsServiceDeploymentLifecycleStageTestTrafficShift           = "TEST_TRAFFIC_SHIFT"
+	EcsServiceDeploymentLifecycleStagePostTestTrafficShift       = "POST_TEST_TRAFFIC_SHIFT"
+	EcsServiceDeploymentLifecycleStageProductionTrafficShift     = "PRODUCTION_TRAFFIC_SHIFT"
+	EcsServiceDeploymentLifecycleStagePostProductionTrafficShift = "POST_PRODUCTION_TRAFFIC_SHIFT"
+	EcsServiceDeploymentLifecycleStageBakeTime                   = "BAKE_TIME"
+	EcsServiceDeploymentLifecycleStageCleanUp                    = "CLEAN_UP"
+
+	// ServiceDeploymentRollbackMonitorsStatus values
+	EcsServiceDeploymentRollbackMonitorsStatusTriggered          = "TRIGGERED"
+	EcsServiceDeploymentRollbackMonitorsStatusMonitoring         = "MONITORING"
+	EcsServiceDeploymentRollbackMonitorsStatusMonitoringComplete = "MONITORING_COMPLETE"
+	EcsServiceDeploymentRollbackMonitorsStatusDisabled           = "DISABLED"
+
+	// ServiceDeploymentStatus values
+	EcsServiceDeploymentStatusPending            = "PENDING"
+	EcsServiceDeploymentStatusSuccessful         = "SUCCESSFUL"
+	EcsServiceDeploymentStatusStopped            = "STOPPED"
+	EcsServiceDeploymentStatusStopRequested      = "STOP_REQUESTED"
+	EcsServiceDeploymentStatusInProgress         = "IN_PROGRESS"
+	EcsServiceDeploymentStatusRollbackRequested  = "ROLLBACK_REQUESTED"
+	EcsServiceDeploymentStatusRollbackInProgress = "ROLLBACK_IN_PROGRESS"
+	EcsServiceDeploymentStatusRollbackSuccessful = "ROLLBACK_SUCCESSFUL"
+	EcsServiceDeploymentStatusRollbackFailed     = "ROLLBACK_FAILED"
+
+	// ServiceField values
+	EcsServiceFieldTags = "TAGS"
+
+	// SettingName values
+	EcsSettingNameServicelongarnformat            = "serviceLongArnFormat"
+	EcsSettingNameTasklongarnformat               = "taskLongArnFormat"
+	EcsSettingNameContainerinstancelongarnformat  = "containerInstanceLongArnFormat"
+	EcsSettingNameAwsvpctrunking                  = "awsvpcTrunking"
+	EcsSettingNameContainerinsights               = "containerInsights"
+	EcsSettingNameFargatefipsmode                 = "fargateFIPSMode"
+	EcsSettingNameTagresourceauthorization        = "tagResourceAuthorization"
+	EcsSettingNameFargatetaskretirementwaitperiod = "fargateTaskRetirementWaitPeriod"
+	EcsSettingNameGuarddutyactivate               = "guardDutyActivate"
+	EcsSettingNameDefaultlogdrivermode            = "defaultLogDriverMode"
+	EcsSettingNameFargateeventwindows             = "fargateEventWindows"
+
+	// SettingType values
+	EcsSettingTypeUser       = "user"
+	EcsSettingTypeAwsManaged = "aws_managed"
+
+	// SortOrder values
+	EcsSortOrderAsc  = "ASC"
+	EcsSortOrderDesc = "DESC"
+
+	// StabilityStatus values
+	EcsStabilityStatusSteadyState = "STEADY_STATE"
+	EcsStabilityStatusStabilizing = "STABILIZING"
+
+	// StopServiceDeploymentStopType values
+	EcsStopServiceDeploymentStopTypeAbort    = "ABORT"
+	EcsStopServiceDeploymentStopTypeRollback = "ROLLBACK"
+
+	// TargetType values
+	EcsTargetTypeContainerInstance = "container-instance"
+
+	// TaskDefinitionFamilyStatus values
+	EcsTaskDefinitionFamilyStatusActive   = "ACTIVE"
+	EcsTaskDefinitionFamilyStatusInactive = "INACTIVE"
+	EcsTaskDefinitionFamilyStatusAll      = "ALL"
+
+	// TaskDefinitionField values
+	EcsTaskDefinitionFieldTags = "TAGS"
+
+	// TaskDefinitionPlacementConstraintType values
+	EcsTaskDefinitionPlacementConstraintTypeMemberof = "memberOf"
+
+	// TaskDefinitionStatus values
+	EcsTaskDefinitionStatusActive           = "ACTIVE"
+	EcsTaskDefinitionStatusInactive         = "INACTIVE"
+	EcsTaskDefinitionStatusDeleteInProgress = "DELETE_IN_PROGRESS"
+
+	// TaskField values
+	EcsTaskFieldTags = "TAGS"
+
+	// TaskFilesystemType values
+	EcsTaskFilesystemTypeExt3 = "ext3"
+	EcsTaskFilesystemTypeExt4 = "ext4"
+	EcsTaskFilesystemTypeXfs  = "xfs"
+	EcsTaskFilesystemTypeNtfs = "ntfs"
+
+	// TaskSetField values
+	EcsTaskSetFieldTags = "TAGS"
+
+	// TaskStopCode values
+	EcsTaskStopCodeTaskfailedtostart         = "TaskFailedToStart"
+	EcsTaskStopCodeEssentialcontainerexited  = "EssentialContainerExited"
+	EcsTaskStopCodeUserinitiated             = "UserInitiated"
+	EcsTaskStopCodeServiceschedulerinitiated = "ServiceSchedulerInitiated"
+	EcsTaskStopCodeSpotinterruption          = "SpotInterruption"
+	EcsTaskStopCodeTerminationnotice         = "TerminationNotice"
+
+	// TransportProtocol values
+	EcsTransportProtocolTcp = "tcp"
+	EcsTransportProtocolUdp = "udp"
+
+	// UlimitName values
+	EcsUlimitNameCore       = "core"
+	EcsUlimitNameCpu        = "cpu"
+	EcsUlimitNameData       = "data"
+	EcsUlimitNameFsize      = "fsize"
+	EcsUlimitNameLocks      = "locks"
+	EcsUlimitNameMemlock    = "memlock"
+	EcsUlimitNameMsgqueue   = "msgqueue"
+	EcsUlimitNameNice       = "nice"
+	EcsUlimitNameNofile     = "nofile"
+	EcsUlimitNameNproc      = "nproc"
+	EcsUlimitNameRss        = "rss"
+	EcsUlimitNameRtprio     = "rtprio"
+	EcsUlimitNameRttime     = "rttime"
+	EcsUlimitNameSigpending = "sigpending"
+	EcsUlimitNameStack      = "stack"
+
+	// VersionConsistency values
+	EcsVersionConsistencyEnabled  = "enabled"
+	EcsVersionConsistencyDisabled = "disabled"
 )
+
+var ecsAcceleratorManufacturerValues = []string{
+	"amazon-web-services",
+	"amd",
+	"nvidia",
+	"xilinx",
+	"habana",
+}
+
+var ecsAcceleratorNameValues = []string{
+	"a100",
+	"inferentia",
+	"k520",
+	"k80",
+	"m60",
+	"radeon-pro-v520",
+	"t4",
+	"vu9p",
+	"v100",
+	"a10g",
+	"h100",
+	"t4g",
+}
+
+var ecsAcceleratorTypeValues = []string{
+	"gpu",
+	"fpga",
+	"inference",
+}
+
+var ecsAccessTypeValues = []string{
+	"PUBLIC",
+	"PRIVATE",
+}
+
+var ecsAgentUpdateStatusValues = []string{
+	"PENDING",
+	"STAGING",
+	"STAGED",
+	"UPDATING",
+	"UPDATED",
+	"FAILED",
+}
+
+var ecsApplicationProtocolValues = []string{
+	"http",
+	"http2",
+	"grpc",
+}
+
+var ecsAssignPublicIpValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var ecsAvailabilityZoneRebalancingValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var ecsBareMetalValues = []string{
+	"included",
+	"required",
+	"excluded",
+}
+
+var ecsBurstablePerformanceValues = []string{
+	"included",
+	"required",
+	"excluded",
+}
+
+var ecsCPUArchitectureValues = []string{
+	"X86_64",
+	"ARM64",
+}
+
+var ecsCapacityOptionTypeValues = []string{
+	"ON_DEMAND",
+	"SPOT",
+}
+
+var ecsCapacityProviderFieldValues = []string{
+	"TAGS",
+}
+
+var ecsCapacityProviderStatusValues = []string{
+	"PROVISIONING",
+	"ACTIVE",
+	"DEPROVISIONING",
+	"INACTIVE",
+}
+
+var ecsCapacityProviderTypeValues = []string{
+	"EC2_AUTOSCALING",
+	"MANAGED_INSTANCES",
+	"FARGATE",
+	"FARGATE_SPOT",
+}
+
+var ecsCapacityProviderUpdateStatusValues = []string{
+	"CREATE_IN_PROGRESS",
+	"CREATE_COMPLETE",
+	"CREATE_FAILED",
+	"DELETE_IN_PROGRESS",
+	"DELETE_COMPLETE",
+	"DELETE_FAILED",
+	"UPDATE_IN_PROGRESS",
+	"UPDATE_COMPLETE",
+	"UPDATE_FAILED",
+}
+
+var ecsClusterFieldValues = []string{
+	"ATTACHMENTS",
+	"CONFIGURATIONS",
+	"SETTINGS",
+	"STATISTICS",
+	"TAGS",
+}
+
+var ecsClusterSettingNameValues = []string{
+	"containerInsights",
+}
+
+var ecsCompatibilityValues = []string{
+	"EC2",
+	"FARGATE",
+	"EXTERNAL",
+	"MANAGED_INSTANCES",
+}
+
+var ecsConnectivityValues = []string{
+	"CONNECTED",
+	"DISCONNECTED",
+}
+
+var ecsContainerConditionValues = []string{
+	"START",
+	"COMPLETE",
+	"SUCCESS",
+	"HEALTHY",
+}
+
+var ecsContainerInstanceFieldValues = []string{
+	"TAGS",
+	"CONTAINER_INSTANCE_HEALTH",
+}
+
+var ecsContainerInstanceStatusValues = []string{
+	"ACTIVE",
+	"DRAINING",
+	"REGISTERING",
+	"DEREGISTERING",
+	"REGISTRATION_FAILED",
+}
+
+var ecsCpuManufacturerValues = []string{
+	"intel",
+	"amd",
+	"amazon-web-services",
+}
+
+var ecsDeploymentControllerTypeValues = []string{
+	"ECS",
+	"CODE_DEPLOY",
+	"EXTERNAL",
+}
+
+var ecsDeploymentLifecycleHookStageValues = []string{
+	"RECONCILE_SERVICE",
+	"PRE_SCALE_UP",
+	"POST_SCALE_UP",
+	"TEST_TRAFFIC_SHIFT",
+	"POST_TEST_TRAFFIC_SHIFT",
+	"PRODUCTION_TRAFFIC_SHIFT",
+	"POST_PRODUCTION_TRAFFIC_SHIFT",
+}
+
+var ecsDeploymentRolloutStateValues = []string{
+	"COMPLETED",
+	"FAILED",
+	"IN_PROGRESS",
+}
+
+var ecsDeploymentStrategyValues = []string{
+	"ROLLING",
+	"BLUE_GREEN",
+	"LINEAR",
+	"CANARY",
+}
+
+var ecsDesiredStatusValues = []string{
+	"RUNNING",
+	"PENDING",
+	"STOPPED",
+}
+
+var ecsDeviceCgroupPermissionValues = []string{
+	"read",
+	"write",
+	"mknod",
+}
+
+var ecsEBSResourceTypeValues = []string{
+	"volume",
+}
+
+var ecsEFSAuthorizationConfigIAMValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var ecsEFSTransitEncryptionValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var ecsEnvironmentFileTypeValues = []string{
+	"s3",
+}
+
+var ecsExecuteCommandLoggingValues = []string{
+	"NONE",
+	"DEFAULT",
+	"OVERRIDE",
+}
+
+var ecsExpressGatewayServiceIncludeValues = []string{
+	"TAGS",
+}
+
+var ecsExpressGatewayServiceScalingMetricValues = []string{
+	"AVERAGE_CPU",
+	"AVERAGE_MEMORY",
+	"REQUEST_COUNT_PER_TARGET",
+}
+
+var ecsExpressGatewayServiceStatusCodeValues = []string{
+	"ACTIVE",
+	"DRAINING",
+	"INACTIVE",
+}
+
+var ecsFirelensConfigurationTypeValues = []string{
+	"fluentd",
+	"fluentbit",
+}
+
+var ecsHealthStatusValues = []string{
+	"HEALTHY",
+	"UNHEALTHY",
+	"UNKNOWN",
+}
+
+var ecsInstanceGenerationValues = []string{
+	"current",
+	"previous",
+}
+
+var ecsInstanceHealthCheckStateValues = []string{
+	"OK",
+	"IMPAIRED",
+	"INSUFFICIENT_DATA",
+	"INITIALIZING",
+}
+
+var ecsInstanceHealthCheckTypeValues = []string{
+	"CONTAINER_RUNTIME",
+}
+
+var ecsIpcModeValues = []string{
+	"host",
+	"task",
+	"none",
+}
 
 var ecsLaunchTypeValues = []string{
 	"EC2",
@@ -28,9 +767,58 @@ var ecsLaunchTypeValues = []string{
 	"MANAGED_INSTANCES",
 }
 
-var ecsSchedulingStrategyValues = []string{
-	"REPLICA",
-	"DAEMON",
+var ecsLocalStorageValues = []string{
+	"included",
+	"required",
+	"excluded",
+}
+
+var ecsLocalStorageTypeValues = []string{
+	"hdd",
+	"ssd",
+}
+
+var ecsLogDriverValues = []string{
+	"json-file",
+	"syslog",
+	"journald",
+	"gelf",
+	"fluentd",
+	"awslogs",
+	"splunk",
+	"awsfirelens",
+}
+
+var ecsManagedAgentNameValues = []string{
+	"ExecuteCommandAgent",
+}
+
+var ecsManagedDrainingValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var ecsManagedInstancesMonitoringOptionsValues = []string{
+	"BASIC",
+	"DETAILED",
+}
+
+var ecsManagedResourceStatusValues = []string{
+	"PROVISIONING",
+	"ACTIVE",
+	"DEPROVISIONING",
+	"DELETED",
+	"FAILED",
+}
+
+var ecsManagedScalingStatusValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var ecsManagedTerminationProtectionValues = []string{
+	"ENABLED",
+	"DISABLED",
 }
 
 var ecsNetworkModeValues = []string{
@@ -40,22 +828,514 @@ var ecsNetworkModeValues = []string{
 	"none",
 }
 
+var ecsOSFamilyValues = []string{
+	"WINDOWS_SERVER_2019_FULL",
+	"WINDOWS_SERVER_2019_CORE",
+	"WINDOWS_SERVER_2016_FULL",
+	"WINDOWS_SERVER_2004_CORE",
+	"WINDOWS_SERVER_2022_CORE",
+	"WINDOWS_SERVER_2022_FULL",
+	"WINDOWS_SERVER_2025_CORE",
+	"WINDOWS_SERVER_2025_FULL",
+	"WINDOWS_SERVER_20H2_CORE",
+	"LINUX",
+}
+
+var ecsPidModeValues = []string{
+	"host",
+	"task",
+}
+
+var ecsPlacementConstraintTypeValues = []string{
+	"distinctInstance",
+	"memberOf",
+}
+
+var ecsPlacementStrategyTypeValues = []string{
+	"random",
+	"spread",
+	"binpack",
+}
+
+var ecsPlatformDeviceTypeValues = []string{
+	"GPU",
+}
+
+var ecsPropagateMITagsValues = []string{
+	"CAPACITY_PROVIDER",
+	"NONE",
+}
+
+var ecsPropagateTagsValues = []string{
+	"TASK_DEFINITION",
+	"SERVICE",
+	"NONE",
+}
+
+var ecsProxyConfigurationTypeValues = []string{
+	"APPMESH",
+}
+
+var ecsResourceManagementTypeValues = []string{
+	"CUSTOMER",
+	"ECS",
+}
+
+var ecsResourceTypeValues = []string{
+	"GPU",
+	"InferenceAccelerator",
+}
+
+var ecsScaleUnitValues = []string{
+	"PERCENT",
+}
+
+var ecsSchedulingStrategyValues = []string{
+	"REPLICA",
+	"DAEMON",
+}
+
+var ecsScopeValues = []string{
+	"task",
+	"shared",
+}
+
+var ecsServiceConnectAccessLoggingFormatValues = []string{
+	"TEXT",
+	"JSON",
+}
+
+var ecsServiceConnectIncludeQueryParametersValues = []string{
+	"DISABLED",
+	"ENABLED",
+}
+
+var ecsServiceDeploymentLifecycleStageValues = []string{
+	"RECONCILE_SERVICE",
+	"PRE_SCALE_UP",
+	"SCALE_UP",
+	"POST_SCALE_UP",
+	"TEST_TRAFFIC_SHIFT",
+	"POST_TEST_TRAFFIC_SHIFT",
+	"PRODUCTION_TRAFFIC_SHIFT",
+	"POST_PRODUCTION_TRAFFIC_SHIFT",
+	"BAKE_TIME",
+	"CLEAN_UP",
+}
+
+var ecsServiceDeploymentRollbackMonitorsStatusValues = []string{
+	"TRIGGERED",
+	"MONITORING",
+	"MONITORING_COMPLETE",
+	"DISABLED",
+}
+
+var ecsServiceDeploymentStatusValues = []string{
+	"PENDING",
+	"SUCCESSFUL",
+	"STOPPED",
+	"STOP_REQUESTED",
+	"IN_PROGRESS",
+	"ROLLBACK_REQUESTED",
+	"ROLLBACK_IN_PROGRESS",
+	"ROLLBACK_SUCCESSFUL",
+	"ROLLBACK_FAILED",
+}
+
+var ecsServiceFieldValues = []string{
+	"TAGS",
+}
+
+var ecsSettingNameValues = []string{
+	"serviceLongArnFormat",
+	"taskLongArnFormat",
+	"containerInstanceLongArnFormat",
+	"awsvpcTrunking",
+	"containerInsights",
+	"fargateFIPSMode",
+	"tagResourceAuthorization",
+	"fargateTaskRetirementWaitPeriod",
+	"guardDutyActivate",
+	"defaultLogDriverMode",
+	"fargateEventWindows",
+}
+
+var ecsSettingTypeValues = []string{
+	"user",
+	"aws_managed",
+}
+
+var ecsSortOrderValues = []string{
+	"ASC",
+	"DESC",
+}
+
+var ecsStabilityStatusValues = []string{
+	"STEADY_STATE",
+	"STABILIZING",
+}
+
+var ecsStopServiceDeploymentStopTypeValues = []string{
+	"ABORT",
+	"ROLLBACK",
+}
+
+var ecsTargetTypeValues = []string{
+	"container-instance",
+}
+
+var ecsTaskDefinitionFamilyStatusValues = []string{
+	"ACTIVE",
+	"INACTIVE",
+	"ALL",
+}
+
+var ecsTaskDefinitionFieldValues = []string{
+	"TAGS",
+}
+
+var ecsTaskDefinitionPlacementConstraintTypeValues = []string{
+	"memberOf",
+}
+
+var ecsTaskDefinitionStatusValues = []string{
+	"ACTIVE",
+	"INACTIVE",
+	"DELETE_IN_PROGRESS",
+}
+
+var ecsTaskFieldValues = []string{
+	"TAGS",
+}
+
+var ecsTaskFilesystemTypeValues = []string{
+	"ext3",
+	"ext4",
+	"xfs",
+	"ntfs",
+}
+
+var ecsTaskSetFieldValues = []string{
+	"TAGS",
+}
+
+var ecsTaskStopCodeValues = []string{
+	"TaskFailedToStart",
+	"EssentialContainerExited",
+	"UserInitiated",
+	"ServiceSchedulerInitiated",
+	"SpotInterruption",
+	"TerminationNotice",
+}
+
+var ecsTransportProtocolValues = []string{
+	"tcp",
+	"udp",
+}
+
+var ecsUlimitNameValues = []string{
+	"core",
+	"cpu",
+	"data",
+	"fsize",
+	"locks",
+	"memlock",
+	"msgqueue",
+	"nice",
+	"nofile",
+	"nproc",
+	"rss",
+	"rtprio",
+	"rttime",
+	"sigpending",
+	"stack",
+}
+
+var ecsVersionConsistencyValues = []string{
+	"enabled",
+	"disabled",
+}
+
 func getEcsEnum(name string) []string {
 	switch name {
+	case "AcceleratorManufacturer":
+		return ecsAcceleratorManufacturerValues
+	case "AcceleratorName":
+		return ecsAcceleratorNameValues
+	case "AcceleratorType":
+		return ecsAcceleratorTypeValues
+	case "AccessType":
+		return ecsAccessTypeValues
+	case "AgentUpdateStatus":
+		return ecsAgentUpdateStatusValues
+	case "ApplicationProtocol":
+		return ecsApplicationProtocolValues
+	case "AssignPublicIp":
+		return ecsAssignPublicIpValues
+	case "AvailabilityZoneRebalancing":
+		return ecsAvailabilityZoneRebalancingValues
+	case "BareMetal":
+		return ecsBareMetalValues
+	case "BurstablePerformance":
+		return ecsBurstablePerformanceValues
+	case "CPUArchitecture":
+		return ecsCPUArchitectureValues
+	case "CapacityOptionType":
+		return ecsCapacityOptionTypeValues
+	case "CapacityProviderField":
+		return ecsCapacityProviderFieldValues
+	case "CapacityProviderStatus":
+		return ecsCapacityProviderStatusValues
+	case "CapacityProviderType":
+		return ecsCapacityProviderTypeValues
+	case "CapacityProviderUpdateStatus":
+		return ecsCapacityProviderUpdateStatusValues
+	case "ClusterField":
+		return ecsClusterFieldValues
+	case "ClusterSettingName":
+		return ecsClusterSettingNameValues
+	case "Compatibility":
+		return ecsCompatibilityValues
+	case "Connectivity":
+		return ecsConnectivityValues
+	case "ContainerCondition":
+		return ecsContainerConditionValues
+	case "ContainerInstanceField":
+		return ecsContainerInstanceFieldValues
+	case "ContainerInstanceStatus":
+		return ecsContainerInstanceStatusValues
+	case "CpuManufacturer":
+		return ecsCpuManufacturerValues
+	case "DeploymentControllerType":
+		return ecsDeploymentControllerTypeValues
+	case "DeploymentLifecycleHookStage":
+		return ecsDeploymentLifecycleHookStageValues
+	case "DeploymentRolloutState":
+		return ecsDeploymentRolloutStateValues
+	case "DeploymentStrategy":
+		return ecsDeploymentStrategyValues
+	case "DesiredStatus":
+		return ecsDesiredStatusValues
+	case "DeviceCgroupPermission":
+		return ecsDeviceCgroupPermissionValues
+	case "EBSResourceType":
+		return ecsEBSResourceTypeValues
+	case "EFSAuthorizationConfigIAM":
+		return ecsEFSAuthorizationConfigIAMValues
+	case "EFSTransitEncryption":
+		return ecsEFSTransitEncryptionValues
+	case "EnvironmentFileType":
+		return ecsEnvironmentFileTypeValues
+	case "ExecuteCommandLogging":
+		return ecsExecuteCommandLoggingValues
+	case "ExpressGatewayServiceInclude":
+		return ecsExpressGatewayServiceIncludeValues
+	case "ExpressGatewayServiceScalingMetric":
+		return ecsExpressGatewayServiceScalingMetricValues
+	case "ExpressGatewayServiceStatusCode":
+		return ecsExpressGatewayServiceStatusCodeValues
+	case "FirelensConfigurationType":
+		return ecsFirelensConfigurationTypeValues
+	case "HealthStatus":
+		return ecsHealthStatusValues
+	case "InstanceGeneration":
+		return ecsInstanceGenerationValues
+	case "InstanceHealthCheckState":
+		return ecsInstanceHealthCheckStateValues
+	case "InstanceHealthCheckType":
+		return ecsInstanceHealthCheckTypeValues
+	case "IpcMode":
+		return ecsIpcModeValues
 	case "LaunchType":
 		return ecsLaunchTypeValues
-	case "SchedulingStrategy":
-		return ecsSchedulingStrategyValues
+	case "LocalStorage":
+		return ecsLocalStorageValues
+	case "LocalStorageType":
+		return ecsLocalStorageTypeValues
+	case "LogDriver":
+		return ecsLogDriverValues
+	case "ManagedAgentName":
+		return ecsManagedAgentNameValues
+	case "ManagedDraining":
+		return ecsManagedDrainingValues
+	case "ManagedInstancesMonitoringOptions":
+		return ecsManagedInstancesMonitoringOptionsValues
+	case "ManagedResourceStatus":
+		return ecsManagedResourceStatusValues
+	case "ManagedScalingStatus":
+		return ecsManagedScalingStatusValues
+	case "ManagedTerminationProtection":
+		return ecsManagedTerminationProtectionValues
 	case "NetworkMode":
 		return ecsNetworkModeValues
+	case "OSFamily":
+		return ecsOSFamilyValues
+	case "PidMode":
+		return ecsPidModeValues
+	case "PlacementConstraintType":
+		return ecsPlacementConstraintTypeValues
+	case "PlacementStrategyType":
+		return ecsPlacementStrategyTypeValues
+	case "PlatformDeviceType":
+		return ecsPlatformDeviceTypeValues
+	case "PropagateMITags":
+		return ecsPropagateMITagsValues
+	case "PropagateTags":
+		return ecsPropagateTagsValues
+	case "ProxyConfigurationType":
+		return ecsProxyConfigurationTypeValues
+	case "ResourceManagementType":
+		return ecsResourceManagementTypeValues
+	case "ResourceType":
+		return ecsResourceTypeValues
+	case "ScaleUnit":
+		return ecsScaleUnitValues
+	case "SchedulingStrategy":
+		return ecsSchedulingStrategyValues
+	case "Scope":
+		return ecsScopeValues
+	case "ServiceConnectAccessLoggingFormat":
+		return ecsServiceConnectAccessLoggingFormatValues
+	case "ServiceConnectIncludeQueryParameters":
+		return ecsServiceConnectIncludeQueryParametersValues
+	case "ServiceDeploymentLifecycleStage":
+		return ecsServiceDeploymentLifecycleStageValues
+	case "ServiceDeploymentRollbackMonitorsStatus":
+		return ecsServiceDeploymentRollbackMonitorsStatusValues
+	case "ServiceDeploymentStatus":
+		return ecsServiceDeploymentStatusValues
+	case "ServiceField":
+		return ecsServiceFieldValues
+	case "SettingName":
+		return ecsSettingNameValues
+	case "SettingType":
+		return ecsSettingTypeValues
+	case "SortOrder":
+		return ecsSortOrderValues
+	case "StabilityStatus":
+		return ecsStabilityStatusValues
+	case "StopServiceDeploymentStopType":
+		return ecsStopServiceDeploymentStopTypeValues
+	case "TargetType":
+		return ecsTargetTypeValues
+	case "TaskDefinitionFamilyStatus":
+		return ecsTaskDefinitionFamilyStatusValues
+	case "TaskDefinitionField":
+		return ecsTaskDefinitionFieldValues
+	case "TaskDefinitionPlacementConstraintType":
+		return ecsTaskDefinitionPlacementConstraintTypeValues
+	case "TaskDefinitionStatus":
+		return ecsTaskDefinitionStatusValues
+	case "TaskField":
+		return ecsTaskFieldValues
+	case "TaskFilesystemType":
+		return ecsTaskFilesystemTypeValues
+	case "TaskSetField":
+		return ecsTaskSetFieldValues
+	case "TaskStopCode":
+		return ecsTaskStopCodeValues
+	case "TransportProtocol":
+		return ecsTransportProtocolValues
+	case "UlimitName":
+		return ecsUlimitNameValues
+	case "VersionConsistency":
+		return ecsVersionConsistencyValues
 	}
 	return nil
 }
 
 func getEcsEnumNames() []string {
 	return []string{
+		"AcceleratorManufacturer",
+		"AcceleratorName",
+		"AcceleratorType",
+		"AccessType",
+		"AgentUpdateStatus",
+		"ApplicationProtocol",
+		"AssignPublicIp",
+		"AvailabilityZoneRebalancing",
+		"BareMetal",
+		"BurstablePerformance",
+		"CPUArchitecture",
+		"CapacityOptionType",
+		"CapacityProviderField",
+		"CapacityProviderStatus",
+		"CapacityProviderType",
+		"CapacityProviderUpdateStatus",
+		"ClusterField",
+		"ClusterSettingName",
+		"Compatibility",
+		"Connectivity",
+		"ContainerCondition",
+		"ContainerInstanceField",
+		"ContainerInstanceStatus",
+		"CpuManufacturer",
+		"DeploymentControllerType",
+		"DeploymentLifecycleHookStage",
+		"DeploymentRolloutState",
+		"DeploymentStrategy",
+		"DesiredStatus",
+		"DeviceCgroupPermission",
+		"EBSResourceType",
+		"EFSAuthorizationConfigIAM",
+		"EFSTransitEncryption",
+		"EnvironmentFileType",
+		"ExecuteCommandLogging",
+		"ExpressGatewayServiceInclude",
+		"ExpressGatewayServiceScalingMetric",
+		"ExpressGatewayServiceStatusCode",
+		"FirelensConfigurationType",
+		"HealthStatus",
+		"InstanceGeneration",
+		"InstanceHealthCheckState",
+		"InstanceHealthCheckType",
+		"IpcMode",
 		"LaunchType",
-		"SchedulingStrategy",
+		"LocalStorage",
+		"LocalStorageType",
+		"LogDriver",
+		"ManagedAgentName",
+		"ManagedDraining",
+		"ManagedInstancesMonitoringOptions",
+		"ManagedResourceStatus",
+		"ManagedScalingStatus",
+		"ManagedTerminationProtection",
 		"NetworkMode",
+		"OSFamily",
+		"PidMode",
+		"PlacementConstraintType",
+		"PlacementStrategyType",
+		"PlatformDeviceType",
+		"PropagateMITags",
+		"PropagateTags",
+		"ProxyConfigurationType",
+		"ResourceManagementType",
+		"ResourceType",
+		"ScaleUnit",
+		"SchedulingStrategy",
+		"Scope",
+		"ServiceConnectAccessLoggingFormat",
+		"ServiceConnectIncludeQueryParameters",
+		"ServiceDeploymentLifecycleStage",
+		"ServiceDeploymentRollbackMonitorsStatus",
+		"ServiceDeploymentStatus",
+		"ServiceField",
+		"SettingName",
+		"SettingType",
+		"SortOrder",
+		"StabilityStatus",
+		"StopServiceDeploymentStopType",
+		"TargetType",
+		"TaskDefinitionFamilyStatus",
+		"TaskDefinitionField",
+		"TaskDefinitionPlacementConstraintType",
+		"TaskDefinitionStatus",
+		"TaskField",
+		"TaskFilesystemType",
+		"TaskSetField",
+		"TaskStopCode",
+		"TransportProtocol",
+		"UlimitName",
+		"VersionConsistency",
 	}
 }

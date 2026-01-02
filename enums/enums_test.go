@@ -74,21 +74,22 @@ func TestGetEnumNames(t *testing.T) {
 		t.Fatal("expected enum names, got nil")
 	}
 
-	expected := map[string]bool{
-		"Runtime":      true,
-		"Architecture": true,
-		"PackageType":  true,
-	}
-
+	// Check that common enums are present (there are many more now that we generate all)
+	required := []string{"Runtime", "Architecture", "PackageType"}
+	nameSet := make(map[string]bool)
 	for _, name := range names {
-		if !expected[name] {
-			t.Errorf("unexpected enum name: %s", name)
-		}
-		delete(expected, name)
+		nameSet[name] = true
 	}
 
-	for name := range expected {
-		t.Errorf("missing enum name: %s", name)
+	for _, req := range required {
+		if !nameSet[req] {
+			t.Errorf("missing required enum name: %s", req)
+		}
+	}
+
+	// Verify we have many enums now (not just the 3 priority ones)
+	if len(names) < 10 {
+		t.Errorf("expected at least 10 enum names for lambda (full generation), got %d", len(names))
 	}
 }
 

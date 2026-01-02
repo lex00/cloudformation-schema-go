@@ -4,9 +4,214 @@ package enums
 
 // Dynamodb enum constants
 const (
+	// ApproximateCreationDateTimePrecision values
+	DynamodbApproximateCreationDateTimePrecisionMillisecond = "MILLISECOND"
+	DynamodbApproximateCreationDateTimePrecisionMicrosecond = "MICROSECOND"
+
+	// AttributeAction values
+	DynamodbAttributeActionAdd    = "ADD"
+	DynamodbAttributeActionPut    = "PUT"
+	DynamodbAttributeActionDelete = "DELETE"
+
+	// BackupStatus values
+	DynamodbBackupStatusCreating  = "CREATING"
+	DynamodbBackupStatusDeleted   = "DELETED"
+	DynamodbBackupStatusAvailable = "AVAILABLE"
+
+	// BackupType values
+	DynamodbBackupTypeUser      = "USER"
+	DynamodbBackupTypeSystem    = "SYSTEM"
+	DynamodbBackupTypeAwsBackup = "AWS_BACKUP"
+
+	// BackupTypeFilter values
+	DynamodbBackupTypeFilterUser      = "USER"
+	DynamodbBackupTypeFilterSystem    = "SYSTEM"
+	DynamodbBackupTypeFilterAwsBackup = "AWS_BACKUP"
+	DynamodbBackupTypeFilterAll       = "ALL"
+
+	// BatchStatementErrorCodeEnum values
+	DynamodbBatchStatementErrorCodeEnumConditionalcheckfailed          = "ConditionalCheckFailed"
+	DynamodbBatchStatementErrorCodeEnumItemcollectionsizelimitexceeded = "ItemCollectionSizeLimitExceeded"
+	DynamodbBatchStatementErrorCodeEnumRequestlimitexceeded            = "RequestLimitExceeded"
+	DynamodbBatchStatementErrorCodeEnumValidationerror                 = "ValidationError"
+	DynamodbBatchStatementErrorCodeEnumProvisionedthroughputexceeded   = "ProvisionedThroughputExceeded"
+	DynamodbBatchStatementErrorCodeEnumTransactionconflict             = "TransactionConflict"
+	DynamodbBatchStatementErrorCodeEnumThrottlingerror                 = "ThrottlingError"
+	DynamodbBatchStatementErrorCodeEnumInternalservererror             = "InternalServerError"
+	DynamodbBatchStatementErrorCodeEnumResourcenotfound                = "ResourceNotFound"
+	DynamodbBatchStatementErrorCodeEnumAccessdenied                    = "AccessDenied"
+	DynamodbBatchStatementErrorCodeEnumDuplicateitem                   = "DuplicateItem"
+
 	// BillingMode values
 	DynamodbBillingModeProvisioned   = "PROVISIONED"
 	DynamodbBillingModePayPerRequest = "PAY_PER_REQUEST"
+
+	// ComparisonOperator values
+	DynamodbComparisonOperatorEq          = "EQ"
+	DynamodbComparisonOperatorNe          = "NE"
+	DynamodbComparisonOperatorIn          = "IN"
+	DynamodbComparisonOperatorLe          = "LE"
+	DynamodbComparisonOperatorLt          = "LT"
+	DynamodbComparisonOperatorGe          = "GE"
+	DynamodbComparisonOperatorGt          = "GT"
+	DynamodbComparisonOperatorBetween     = "BETWEEN"
+	DynamodbComparisonOperatorNotNull     = "NOT_NULL"
+	DynamodbComparisonOperatorNull        = "NULL"
+	DynamodbComparisonOperatorContains    = "CONTAINS"
+	DynamodbComparisonOperatorNotContains = "NOT_CONTAINS"
+	DynamodbComparisonOperatorBeginsWith  = "BEGINS_WITH"
+
+	// ConditionalOperator values
+	DynamodbConditionalOperatorAnd = "AND"
+	DynamodbConditionalOperatorOr  = "OR"
+
+	// ContinuousBackupsStatus values
+	DynamodbContinuousBackupsStatusEnabled  = "ENABLED"
+	DynamodbContinuousBackupsStatusDisabled = "DISABLED"
+
+	// ContributorInsightsAction values
+	DynamodbContributorInsightsActionEnable  = "ENABLE"
+	DynamodbContributorInsightsActionDisable = "DISABLE"
+
+	// ContributorInsightsMode values
+	DynamodbContributorInsightsModeAccessedAndThrottledKeys = "ACCESSED_AND_THROTTLED_KEYS"
+	DynamodbContributorInsightsModeThrottledKeys            = "THROTTLED_KEYS"
+
+	// ContributorInsightsStatus values
+	DynamodbContributorInsightsStatusEnabling  = "ENABLING"
+	DynamodbContributorInsightsStatusEnabled   = "ENABLED"
+	DynamodbContributorInsightsStatusDisabling = "DISABLING"
+	DynamodbContributorInsightsStatusDisabled  = "DISABLED"
+	DynamodbContributorInsightsStatusFailed    = "FAILED"
+
+	// DestinationStatus values
+	DynamodbDestinationStatusEnabling     = "ENABLING"
+	DynamodbDestinationStatusActive       = "ACTIVE"
+	DynamodbDestinationStatusDisabling    = "DISABLING"
+	DynamodbDestinationStatusDisabled     = "DISABLED"
+	DynamodbDestinationStatusEnableFailed = "ENABLE_FAILED"
+	DynamodbDestinationStatusUpdating     = "UPDATING"
+
+	// ExportFormat values
+	DynamodbExportFormatDynamodbJson = "DYNAMODB_JSON"
+	DynamodbExportFormatIon          = "ION"
+
+	// ExportStatus values
+	DynamodbExportStatusInProgress = "IN_PROGRESS"
+	DynamodbExportStatusCompleted  = "COMPLETED"
+	DynamodbExportStatusFailed     = "FAILED"
+
+	// ExportType values
+	DynamodbExportTypeFullExport        = "FULL_EXPORT"
+	DynamodbExportTypeIncrementalExport = "INCREMENTAL_EXPORT"
+
+	// ExportViewType values
+	DynamodbExportViewTypeNewImage        = "NEW_IMAGE"
+	DynamodbExportViewTypeNewAndOldImages = "NEW_AND_OLD_IMAGES"
+
+	// GlobalTableStatus values
+	DynamodbGlobalTableStatusCreating = "CREATING"
+	DynamodbGlobalTableStatusActive   = "ACTIVE"
+	DynamodbGlobalTableStatusDeleting = "DELETING"
+	DynamodbGlobalTableStatusUpdating = "UPDATING"
+
+	// ImportStatus values
+	DynamodbImportStatusInProgress = "IN_PROGRESS"
+	DynamodbImportStatusCompleted  = "COMPLETED"
+	DynamodbImportStatusCancelling = "CANCELLING"
+	DynamodbImportStatusCancelled  = "CANCELLED"
+	DynamodbImportStatusFailed     = "FAILED"
+
+	// IndexStatus values
+	DynamodbIndexStatusCreating = "CREATING"
+	DynamodbIndexStatusUpdating = "UPDATING"
+	DynamodbIndexStatusDeleting = "DELETING"
+	DynamodbIndexStatusActive   = "ACTIVE"
+
+	// InputCompressionType values
+	DynamodbInputCompressionTypeGzip = "GZIP"
+	DynamodbInputCompressionTypeZstd = "ZSTD"
+	DynamodbInputCompressionTypeNone = "NONE"
+
+	// InputFormat values
+	DynamodbInputFormatDynamodbJson = "DYNAMODB_JSON"
+	DynamodbInputFormatIon          = "ION"
+	DynamodbInputFormatCsv          = "CSV"
+
+	// KeyType values
+	DynamodbKeyTypeHash  = "HASH"
+	DynamodbKeyTypeRange = "RANGE"
+
+	// MultiRegionConsistency values
+	DynamodbMultiRegionConsistencyEventual = "EVENTUAL"
+	DynamodbMultiRegionConsistencyStrong   = "STRONG"
+
+	// PointInTimeRecoveryStatus values
+	DynamodbPointInTimeRecoveryStatusEnabled  = "ENABLED"
+	DynamodbPointInTimeRecoveryStatusDisabled = "DISABLED"
+
+	// ProjectionType values
+	DynamodbProjectionTypeAll      = "ALL"
+	DynamodbProjectionTypeKeysOnly = "KEYS_ONLY"
+	DynamodbProjectionTypeInclude  = "INCLUDE"
+
+	// ReplicaStatus values
+	DynamodbReplicaStatusCreating                          = "CREATING"
+	DynamodbReplicaStatusCreationFailed                    = "CREATION_FAILED"
+	DynamodbReplicaStatusUpdating                          = "UPDATING"
+	DynamodbReplicaStatusDeleting                          = "DELETING"
+	DynamodbReplicaStatusActive                            = "ACTIVE"
+	DynamodbReplicaStatusRegionDisabled                    = "REGION_DISABLED"
+	DynamodbReplicaStatusInaccessibleEncryptionCredentials = "INACCESSIBLE_ENCRYPTION_CREDENTIALS"
+	DynamodbReplicaStatusArchiving                         = "ARCHIVING"
+	DynamodbReplicaStatusArchived                          = "ARCHIVED"
+	DynamodbReplicaStatusReplicationNotAuthorized          = "REPLICATION_NOT_AUTHORIZED"
+
+	// ReturnConsumedCapacity values
+	DynamodbReturnConsumedCapacityIndexes = "INDEXES"
+	DynamodbReturnConsumedCapacityTotal   = "TOTAL"
+	DynamodbReturnConsumedCapacityNone    = "NONE"
+
+	// ReturnItemCollectionMetrics values
+	DynamodbReturnItemCollectionMetricsSize = "SIZE"
+	DynamodbReturnItemCollectionMetricsNone = "NONE"
+
+	// ReturnValue values
+	DynamodbReturnValueNone       = "NONE"
+	DynamodbReturnValueAllOld     = "ALL_OLD"
+	DynamodbReturnValueUpdatedOld = "UPDATED_OLD"
+	DynamodbReturnValueAllNew     = "ALL_NEW"
+	DynamodbReturnValueUpdatedNew = "UPDATED_NEW"
+
+	// ReturnValuesOnConditionCheckFailure values
+	DynamodbReturnValuesOnConditionCheckFailureAllOld = "ALL_OLD"
+	DynamodbReturnValuesOnConditionCheckFailureNone   = "NONE"
+
+	// S3SseAlgorithm values
+	DynamodbS3SseAlgorithmAes256 = "AES256"
+	DynamodbS3SseAlgorithmKms    = "KMS"
+
+	// SSEStatus values
+	DynamodbSSEStatusEnabling  = "ENABLING"
+	DynamodbSSEStatusEnabled   = "ENABLED"
+	DynamodbSSEStatusDisabling = "DISABLING"
+	DynamodbSSEStatusDisabled  = "DISABLED"
+	DynamodbSSEStatusUpdating  = "UPDATING"
+
+	// SSEType values
+	DynamodbSSETypeAes256 = "AES256"
+	DynamodbSSETypeKms    = "KMS"
+
+	// ScalarAttributeType values
+	DynamodbScalarAttributeTypeS = "S"
+	DynamodbScalarAttributeTypeN = "N"
+	DynamodbScalarAttributeTypeB = "B"
+
+	// Select values
+	DynamodbSelectAllAttributes          = "ALL_ATTRIBUTES"
+	DynamodbSelectAllProjectedAttributes = "ALL_PROJECTED_ATTRIBUTES"
+	DynamodbSelectSpecificAttributes     = "SPECIFIC_ATTRIBUTES"
+	DynamodbSelectCount                  = "COUNT"
 
 	// StreamViewType values
 	DynamodbStreamViewTypeNewImage        = "NEW_IMAGE"
@@ -17,11 +222,273 @@ const (
 	// TableClass values
 	DynamodbTableClassStandard                 = "STANDARD"
 	DynamodbTableClassStandardInfrequentAccess = "STANDARD_INFREQUENT_ACCESS"
+
+	// TableStatus values
+	DynamodbTableStatusCreating                          = "CREATING"
+	DynamodbTableStatusUpdating                          = "UPDATING"
+	DynamodbTableStatusDeleting                          = "DELETING"
+	DynamodbTableStatusActive                            = "ACTIVE"
+	DynamodbTableStatusInaccessibleEncryptionCredentials = "INACCESSIBLE_ENCRYPTION_CREDENTIALS"
+	DynamodbTableStatusArchiving                         = "ARCHIVING"
+	DynamodbTableStatusArchived                          = "ARCHIVED"
+	DynamodbTableStatusReplicationNotAuthorized          = "REPLICATION_NOT_AUTHORIZED"
+
+	// TimeToLiveStatus values
+	DynamodbTimeToLiveStatusEnabling  = "ENABLING"
+	DynamodbTimeToLiveStatusDisabling = "DISABLING"
+	DynamodbTimeToLiveStatusEnabled   = "ENABLED"
+	DynamodbTimeToLiveStatusDisabled  = "DISABLED"
+
+	// WitnessStatus values
+	DynamodbWitnessStatusCreating = "CREATING"
+	DynamodbWitnessStatusDeleting = "DELETING"
+	DynamodbWitnessStatusActive   = "ACTIVE"
 )
+
+var dynamodbApproximateCreationDateTimePrecisionValues = []string{
+	"MILLISECOND",
+	"MICROSECOND",
+}
+
+var dynamodbAttributeActionValues = []string{
+	"ADD",
+	"PUT",
+	"DELETE",
+}
+
+var dynamodbBackupStatusValues = []string{
+	"CREATING",
+	"DELETED",
+	"AVAILABLE",
+}
+
+var dynamodbBackupTypeValues = []string{
+	"USER",
+	"SYSTEM",
+	"AWS_BACKUP",
+}
+
+var dynamodbBackupTypeFilterValues = []string{
+	"USER",
+	"SYSTEM",
+	"AWS_BACKUP",
+	"ALL",
+}
+
+var dynamodbBatchStatementErrorCodeEnumValues = []string{
+	"ConditionalCheckFailed",
+	"ItemCollectionSizeLimitExceeded",
+	"RequestLimitExceeded",
+	"ValidationError",
+	"ProvisionedThroughputExceeded",
+	"TransactionConflict",
+	"ThrottlingError",
+	"InternalServerError",
+	"ResourceNotFound",
+	"AccessDenied",
+	"DuplicateItem",
+}
 
 var dynamodbBillingModeValues = []string{
 	"PROVISIONED",
 	"PAY_PER_REQUEST",
+}
+
+var dynamodbComparisonOperatorValues = []string{
+	"EQ",
+	"NE",
+	"IN",
+	"LE",
+	"LT",
+	"GE",
+	"GT",
+	"BETWEEN",
+	"NOT_NULL",
+	"NULL",
+	"CONTAINS",
+	"NOT_CONTAINS",
+	"BEGINS_WITH",
+}
+
+var dynamodbConditionalOperatorValues = []string{
+	"AND",
+	"OR",
+}
+
+var dynamodbContinuousBackupsStatusValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var dynamodbContributorInsightsActionValues = []string{
+	"ENABLE",
+	"DISABLE",
+}
+
+var dynamodbContributorInsightsModeValues = []string{
+	"ACCESSED_AND_THROTTLED_KEYS",
+	"THROTTLED_KEYS",
+}
+
+var dynamodbContributorInsightsStatusValues = []string{
+	"ENABLING",
+	"ENABLED",
+	"DISABLING",
+	"DISABLED",
+	"FAILED",
+}
+
+var dynamodbDestinationStatusValues = []string{
+	"ENABLING",
+	"ACTIVE",
+	"DISABLING",
+	"DISABLED",
+	"ENABLE_FAILED",
+	"UPDATING",
+}
+
+var dynamodbExportFormatValues = []string{
+	"DYNAMODB_JSON",
+	"ION",
+}
+
+var dynamodbExportStatusValues = []string{
+	"IN_PROGRESS",
+	"COMPLETED",
+	"FAILED",
+}
+
+var dynamodbExportTypeValues = []string{
+	"FULL_EXPORT",
+	"INCREMENTAL_EXPORT",
+}
+
+var dynamodbExportViewTypeValues = []string{
+	"NEW_IMAGE",
+	"NEW_AND_OLD_IMAGES",
+}
+
+var dynamodbGlobalTableStatusValues = []string{
+	"CREATING",
+	"ACTIVE",
+	"DELETING",
+	"UPDATING",
+}
+
+var dynamodbImportStatusValues = []string{
+	"IN_PROGRESS",
+	"COMPLETED",
+	"CANCELLING",
+	"CANCELLED",
+	"FAILED",
+}
+
+var dynamodbIndexStatusValues = []string{
+	"CREATING",
+	"UPDATING",
+	"DELETING",
+	"ACTIVE",
+}
+
+var dynamodbInputCompressionTypeValues = []string{
+	"GZIP",
+	"ZSTD",
+	"NONE",
+}
+
+var dynamodbInputFormatValues = []string{
+	"DYNAMODB_JSON",
+	"ION",
+	"CSV",
+}
+
+var dynamodbKeyTypeValues = []string{
+	"HASH",
+	"RANGE",
+}
+
+var dynamodbMultiRegionConsistencyValues = []string{
+	"EVENTUAL",
+	"STRONG",
+}
+
+var dynamodbPointInTimeRecoveryStatusValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var dynamodbProjectionTypeValues = []string{
+	"ALL",
+	"KEYS_ONLY",
+	"INCLUDE",
+}
+
+var dynamodbReplicaStatusValues = []string{
+	"CREATING",
+	"CREATION_FAILED",
+	"UPDATING",
+	"DELETING",
+	"ACTIVE",
+	"REGION_DISABLED",
+	"INACCESSIBLE_ENCRYPTION_CREDENTIALS",
+	"ARCHIVING",
+	"ARCHIVED",
+	"REPLICATION_NOT_AUTHORIZED",
+}
+
+var dynamodbReturnConsumedCapacityValues = []string{
+	"INDEXES",
+	"TOTAL",
+	"NONE",
+}
+
+var dynamodbReturnItemCollectionMetricsValues = []string{
+	"SIZE",
+	"NONE",
+}
+
+var dynamodbReturnValueValues = []string{
+	"NONE",
+	"ALL_OLD",
+	"UPDATED_OLD",
+	"ALL_NEW",
+	"UPDATED_NEW",
+}
+
+var dynamodbReturnValuesOnConditionCheckFailureValues = []string{
+	"ALL_OLD",
+	"NONE",
+}
+
+var dynamodbS3SseAlgorithmValues = []string{
+	"AES256",
+	"KMS",
+}
+
+var dynamodbSSEStatusValues = []string{
+	"ENABLING",
+	"ENABLED",
+	"DISABLING",
+	"DISABLED",
+	"UPDATING",
+}
+
+var dynamodbSSETypeValues = []string{
+	"AES256",
+	"KMS",
+}
+
+var dynamodbScalarAttributeTypeValues = []string{
+	"S",
+	"N",
+	"B",
+}
+
+var dynamodbSelectValues = []string{
+	"ALL_ATTRIBUTES",
+	"ALL_PROJECTED_ATTRIBUTES",
+	"SPECIFIC_ATTRIBUTES",
+	"COUNT",
 }
 
 var dynamodbStreamViewTypeValues = []string{
@@ -36,22 +503,163 @@ var dynamodbTableClassValues = []string{
 	"STANDARD_INFREQUENT_ACCESS",
 }
 
+var dynamodbTableStatusValues = []string{
+	"CREATING",
+	"UPDATING",
+	"DELETING",
+	"ACTIVE",
+	"INACCESSIBLE_ENCRYPTION_CREDENTIALS",
+	"ARCHIVING",
+	"ARCHIVED",
+	"REPLICATION_NOT_AUTHORIZED",
+}
+
+var dynamodbTimeToLiveStatusValues = []string{
+	"ENABLING",
+	"DISABLING",
+	"ENABLED",
+	"DISABLED",
+}
+
+var dynamodbWitnessStatusValues = []string{
+	"CREATING",
+	"DELETING",
+	"ACTIVE",
+}
+
 func getDynamodbEnum(name string) []string {
 	switch name {
+	case "ApproximateCreationDateTimePrecision":
+		return dynamodbApproximateCreationDateTimePrecisionValues
+	case "AttributeAction":
+		return dynamodbAttributeActionValues
+	case "BackupStatus":
+		return dynamodbBackupStatusValues
+	case "BackupType":
+		return dynamodbBackupTypeValues
+	case "BackupTypeFilter":
+		return dynamodbBackupTypeFilterValues
+	case "BatchStatementErrorCodeEnum":
+		return dynamodbBatchStatementErrorCodeEnumValues
 	case "BillingMode":
 		return dynamodbBillingModeValues
+	case "ComparisonOperator":
+		return dynamodbComparisonOperatorValues
+	case "ConditionalOperator":
+		return dynamodbConditionalOperatorValues
+	case "ContinuousBackupsStatus":
+		return dynamodbContinuousBackupsStatusValues
+	case "ContributorInsightsAction":
+		return dynamodbContributorInsightsActionValues
+	case "ContributorInsightsMode":
+		return dynamodbContributorInsightsModeValues
+	case "ContributorInsightsStatus":
+		return dynamodbContributorInsightsStatusValues
+	case "DestinationStatus":
+		return dynamodbDestinationStatusValues
+	case "ExportFormat":
+		return dynamodbExportFormatValues
+	case "ExportStatus":
+		return dynamodbExportStatusValues
+	case "ExportType":
+		return dynamodbExportTypeValues
+	case "ExportViewType":
+		return dynamodbExportViewTypeValues
+	case "GlobalTableStatus":
+		return dynamodbGlobalTableStatusValues
+	case "ImportStatus":
+		return dynamodbImportStatusValues
+	case "IndexStatus":
+		return dynamodbIndexStatusValues
+	case "InputCompressionType":
+		return dynamodbInputCompressionTypeValues
+	case "InputFormat":
+		return dynamodbInputFormatValues
+	case "KeyType":
+		return dynamodbKeyTypeValues
+	case "MultiRegionConsistency":
+		return dynamodbMultiRegionConsistencyValues
+	case "PointInTimeRecoveryStatus":
+		return dynamodbPointInTimeRecoveryStatusValues
+	case "ProjectionType":
+		return dynamodbProjectionTypeValues
+	case "ReplicaStatus":
+		return dynamodbReplicaStatusValues
+	case "ReturnConsumedCapacity":
+		return dynamodbReturnConsumedCapacityValues
+	case "ReturnItemCollectionMetrics":
+		return dynamodbReturnItemCollectionMetricsValues
+	case "ReturnValue":
+		return dynamodbReturnValueValues
+	case "ReturnValuesOnConditionCheckFailure":
+		return dynamodbReturnValuesOnConditionCheckFailureValues
+	case "S3SseAlgorithm":
+		return dynamodbS3SseAlgorithmValues
+	case "SSEStatus":
+		return dynamodbSSEStatusValues
+	case "SSEType":
+		return dynamodbSSETypeValues
+	case "ScalarAttributeType":
+		return dynamodbScalarAttributeTypeValues
+	case "Select":
+		return dynamodbSelectValues
 	case "StreamViewType":
 		return dynamodbStreamViewTypeValues
 	case "TableClass":
 		return dynamodbTableClassValues
+	case "TableStatus":
+		return dynamodbTableStatusValues
+	case "TimeToLiveStatus":
+		return dynamodbTimeToLiveStatusValues
+	case "WitnessStatus":
+		return dynamodbWitnessStatusValues
 	}
 	return nil
 }
 
 func getDynamodbEnumNames() []string {
 	return []string{
+		"ApproximateCreationDateTimePrecision",
+		"AttributeAction",
+		"BackupStatus",
+		"BackupType",
+		"BackupTypeFilter",
+		"BatchStatementErrorCodeEnum",
 		"BillingMode",
+		"ComparisonOperator",
+		"ConditionalOperator",
+		"ContinuousBackupsStatus",
+		"ContributorInsightsAction",
+		"ContributorInsightsMode",
+		"ContributorInsightsStatus",
+		"DestinationStatus",
+		"ExportFormat",
+		"ExportStatus",
+		"ExportType",
+		"ExportViewType",
+		"GlobalTableStatus",
+		"ImportStatus",
+		"IndexStatus",
+		"InputCompressionType",
+		"InputFormat",
+		"KeyType",
+		"MultiRegionConsistency",
+		"PointInTimeRecoveryStatus",
+		"ProjectionType",
+		"ReplicaStatus",
+		"ReturnConsumedCapacity",
+		"ReturnItemCollectionMetrics",
+		"ReturnValue",
+		"ReturnValuesOnConditionCheckFailure",
+		"S3SseAlgorithm",
+		"SSEStatus",
+		"SSEType",
+		"ScalarAttributeType",
+		"Select",
 		"StreamViewType",
 		"TableClass",
+		"TableStatus",
+		"TimeToLiveStatus",
+		"WitnessStatus",
 	}
 }

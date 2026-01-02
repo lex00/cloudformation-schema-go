@@ -4,6 +4,205 @@ package enums
 
 // Lambda enum constants
 const (
+	// ApplicationLogLevel values
+	LambdaApplicationLogLevelTrace = "TRACE"
+	LambdaApplicationLogLevelDebug = "DEBUG"
+	LambdaApplicationLogLevelInfo  = "INFO"
+	LambdaApplicationLogLevelWarn  = "WARN"
+	LambdaApplicationLogLevelError = "ERROR"
+	LambdaApplicationLogLevelFatal = "FATAL"
+
+	// Architecture values
+	LambdaArchitectureX8664 = "x86_64"
+	LambdaArchitectureArm64 = "arm64"
+
+	// CapacityProviderPredefinedMetricType values
+	LambdaCapacityProviderPredefinedMetricTypeLambdacapacityprovideraveragecpuutilization = "LambdaCapacityProviderAverageCPUUtilization"
+
+	// CapacityProviderScalingMode values
+	LambdaCapacityProviderScalingModeAuto   = "Auto"
+	LambdaCapacityProviderScalingModeManual = "Manual"
+
+	// CapacityProviderState values
+	LambdaCapacityProviderStatePending  = "Pending"
+	LambdaCapacityProviderStateActive   = "Active"
+	LambdaCapacityProviderStateFailed   = "Failed"
+	LambdaCapacityProviderStateDeleting = "Deleting"
+
+	// CodeSigningPolicy values
+	LambdaCodeSigningPolicyWarn    = "Warn"
+	LambdaCodeSigningPolicyEnforce = "Enforce"
+
+	// EndPointType values
+	LambdaEndPointTypeKafkaBootstrapServers = "KAFKA_BOOTSTRAP_SERVERS"
+
+	// EventSourceMappingMetric values
+	LambdaEventSourceMappingMetricEventcount = "EventCount"
+
+	// EventSourcePosition values
+	LambdaEventSourcePositionTrimHorizon = "TRIM_HORIZON"
+	LambdaEventSourcePositionLatest      = "LATEST"
+	LambdaEventSourcePositionAtTimestamp = "AT_TIMESTAMP"
+
+	// EventType values
+	LambdaEventTypeExecutionstarted       = "ExecutionStarted"
+	LambdaEventTypeExecutionsucceeded     = "ExecutionSucceeded"
+	LambdaEventTypeExecutionfailed        = "ExecutionFailed"
+	LambdaEventTypeExecutiontimedout      = "ExecutionTimedOut"
+	LambdaEventTypeExecutionstopped       = "ExecutionStopped"
+	LambdaEventTypeContextstarted         = "ContextStarted"
+	LambdaEventTypeContextsucceeded       = "ContextSucceeded"
+	LambdaEventTypeContextfailed          = "ContextFailed"
+	LambdaEventTypeWaitstarted            = "WaitStarted"
+	LambdaEventTypeWaitsucceeded          = "WaitSucceeded"
+	LambdaEventTypeWaitcancelled          = "WaitCancelled"
+	LambdaEventTypeStepstarted            = "StepStarted"
+	LambdaEventTypeStepsucceeded          = "StepSucceeded"
+	LambdaEventTypeStepfailed             = "StepFailed"
+	LambdaEventTypeChainedinvokestarted   = "ChainedInvokeStarted"
+	LambdaEventTypeChainedinvokesucceeded = "ChainedInvokeSucceeded"
+	LambdaEventTypeChainedinvokefailed    = "ChainedInvokeFailed"
+	LambdaEventTypeChainedinvoketimedout  = "ChainedInvokeTimedOut"
+	LambdaEventTypeChainedinvokestopped   = "ChainedInvokeStopped"
+	LambdaEventTypeCallbackstarted        = "CallbackStarted"
+	LambdaEventTypeCallbacksucceeded      = "CallbackSucceeded"
+	LambdaEventTypeCallbackfailed         = "CallbackFailed"
+	LambdaEventTypeCallbacktimedout       = "CallbackTimedOut"
+	LambdaEventTypeInvocationcompleted    = "InvocationCompleted"
+
+	// ExecutionStatus values
+	LambdaExecutionStatusRunning   = "RUNNING"
+	LambdaExecutionStatusSucceeded = "SUCCEEDED"
+	LambdaExecutionStatusFailed    = "FAILED"
+	LambdaExecutionStatusTimedOut  = "TIMED_OUT"
+	LambdaExecutionStatusStopped   = "STOPPED"
+
+	// FullDocument values
+	LambdaFullDocumentUpdatelookup = "UpdateLookup"
+	LambdaFullDocumentDefault      = "Default"
+
+	// FunctionResponseType values
+	LambdaFunctionResponseTypeReportbatchitemfailures = "ReportBatchItemFailures"
+
+	// FunctionUrlAuthType values
+	LambdaFunctionUrlAuthTypeNone   = "NONE"
+	LambdaFunctionUrlAuthTypeAwsIam = "AWS_IAM"
+
+	// FunctionVersion values
+	LambdaFunctionVersionAll = "ALL"
+
+	// FunctionVersionLatestPublished values
+	LambdaFunctionVersionLatestPublishedLatestPublished = "LATEST_PUBLISHED"
+
+	// InvocationType values
+	LambdaInvocationTypeEvent           = "Event"
+	LambdaInvocationTypeRequestresponse = "RequestResponse"
+	LambdaInvocationTypeDryrun          = "DryRun"
+
+	// InvokeMode values
+	LambdaInvokeModeBuffered       = "BUFFERED"
+	LambdaInvokeModeResponseStream = "RESPONSE_STREAM"
+
+	// KafkaSchemaRegistryAuthType values
+	LambdaKafkaSchemaRegistryAuthTypeBasicAuth                = "BASIC_AUTH"
+	LambdaKafkaSchemaRegistryAuthTypeClientCertificateTlsAuth = "CLIENT_CERTIFICATE_TLS_AUTH"
+	LambdaKafkaSchemaRegistryAuthTypeServerRootCaCertificate  = "SERVER_ROOT_CA_CERTIFICATE"
+
+	// KafkaSchemaValidationAttribute values
+	LambdaKafkaSchemaValidationAttributeKey   = "KEY"
+	LambdaKafkaSchemaValidationAttributeValue = "VALUE"
+
+	// LastUpdateStatus values
+	LambdaLastUpdateStatusSuccessful = "Successful"
+	LambdaLastUpdateStatusFailed     = "Failed"
+	LambdaLastUpdateStatusInprogress = "InProgress"
+
+	// LastUpdateStatusReasonCode values
+	LambdaLastUpdateStatusReasonCodeEnilimitexceeded                     = "EniLimitExceeded"
+	LambdaLastUpdateStatusReasonCodeInsufficientrolepermissions          = "InsufficientRolePermissions"
+	LambdaLastUpdateStatusReasonCodeInvalidconfiguration                 = "InvalidConfiguration"
+	LambdaLastUpdateStatusReasonCodeInternalerror                        = "InternalError"
+	LambdaLastUpdateStatusReasonCodeSubnetoutofipaddresses               = "SubnetOutOfIPAddresses"
+	LambdaLastUpdateStatusReasonCodeInvalidsubnet                        = "InvalidSubnet"
+	LambdaLastUpdateStatusReasonCodeInvalidsecuritygroup                 = "InvalidSecurityGroup"
+	LambdaLastUpdateStatusReasonCodeImagedeleted                         = "ImageDeleted"
+	LambdaLastUpdateStatusReasonCodeImageaccessdenied                    = "ImageAccessDenied"
+	LambdaLastUpdateStatusReasonCodeInvalidimage                         = "InvalidImage"
+	LambdaLastUpdateStatusReasonCodeKmskeyaccessdenied                   = "KMSKeyAccessDenied"
+	LambdaLastUpdateStatusReasonCodeKmskeynotfound                       = "KMSKeyNotFound"
+	LambdaLastUpdateStatusReasonCodeInvalidstatekmskey                   = "InvalidStateKMSKey"
+	LambdaLastUpdateStatusReasonCodeDisabledkmskey                       = "DisabledKMSKey"
+	LambdaLastUpdateStatusReasonCodeEfsioerror                           = "EFSIOError"
+	LambdaLastUpdateStatusReasonCodeEfsmountconnectivityerror            = "EFSMountConnectivityError"
+	LambdaLastUpdateStatusReasonCodeEfsmountfailure                      = "EFSMountFailure"
+	LambdaLastUpdateStatusReasonCodeEfsmounttimeout                      = "EFSMountTimeout"
+	LambdaLastUpdateStatusReasonCodeInvalidruntime                       = "InvalidRuntime"
+	LambdaLastUpdateStatusReasonCodeInvalidzipfileexception              = "InvalidZipFileException"
+	LambdaLastUpdateStatusReasonCodeFunctionerror                        = "FunctionError"
+	LambdaLastUpdateStatusReasonCodeVcpulimitexceeded                    = "VcpuLimitExceeded"
+	LambdaLastUpdateStatusReasonCodeCapacityproviderscalinglimitexceeded = "CapacityProviderScalingLimitExceeded"
+	LambdaLastUpdateStatusReasonCodeInsufficientcapacity                 = "InsufficientCapacity"
+	LambdaLastUpdateStatusReasonCodeEc2requestlimitexceeded              = "EC2RequestLimitExceeded"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorInittimeout             = "FunctionError.InitTimeout"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorRuntimeiniterror        = "FunctionError.RuntimeInitError"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorExtensioniniterror      = "FunctionError.ExtensionInitError"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorInvalidentrypoint       = "FunctionError.InvalidEntryPoint"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorInvalidworkingdirectory = "FunctionError.InvalidWorkingDirectory"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorPermissiondenied        = "FunctionError.PermissionDenied"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorToomanyextensions       = "FunctionError.TooManyExtensions"
+	LambdaLastUpdateStatusReasonCodeFunctionerrorInitresourceexhausted   = "FunctionError.InitResourceExhausted"
+	LambdaLastUpdateStatusReasonCodeDisallowedbyvpcencryptioncontrol     = "DisallowedByVpcEncryptionControl"
+
+	// LogFormat values
+	LambdaLogFormatJson = "JSON"
+	LambdaLogFormatText = "Text"
+
+	// LogType values
+	LambdaLogTypeNone = "None"
+	LambdaLogTypeTail = "Tail"
+
+	// OperationAction values
+	LambdaOperationActionStart   = "START"
+	LambdaOperationActionSucceed = "SUCCEED"
+	LambdaOperationActionFail    = "FAIL"
+	LambdaOperationActionRetry   = "RETRY"
+	LambdaOperationActionCancel  = "CANCEL"
+
+	// OperationStatus values
+	LambdaOperationStatusStarted   = "STARTED"
+	LambdaOperationStatusPending   = "PENDING"
+	LambdaOperationStatusReady     = "READY"
+	LambdaOperationStatusSucceeded = "SUCCEEDED"
+	LambdaOperationStatusFailed    = "FAILED"
+	LambdaOperationStatusCancelled = "CANCELLED"
+	LambdaOperationStatusTimedOut  = "TIMED_OUT"
+	LambdaOperationStatusStopped   = "STOPPED"
+
+	// OperationType values
+	LambdaOperationTypeExecution     = "EXECUTION"
+	LambdaOperationTypeContext       = "CONTEXT"
+	LambdaOperationTypeStep          = "STEP"
+	LambdaOperationTypeWait          = "WAIT"
+	LambdaOperationTypeCallback      = "CALLBACK"
+	LambdaOperationTypeChainedInvoke = "CHAINED_INVOKE"
+
+	// PackageType values
+	LambdaPackageTypeZip   = "Zip"
+	LambdaPackageTypeImage = "Image"
+
+	// ProvisionedConcurrencyStatusEnum values
+	LambdaProvisionedConcurrencyStatusEnumInProgress = "IN_PROGRESS"
+	LambdaProvisionedConcurrencyStatusEnumReady      = "READY"
+	LambdaProvisionedConcurrencyStatusEnumFailed     = "FAILED"
+
+	// RecursiveLoop values
+	LambdaRecursiveLoopAllow     = "Allow"
+	LambdaRecursiveLoopTerminate = "Terminate"
+
+	// ResponseStreamingInvocationType values
+	LambdaResponseStreamingInvocationTypeRequestresponse = "RequestResponse"
+	LambdaResponseStreamingInvocationTypeDryrun          = "DryRun"
+
 	// Runtime values
 	LambdaRuntimeNodejs         = "nodejs"
 	LambdaRuntimeNodejs43       = "nodejs4.3"
@@ -51,14 +250,333 @@ const (
 	LambdaRuntimeJava25         = "java25"
 	LambdaRuntimeDotnet10       = "dotnet10"
 
-	// Architecture values
-	LambdaArchitectureX8664 = "x86_64"
-	LambdaArchitectureArm64 = "arm64"
+	// SchemaRegistryEventRecordFormat values
+	LambdaSchemaRegistryEventRecordFormatJson   = "JSON"
+	LambdaSchemaRegistryEventRecordFormatSource = "SOURCE"
 
-	// PackageType values
-	LambdaPackageTypeZip   = "Zip"
-	LambdaPackageTypeImage = "Image"
+	// SnapStartApplyOn values
+	LambdaSnapStartApplyOnPublishedversions = "PublishedVersions"
+	LambdaSnapStartApplyOnNone              = "None"
+
+	// SnapStartOptimizationStatus values
+	LambdaSnapStartOptimizationStatusOn  = "On"
+	LambdaSnapStartOptimizationStatusOff = "Off"
+
+	// SourceAccessType values
+	LambdaSourceAccessTypeBasicAuth                = "BASIC_AUTH"
+	LambdaSourceAccessTypeVpcSubnet                = "VPC_SUBNET"
+	LambdaSourceAccessTypeVpcSecurityGroup         = "VPC_SECURITY_GROUP"
+	LambdaSourceAccessTypeSaslScram512Auth         = "SASL_SCRAM_512_AUTH"
+	LambdaSourceAccessTypeSaslScram256Auth         = "SASL_SCRAM_256_AUTH"
+	LambdaSourceAccessTypeVirtualHost              = "VIRTUAL_HOST"
+	LambdaSourceAccessTypeClientCertificateTlsAuth = "CLIENT_CERTIFICATE_TLS_AUTH"
+	LambdaSourceAccessTypeServerRootCaCertificate  = "SERVER_ROOT_CA_CERTIFICATE"
+
+	// State values
+	LambdaStatePending            = "Pending"
+	LambdaStateActive             = "Active"
+	LambdaStateInactive           = "Inactive"
+	LambdaStateFailed             = "Failed"
+	LambdaStateDeactivating       = "Deactivating"
+	LambdaStateDeactivated        = "Deactivated"
+	LambdaStateActivenoninvocable = "ActiveNonInvocable"
+	LambdaStateDeleting           = "Deleting"
+
+	// StateReasonCode values
+	LambdaStateReasonCodeIdle                                 = "Idle"
+	LambdaStateReasonCodeCreating                             = "Creating"
+	LambdaStateReasonCodeRestoring                            = "Restoring"
+	LambdaStateReasonCodeEnilimitexceeded                     = "EniLimitExceeded"
+	LambdaStateReasonCodeInsufficientrolepermissions          = "InsufficientRolePermissions"
+	LambdaStateReasonCodeInvalidconfiguration                 = "InvalidConfiguration"
+	LambdaStateReasonCodeInternalerror                        = "InternalError"
+	LambdaStateReasonCodeSubnetoutofipaddresses               = "SubnetOutOfIPAddresses"
+	LambdaStateReasonCodeInvalidsubnet                        = "InvalidSubnet"
+	LambdaStateReasonCodeInvalidsecuritygroup                 = "InvalidSecurityGroup"
+	LambdaStateReasonCodeImagedeleted                         = "ImageDeleted"
+	LambdaStateReasonCodeImageaccessdenied                    = "ImageAccessDenied"
+	LambdaStateReasonCodeInvalidimage                         = "InvalidImage"
+	LambdaStateReasonCodeKmskeyaccessdenied                   = "KMSKeyAccessDenied"
+	LambdaStateReasonCodeKmskeynotfound                       = "KMSKeyNotFound"
+	LambdaStateReasonCodeInvalidstatekmskey                   = "InvalidStateKMSKey"
+	LambdaStateReasonCodeDisabledkmskey                       = "DisabledKMSKey"
+	LambdaStateReasonCodeEfsioerror                           = "EFSIOError"
+	LambdaStateReasonCodeEfsmountconnectivityerror            = "EFSMountConnectivityError"
+	LambdaStateReasonCodeEfsmountfailure                      = "EFSMountFailure"
+	LambdaStateReasonCodeEfsmounttimeout                      = "EFSMountTimeout"
+	LambdaStateReasonCodeInvalidruntime                       = "InvalidRuntime"
+	LambdaStateReasonCodeInvalidzipfileexception              = "InvalidZipFileException"
+	LambdaStateReasonCodeFunctionerror                        = "FunctionError"
+	LambdaStateReasonCodeDrainingdurableexecutions            = "DrainingDurableExecutions"
+	LambdaStateReasonCodeVcpulimitexceeded                    = "VcpuLimitExceeded"
+	LambdaStateReasonCodeCapacityproviderscalinglimitexceeded = "CapacityProviderScalingLimitExceeded"
+	LambdaStateReasonCodeInsufficientcapacity                 = "InsufficientCapacity"
+	LambdaStateReasonCodeEc2requestlimitexceeded              = "EC2RequestLimitExceeded"
+	LambdaStateReasonCodeFunctionerrorInittimeout             = "FunctionError.InitTimeout"
+	LambdaStateReasonCodeFunctionerrorRuntimeiniterror        = "FunctionError.RuntimeInitError"
+	LambdaStateReasonCodeFunctionerrorExtensioniniterror      = "FunctionError.ExtensionInitError"
+	LambdaStateReasonCodeFunctionerrorInvalidentrypoint       = "FunctionError.InvalidEntryPoint"
+	LambdaStateReasonCodeFunctionerrorInvalidworkingdirectory = "FunctionError.InvalidWorkingDirectory"
+	LambdaStateReasonCodeFunctionerrorPermissiondenied        = "FunctionError.PermissionDenied"
+	LambdaStateReasonCodeFunctionerrorToomanyextensions       = "FunctionError.TooManyExtensions"
+	LambdaStateReasonCodeFunctionerrorInitresourceexhausted   = "FunctionError.InitResourceExhausted"
+	LambdaStateReasonCodeDisallowedbyvpcencryptioncontrol     = "DisallowedByVpcEncryptionControl"
+
+	// SystemLogLevel values
+	LambdaSystemLogLevelDebug = "DEBUG"
+	LambdaSystemLogLevelInfo  = "INFO"
+	LambdaSystemLogLevelWarn  = "WARN"
+
+	// TenantIsolationMode values
+	LambdaTenantIsolationModePerTenant = "PER_TENANT"
+
+	// ThrottleReason values
+	LambdaThrottleReasonConcurrentinvocationlimitexceeded                 = "ConcurrentInvocationLimitExceeded"
+	LambdaThrottleReasonFunctioninvocationratelimitexceeded               = "FunctionInvocationRateLimitExceeded"
+	LambdaThrottleReasonReservedfunctionconcurrentinvocationlimitexceeded = "ReservedFunctionConcurrentInvocationLimitExceeded"
+	LambdaThrottleReasonReservedfunctioninvocationratelimitexceeded       = "ReservedFunctionInvocationRateLimitExceeded"
+	LambdaThrottleReasonCallerratelimitexceeded                           = "CallerRateLimitExceeded"
+	LambdaThrottleReasonConcurrentsnapshotcreatelimitexceeded             = "ConcurrentSnapshotCreateLimitExceeded"
+
+	// TracingMode values
+	LambdaTracingModeActive      = "Active"
+	LambdaTracingModePassthrough = "PassThrough"
+
+	// UpdateRuntimeOn values
+	LambdaUpdateRuntimeOnAuto           = "Auto"
+	LambdaUpdateRuntimeOnManual         = "Manual"
+	LambdaUpdateRuntimeOnFunctionupdate = "FunctionUpdate"
 )
+
+var lambdaApplicationLogLevelValues = []string{
+	"TRACE",
+	"DEBUG",
+	"INFO",
+	"WARN",
+	"ERROR",
+	"FATAL",
+}
+
+var lambdaArchitectureValues = []string{
+	"x86_64",
+	"arm64",
+}
+
+var lambdaCapacityProviderPredefinedMetricTypeValues = []string{
+	"LambdaCapacityProviderAverageCPUUtilization",
+}
+
+var lambdaCapacityProviderScalingModeValues = []string{
+	"Auto",
+	"Manual",
+}
+
+var lambdaCapacityProviderStateValues = []string{
+	"Pending",
+	"Active",
+	"Failed",
+	"Deleting",
+}
+
+var lambdaCodeSigningPolicyValues = []string{
+	"Warn",
+	"Enforce",
+}
+
+var lambdaEndPointTypeValues = []string{
+	"KAFKA_BOOTSTRAP_SERVERS",
+}
+
+var lambdaEventSourceMappingMetricValues = []string{
+	"EventCount",
+}
+
+var lambdaEventSourcePositionValues = []string{
+	"TRIM_HORIZON",
+	"LATEST",
+	"AT_TIMESTAMP",
+}
+
+var lambdaEventTypeValues = []string{
+	"ExecutionStarted",
+	"ExecutionSucceeded",
+	"ExecutionFailed",
+	"ExecutionTimedOut",
+	"ExecutionStopped",
+	"ContextStarted",
+	"ContextSucceeded",
+	"ContextFailed",
+	"WaitStarted",
+	"WaitSucceeded",
+	"WaitCancelled",
+	"StepStarted",
+	"StepSucceeded",
+	"StepFailed",
+	"ChainedInvokeStarted",
+	"ChainedInvokeSucceeded",
+	"ChainedInvokeFailed",
+	"ChainedInvokeTimedOut",
+	"ChainedInvokeStopped",
+	"CallbackStarted",
+	"CallbackSucceeded",
+	"CallbackFailed",
+	"CallbackTimedOut",
+	"InvocationCompleted",
+}
+
+var lambdaExecutionStatusValues = []string{
+	"RUNNING",
+	"SUCCEEDED",
+	"FAILED",
+	"TIMED_OUT",
+	"STOPPED",
+}
+
+var lambdaFullDocumentValues = []string{
+	"UpdateLookup",
+	"Default",
+}
+
+var lambdaFunctionResponseTypeValues = []string{
+	"ReportBatchItemFailures",
+}
+
+var lambdaFunctionUrlAuthTypeValues = []string{
+	"NONE",
+	"AWS_IAM",
+}
+
+var lambdaFunctionVersionValues = []string{
+	"ALL",
+}
+
+var lambdaFunctionVersionLatestPublishedValues = []string{
+	"LATEST_PUBLISHED",
+}
+
+var lambdaInvocationTypeValues = []string{
+	"Event",
+	"RequestResponse",
+	"DryRun",
+}
+
+var lambdaInvokeModeValues = []string{
+	"BUFFERED",
+	"RESPONSE_STREAM",
+}
+
+var lambdaKafkaSchemaRegistryAuthTypeValues = []string{
+	"BASIC_AUTH",
+	"CLIENT_CERTIFICATE_TLS_AUTH",
+	"SERVER_ROOT_CA_CERTIFICATE",
+}
+
+var lambdaKafkaSchemaValidationAttributeValues = []string{
+	"KEY",
+	"VALUE",
+}
+
+var lambdaLastUpdateStatusValues = []string{
+	"Successful",
+	"Failed",
+	"InProgress",
+}
+
+var lambdaLastUpdateStatusReasonCodeValues = []string{
+	"EniLimitExceeded",
+	"InsufficientRolePermissions",
+	"InvalidConfiguration",
+	"InternalError",
+	"SubnetOutOfIPAddresses",
+	"InvalidSubnet",
+	"InvalidSecurityGroup",
+	"ImageDeleted",
+	"ImageAccessDenied",
+	"InvalidImage",
+	"KMSKeyAccessDenied",
+	"KMSKeyNotFound",
+	"InvalidStateKMSKey",
+	"DisabledKMSKey",
+	"EFSIOError",
+	"EFSMountConnectivityError",
+	"EFSMountFailure",
+	"EFSMountTimeout",
+	"InvalidRuntime",
+	"InvalidZipFileException",
+	"FunctionError",
+	"VcpuLimitExceeded",
+	"CapacityProviderScalingLimitExceeded",
+	"InsufficientCapacity",
+	"EC2RequestLimitExceeded",
+	"FunctionError.InitTimeout",
+	"FunctionError.RuntimeInitError",
+	"FunctionError.ExtensionInitError",
+	"FunctionError.InvalidEntryPoint",
+	"FunctionError.InvalidWorkingDirectory",
+	"FunctionError.PermissionDenied",
+	"FunctionError.TooManyExtensions",
+	"FunctionError.InitResourceExhausted",
+	"DisallowedByVpcEncryptionControl",
+}
+
+var lambdaLogFormatValues = []string{
+	"JSON",
+	"Text",
+}
+
+var lambdaLogTypeValues = []string{
+	"None",
+	"Tail",
+}
+
+var lambdaOperationActionValues = []string{
+	"START",
+	"SUCCEED",
+	"FAIL",
+	"RETRY",
+	"CANCEL",
+}
+
+var lambdaOperationStatusValues = []string{
+	"STARTED",
+	"PENDING",
+	"READY",
+	"SUCCEEDED",
+	"FAILED",
+	"CANCELLED",
+	"TIMED_OUT",
+	"STOPPED",
+}
+
+var lambdaOperationTypeValues = []string{
+	"EXECUTION",
+	"CONTEXT",
+	"STEP",
+	"WAIT",
+	"CALLBACK",
+	"CHAINED_INVOKE",
+}
+
+var lambdaPackageTypeValues = []string{
+	"Zip",
+	"Image",
+}
+
+var lambdaProvisionedConcurrencyStatusEnumValues = []string{
+	"IN_PROGRESS",
+	"READY",
+	"FAILED",
+}
+
+var lambdaRecursiveLoopValues = []string{
+	"Allow",
+	"Terminate",
+}
+
+var lambdaResponseStreamingInvocationTypeValues = []string{
+	"RequestResponse",
+	"DryRun",
+}
 
 var lambdaRuntimeValues = []string{
 	"nodejs",
@@ -108,32 +626,250 @@ var lambdaRuntimeValues = []string{
 	"dotnet10",
 }
 
-var lambdaArchitectureValues = []string{
-	"x86_64",
-	"arm64",
+var lambdaSchemaRegistryEventRecordFormatValues = []string{
+	"JSON",
+	"SOURCE",
 }
 
-var lambdaPackageTypeValues = []string{
-	"Zip",
-	"Image",
+var lambdaSnapStartApplyOnValues = []string{
+	"PublishedVersions",
+	"None",
+}
+
+var lambdaSnapStartOptimizationStatusValues = []string{
+	"On",
+	"Off",
+}
+
+var lambdaSourceAccessTypeValues = []string{
+	"BASIC_AUTH",
+	"VPC_SUBNET",
+	"VPC_SECURITY_GROUP",
+	"SASL_SCRAM_512_AUTH",
+	"SASL_SCRAM_256_AUTH",
+	"VIRTUAL_HOST",
+	"CLIENT_CERTIFICATE_TLS_AUTH",
+	"SERVER_ROOT_CA_CERTIFICATE",
+}
+
+var lambdaStateValues = []string{
+	"Pending",
+	"Active",
+	"Inactive",
+	"Failed",
+	"Deactivating",
+	"Deactivated",
+	"ActiveNonInvocable",
+	"Deleting",
+}
+
+var lambdaStateReasonCodeValues = []string{
+	"Idle",
+	"Creating",
+	"Restoring",
+	"EniLimitExceeded",
+	"InsufficientRolePermissions",
+	"InvalidConfiguration",
+	"InternalError",
+	"SubnetOutOfIPAddresses",
+	"InvalidSubnet",
+	"InvalidSecurityGroup",
+	"ImageDeleted",
+	"ImageAccessDenied",
+	"InvalidImage",
+	"KMSKeyAccessDenied",
+	"KMSKeyNotFound",
+	"InvalidStateKMSKey",
+	"DisabledKMSKey",
+	"EFSIOError",
+	"EFSMountConnectivityError",
+	"EFSMountFailure",
+	"EFSMountTimeout",
+	"InvalidRuntime",
+	"InvalidZipFileException",
+	"FunctionError",
+	"DrainingDurableExecutions",
+	"VcpuLimitExceeded",
+	"CapacityProviderScalingLimitExceeded",
+	"InsufficientCapacity",
+	"EC2RequestLimitExceeded",
+	"FunctionError.InitTimeout",
+	"FunctionError.RuntimeInitError",
+	"FunctionError.ExtensionInitError",
+	"FunctionError.InvalidEntryPoint",
+	"FunctionError.InvalidWorkingDirectory",
+	"FunctionError.PermissionDenied",
+	"FunctionError.TooManyExtensions",
+	"FunctionError.InitResourceExhausted",
+	"DisallowedByVpcEncryptionControl",
+}
+
+var lambdaSystemLogLevelValues = []string{
+	"DEBUG",
+	"INFO",
+	"WARN",
+}
+
+var lambdaTenantIsolationModeValues = []string{
+	"PER_TENANT",
+}
+
+var lambdaThrottleReasonValues = []string{
+	"ConcurrentInvocationLimitExceeded",
+	"FunctionInvocationRateLimitExceeded",
+	"ReservedFunctionConcurrentInvocationLimitExceeded",
+	"ReservedFunctionInvocationRateLimitExceeded",
+	"CallerRateLimitExceeded",
+	"ConcurrentSnapshotCreateLimitExceeded",
+}
+
+var lambdaTracingModeValues = []string{
+	"Active",
+	"PassThrough",
+}
+
+var lambdaUpdateRuntimeOnValues = []string{
+	"Auto",
+	"Manual",
+	"FunctionUpdate",
 }
 
 func getLambdaEnum(name string) []string {
 	switch name {
-	case "Runtime":
-		return lambdaRuntimeValues
+	case "ApplicationLogLevel":
+		return lambdaApplicationLogLevelValues
 	case "Architecture":
 		return lambdaArchitectureValues
+	case "CapacityProviderPredefinedMetricType":
+		return lambdaCapacityProviderPredefinedMetricTypeValues
+	case "CapacityProviderScalingMode":
+		return lambdaCapacityProviderScalingModeValues
+	case "CapacityProviderState":
+		return lambdaCapacityProviderStateValues
+	case "CodeSigningPolicy":
+		return lambdaCodeSigningPolicyValues
+	case "EndPointType":
+		return lambdaEndPointTypeValues
+	case "EventSourceMappingMetric":
+		return lambdaEventSourceMappingMetricValues
+	case "EventSourcePosition":
+		return lambdaEventSourcePositionValues
+	case "EventType":
+		return lambdaEventTypeValues
+	case "ExecutionStatus":
+		return lambdaExecutionStatusValues
+	case "FullDocument":
+		return lambdaFullDocumentValues
+	case "FunctionResponseType":
+		return lambdaFunctionResponseTypeValues
+	case "FunctionUrlAuthType":
+		return lambdaFunctionUrlAuthTypeValues
+	case "FunctionVersion":
+		return lambdaFunctionVersionValues
+	case "FunctionVersionLatestPublished":
+		return lambdaFunctionVersionLatestPublishedValues
+	case "InvocationType":
+		return lambdaInvocationTypeValues
+	case "InvokeMode":
+		return lambdaInvokeModeValues
+	case "KafkaSchemaRegistryAuthType":
+		return lambdaKafkaSchemaRegistryAuthTypeValues
+	case "KafkaSchemaValidationAttribute":
+		return lambdaKafkaSchemaValidationAttributeValues
+	case "LastUpdateStatus":
+		return lambdaLastUpdateStatusValues
+	case "LastUpdateStatusReasonCode":
+		return lambdaLastUpdateStatusReasonCodeValues
+	case "LogFormat":
+		return lambdaLogFormatValues
+	case "LogType":
+		return lambdaLogTypeValues
+	case "OperationAction":
+		return lambdaOperationActionValues
+	case "OperationStatus":
+		return lambdaOperationStatusValues
+	case "OperationType":
+		return lambdaOperationTypeValues
 	case "PackageType":
 		return lambdaPackageTypeValues
+	case "ProvisionedConcurrencyStatusEnum":
+		return lambdaProvisionedConcurrencyStatusEnumValues
+	case "RecursiveLoop":
+		return lambdaRecursiveLoopValues
+	case "ResponseStreamingInvocationType":
+		return lambdaResponseStreamingInvocationTypeValues
+	case "Runtime":
+		return lambdaRuntimeValues
+	case "SchemaRegistryEventRecordFormat":
+		return lambdaSchemaRegistryEventRecordFormatValues
+	case "SnapStartApplyOn":
+		return lambdaSnapStartApplyOnValues
+	case "SnapStartOptimizationStatus":
+		return lambdaSnapStartOptimizationStatusValues
+	case "SourceAccessType":
+		return lambdaSourceAccessTypeValues
+	case "State":
+		return lambdaStateValues
+	case "StateReasonCode":
+		return lambdaStateReasonCodeValues
+	case "SystemLogLevel":
+		return lambdaSystemLogLevelValues
+	case "TenantIsolationMode":
+		return lambdaTenantIsolationModeValues
+	case "ThrottleReason":
+		return lambdaThrottleReasonValues
+	case "TracingMode":
+		return lambdaTracingModeValues
+	case "UpdateRuntimeOn":
+		return lambdaUpdateRuntimeOnValues
 	}
 	return nil
 }
 
 func getLambdaEnumNames() []string {
 	return []string{
-		"Runtime",
+		"ApplicationLogLevel",
 		"Architecture",
+		"CapacityProviderPredefinedMetricType",
+		"CapacityProviderScalingMode",
+		"CapacityProviderState",
+		"CodeSigningPolicy",
+		"EndPointType",
+		"EventSourceMappingMetric",
+		"EventSourcePosition",
+		"EventType",
+		"ExecutionStatus",
+		"FullDocument",
+		"FunctionResponseType",
+		"FunctionUrlAuthType",
+		"FunctionVersion",
+		"FunctionVersionLatestPublished",
+		"InvocationType",
+		"InvokeMode",
+		"KafkaSchemaRegistryAuthType",
+		"KafkaSchemaValidationAttribute",
+		"LastUpdateStatus",
+		"LastUpdateStatusReasonCode",
+		"LogFormat",
+		"LogType",
+		"OperationAction",
+		"OperationStatus",
+		"OperationType",
 		"PackageType",
+		"ProvisionedConcurrencyStatusEnum",
+		"RecursiveLoop",
+		"ResponseStreamingInvocationType",
+		"Runtime",
+		"SchemaRegistryEventRecordFormat",
+		"SnapStartApplyOn",
+		"SnapStartOptimizationStatus",
+		"SourceAccessType",
+		"State",
+		"StateReasonCode",
+		"SystemLogLevel",
+		"TenantIsolationMode",
+		"ThrottleReason",
+		"TracingMode",
+		"UpdateRuntimeOn",
 	}
 }

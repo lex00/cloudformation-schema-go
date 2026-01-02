@@ -4,11 +4,226 @@ package enums
 
 // Events enum constants
 const (
+	// ApiDestinationHttpMethod values
+	EventsApiDestinationHttpMethodPost    = "POST"
+	EventsApiDestinationHttpMethodGet     = "GET"
+	EventsApiDestinationHttpMethodHead    = "HEAD"
+	EventsApiDestinationHttpMethodOptions = "OPTIONS"
+	EventsApiDestinationHttpMethodPut     = "PUT"
+	EventsApiDestinationHttpMethodPatch   = "PATCH"
+	EventsApiDestinationHttpMethodDelete  = "DELETE"
+
+	// ApiDestinationState values
+	EventsApiDestinationStateActive   = "ACTIVE"
+	EventsApiDestinationStateInactive = "INACTIVE"
+
+	// ArchiveState values
+	EventsArchiveStateEnabled      = "ENABLED"
+	EventsArchiveStateDisabled     = "DISABLED"
+	EventsArchiveStateCreating     = "CREATING"
+	EventsArchiveStateUpdating     = "UPDATING"
+	EventsArchiveStateCreateFailed = "CREATE_FAILED"
+	EventsArchiveStateUpdateFailed = "UPDATE_FAILED"
+
+	// AssignPublicIp values
+	EventsAssignPublicIpEnabled  = "ENABLED"
+	EventsAssignPublicIpDisabled = "DISABLED"
+
+	// ConnectionAuthorizationType values
+	EventsConnectionAuthorizationTypeBasic                  = "BASIC"
+	EventsConnectionAuthorizationTypeOauthClientCredentials = "OAUTH_CLIENT_CREDENTIALS"
+	EventsConnectionAuthorizationTypeApiKey                 = "API_KEY"
+
+	// ConnectionOAuthHttpMethod values
+	EventsConnectionOAuthHttpMethodGet  = "GET"
+	EventsConnectionOAuthHttpMethodPost = "POST"
+	EventsConnectionOAuthHttpMethodPut  = "PUT"
+
+	// ConnectionState values
+	EventsConnectionStateCreating           = "CREATING"
+	EventsConnectionStateUpdating           = "UPDATING"
+	EventsConnectionStateDeleting           = "DELETING"
+	EventsConnectionStateAuthorized         = "AUTHORIZED"
+	EventsConnectionStateDeauthorized       = "DEAUTHORIZED"
+	EventsConnectionStateAuthorizing        = "AUTHORIZING"
+	EventsConnectionStateDeauthorizing      = "DEAUTHORIZING"
+	EventsConnectionStateActive             = "ACTIVE"
+	EventsConnectionStateFailedConnectivity = "FAILED_CONNECTIVITY"
+
+	// EndpointState values
+	EventsEndpointStateActive       = "ACTIVE"
+	EventsEndpointStateCreating     = "CREATING"
+	EventsEndpointStateUpdating     = "UPDATING"
+	EventsEndpointStateDeleting     = "DELETING"
+	EventsEndpointStateCreateFailed = "CREATE_FAILED"
+	EventsEndpointStateUpdateFailed = "UPDATE_FAILED"
+	EventsEndpointStateDeleteFailed = "DELETE_FAILED"
+
+	// EventSourceState values
+	EventsEventSourceStatePending = "PENDING"
+	EventsEventSourceStateActive  = "ACTIVE"
+	EventsEventSourceStateDeleted = "DELETED"
+
+	// IncludeDetail values
+	EventsIncludeDetailNone = "NONE"
+	EventsIncludeDetailFull = "FULL"
+
+	// LaunchType values
+	EventsLaunchTypeEc2      = "EC2"
+	EventsLaunchTypeFargate  = "FARGATE"
+	EventsLaunchTypeExternal = "EXTERNAL"
+
+	// Level values
+	EventsLevelOff   = "OFF"
+	EventsLevelError = "ERROR"
+	EventsLevelInfo  = "INFO"
+	EventsLevelTrace = "TRACE"
+
+	// PlacementConstraintType values
+	EventsPlacementConstraintTypeDistinctinstance = "distinctInstance"
+	EventsPlacementConstraintTypeMemberof         = "memberOf"
+
+	// PlacementStrategyType values
+	EventsPlacementStrategyTypeRandom  = "random"
+	EventsPlacementStrategyTypeSpread  = "spread"
+	EventsPlacementStrategyTypeBinpack = "binpack"
+
+	// PropagateTags values
+	EventsPropagateTagsTaskDefinition = "TASK_DEFINITION"
+
+	// ReplayState values
+	EventsReplayStateStarting   = "STARTING"
+	EventsReplayStateRunning    = "RUNNING"
+	EventsReplayStateCancelling = "CANCELLING"
+	EventsReplayStateCompleted  = "COMPLETED"
+	EventsReplayStateCancelled  = "CANCELLED"
+	EventsReplayStateFailed     = "FAILED"
+
+	// ReplicationState values
+	EventsReplicationStateEnabled  = "ENABLED"
+	EventsReplicationStateDisabled = "DISABLED"
+
 	// RuleState values
 	EventsRuleStateEnabled                                  = "ENABLED"
 	EventsRuleStateDisabled                                 = "DISABLED"
 	EventsRuleStateEnabledWithAllCloudtrailManagementEvents = "ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS"
 )
+
+var eventsApiDestinationHttpMethodValues = []string{
+	"POST",
+	"GET",
+	"HEAD",
+	"OPTIONS",
+	"PUT",
+	"PATCH",
+	"DELETE",
+}
+
+var eventsApiDestinationStateValues = []string{
+	"ACTIVE",
+	"INACTIVE",
+}
+
+var eventsArchiveStateValues = []string{
+	"ENABLED",
+	"DISABLED",
+	"CREATING",
+	"UPDATING",
+	"CREATE_FAILED",
+	"UPDATE_FAILED",
+}
+
+var eventsAssignPublicIpValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var eventsConnectionAuthorizationTypeValues = []string{
+	"BASIC",
+	"OAUTH_CLIENT_CREDENTIALS",
+	"API_KEY",
+}
+
+var eventsConnectionOAuthHttpMethodValues = []string{
+	"GET",
+	"POST",
+	"PUT",
+}
+
+var eventsConnectionStateValues = []string{
+	"CREATING",
+	"UPDATING",
+	"DELETING",
+	"AUTHORIZED",
+	"DEAUTHORIZED",
+	"AUTHORIZING",
+	"DEAUTHORIZING",
+	"ACTIVE",
+	"FAILED_CONNECTIVITY",
+}
+
+var eventsEndpointStateValues = []string{
+	"ACTIVE",
+	"CREATING",
+	"UPDATING",
+	"DELETING",
+	"CREATE_FAILED",
+	"UPDATE_FAILED",
+	"DELETE_FAILED",
+}
+
+var eventsEventSourceStateValues = []string{
+	"PENDING",
+	"ACTIVE",
+	"DELETED",
+}
+
+var eventsIncludeDetailValues = []string{
+	"NONE",
+	"FULL",
+}
+
+var eventsLaunchTypeValues = []string{
+	"EC2",
+	"FARGATE",
+	"EXTERNAL",
+}
+
+var eventsLevelValues = []string{
+	"OFF",
+	"ERROR",
+	"INFO",
+	"TRACE",
+}
+
+var eventsPlacementConstraintTypeValues = []string{
+	"distinctInstance",
+	"memberOf",
+}
+
+var eventsPlacementStrategyTypeValues = []string{
+	"random",
+	"spread",
+	"binpack",
+}
+
+var eventsPropagateTagsValues = []string{
+	"TASK_DEFINITION",
+}
+
+var eventsReplayStateValues = []string{
+	"STARTING",
+	"RUNNING",
+	"CANCELLING",
+	"COMPLETED",
+	"CANCELLED",
+	"FAILED",
+}
+
+var eventsReplicationStateValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
 
 var eventsRuleStateValues = []string{
 	"ENABLED",
@@ -18,6 +233,40 @@ var eventsRuleStateValues = []string{
 
 func getEventsEnum(name string) []string {
 	switch name {
+	case "ApiDestinationHttpMethod":
+		return eventsApiDestinationHttpMethodValues
+	case "ApiDestinationState":
+		return eventsApiDestinationStateValues
+	case "ArchiveState":
+		return eventsArchiveStateValues
+	case "AssignPublicIp":
+		return eventsAssignPublicIpValues
+	case "ConnectionAuthorizationType":
+		return eventsConnectionAuthorizationTypeValues
+	case "ConnectionOAuthHttpMethod":
+		return eventsConnectionOAuthHttpMethodValues
+	case "ConnectionState":
+		return eventsConnectionStateValues
+	case "EndpointState":
+		return eventsEndpointStateValues
+	case "EventSourceState":
+		return eventsEventSourceStateValues
+	case "IncludeDetail":
+		return eventsIncludeDetailValues
+	case "LaunchType":
+		return eventsLaunchTypeValues
+	case "Level":
+		return eventsLevelValues
+	case "PlacementConstraintType":
+		return eventsPlacementConstraintTypeValues
+	case "PlacementStrategyType":
+		return eventsPlacementStrategyTypeValues
+	case "PropagateTags":
+		return eventsPropagateTagsValues
+	case "ReplayState":
+		return eventsReplayStateValues
+	case "ReplicationState":
+		return eventsReplicationStateValues
 	case "RuleState":
 		return eventsRuleStateValues
 	}
@@ -26,6 +275,23 @@ func getEventsEnum(name string) []string {
 
 func getEventsEnumNames() []string {
 	return []string{
+		"ApiDestinationHttpMethod",
+		"ApiDestinationState",
+		"ArchiveState",
+		"AssignPublicIp",
+		"ConnectionAuthorizationType",
+		"ConnectionOAuthHttpMethod",
+		"ConnectionState",
+		"EndpointState",
+		"EventSourceState",
+		"IncludeDetail",
+		"LaunchType",
+		"Level",
+		"PlacementConstraintType",
+		"PlacementStrategyType",
+		"PropagateTags",
+		"ReplayState",
+		"ReplicationState",
 		"RuleState",
 	}
 }
