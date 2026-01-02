@@ -4,6 +4,357 @@ package enums
 
 // S3 enum constants
 const (
+	// AnalyticsS3ExportFileFormat values
+	S3AnalyticsS3ExportFileFormatCsv = "CSV"
+
+	// ArchiveStatus values
+	S3ArchiveStatusArchiveAccess     = "ARCHIVE_ACCESS"
+	S3ArchiveStatusDeepArchiveAccess = "DEEP_ARCHIVE_ACCESS"
+
+	// BucketAbacStatus values
+	S3BucketAbacStatusEnabled  = "Enabled"
+	S3BucketAbacStatusDisabled = "Disabled"
+
+	// BucketAccelerateStatus values
+	S3BucketAccelerateStatusEnabled   = "Enabled"
+	S3BucketAccelerateStatusSuspended = "Suspended"
+
+	// BucketCannedACL values
+	S3BucketCannedACLPrivate           = "private"
+	S3BucketCannedACLPublicRead        = "public-read"
+	S3BucketCannedACLPublicReadWrite   = "public-read-write"
+	S3BucketCannedACLAuthenticatedRead = "authenticated-read"
+
+	// BucketLocationConstraint values
+	S3BucketLocationConstraintAfSouth1     = "af-south-1"
+	S3BucketLocationConstraintApEast1      = "ap-east-1"
+	S3BucketLocationConstraintApNortheast1 = "ap-northeast-1"
+	S3BucketLocationConstraintApNortheast2 = "ap-northeast-2"
+	S3BucketLocationConstraintApNortheast3 = "ap-northeast-3"
+	S3BucketLocationConstraintApSouth1     = "ap-south-1"
+	S3BucketLocationConstraintApSouth2     = "ap-south-2"
+	S3BucketLocationConstraintApSoutheast1 = "ap-southeast-1"
+	S3BucketLocationConstraintApSoutheast2 = "ap-southeast-2"
+	S3BucketLocationConstraintApSoutheast3 = "ap-southeast-3"
+	S3BucketLocationConstraintApSoutheast4 = "ap-southeast-4"
+	S3BucketLocationConstraintApSoutheast5 = "ap-southeast-5"
+	S3BucketLocationConstraintCaCentral1   = "ca-central-1"
+	S3BucketLocationConstraintCnNorth1     = "cn-north-1"
+	S3BucketLocationConstraintCnNorthwest1 = "cn-northwest-1"
+	S3BucketLocationConstraintEu           = "EU"
+	S3BucketLocationConstraintEuCentral1   = "eu-central-1"
+	S3BucketLocationConstraintEuCentral2   = "eu-central-2"
+	S3BucketLocationConstraintEuNorth1     = "eu-north-1"
+	S3BucketLocationConstraintEuSouth1     = "eu-south-1"
+	S3BucketLocationConstraintEuSouth2     = "eu-south-2"
+	S3BucketLocationConstraintEuWest1      = "eu-west-1"
+	S3BucketLocationConstraintEuWest2      = "eu-west-2"
+	S3BucketLocationConstraintEuWest3      = "eu-west-3"
+	S3BucketLocationConstraintIlCentral1   = "il-central-1"
+	S3BucketLocationConstraintMeCentral1   = "me-central-1"
+	S3BucketLocationConstraintMeSouth1     = "me-south-1"
+	S3BucketLocationConstraintSaEast1      = "sa-east-1"
+	S3BucketLocationConstraintUsEast2      = "us-east-2"
+	S3BucketLocationConstraintUsGovEast1   = "us-gov-east-1"
+	S3BucketLocationConstraintUsGovWest1   = "us-gov-west-1"
+	S3BucketLocationConstraintUsWest1      = "us-west-1"
+	S3BucketLocationConstraintUsWest2      = "us-west-2"
+
+	// BucketLogsPermission values
+	S3BucketLogsPermissionFullControl = "FULL_CONTROL"
+	S3BucketLogsPermissionRead        = "READ"
+	S3BucketLogsPermissionWrite       = "WRITE"
+
+	// BucketType values
+	S3BucketTypeDirectory = "Directory"
+
+	// BucketVersioningStatus values
+	S3BucketVersioningStatusEnabled   = "Enabled"
+	S3BucketVersioningStatusSuspended = "Suspended"
+
+	// ChecksumAlgorithm values
+	S3ChecksumAlgorithmCrc32     = "CRC32"
+	S3ChecksumAlgorithmCrc32c    = "CRC32C"
+	S3ChecksumAlgorithmSha1      = "SHA1"
+	S3ChecksumAlgorithmSha256    = "SHA256"
+	S3ChecksumAlgorithmCrc64nvme = "CRC64NVME"
+
+	// ChecksumMode values
+	S3ChecksumModeEnabled = "ENABLED"
+
+	// ChecksumType values
+	S3ChecksumTypeComposite  = "COMPOSITE"
+	S3ChecksumTypeFullObject = "FULL_OBJECT"
+
+	// CompressionType values
+	S3CompressionTypeNone  = "NONE"
+	S3CompressionTypeGzip  = "GZIP"
+	S3CompressionTypeBzip2 = "BZIP2"
+
+	// DataRedundancy values
+	S3DataRedundancySingleavailabilityzone = "SingleAvailabilityZone"
+	S3DataRedundancySinglelocalzone        = "SingleLocalZone"
+
+	// DeleteMarkerReplicationStatus values
+	S3DeleteMarkerReplicationStatusEnabled  = "Enabled"
+	S3DeleteMarkerReplicationStatusDisabled = "Disabled"
+
+	// EncodingType values
+	S3EncodingTypeUrl = "url"
+
+	// EncryptionType values
+	S3EncryptionTypeNone = "NONE"
+	S3EncryptionTypeSseC = "SSE-C"
+
+	// Event values
+	S3EventS3Reducedredundancylostobject                  = "s3:ReducedRedundancyLostObject"
+	S3EventS3Objectcreated                                = "s3:ObjectCreated:*"
+	S3EventS3ObjectcreatedPut                             = "s3:ObjectCreated:Put"
+	S3EventS3ObjectcreatedPost                            = "s3:ObjectCreated:Post"
+	S3EventS3ObjectcreatedCopy                            = "s3:ObjectCreated:Copy"
+	S3EventS3ObjectcreatedCompletemultipartupload         = "s3:ObjectCreated:CompleteMultipartUpload"
+	S3EventS3Objectremoved                                = "s3:ObjectRemoved:*"
+	S3EventS3ObjectremovedDelete                          = "s3:ObjectRemoved:Delete"
+	S3EventS3ObjectremovedDeletemarkercreated             = "s3:ObjectRemoved:DeleteMarkerCreated"
+	S3EventS3Objectrestore                                = "s3:ObjectRestore:*"
+	S3EventS3ObjectrestorePost                            = "s3:ObjectRestore:Post"
+	S3EventS3ObjectrestoreCompleted                       = "s3:ObjectRestore:Completed"
+	S3EventS3Replication                                  = "s3:Replication:*"
+	S3EventS3ReplicationOperationfailedreplication        = "s3:Replication:OperationFailedReplication"
+	S3EventS3ReplicationOperationnottracked               = "s3:Replication:OperationNotTracked"
+	S3EventS3ReplicationOperationmissedthreshold          = "s3:Replication:OperationMissedThreshold"
+	S3EventS3ReplicationOperationreplicatedafterthreshold = "s3:Replication:OperationReplicatedAfterThreshold"
+	S3EventS3ObjectrestoreDelete                          = "s3:ObjectRestore:Delete"
+	S3EventS3Lifecycletransition                          = "s3:LifecycleTransition"
+	S3EventS3Intelligenttiering                           = "s3:IntelligentTiering"
+	S3EventS3ObjectaclPut                                 = "s3:ObjectAcl:Put"
+	S3EventS3Lifecycleexpiration                          = "s3:LifecycleExpiration:*"
+	S3EventS3LifecycleexpirationDelete                    = "s3:LifecycleExpiration:Delete"
+	S3EventS3LifecycleexpirationDeletemarkercreated       = "s3:LifecycleExpiration:DeleteMarkerCreated"
+	S3EventS3Objecttagging                                = "s3:ObjectTagging:*"
+	S3EventS3ObjecttaggingPut                             = "s3:ObjectTagging:Put"
+	S3EventS3ObjecttaggingDelete                          = "s3:ObjectTagging:Delete"
+
+	// ExistingObjectReplicationStatus values
+	S3ExistingObjectReplicationStatusEnabled  = "Enabled"
+	S3ExistingObjectReplicationStatusDisabled = "Disabled"
+
+	// ExpirationState values
+	S3ExpirationStateEnabled  = "ENABLED"
+	S3ExpirationStateDisabled = "DISABLED"
+
+	// ExpirationStatus values
+	S3ExpirationStatusEnabled  = "Enabled"
+	S3ExpirationStatusDisabled = "Disabled"
+
+	// ExpressionType values
+	S3ExpressionTypeSql = "SQL"
+
+	// FileHeaderInfo values
+	S3FileHeaderInfoUse    = "USE"
+	S3FileHeaderInfoIgnore = "IGNORE"
+	S3FileHeaderInfoNone   = "NONE"
+
+	// FilterRuleName values
+	S3FilterRuleNamePrefix = "prefix"
+	S3FilterRuleNameSuffix = "suffix"
+
+	// IntelligentTieringAccessTier values
+	S3IntelligentTieringAccessTierArchiveAccess     = "ARCHIVE_ACCESS"
+	S3IntelligentTieringAccessTierDeepArchiveAccess = "DEEP_ARCHIVE_ACCESS"
+
+	// IntelligentTieringStatus values
+	S3IntelligentTieringStatusEnabled  = "Enabled"
+	S3IntelligentTieringStatusDisabled = "Disabled"
+
+	// InventoryConfigurationState values
+	S3InventoryConfigurationStateEnabled  = "ENABLED"
+	S3InventoryConfigurationStateDisabled = "DISABLED"
+
+	// InventoryFormat values
+	S3InventoryFormatCsv     = "CSV"
+	S3InventoryFormatOrc     = "ORC"
+	S3InventoryFormatParquet = "Parquet"
+
+	// InventoryFrequency values
+	S3InventoryFrequencyDaily  = "Daily"
+	S3InventoryFrequencyWeekly = "Weekly"
+
+	// InventoryIncludedObjectVersions values
+	S3InventoryIncludedObjectVersionsAll     = "All"
+	S3InventoryIncludedObjectVersionsCurrent = "Current"
+
+	// InventoryOptionalField values
+	S3InventoryOptionalFieldSize                         = "Size"
+	S3InventoryOptionalFieldLastmodifieddate             = "LastModifiedDate"
+	S3InventoryOptionalFieldStorageclass                 = "StorageClass"
+	S3InventoryOptionalFieldEtag                         = "ETag"
+	S3InventoryOptionalFieldIsmultipartuploaded          = "IsMultipartUploaded"
+	S3InventoryOptionalFieldReplicationstatus            = "ReplicationStatus"
+	S3InventoryOptionalFieldEncryptionstatus             = "EncryptionStatus"
+	S3InventoryOptionalFieldObjectlockretainuntildate    = "ObjectLockRetainUntilDate"
+	S3InventoryOptionalFieldObjectlockmode               = "ObjectLockMode"
+	S3InventoryOptionalFieldObjectlocklegalholdstatus    = "ObjectLockLegalHoldStatus"
+	S3InventoryOptionalFieldIntelligenttieringaccesstier = "IntelligentTieringAccessTier"
+	S3InventoryOptionalFieldBucketkeystatus              = "BucketKeyStatus"
+	S3InventoryOptionalFieldChecksumalgorithm            = "ChecksumAlgorithm"
+	S3InventoryOptionalFieldObjectaccesscontrollist      = "ObjectAccessControlList"
+	S3InventoryOptionalFieldObjectowner                  = "ObjectOwner"
+	S3InventoryOptionalFieldLifecycleexpirationdate      = "LifecycleExpirationDate"
+
+	// JSONType values
+	S3JSONTypeDocument = "DOCUMENT"
+	S3JSONTypeLines    = "LINES"
+
+	// LocationType values
+	S3LocationTypeAvailabilityzone = "AvailabilityZone"
+	S3LocationTypeLocalzone        = "LocalZone"
+
+	// MFADelete values
+	S3MFADeleteEnabled  = "Enabled"
+	S3MFADeleteDisabled = "Disabled"
+
+	// MFADeleteStatus values
+	S3MFADeleteStatusEnabled  = "Enabled"
+	S3MFADeleteStatusDisabled = "Disabled"
+
+	// MetadataDirective values
+	S3MetadataDirectiveCopy    = "COPY"
+	S3MetadataDirectiveReplace = "REPLACE"
+
+	// MetricsStatus values
+	S3MetricsStatusEnabled  = "Enabled"
+	S3MetricsStatusDisabled = "Disabled"
+
+	// ObjectAttributes values
+	S3ObjectAttributesEtag         = "ETag"
+	S3ObjectAttributesChecksum     = "Checksum"
+	S3ObjectAttributesObjectparts  = "ObjectParts"
+	S3ObjectAttributesStorageclass = "StorageClass"
+	S3ObjectAttributesObjectsize   = "ObjectSize"
+
+	// ObjectCannedACL values
+	S3ObjectCannedACLPrivate                = "private"
+	S3ObjectCannedACLPublicRead             = "public-read"
+	S3ObjectCannedACLPublicReadWrite        = "public-read-write"
+	S3ObjectCannedACLAuthenticatedRead      = "authenticated-read"
+	S3ObjectCannedACLAwsExecRead            = "aws-exec-read"
+	S3ObjectCannedACLBucketOwnerRead        = "bucket-owner-read"
+	S3ObjectCannedACLBucketOwnerFullControl = "bucket-owner-full-control"
+
+	// ObjectLockEnabled values
+	S3ObjectLockEnabledEnabled = "Enabled"
+
+	// ObjectLockLegalHoldStatus values
+	S3ObjectLockLegalHoldStatusOn  = "ON"
+	S3ObjectLockLegalHoldStatusOff = "OFF"
+
+	// ObjectLockMode values
+	S3ObjectLockModeGovernance = "GOVERNANCE"
+	S3ObjectLockModeCompliance = "COMPLIANCE"
+
+	// ObjectLockRetentionMode values
+	S3ObjectLockRetentionModeGovernance = "GOVERNANCE"
+	S3ObjectLockRetentionModeCompliance = "COMPLIANCE"
+
+	// ObjectOwnership values
+	S3ObjectOwnershipBucketownerpreferred = "BucketOwnerPreferred"
+	S3ObjectOwnershipObjectwriter         = "ObjectWriter"
+	S3ObjectOwnershipBucketownerenforced  = "BucketOwnerEnforced"
+
+	// ObjectStorageClass values
+	S3ObjectStorageClassStandard           = "STANDARD"
+	S3ObjectStorageClassReducedRedundancy  = "REDUCED_REDUNDANCY"
+	S3ObjectStorageClassGlacier            = "GLACIER"
+	S3ObjectStorageClassStandardIa         = "STANDARD_IA"
+	S3ObjectStorageClassOnezoneIa          = "ONEZONE_IA"
+	S3ObjectStorageClassIntelligentTiering = "INTELLIGENT_TIERING"
+	S3ObjectStorageClassDeepArchive        = "DEEP_ARCHIVE"
+	S3ObjectStorageClassOutposts           = "OUTPOSTS"
+	S3ObjectStorageClassGlacierIr          = "GLACIER_IR"
+	S3ObjectStorageClassSnow               = "SNOW"
+	S3ObjectStorageClassExpressOnezone     = "EXPRESS_ONEZONE"
+	S3ObjectStorageClassFsxOpenzfs         = "FSX_OPENZFS"
+	S3ObjectStorageClassFsxOntap           = "FSX_ONTAP"
+
+	// ObjectVersionStorageClass values
+	S3ObjectVersionStorageClassStandard = "STANDARD"
+
+	// OptionalObjectAttributes values
+	S3OptionalObjectAttributesRestorestatus = "RestoreStatus"
+
+	// OwnerOverride values
+	S3OwnerOverrideDestination = "Destination"
+
+	// PartitionDateSource values
+	S3PartitionDateSourceEventtime    = "EventTime"
+	S3PartitionDateSourceDeliverytime = "DeliveryTime"
+
+	// Payer values
+	S3PayerRequester   = "Requester"
+	S3PayerBucketowner = "BucketOwner"
+
+	// Permission values
+	S3PermissionFullControl = "FULL_CONTROL"
+	S3PermissionWrite       = "WRITE"
+	S3PermissionWriteAcp    = "WRITE_ACP"
+	S3PermissionRead        = "READ"
+	S3PermissionReadAcp     = "READ_ACP"
+
+	// Protocol values
+	S3ProtocolHttp  = "http"
+	S3ProtocolHttps = "https"
+
+	// QuoteFields values
+	S3QuoteFieldsAlways   = "ALWAYS"
+	S3QuoteFieldsAsneeded = "ASNEEDED"
+
+	// ReplicaModificationsStatus values
+	S3ReplicaModificationsStatusEnabled  = "Enabled"
+	S3ReplicaModificationsStatusDisabled = "Disabled"
+
+	// ReplicationRuleStatus values
+	S3ReplicationRuleStatusEnabled  = "Enabled"
+	S3ReplicationRuleStatusDisabled = "Disabled"
+
+	// ReplicationStatus values
+	S3ReplicationStatusComplete  = "COMPLETE"
+	S3ReplicationStatusPending   = "PENDING"
+	S3ReplicationStatusFailed    = "FAILED"
+	S3ReplicationStatusReplica   = "REPLICA"
+	S3ReplicationStatusCompleted = "COMPLETED"
+
+	// ReplicationTimeStatus values
+	S3ReplicationTimeStatusEnabled  = "Enabled"
+	S3ReplicationTimeStatusDisabled = "Disabled"
+
+	// RequestCharged values
+	S3RequestChargedRequester = "requester"
+
+	// RequestPayer values
+	S3RequestPayerRequester = "requester"
+
+	// RestoreRequestType values
+	S3RestoreRequestTypeSelect = "SELECT"
+
+	// S3TablesBucketType values
+	S3S3TablesBucketTypeAws      = "aws"
+	S3S3TablesBucketTypeCustomer = "customer"
+
+	// ServerSideEncryption values
+	S3ServerSideEncryptionAes256     = "AES256"
+	S3ServerSideEncryptionAwsFsx     = "aws:fsx"
+	S3ServerSideEncryptionAwsKms     = "aws:kms"
+	S3ServerSideEncryptionAwsKmsDsse = "aws:kms:dsse"
+
+	// SessionMode values
+	S3SessionModeReadonly  = "ReadOnly"
+	S3SessionModeReadwrite = "ReadWrite"
+
+	// SseKmsEncryptedObjectsStatus values
+	S3SseKmsEncryptedObjectsStatusEnabled  = "Enabled"
+	S3SseKmsEncryptedObjectsStatusDisabled = "Disabled"
+
 	// StorageClass values
 	S3StorageClassStandard           = "STANDARD"
 	S3StorageClassReducedRedundancy  = "REDUCED_REDUNDANCY"
@@ -19,39 +370,454 @@ const (
 	S3StorageClassFsxOpenzfs         = "FSX_OPENZFS"
 	S3StorageClassFsxOntap           = "FSX_ONTAP"
 
-	// ObjectCannedACL values
-	S3ObjectCannedACLPrivate                = "private"
-	S3ObjectCannedACLPublicRead             = "public-read"
-	S3ObjectCannedACLPublicReadWrite        = "public-read-write"
-	S3ObjectCannedACLAuthenticatedRead      = "authenticated-read"
-	S3ObjectCannedACLAwsExecRead            = "aws-exec-read"
-	S3ObjectCannedACLBucketOwnerRead        = "bucket-owner-read"
-	S3ObjectCannedACLBucketOwnerFullControl = "bucket-owner-full-control"
+	// StorageClassAnalysisSchemaVersion values
+	S3StorageClassAnalysisSchemaVersionV1 = "V_1"
 
-	// BucketCannedACL values
-	S3BucketCannedACLPrivate           = "private"
-	S3BucketCannedACLPublicRead        = "public-read"
-	S3BucketCannedACLPublicReadWrite   = "public-read-write"
-	S3BucketCannedACLAuthenticatedRead = "authenticated-read"
+	// TableSseAlgorithm values
+	S3TableSseAlgorithmAwsKms = "aws:kms"
+	S3TableSseAlgorithmAes256 = "AES256"
 
-	// ServerSideEncryption values
-	S3ServerSideEncryptionAes256     = "AES256"
-	S3ServerSideEncryptionAwsFsx     = "aws:fsx"
-	S3ServerSideEncryptionAwsKms     = "aws:kms"
-	S3ServerSideEncryptionAwsKmsDsse = "aws:kms:dsse"
+	// TaggingDirective values
+	S3TaggingDirectiveCopy    = "COPY"
+	S3TaggingDirectiveReplace = "REPLACE"
 
-	// ObjectLockRetentionMode values
-	S3ObjectLockRetentionModeGovernance = "GOVERNANCE"
-	S3ObjectLockRetentionModeCompliance = "COMPLIANCE"
+	// Tier values
+	S3TierStandard  = "Standard"
+	S3TierBulk      = "Bulk"
+	S3TierExpedited = "Expedited"
 
-	// BucketVersioningStatus values
-	S3BucketVersioningStatusEnabled   = "Enabled"
-	S3BucketVersioningStatusSuspended = "Suspended"
+	// TransitionDefaultMinimumObjectSize values
+	S3TransitionDefaultMinimumObjectSizeVariesByStorageClass  = "varies_by_storage_class"
+	S3TransitionDefaultMinimumObjectSizeAllStorageClasses128k = "all_storage_classes_128K"
 
-	// Protocol values
-	S3ProtocolHttp  = "http"
-	S3ProtocolHttps = "https"
+	// TransitionStorageClass values
+	S3TransitionStorageClassGlacier            = "GLACIER"
+	S3TransitionStorageClassStandardIa         = "STANDARD_IA"
+	S3TransitionStorageClassOnezoneIa          = "ONEZONE_IA"
+	S3TransitionStorageClassIntelligentTiering = "INTELLIGENT_TIERING"
+	S3TransitionStorageClassDeepArchive        = "DEEP_ARCHIVE"
+	S3TransitionStorageClassGlacierIr          = "GLACIER_IR"
+
+	// Type values
+	S3TypeCanonicaluser         = "CanonicalUser"
+	S3TypeAmazoncustomerbyemail = "AmazonCustomerByEmail"
+	S3TypeGroup                 = "Group"
 )
+
+var s3AnalyticsS3ExportFileFormatValues = []string{
+	"CSV",
+}
+
+var s3ArchiveStatusValues = []string{
+	"ARCHIVE_ACCESS",
+	"DEEP_ARCHIVE_ACCESS",
+}
+
+var s3BucketAbacStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3BucketAccelerateStatusValues = []string{
+	"Enabled",
+	"Suspended",
+}
+
+var s3BucketCannedACLValues = []string{
+	"private",
+	"public-read",
+	"public-read-write",
+	"authenticated-read",
+}
+
+var s3BucketLocationConstraintValues = []string{
+	"af-south-1",
+	"ap-east-1",
+	"ap-northeast-1",
+	"ap-northeast-2",
+	"ap-northeast-3",
+	"ap-south-1",
+	"ap-south-2",
+	"ap-southeast-1",
+	"ap-southeast-2",
+	"ap-southeast-3",
+	"ap-southeast-4",
+	"ap-southeast-5",
+	"ca-central-1",
+	"cn-north-1",
+	"cn-northwest-1",
+	"EU",
+	"eu-central-1",
+	"eu-central-2",
+	"eu-north-1",
+	"eu-south-1",
+	"eu-south-2",
+	"eu-west-1",
+	"eu-west-2",
+	"eu-west-3",
+	"il-central-1",
+	"me-central-1",
+	"me-south-1",
+	"sa-east-1",
+	"us-east-2",
+	"us-gov-east-1",
+	"us-gov-west-1",
+	"us-west-1",
+	"us-west-2",
+}
+
+var s3BucketLogsPermissionValues = []string{
+	"FULL_CONTROL",
+	"READ",
+	"WRITE",
+}
+
+var s3BucketTypeValues = []string{
+	"Directory",
+}
+
+var s3BucketVersioningStatusValues = []string{
+	"Enabled",
+	"Suspended",
+}
+
+var s3ChecksumAlgorithmValues = []string{
+	"CRC32",
+	"CRC32C",
+	"SHA1",
+	"SHA256",
+	"CRC64NVME",
+}
+
+var s3ChecksumModeValues = []string{
+	"ENABLED",
+}
+
+var s3ChecksumTypeValues = []string{
+	"COMPOSITE",
+	"FULL_OBJECT",
+}
+
+var s3CompressionTypeValues = []string{
+	"NONE",
+	"GZIP",
+	"BZIP2",
+}
+
+var s3DataRedundancyValues = []string{
+	"SingleAvailabilityZone",
+	"SingleLocalZone",
+}
+
+var s3DeleteMarkerReplicationStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3EncodingTypeValues = []string{
+	"url",
+}
+
+var s3EncryptionTypeValues = []string{
+	"NONE",
+	"SSE-C",
+}
+
+var s3EventValues = []string{
+	"s3:ReducedRedundancyLostObject",
+	"s3:ObjectCreated:*",
+	"s3:ObjectCreated:Put",
+	"s3:ObjectCreated:Post",
+	"s3:ObjectCreated:Copy",
+	"s3:ObjectCreated:CompleteMultipartUpload",
+	"s3:ObjectRemoved:*",
+	"s3:ObjectRemoved:Delete",
+	"s3:ObjectRemoved:DeleteMarkerCreated",
+	"s3:ObjectRestore:*",
+	"s3:ObjectRestore:Post",
+	"s3:ObjectRestore:Completed",
+	"s3:Replication:*",
+	"s3:Replication:OperationFailedReplication",
+	"s3:Replication:OperationNotTracked",
+	"s3:Replication:OperationMissedThreshold",
+	"s3:Replication:OperationReplicatedAfterThreshold",
+	"s3:ObjectRestore:Delete",
+	"s3:LifecycleTransition",
+	"s3:IntelligentTiering",
+	"s3:ObjectAcl:Put",
+	"s3:LifecycleExpiration:*",
+	"s3:LifecycleExpiration:Delete",
+	"s3:LifecycleExpiration:DeleteMarkerCreated",
+	"s3:ObjectTagging:*",
+	"s3:ObjectTagging:Put",
+	"s3:ObjectTagging:Delete",
+}
+
+var s3ExistingObjectReplicationStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3ExpirationStateValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var s3ExpirationStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3ExpressionTypeValues = []string{
+	"SQL",
+}
+
+var s3FileHeaderInfoValues = []string{
+	"USE",
+	"IGNORE",
+	"NONE",
+}
+
+var s3FilterRuleNameValues = []string{
+	"prefix",
+	"suffix",
+}
+
+var s3IntelligentTieringAccessTierValues = []string{
+	"ARCHIVE_ACCESS",
+	"DEEP_ARCHIVE_ACCESS",
+}
+
+var s3IntelligentTieringStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3InventoryConfigurationStateValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var s3InventoryFormatValues = []string{
+	"CSV",
+	"ORC",
+	"Parquet",
+}
+
+var s3InventoryFrequencyValues = []string{
+	"Daily",
+	"Weekly",
+}
+
+var s3InventoryIncludedObjectVersionsValues = []string{
+	"All",
+	"Current",
+}
+
+var s3InventoryOptionalFieldValues = []string{
+	"Size",
+	"LastModifiedDate",
+	"StorageClass",
+	"ETag",
+	"IsMultipartUploaded",
+	"ReplicationStatus",
+	"EncryptionStatus",
+	"ObjectLockRetainUntilDate",
+	"ObjectLockMode",
+	"ObjectLockLegalHoldStatus",
+	"IntelligentTieringAccessTier",
+	"BucketKeyStatus",
+	"ChecksumAlgorithm",
+	"ObjectAccessControlList",
+	"ObjectOwner",
+	"LifecycleExpirationDate",
+}
+
+var s3JSONTypeValues = []string{
+	"DOCUMENT",
+	"LINES",
+}
+
+var s3LocationTypeValues = []string{
+	"AvailabilityZone",
+	"LocalZone",
+}
+
+var s3MFADeleteValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3MFADeleteStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3MetadataDirectiveValues = []string{
+	"COPY",
+	"REPLACE",
+}
+
+var s3MetricsStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3ObjectAttributesValues = []string{
+	"ETag",
+	"Checksum",
+	"ObjectParts",
+	"StorageClass",
+	"ObjectSize",
+}
+
+var s3ObjectCannedACLValues = []string{
+	"private",
+	"public-read",
+	"public-read-write",
+	"authenticated-read",
+	"aws-exec-read",
+	"bucket-owner-read",
+	"bucket-owner-full-control",
+}
+
+var s3ObjectLockEnabledValues = []string{
+	"Enabled",
+}
+
+var s3ObjectLockLegalHoldStatusValues = []string{
+	"ON",
+	"OFF",
+}
+
+var s3ObjectLockModeValues = []string{
+	"GOVERNANCE",
+	"COMPLIANCE",
+}
+
+var s3ObjectLockRetentionModeValues = []string{
+	"GOVERNANCE",
+	"COMPLIANCE",
+}
+
+var s3ObjectOwnershipValues = []string{
+	"BucketOwnerPreferred",
+	"ObjectWriter",
+	"BucketOwnerEnforced",
+}
+
+var s3ObjectStorageClassValues = []string{
+	"STANDARD",
+	"REDUCED_REDUNDANCY",
+	"GLACIER",
+	"STANDARD_IA",
+	"ONEZONE_IA",
+	"INTELLIGENT_TIERING",
+	"DEEP_ARCHIVE",
+	"OUTPOSTS",
+	"GLACIER_IR",
+	"SNOW",
+	"EXPRESS_ONEZONE",
+	"FSX_OPENZFS",
+	"FSX_ONTAP",
+}
+
+var s3ObjectVersionStorageClassValues = []string{
+	"STANDARD",
+}
+
+var s3OptionalObjectAttributesValues = []string{
+	"RestoreStatus",
+}
+
+var s3OwnerOverrideValues = []string{
+	"Destination",
+}
+
+var s3PartitionDateSourceValues = []string{
+	"EventTime",
+	"DeliveryTime",
+}
+
+var s3PayerValues = []string{
+	"Requester",
+	"BucketOwner",
+}
+
+var s3PermissionValues = []string{
+	"FULL_CONTROL",
+	"WRITE",
+	"WRITE_ACP",
+	"READ",
+	"READ_ACP",
+}
+
+var s3ProtocolValues = []string{
+	"http",
+	"https",
+}
+
+var s3QuoteFieldsValues = []string{
+	"ALWAYS",
+	"ASNEEDED",
+}
+
+var s3ReplicaModificationsStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3ReplicationRuleStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3ReplicationStatusValues = []string{
+	"COMPLETE",
+	"PENDING",
+	"FAILED",
+	"REPLICA",
+	"COMPLETED",
+}
+
+var s3ReplicationTimeStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var s3RequestChargedValues = []string{
+	"requester",
+}
+
+var s3RequestPayerValues = []string{
+	"requester",
+}
+
+var s3RestoreRequestTypeValues = []string{
+	"SELECT",
+}
+
+var s3S3TablesBucketTypeValues = []string{
+	"aws",
+	"customer",
+}
+
+var s3ServerSideEncryptionValues = []string{
+	"AES256",
+	"aws:fsx",
+	"aws:kms",
+	"aws:kms:dsse",
+}
+
+var s3SessionModeValues = []string{
+	"ReadOnly",
+	"ReadWrite",
+}
+
+var s3SseKmsEncryptedObjectsStatusValues = []string{
+	"Enabled",
+	"Disabled",
+}
 
 var s3StorageClassValues = []string{
 	"STANDARD",
@@ -69,73 +835,269 @@ var s3StorageClassValues = []string{
 	"FSX_ONTAP",
 }
 
-var s3ObjectCannedACLValues = []string{
-	"private",
-	"public-read",
-	"public-read-write",
-	"authenticated-read",
-	"aws-exec-read",
-	"bucket-owner-read",
-	"bucket-owner-full-control",
+var s3StorageClassAnalysisSchemaVersionValues = []string{
+	"V_1",
 }
 
-var s3BucketCannedACLValues = []string{
-	"private",
-	"public-read",
-	"public-read-write",
-	"authenticated-read",
-}
-
-var s3ServerSideEncryptionValues = []string{
-	"AES256",
-	"aws:fsx",
+var s3TableSseAlgorithmValues = []string{
 	"aws:kms",
-	"aws:kms:dsse",
+	"AES256",
 }
 
-var s3ObjectLockRetentionModeValues = []string{
-	"GOVERNANCE",
-	"COMPLIANCE",
+var s3TaggingDirectiveValues = []string{
+	"COPY",
+	"REPLACE",
 }
 
-var s3BucketVersioningStatusValues = []string{
-	"Enabled",
-	"Suspended",
+var s3TierValues = []string{
+	"Standard",
+	"Bulk",
+	"Expedited",
 }
 
-var s3ProtocolValues = []string{
-	"http",
-	"https",
+var s3TransitionDefaultMinimumObjectSizeValues = []string{
+	"varies_by_storage_class",
+	"all_storage_classes_128K",
+}
+
+var s3TransitionStorageClassValues = []string{
+	"GLACIER",
+	"STANDARD_IA",
+	"ONEZONE_IA",
+	"INTELLIGENT_TIERING",
+	"DEEP_ARCHIVE",
+	"GLACIER_IR",
+}
+
+var s3TypeValues = []string{
+	"CanonicalUser",
+	"AmazonCustomerByEmail",
+	"Group",
 }
 
 func getS3Enum(name string) []string {
 	switch name {
-	case "StorageClass":
-		return s3StorageClassValues
-	case "ObjectCannedACL":
-		return s3ObjectCannedACLValues
+	case "AnalyticsS3ExportFileFormat":
+		return s3AnalyticsS3ExportFileFormatValues
+	case "ArchiveStatus":
+		return s3ArchiveStatusValues
+	case "BucketAbacStatus":
+		return s3BucketAbacStatusValues
+	case "BucketAccelerateStatus":
+		return s3BucketAccelerateStatusValues
 	case "BucketCannedACL":
 		return s3BucketCannedACLValues
-	case "ServerSideEncryption":
-		return s3ServerSideEncryptionValues
-	case "ObjectLockRetentionMode":
-		return s3ObjectLockRetentionModeValues
+	case "BucketLocationConstraint":
+		return s3BucketLocationConstraintValues
+	case "BucketLogsPermission":
+		return s3BucketLogsPermissionValues
+	case "BucketType":
+		return s3BucketTypeValues
 	case "BucketVersioningStatus":
 		return s3BucketVersioningStatusValues
+	case "ChecksumAlgorithm":
+		return s3ChecksumAlgorithmValues
+	case "ChecksumMode":
+		return s3ChecksumModeValues
+	case "ChecksumType":
+		return s3ChecksumTypeValues
+	case "CompressionType":
+		return s3CompressionTypeValues
+	case "DataRedundancy":
+		return s3DataRedundancyValues
+	case "DeleteMarkerReplicationStatus":
+		return s3DeleteMarkerReplicationStatusValues
+	case "EncodingType":
+		return s3EncodingTypeValues
+	case "EncryptionType":
+		return s3EncryptionTypeValues
+	case "Event":
+		return s3EventValues
+	case "ExistingObjectReplicationStatus":
+		return s3ExistingObjectReplicationStatusValues
+	case "ExpirationState":
+		return s3ExpirationStateValues
+	case "ExpirationStatus":
+		return s3ExpirationStatusValues
+	case "ExpressionType":
+		return s3ExpressionTypeValues
+	case "FileHeaderInfo":
+		return s3FileHeaderInfoValues
+	case "FilterRuleName":
+		return s3FilterRuleNameValues
+	case "IntelligentTieringAccessTier":
+		return s3IntelligentTieringAccessTierValues
+	case "IntelligentTieringStatus":
+		return s3IntelligentTieringStatusValues
+	case "InventoryConfigurationState":
+		return s3InventoryConfigurationStateValues
+	case "InventoryFormat":
+		return s3InventoryFormatValues
+	case "InventoryFrequency":
+		return s3InventoryFrequencyValues
+	case "InventoryIncludedObjectVersions":
+		return s3InventoryIncludedObjectVersionsValues
+	case "InventoryOptionalField":
+		return s3InventoryOptionalFieldValues
+	case "JSONType":
+		return s3JSONTypeValues
+	case "LocationType":
+		return s3LocationTypeValues
+	case "MFADelete":
+		return s3MFADeleteValues
+	case "MFADeleteStatus":
+		return s3MFADeleteStatusValues
+	case "MetadataDirective":
+		return s3MetadataDirectiveValues
+	case "MetricsStatus":
+		return s3MetricsStatusValues
+	case "ObjectAttributes":
+		return s3ObjectAttributesValues
+	case "ObjectCannedACL":
+		return s3ObjectCannedACLValues
+	case "ObjectLockEnabled":
+		return s3ObjectLockEnabledValues
+	case "ObjectLockLegalHoldStatus":
+		return s3ObjectLockLegalHoldStatusValues
+	case "ObjectLockMode":
+		return s3ObjectLockModeValues
+	case "ObjectLockRetentionMode":
+		return s3ObjectLockRetentionModeValues
+	case "ObjectOwnership":
+		return s3ObjectOwnershipValues
+	case "ObjectStorageClass":
+		return s3ObjectStorageClassValues
+	case "ObjectVersionStorageClass":
+		return s3ObjectVersionStorageClassValues
+	case "OptionalObjectAttributes":
+		return s3OptionalObjectAttributesValues
+	case "OwnerOverride":
+		return s3OwnerOverrideValues
+	case "PartitionDateSource":
+		return s3PartitionDateSourceValues
+	case "Payer":
+		return s3PayerValues
+	case "Permission":
+		return s3PermissionValues
 	case "Protocol":
 		return s3ProtocolValues
+	case "QuoteFields":
+		return s3QuoteFieldsValues
+	case "ReplicaModificationsStatus":
+		return s3ReplicaModificationsStatusValues
+	case "ReplicationRuleStatus":
+		return s3ReplicationRuleStatusValues
+	case "ReplicationStatus":
+		return s3ReplicationStatusValues
+	case "ReplicationTimeStatus":
+		return s3ReplicationTimeStatusValues
+	case "RequestCharged":
+		return s3RequestChargedValues
+	case "RequestPayer":
+		return s3RequestPayerValues
+	case "RestoreRequestType":
+		return s3RestoreRequestTypeValues
+	case "S3TablesBucketType":
+		return s3S3TablesBucketTypeValues
+	case "ServerSideEncryption":
+		return s3ServerSideEncryptionValues
+	case "SessionMode":
+		return s3SessionModeValues
+	case "SseKmsEncryptedObjectsStatus":
+		return s3SseKmsEncryptedObjectsStatusValues
+	case "StorageClass":
+		return s3StorageClassValues
+	case "StorageClassAnalysisSchemaVersion":
+		return s3StorageClassAnalysisSchemaVersionValues
+	case "TableSseAlgorithm":
+		return s3TableSseAlgorithmValues
+	case "TaggingDirective":
+		return s3TaggingDirectiveValues
+	case "Tier":
+		return s3TierValues
+	case "TransitionDefaultMinimumObjectSize":
+		return s3TransitionDefaultMinimumObjectSizeValues
+	case "TransitionStorageClass":
+		return s3TransitionStorageClassValues
+	case "Type":
+		return s3TypeValues
 	}
 	return nil
 }
 
 func getS3EnumNames() []string {
 	return []string{
-		"StorageClass",
-		"ObjectCannedACL",
+		"AnalyticsS3ExportFileFormat",
+		"ArchiveStatus",
+		"BucketAbacStatus",
+		"BucketAccelerateStatus",
 		"BucketCannedACL",
-		"ServerSideEncryption",
-		"ObjectLockRetentionMode",
+		"BucketLocationConstraint",
+		"BucketLogsPermission",
+		"BucketType",
 		"BucketVersioningStatus",
+		"ChecksumAlgorithm",
+		"ChecksumMode",
+		"ChecksumType",
+		"CompressionType",
+		"DataRedundancy",
+		"DeleteMarkerReplicationStatus",
+		"EncodingType",
+		"EncryptionType",
+		"Event",
+		"ExistingObjectReplicationStatus",
+		"ExpirationState",
+		"ExpirationStatus",
+		"ExpressionType",
+		"FileHeaderInfo",
+		"FilterRuleName",
+		"IntelligentTieringAccessTier",
+		"IntelligentTieringStatus",
+		"InventoryConfigurationState",
+		"InventoryFormat",
+		"InventoryFrequency",
+		"InventoryIncludedObjectVersions",
+		"InventoryOptionalField",
+		"JSONType",
+		"LocationType",
+		"MFADelete",
+		"MFADeleteStatus",
+		"MetadataDirective",
+		"MetricsStatus",
+		"ObjectAttributes",
+		"ObjectCannedACL",
+		"ObjectLockEnabled",
+		"ObjectLockLegalHoldStatus",
+		"ObjectLockMode",
+		"ObjectLockRetentionMode",
+		"ObjectOwnership",
+		"ObjectStorageClass",
+		"ObjectVersionStorageClass",
+		"OptionalObjectAttributes",
+		"OwnerOverride",
+		"PartitionDateSource",
+		"Payer",
+		"Permission",
 		"Protocol",
+		"QuoteFields",
+		"ReplicaModificationsStatus",
+		"ReplicationRuleStatus",
+		"ReplicationStatus",
+		"ReplicationTimeStatus",
+		"RequestCharged",
+		"RequestPayer",
+		"RestoreRequestType",
+		"S3TablesBucketType",
+		"ServerSideEncryption",
+		"SessionMode",
+		"SseKmsEncryptedObjectsStatus",
+		"StorageClass",
+		"StorageClassAnalysisSchemaVersion",
+		"TableSseAlgorithm",
+		"TaggingDirective",
+		"Tier",
+		"TransitionDefaultMinimumObjectSize",
+		"TransitionStorageClass",
+		"Type",
 	}
 }

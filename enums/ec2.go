@@ -4,6 +4,2463 @@ package enums
 
 // Ec2 enum constants
 const (
+	// AcceleratorManufacturer values
+	Ec2AcceleratorManufacturerAmazonWebServices = "amazon-web-services"
+	Ec2AcceleratorManufacturerAmd               = "amd"
+	Ec2AcceleratorManufacturerNvidia            = "nvidia"
+	Ec2AcceleratorManufacturerXilinx            = "xilinx"
+	Ec2AcceleratorManufacturerHabana            = "habana"
+
+	// AcceleratorName values
+	Ec2AcceleratorNameA100          = "a100"
+	Ec2AcceleratorNameInferentia    = "inferentia"
+	Ec2AcceleratorNameK520          = "k520"
+	Ec2AcceleratorNameK80           = "k80"
+	Ec2AcceleratorNameM60           = "m60"
+	Ec2AcceleratorNameRadeonProV520 = "radeon-pro-v520"
+	Ec2AcceleratorNameT4            = "t4"
+	Ec2AcceleratorNameVu9p          = "vu9p"
+	Ec2AcceleratorNameV100          = "v100"
+	Ec2AcceleratorNameA10g          = "a10g"
+	Ec2AcceleratorNameH100          = "h100"
+	Ec2AcceleratorNameT4g           = "t4g"
+	Ec2AcceleratorNameL40s          = "l40s"
+	Ec2AcceleratorNameL4            = "l4"
+	Ec2AcceleratorNameGaudiHl205    = "gaudi-hl-205"
+	Ec2AcceleratorNameInferentia2   = "inferentia2"
+	Ec2AcceleratorNameTrainium      = "trainium"
+	Ec2AcceleratorNameTrainium2     = "trainium2"
+	Ec2AcceleratorNameU30           = "u30"
+
+	// AcceleratorType values
+	Ec2AcceleratorTypeGpu       = "gpu"
+	Ec2AcceleratorTypeFpga      = "fpga"
+	Ec2AcceleratorTypeInference = "inference"
+	Ec2AcceleratorTypeMedia     = "media"
+
+	// AccountAttributeName values
+	Ec2AccountAttributeNameSupportedPlatforms = "supported-platforms"
+	Ec2AccountAttributeNameDefaultVpc         = "default-vpc"
+
+	// ActivityStatus values
+	Ec2ActivityStatusError              = "error"
+	Ec2ActivityStatusPendingFulfillment = "pending_fulfillment"
+	Ec2ActivityStatusPendingTermination = "pending_termination"
+	Ec2ActivityStatusFulfilled          = "fulfilled"
+
+	// AddressAttributeName values
+	Ec2AddressAttributeNameDomainName = "domain-name"
+
+	// AddressFamily values
+	Ec2AddressFamilyIpv4 = "ipv4"
+	Ec2AddressFamilyIpv6 = "ipv6"
+
+	// AddressTransferStatus values
+	Ec2AddressTransferStatusPending  = "pending"
+	Ec2AddressTransferStatusDisabled = "disabled"
+	Ec2AddressTransferStatusAccepted = "accepted"
+
+	// Affinity values
+	Ec2AffinityDefault = "default"
+	Ec2AffinityHost    = "host"
+
+	// AllocationState values
+	Ec2AllocationStateAvailable                = "available"
+	Ec2AllocationStateUnderAssessment          = "under-assessment"
+	Ec2AllocationStatePermanentFailure         = "permanent-failure"
+	Ec2AllocationStateReleased                 = "released"
+	Ec2AllocationStateReleasedPermanentFailure = "released-permanent-failure"
+	Ec2AllocationStatePending                  = "pending"
+
+	// AllocationStrategy values
+	Ec2AllocationStrategyLowestprice                  = "lowestPrice"
+	Ec2AllocationStrategyDiversified                  = "diversified"
+	Ec2AllocationStrategyCapacityoptimized            = "capacityOptimized"
+	Ec2AllocationStrategyCapacityoptimizedprioritized = "capacityOptimizedPrioritized"
+	Ec2AllocationStrategyPricecapacityoptimized       = "priceCapacityOptimized"
+
+	// AllocationType values
+	Ec2AllocationTypeUsed   = "used"
+	Ec2AllocationTypeFuture = "future"
+
+	// AllowedImagesSettingsDisabledState values
+	Ec2AllowedImagesSettingsDisabledStateDisabled = "disabled"
+
+	// AllowedImagesSettingsEnabledState values
+	Ec2AllowedImagesSettingsEnabledStateEnabled   = "enabled"
+	Ec2AllowedImagesSettingsEnabledStateAuditMode = "audit-mode"
+
+	// AllowsMultipleInstanceTypes values
+	Ec2AllowsMultipleInstanceTypesOn  = "on"
+	Ec2AllowsMultipleInstanceTypesOff = "off"
+
+	// AmdSevSnpSpecification values
+	Ec2AmdSevSnpSpecificationEnabled  = "enabled"
+	Ec2AmdSevSnpSpecificationDisabled = "disabled"
+
+	// AnalysisStatus values
+	Ec2AnalysisStatusRunning   = "running"
+	Ec2AnalysisStatusSucceeded = "succeeded"
+	Ec2AnalysisStatusFailed    = "failed"
+
+	// ApplianceModeSupportValue values
+	Ec2ApplianceModeSupportValueEnable  = "enable"
+	Ec2ApplianceModeSupportValueDisable = "disable"
+
+	// ArchitectureType values
+	Ec2ArchitectureTypeI386     = "i386"
+	Ec2ArchitectureTypeX8664    = "x86_64"
+	Ec2ArchitectureTypeArm64    = "arm64"
+	Ec2ArchitectureTypeX8664Mac = "x86_64_mac"
+	Ec2ArchitectureTypeArm64Mac = "arm64_mac"
+
+	// ArchitectureValues values
+	Ec2ArchitectureValuesI386     = "i386"
+	Ec2ArchitectureValuesX8664    = "x86_64"
+	Ec2ArchitectureValuesArm64    = "arm64"
+	Ec2ArchitectureValuesX8664Mac = "x86_64_mac"
+	Ec2ArchitectureValuesArm64Mac = "arm64_mac"
+
+	// AsnAssociationState values
+	Ec2AsnAssociationStateDisassociated         = "disassociated"
+	Ec2AsnAssociationStateFailedDisassociation  = "failed-disassociation"
+	Ec2AsnAssociationStateFailedAssociation     = "failed-association"
+	Ec2AsnAssociationStatePendingDisassociation = "pending-disassociation"
+	Ec2AsnAssociationStatePendingAssociation    = "pending-association"
+	Ec2AsnAssociationStateAssociated            = "associated"
+
+	// AsnState values
+	Ec2AsnStateDeprovisioned      = "deprovisioned"
+	Ec2AsnStateFailedDeprovision  = "failed-deprovision"
+	Ec2AsnStateFailedProvision    = "failed-provision"
+	Ec2AsnStatePendingDeprovision = "pending-deprovision"
+	Ec2AsnStatePendingProvision   = "pending-provision"
+	Ec2AsnStateProvisioned        = "provisioned"
+
+	// AssociatedNetworkType values
+	Ec2AssociatedNetworkTypeVpc = "vpc"
+
+	// AssociationStatusCode values
+	Ec2AssociationStatusCodeAssociating       = "associating"
+	Ec2AssociationStatusCodeAssociated        = "associated"
+	Ec2AssociationStatusCodeAssociationFailed = "association-failed"
+	Ec2AssociationStatusCodeDisassociating    = "disassociating"
+	Ec2AssociationStatusCodeDisassociated     = "disassociated"
+
+	// AttachmentLimitType values
+	Ec2AttachmentLimitTypeShared    = "shared"
+	Ec2AttachmentLimitTypeDedicated = "dedicated"
+
+	// AttachmentStatus values
+	Ec2AttachmentStatusAttaching = "attaching"
+	Ec2AttachmentStatusAttached  = "attached"
+	Ec2AttachmentStatusDetaching = "detaching"
+	Ec2AttachmentStatusDetached  = "detached"
+
+	// AutoAcceptSharedAssociationsValue values
+	Ec2AutoAcceptSharedAssociationsValueEnable  = "enable"
+	Ec2AutoAcceptSharedAssociationsValueDisable = "disable"
+
+	// AutoAcceptSharedAttachmentsValue values
+	Ec2AutoAcceptSharedAttachmentsValueEnable  = "enable"
+	Ec2AutoAcceptSharedAttachmentsValueDisable = "disable"
+
+	// AutoPlacement values
+	Ec2AutoPlacementOn  = "on"
+	Ec2AutoPlacementOff = "off"
+
+	// AutoProvisionZonesState values
+	Ec2AutoProvisionZonesStateEnabled  = "enabled"
+	Ec2AutoProvisionZonesStateDisabled = "disabled"
+
+	// AutoScalingIpsState values
+	Ec2AutoScalingIpsStateEnabled  = "enabled"
+	Ec2AutoScalingIpsStateDisabled = "disabled"
+
+	// AvailabilityMode values
+	Ec2AvailabilityModeZonal    = "zonal"
+	Ec2AvailabilityModeRegional = "regional"
+
+	// AvailabilityZoneOptInStatus values
+	Ec2AvailabilityZoneOptInStatusOptInNotRequired = "opt-in-not-required"
+	Ec2AvailabilityZoneOptInStatusOptedIn          = "opted-in"
+	Ec2AvailabilityZoneOptInStatusNotOptedIn       = "not-opted-in"
+
+	// AvailabilityZoneState values
+	Ec2AvailabilityZoneStateAvailable   = "available"
+	Ec2AvailabilityZoneStateInformation = "information"
+	Ec2AvailabilityZoneStateImpaired    = "impaired"
+	Ec2AvailabilityZoneStateUnavailable = "unavailable"
+	Ec2AvailabilityZoneStateConstrained = "constrained"
+
+	// BandwidthWeightingType values
+	Ec2BandwidthWeightingTypeDefault = "default"
+	Ec2BandwidthWeightingTypeVpc1    = "vpc-1"
+	Ec2BandwidthWeightingTypeEbs1    = "ebs-1"
+
+	// BareMetal values
+	Ec2BareMetalIncluded = "included"
+	Ec2BareMetalRequired = "required"
+	Ec2BareMetalExcluded = "excluded"
+
+	// BatchState values
+	Ec2BatchStateSubmitted            = "submitted"
+	Ec2BatchStateActive               = "active"
+	Ec2BatchStateCancelled            = "cancelled"
+	Ec2BatchStateFailed               = "failed"
+	Ec2BatchStateCancelledRunning     = "cancelled_running"
+	Ec2BatchStateCancelledTerminating = "cancelled_terminating"
+	Ec2BatchStateModifying            = "modifying"
+
+	// BgpStatus values
+	Ec2BgpStatusUp   = "up"
+	Ec2BgpStatusDown = "down"
+
+	// BlockPublicAccessMode values
+	Ec2BlockPublicAccessModeOff                = "off"
+	Ec2BlockPublicAccessModeBlockBidirectional = "block-bidirectional"
+	Ec2BlockPublicAccessModeBlockIngress       = "block-ingress"
+
+	// BootModeType values
+	Ec2BootModeTypeLegacyBios = "legacy-bios"
+	Ec2BootModeTypeUefi       = "uefi"
+
+	// BootModeValues values
+	Ec2BootModeValuesLegacyBios    = "legacy-bios"
+	Ec2BootModeValuesUefi          = "uefi"
+	Ec2BootModeValuesUefiPreferred = "uefi-preferred"
+
+	// BundleTaskState values
+	Ec2BundleTaskStatePending            = "pending"
+	Ec2BundleTaskStateWaitingForShutdown = "waiting-for-shutdown"
+	Ec2BundleTaskStateBundling           = "bundling"
+	Ec2BundleTaskStateStoring            = "storing"
+	Ec2BundleTaskStateCancelling         = "cancelling"
+	Ec2BundleTaskStateComplete           = "complete"
+	Ec2BundleTaskStateFailed             = "failed"
+
+	// BurstablePerformance values
+	Ec2BurstablePerformanceIncluded = "included"
+	Ec2BurstablePerformanceRequired = "required"
+	Ec2BurstablePerformanceExcluded = "excluded"
+
+	// ByoipCidrState values
+	Ec2ByoipCidrStateAdvertised                         = "advertised"
+	Ec2ByoipCidrStateDeprovisioned                      = "deprovisioned"
+	Ec2ByoipCidrStateFailedDeprovision                  = "failed-deprovision"
+	Ec2ByoipCidrStateFailedProvision                    = "failed-provision"
+	Ec2ByoipCidrStatePendingAdvertising                 = "pending-advertising"
+	Ec2ByoipCidrStatePendingDeprovision                 = "pending-deprovision"
+	Ec2ByoipCidrStatePendingProvision                   = "pending-provision"
+	Ec2ByoipCidrStatePendingWithdrawal                  = "pending-withdrawal"
+	Ec2ByoipCidrStateProvisioned                        = "provisioned"
+	Ec2ByoipCidrStateProvisionedNotPubliclyAdvertisable = "provisioned-not-publicly-advertisable"
+
+	// CallerRole values
+	Ec2CallerRoleOdcrOwner                     = "odcr-owner"
+	Ec2CallerRoleUnusedReservationBillingOwner = "unused-reservation-billing-owner"
+
+	// CancelBatchErrorCode values
+	Ec2CancelBatchErrorCodeFleetrequestiddoesnotexist        = "fleetRequestIdDoesNotExist"
+	Ec2CancelBatchErrorCodeFleetrequestidmalformed           = "fleetRequestIdMalformed"
+	Ec2CancelBatchErrorCodeFleetrequestnotincancellablestate = "fleetRequestNotInCancellableState"
+	Ec2CancelBatchErrorCodeUnexpectederror                   = "unexpectedError"
+
+	// CancelSpotInstanceRequestState values
+	Ec2CancelSpotInstanceRequestStateActive    = "active"
+	Ec2CancelSpotInstanceRequestStateOpen      = "open"
+	Ec2CancelSpotInstanceRequestStateClosed    = "closed"
+	Ec2CancelSpotInstanceRequestStateCancelled = "cancelled"
+	Ec2CancelSpotInstanceRequestStateCompleted = "completed"
+
+	// CapacityBlockExtensionStatus values
+	Ec2CapacityBlockExtensionStatusPaymentPending   = "payment-pending"
+	Ec2CapacityBlockExtensionStatusPaymentFailed    = "payment-failed"
+	Ec2CapacityBlockExtensionStatusPaymentSucceeded = "payment-succeeded"
+
+	// CapacityBlockInterconnectStatus values
+	Ec2CapacityBlockInterconnectStatusOk               = "ok"
+	Ec2CapacityBlockInterconnectStatusImpaired         = "impaired"
+	Ec2CapacityBlockInterconnectStatusInsufficientData = "insufficient-data"
+
+	// CapacityBlockResourceState values
+	Ec2CapacityBlockResourceStateActive         = "active"
+	Ec2CapacityBlockResourceStateExpired        = "expired"
+	Ec2CapacityBlockResourceStateUnavailable    = "unavailable"
+	Ec2CapacityBlockResourceStateCancelled      = "cancelled"
+	Ec2CapacityBlockResourceStateFailed         = "failed"
+	Ec2CapacityBlockResourceStateScheduled      = "scheduled"
+	Ec2CapacityBlockResourceStatePaymentPending = "payment-pending"
+	Ec2CapacityBlockResourceStatePaymentFailed  = "payment-failed"
+
+	// CapacityManagerDataExportStatus values
+	Ec2CapacityManagerDataExportStatusPending    = "pending"
+	Ec2CapacityManagerDataExportStatusInProgress = "in-progress"
+	Ec2CapacityManagerDataExportStatusDelivered  = "delivered"
+	Ec2CapacityManagerDataExportStatusFailed     = "failed"
+
+	// CapacityManagerStatus values
+	Ec2CapacityManagerStatusEnabled  = "enabled"
+	Ec2CapacityManagerStatusDisabled = "disabled"
+
+	// CapacityReservationBillingRequestStatus values
+	Ec2CapacityReservationBillingRequestStatusPending   = "pending"
+	Ec2CapacityReservationBillingRequestStatusAccepted  = "accepted"
+	Ec2CapacityReservationBillingRequestStatusRejected  = "rejected"
+	Ec2CapacityReservationBillingRequestStatusCancelled = "cancelled"
+	Ec2CapacityReservationBillingRequestStatusRevoked   = "revoked"
+	Ec2CapacityReservationBillingRequestStatusExpired   = "expired"
+
+	// CapacityReservationDeliveryPreference values
+	Ec2CapacityReservationDeliveryPreferenceFixed       = "fixed"
+	Ec2CapacityReservationDeliveryPreferenceIncremental = "incremental"
+
+	// CapacityReservationFleetState values
+	Ec2CapacityReservationFleetStateSubmitted          = "submitted"
+	Ec2CapacityReservationFleetStateModifying          = "modifying"
+	Ec2CapacityReservationFleetStateActive             = "active"
+	Ec2CapacityReservationFleetStatePartiallyFulfilled = "partially_fulfilled"
+	Ec2CapacityReservationFleetStateExpiring           = "expiring"
+	Ec2CapacityReservationFleetStateExpired            = "expired"
+	Ec2CapacityReservationFleetStateCancelling         = "cancelling"
+	Ec2CapacityReservationFleetStateCancelled          = "cancelled"
+	Ec2CapacityReservationFleetStateFailed             = "failed"
+
+	// CapacityReservationInstancePlatform values
+	Ec2CapacityReservationInstancePlatformLinuxUnix                        = "Linux/UNIX"
+	Ec2CapacityReservationInstancePlatformRedHatEnterpriseLinux            = "Red Hat Enterprise Linux"
+	Ec2CapacityReservationInstancePlatformSuseLinux                        = "SUSE Linux"
+	Ec2CapacityReservationInstancePlatformWindows                          = "Windows"
+	Ec2CapacityReservationInstancePlatformWindowsWithSqlServer             = "Windows with SQL Server"
+	Ec2CapacityReservationInstancePlatformWindowsWithSqlServerEnterprise   = "Windows with SQL Server Enterprise"
+	Ec2CapacityReservationInstancePlatformWindowsWithSqlServerStandard     = "Windows with SQL Server Standard"
+	Ec2CapacityReservationInstancePlatformWindowsWithSqlServerWeb          = "Windows with SQL Server Web"
+	Ec2CapacityReservationInstancePlatformLinuxWithSqlServerStandard       = "Linux with SQL Server Standard"
+	Ec2CapacityReservationInstancePlatformLinuxWithSqlServerWeb            = "Linux with SQL Server Web"
+	Ec2CapacityReservationInstancePlatformLinuxWithSqlServerEnterprise     = "Linux with SQL Server Enterprise"
+	Ec2CapacityReservationInstancePlatformRhelWithSqlServerStandard        = "RHEL with SQL Server Standard"
+	Ec2CapacityReservationInstancePlatformRhelWithSqlServerEnterprise      = "RHEL with SQL Server Enterprise"
+	Ec2CapacityReservationInstancePlatformRhelWithSqlServerWeb             = "RHEL with SQL Server Web"
+	Ec2CapacityReservationInstancePlatformRhelWithHa                       = "RHEL with HA"
+	Ec2CapacityReservationInstancePlatformRhelWithHaAndSqlServerStandard   = "RHEL with HA and SQL Server Standard"
+	Ec2CapacityReservationInstancePlatformRhelWithHaAndSqlServerEnterprise = "RHEL with HA and SQL Server Enterprise"
+	Ec2CapacityReservationInstancePlatformUbuntuPro                        = "Ubuntu Pro"
+
+	// CapacityReservationPreference values
+	Ec2CapacityReservationPreferenceCapacityReservationsOnly = "capacity-reservations-only"
+	Ec2CapacityReservationPreferenceOpen                     = "open"
+	Ec2CapacityReservationPreferenceNone                     = "none"
+
+	// CapacityReservationState values
+	Ec2CapacityReservationStateActive         = "active"
+	Ec2CapacityReservationStateExpired        = "expired"
+	Ec2CapacityReservationStateCancelled      = "cancelled"
+	Ec2CapacityReservationStatePending        = "pending"
+	Ec2CapacityReservationStateFailed         = "failed"
+	Ec2CapacityReservationStateScheduled      = "scheduled"
+	Ec2CapacityReservationStatePaymentPending = "payment-pending"
+	Ec2CapacityReservationStatePaymentFailed  = "payment-failed"
+	Ec2CapacityReservationStateAssessing      = "assessing"
+	Ec2CapacityReservationStateDelayed        = "delayed"
+	Ec2CapacityReservationStateUnsupported    = "unsupported"
+	Ec2CapacityReservationStateUnavailable    = "unavailable"
+
+	// CapacityReservationTenancy values
+	Ec2CapacityReservationTenancyDefault   = "default"
+	Ec2CapacityReservationTenancyDedicated = "dedicated"
+
+	// CapacityReservationType values
+	Ec2CapacityReservationTypeDefault       = "default"
+	Ec2CapacityReservationTypeCapacityBlock = "capacity-block"
+
+	// CapacityTenancy values
+	Ec2CapacityTenancyDefault   = "default"
+	Ec2CapacityTenancyDedicated = "dedicated"
+
+	// CarrierGatewayState values
+	Ec2CarrierGatewayStatePending   = "pending"
+	Ec2CarrierGatewayStateAvailable = "available"
+	Ec2CarrierGatewayStateDeleting  = "deleting"
+	Ec2CarrierGatewayStateDeleted   = "deleted"
+
+	// ClientCertificateRevocationListStatusCode values
+	Ec2ClientCertificateRevocationListStatusCodePending = "pending"
+	Ec2ClientCertificateRevocationListStatusCodeActive  = "active"
+
+	// ClientVpnAuthenticationType values
+	Ec2ClientVpnAuthenticationTypeCertificateAuthentication      = "certificate-authentication"
+	Ec2ClientVpnAuthenticationTypeDirectoryServiceAuthentication = "directory-service-authentication"
+	Ec2ClientVpnAuthenticationTypeFederatedAuthentication        = "federated-authentication"
+
+	// ClientVpnAuthorizationRuleStatusCode values
+	Ec2ClientVpnAuthorizationRuleStatusCodeAuthorizing = "authorizing"
+	Ec2ClientVpnAuthorizationRuleStatusCodeActive      = "active"
+	Ec2ClientVpnAuthorizationRuleStatusCodeFailed      = "failed"
+	Ec2ClientVpnAuthorizationRuleStatusCodeRevoking    = "revoking"
+
+	// ClientVpnConnectionStatusCode values
+	Ec2ClientVpnConnectionStatusCodeActive            = "active"
+	Ec2ClientVpnConnectionStatusCodeFailedToTerminate = "failed-to-terminate"
+	Ec2ClientVpnConnectionStatusCodeTerminating       = "terminating"
+	Ec2ClientVpnConnectionStatusCodeTerminated        = "terminated"
+
+	// ClientVpnEndpointAttributeStatusCode values
+	Ec2ClientVpnEndpointAttributeStatusCodeApplying = "applying"
+	Ec2ClientVpnEndpointAttributeStatusCodeApplied  = "applied"
+
+	// ClientVpnEndpointStatusCode values
+	Ec2ClientVpnEndpointStatusCodePendingAssociate = "pending-associate"
+	Ec2ClientVpnEndpointStatusCodeAvailable        = "available"
+	Ec2ClientVpnEndpointStatusCodeDeleting         = "deleting"
+	Ec2ClientVpnEndpointStatusCodeDeleted          = "deleted"
+
+	// ClientVpnRouteStatusCode values
+	Ec2ClientVpnRouteStatusCodeCreating = "creating"
+	Ec2ClientVpnRouteStatusCodeActive   = "active"
+	Ec2ClientVpnRouteStatusCodeFailed   = "failed"
+	Ec2ClientVpnRouteStatusCodeDeleting = "deleting"
+
+	// Comparison values
+	Ec2ComparisonEquals = "equals"
+	Ec2ComparisonIn     = "in"
+
+	// ConnectionNotificationState values
+	Ec2ConnectionNotificationStateEnabled  = "Enabled"
+	Ec2ConnectionNotificationStateDisabled = "Disabled"
+
+	// ConnectionNotificationType values
+	Ec2ConnectionNotificationTypeTopic = "Topic"
+
+	// ConnectivityType values
+	Ec2ConnectivityTypePrivate = "private"
+	Ec2ConnectivityTypePublic  = "public"
+
+	// ContainerFormat values
+	Ec2ContainerFormatOva = "ova"
+
+	// ConversionTaskState values
+	Ec2ConversionTaskStateActive     = "active"
+	Ec2ConversionTaskStateCancelling = "cancelling"
+	Ec2ConversionTaskStateCancelled  = "cancelled"
+	Ec2ConversionTaskStateCompleted  = "completed"
+
+	// CopyTagsFromSource values
+	Ec2CopyTagsFromSourceVolume = "volume"
+
+	// CpuManufacturer values
+	Ec2CpuManufacturerIntel             = "intel"
+	Ec2CpuManufacturerAmd               = "amd"
+	Ec2CpuManufacturerAmazonWebServices = "amazon-web-services"
+	Ec2CpuManufacturerApple             = "apple"
+
+	// CurrencyCodeValues values
+	Ec2CurrencyCodeValuesUsd = "USD"
+
+	// DatafeedSubscriptionState values
+	Ec2DatafeedSubscriptionStateActive   = "Active"
+	Ec2DatafeedSubscriptionStateInactive = "Inactive"
+
+	// DefaultInstanceMetadataEndpointState values
+	Ec2DefaultInstanceMetadataEndpointStateDisabled     = "disabled"
+	Ec2DefaultInstanceMetadataEndpointStateEnabled      = "enabled"
+	Ec2DefaultInstanceMetadataEndpointStateNoPreference = "no-preference"
+
+	// DefaultInstanceMetadataTagsState values
+	Ec2DefaultInstanceMetadataTagsStateDisabled     = "disabled"
+	Ec2DefaultInstanceMetadataTagsStateEnabled      = "enabled"
+	Ec2DefaultInstanceMetadataTagsStateNoPreference = "no-preference"
+
+	// DefaultRouteTableAssociationValue values
+	Ec2DefaultRouteTableAssociationValueEnable  = "enable"
+	Ec2DefaultRouteTableAssociationValueDisable = "disable"
+
+	// DefaultRouteTablePropagationValue values
+	Ec2DefaultRouteTablePropagationValueEnable  = "enable"
+	Ec2DefaultRouteTablePropagationValueDisable = "disable"
+
+	// DefaultTargetCapacityType values
+	Ec2DefaultTargetCapacityTypeSpot          = "spot"
+	Ec2DefaultTargetCapacityTypeOnDemand      = "on-demand"
+	Ec2DefaultTargetCapacityTypeCapacityBlock = "capacity-block"
+
+	// DeleteFleetErrorCode values
+	Ec2DeleteFleetErrorCodeFleetiddoesnotexist      = "fleetIdDoesNotExist"
+	Ec2DeleteFleetErrorCodeFleetidmalformed         = "fleetIdMalformed"
+	Ec2DeleteFleetErrorCodeFleetnotindeletablestate = "fleetNotInDeletableState"
+	Ec2DeleteFleetErrorCodeUnexpectederror          = "unexpectedError"
+
+	// DeleteQueuedReservedInstancesErrorCode values
+	Ec2DeleteQueuedReservedInstancesErrorCodeReservedInstancesIdInvalid        = "reserved-instances-id-invalid"
+	Ec2DeleteQueuedReservedInstancesErrorCodeReservedInstancesNotInQueuedState = "reserved-instances-not-in-queued-state"
+	Ec2DeleteQueuedReservedInstancesErrorCodeUnexpectedError                   = "unexpected-error"
+
+	// DestinationFileFormat values
+	Ec2DestinationFileFormatPlainText = "plain-text"
+	Ec2DestinationFileFormatParquet   = "parquet"
+
+	// DeviceTrustProviderType values
+	Ec2DeviceTrustProviderTypeJamf        = "jamf"
+	Ec2DeviceTrustProviderTypeCrowdstrike = "crowdstrike"
+	Ec2DeviceTrustProviderTypeJumpcloud   = "jumpcloud"
+
+	// DeviceType values
+	Ec2DeviceTypeEbs           = "ebs"
+	Ec2DeviceTypeInstanceStore = "instance-store"
+
+	// DiskImageFormat values
+	Ec2DiskImageFormatVmdk = "VMDK"
+	Ec2DiskImageFormatRaw  = "RAW"
+	Ec2DiskImageFormatVhd  = "VHD"
+
+	// DiskType values
+	Ec2DiskTypeHdd = "hdd"
+	Ec2DiskTypeSsd = "ssd"
+
+	// DnsNameState values
+	Ec2DnsNameStatePendingverification = "pendingVerification"
+	Ec2DnsNameStateVerified            = "verified"
+	Ec2DnsNameStateFailed              = "failed"
+
+	// DnsRecordIpType values
+	Ec2DnsRecordIpTypeIpv4           = "ipv4"
+	Ec2DnsRecordIpTypeDualstack      = "dualstack"
+	Ec2DnsRecordIpTypeIpv6           = "ipv6"
+	Ec2DnsRecordIpTypeServiceDefined = "service-defined"
+
+	// DnsSupportValue values
+	Ec2DnsSupportValueEnable  = "enable"
+	Ec2DnsSupportValueDisable = "disable"
+
+	// DomainType values
+	Ec2DomainTypeVpc      = "vpc"
+	Ec2DomainTypeStandard = "standard"
+
+	// DynamicRoutingValue values
+	Ec2DynamicRoutingValueEnable  = "enable"
+	Ec2DynamicRoutingValueDisable = "disable"
+
+	// EbsEncryptionSupport values
+	Ec2EbsEncryptionSupportUnsupported = "unsupported"
+	Ec2EbsEncryptionSupportSupported   = "supported"
+
+	// EbsNvmeSupport values
+	Ec2EbsNvmeSupportUnsupported = "unsupported"
+	Ec2EbsNvmeSupportSupported   = "supported"
+	Ec2EbsNvmeSupportRequired    = "required"
+
+	// EbsOptimizedSupport values
+	Ec2EbsOptimizedSupportUnsupported = "unsupported"
+	Ec2EbsOptimizedSupportSupported   = "supported"
+	Ec2EbsOptimizedSupportDefault     = "default"
+
+	// Ec2InstanceConnectEndpointState values
+	Ec2Ec2InstanceConnectEndpointStateCreateInProgress = "create-in-progress"
+	Ec2Ec2InstanceConnectEndpointStateCreateComplete   = "create-complete"
+	Ec2Ec2InstanceConnectEndpointStateCreateFailed     = "create-failed"
+	Ec2Ec2InstanceConnectEndpointStateDeleteInProgress = "delete-in-progress"
+	Ec2Ec2InstanceConnectEndpointStateDeleteComplete   = "delete-complete"
+	Ec2Ec2InstanceConnectEndpointStateDeleteFailed     = "delete-failed"
+	Ec2Ec2InstanceConnectEndpointStateUpdateInProgress = "update-in-progress"
+	Ec2Ec2InstanceConnectEndpointStateUpdateComplete   = "update-complete"
+	Ec2Ec2InstanceConnectEndpointStateUpdateFailed     = "update-failed"
+
+	// EkPubKeyFormat values
+	Ec2EkPubKeyFormatDer  = "der"
+	Ec2EkPubKeyFormatTpmt = "tpmt"
+
+	// EkPubKeyType values
+	Ec2EkPubKeyTypeRsa2048    = "rsa-2048"
+	Ec2EkPubKeyTypeEccSecP384 = "ecc-sec-p384"
+
+	// ElasticGpuState values
+	Ec2ElasticGpuStateAttached = "ATTACHED"
+
+	// ElasticGpuStatus values
+	Ec2ElasticGpuStatusOk       = "OK"
+	Ec2ElasticGpuStatusImpaired = "IMPAIRED"
+
+	// EnaSupport values
+	Ec2EnaSupportUnsupported = "unsupported"
+	Ec2EnaSupportSupported   = "supported"
+	Ec2EnaSupportRequired    = "required"
+
+	// EncryptionStateValue values
+	Ec2EncryptionStateValueEnabling  = "enabling"
+	Ec2EncryptionStateValueEnabled   = "enabled"
+	Ec2EncryptionStateValueDisabling = "disabling"
+	Ec2EncryptionStateValueDisabled  = "disabled"
+
+	// EncryptionSupportOptionValue values
+	Ec2EncryptionSupportOptionValueEnable  = "enable"
+	Ec2EncryptionSupportOptionValueDisable = "disable"
+
+	// EndDateType values
+	Ec2EndDateTypeUnlimited = "unlimited"
+	Ec2EndDateTypeLimited   = "limited"
+
+	// EndpointIpAddressType values
+	Ec2EndpointIpAddressTypeIpv4      = "ipv4"
+	Ec2EndpointIpAddressTypeIpv6      = "ipv6"
+	Ec2EndpointIpAddressTypeDualStack = "dual-stack"
+
+	// EphemeralNvmeSupport values
+	Ec2EphemeralNvmeSupportUnsupported = "unsupported"
+	Ec2EphemeralNvmeSupportSupported   = "supported"
+	Ec2EphemeralNvmeSupportRequired    = "required"
+
+	// EventCode values
+	Ec2EventCodeInstanceReboot     = "instance-reboot"
+	Ec2EventCodeSystemReboot       = "system-reboot"
+	Ec2EventCodeSystemMaintenance  = "system-maintenance"
+	Ec2EventCodeInstanceRetirement = "instance-retirement"
+	Ec2EventCodeInstanceStop       = "instance-stop"
+
+	// EventType values
+	Ec2EventTypeInstancechange     = "instanceChange"
+	Ec2EventTypeFleetrequestchange = "fleetRequestChange"
+	Ec2EventTypeError              = "error"
+	Ec2EventTypeInformation        = "information"
+
+	// ExcessCapacityTerminationPolicy values
+	Ec2ExcessCapacityTerminationPolicyNotermination = "noTermination"
+	Ec2ExcessCapacityTerminationPolicyDefault       = "default"
+
+	// ExportEnvironment values
+	Ec2ExportEnvironmentCitrix    = "citrix"
+	Ec2ExportEnvironmentVmware    = "vmware"
+	Ec2ExportEnvironmentMicrosoft = "microsoft"
+
+	// ExportTaskState values
+	Ec2ExportTaskStateActive     = "active"
+	Ec2ExportTaskStateCancelling = "cancelling"
+	Ec2ExportTaskStateCancelled  = "cancelled"
+	Ec2ExportTaskStateCompleted  = "completed"
+
+	// FastLaunchResourceType values
+	Ec2FastLaunchResourceTypeSnapshot = "snapshot"
+
+	// FastLaunchStateCode values
+	Ec2FastLaunchStateCodeEnabling        = "enabling"
+	Ec2FastLaunchStateCodeEnablingFailed  = "enabling-failed"
+	Ec2FastLaunchStateCodeEnabled         = "enabled"
+	Ec2FastLaunchStateCodeEnabledFailed   = "enabled-failed"
+	Ec2FastLaunchStateCodeDisabling       = "disabling"
+	Ec2FastLaunchStateCodeDisablingFailed = "disabling-failed"
+
+	// FastSnapshotRestoreStateCode values
+	Ec2FastSnapshotRestoreStateCodeEnabling   = "enabling"
+	Ec2FastSnapshotRestoreStateCodeOptimizing = "optimizing"
+	Ec2FastSnapshotRestoreStateCodeEnabled    = "enabled"
+	Ec2FastSnapshotRestoreStateCodeDisabling  = "disabling"
+	Ec2FastSnapshotRestoreStateCodeDisabled   = "disabled"
+
+	// FilterByDimension values
+	Ec2FilterByDimensionResourceRegion                   = "resource-region"
+	Ec2FilterByDimensionAvailabilityZoneId               = "availability-zone-id"
+	Ec2FilterByDimensionAccountId                        = "account-id"
+	Ec2FilterByDimensionInstanceFamily                   = "instance-family"
+	Ec2FilterByDimensionInstanceType                     = "instance-type"
+	Ec2FilterByDimensionInstancePlatform                 = "instance-platform"
+	Ec2FilterByDimensionReservationArn                   = "reservation-arn"
+	Ec2FilterByDimensionReservationId                    = "reservation-id"
+	Ec2FilterByDimensionReservationType                  = "reservation-type"
+	Ec2FilterByDimensionReservationCreateTimestamp       = "reservation-create-timestamp"
+	Ec2FilterByDimensionReservationStartTimestamp        = "reservation-start-timestamp"
+	Ec2FilterByDimensionReservationEndTimestamp          = "reservation-end-timestamp"
+	Ec2FilterByDimensionReservationEndDateType           = "reservation-end-date-type"
+	Ec2FilterByDimensionTenancy                          = "tenancy"
+	Ec2FilterByDimensionReservationState                 = "reservation-state"
+	Ec2FilterByDimensionReservationInstanceMatchCriteria = "reservation-instance-match-criteria"
+	Ec2FilterByDimensionReservationUnusedFinancialOwner  = "reservation-unused-financial-owner"
+
+	// FindingsFound values
+	Ec2FindingsFoundTrue    = "true"
+	Ec2FindingsFoundFalse   = "false"
+	Ec2FindingsFoundUnknown = "unknown"
+
+	// FleetActivityStatus values
+	Ec2FleetActivityStatusError              = "error"
+	Ec2FleetActivityStatusPendingFulfillment = "pending_fulfillment"
+	Ec2FleetActivityStatusPendingTermination = "pending_termination"
+	Ec2FleetActivityStatusFulfilled          = "fulfilled"
+
+	// FleetCapacityReservationTenancy values
+	Ec2FleetCapacityReservationTenancyDefault = "default"
+
+	// FleetCapacityReservationUsageStrategy values
+	Ec2FleetCapacityReservationUsageStrategyUseCapacityReservationsFirst = "use-capacity-reservations-first"
+
+	// FleetEventType values
+	Ec2FleetEventTypeInstanceChange = "instance-change"
+	Ec2FleetEventTypeFleetChange    = "fleet-change"
+	Ec2FleetEventTypeServiceError   = "service-error"
+
+	// FleetExcessCapacityTerminationPolicy values
+	Ec2FleetExcessCapacityTerminationPolicyNoTermination = "no-termination"
+	Ec2FleetExcessCapacityTerminationPolicyTermination   = "termination"
+
+	// FleetInstanceMatchCriteria values
+	Ec2FleetInstanceMatchCriteriaOpen = "open"
+
+	// FleetOnDemandAllocationStrategy values
+	Ec2FleetOnDemandAllocationStrategyLowestPrice = "lowest-price"
+	Ec2FleetOnDemandAllocationStrategyPrioritized = "prioritized"
+
+	// FleetReplacementStrategy values
+	Ec2FleetReplacementStrategyLaunch                = "launch"
+	Ec2FleetReplacementStrategyLaunchBeforeTerminate = "launch-before-terminate"
+
+	// FleetStateCode values
+	Ec2FleetStateCodeSubmitted          = "submitted"
+	Ec2FleetStateCodeActive             = "active"
+	Ec2FleetStateCodeDeleted            = "deleted"
+	Ec2FleetStateCodeFailed             = "failed"
+	Ec2FleetStateCodeDeletedRunning     = "deleted_running"
+	Ec2FleetStateCodeDeletedTerminating = "deleted_terminating"
+	Ec2FleetStateCodeModifying          = "modifying"
+
+	// FleetType values
+	Ec2FleetTypeRequest  = "request"
+	Ec2FleetTypeMaintain = "maintain"
+	Ec2FleetTypeInstant  = "instant"
+
+	// FlexibleEnaQueuesSupport values
+	Ec2FlexibleEnaQueuesSupportUnsupported = "unsupported"
+	Ec2FlexibleEnaQueuesSupportSupported   = "supported"
+
+	// FlowLogsResourceType values
+	Ec2FlowLogsResourceTypeVpc                      = "VPC"
+	Ec2FlowLogsResourceTypeSubnet                   = "Subnet"
+	Ec2FlowLogsResourceTypeNetworkinterface         = "NetworkInterface"
+	Ec2FlowLogsResourceTypeTransitgateway           = "TransitGateway"
+	Ec2FlowLogsResourceTypeTransitgatewayattachment = "TransitGatewayAttachment"
+	Ec2FlowLogsResourceTypeRegionalnatgateway       = "RegionalNatGateway"
+
+	// FpgaImageAttributeName values
+	Ec2FpgaImageAttributeNameDescription    = "description"
+	Ec2FpgaImageAttributeNameName           = "name"
+	Ec2FpgaImageAttributeNameLoadpermission = "loadPermission"
+	Ec2FpgaImageAttributeNameProductcodes   = "productCodes"
+
+	// FpgaImageStateCode values
+	Ec2FpgaImageStateCodePending     = "pending"
+	Ec2FpgaImageStateCodeFailed      = "failed"
+	Ec2FpgaImageStateCodeAvailable   = "available"
+	Ec2FpgaImageStateCodeUnavailable = "unavailable"
+
+	// GatewayAssociationState values
+	Ec2GatewayAssociationStateAssociated     = "associated"
+	Ec2GatewayAssociationStateNotAssociated  = "not-associated"
+	Ec2GatewayAssociationStateAssociating    = "associating"
+	Ec2GatewayAssociationStateDisassociating = "disassociating"
+
+	// GatewayType values
+	Ec2GatewayTypeIpsec1 = "ipsec.1"
+
+	// GroupBy values
+	Ec2GroupByResourceRegion                   = "resource-region"
+	Ec2GroupByAvailabilityZoneId               = "availability-zone-id"
+	Ec2GroupByAccountId                        = "account-id"
+	Ec2GroupByInstanceFamily                   = "instance-family"
+	Ec2GroupByInstanceType                     = "instance-type"
+	Ec2GroupByInstancePlatform                 = "instance-platform"
+	Ec2GroupByReservationArn                   = "reservation-arn"
+	Ec2GroupByReservationId                    = "reservation-id"
+	Ec2GroupByReservationType                  = "reservation-type"
+	Ec2GroupByReservationCreateTimestamp       = "reservation-create-timestamp"
+	Ec2GroupByReservationStartTimestamp        = "reservation-start-timestamp"
+	Ec2GroupByReservationEndTimestamp          = "reservation-end-timestamp"
+	Ec2GroupByReservationEndDateType           = "reservation-end-date-type"
+	Ec2GroupByTenancy                          = "tenancy"
+	Ec2GroupByReservationState                 = "reservation-state"
+	Ec2GroupByReservationInstanceMatchCriteria = "reservation-instance-match-criteria"
+	Ec2GroupByReservationUnusedFinancialOwner  = "reservation-unused-financial-owner"
+
+	// HaStatus values
+	Ec2HaStatusProcessing = "processing"
+	Ec2HaStatusActive     = "active"
+	Ec2HaStatusStandby    = "standby"
+	Ec2HaStatusInvalid    = "invalid"
+
+	// HostMaintenance values
+	Ec2HostMaintenanceOn  = "on"
+	Ec2HostMaintenanceOff = "off"
+
+	// HostRecovery values
+	Ec2HostRecoveryOn  = "on"
+	Ec2HostRecoveryOff = "off"
+
+	// HostTenancy values
+	Ec2HostTenancyDefault   = "default"
+	Ec2HostTenancyDedicated = "dedicated"
+	Ec2HostTenancyHost      = "host"
+
+	// HostnameType values
+	Ec2HostnameTypeIpName       = "ip-name"
+	Ec2HostnameTypeResourceName = "resource-name"
+
+	// HttpTokensState values
+	Ec2HttpTokensStateOptional = "optional"
+	Ec2HttpTokensStateRequired = "required"
+
+	// HypervisorType values
+	Ec2HypervisorTypeOvm = "ovm"
+	Ec2HypervisorTypeXen = "xen"
+
+	// IamInstanceProfileAssociationState values
+	Ec2IamInstanceProfileAssociationStateAssociating    = "associating"
+	Ec2IamInstanceProfileAssociationStateAssociated     = "associated"
+	Ec2IamInstanceProfileAssociationStateDisassociating = "disassociating"
+	Ec2IamInstanceProfileAssociationStateDisassociated  = "disassociated"
+
+	// Igmpv2SupportValue values
+	Ec2Igmpv2SupportValueEnable  = "enable"
+	Ec2Igmpv2SupportValueDisable = "disable"
+
+	// ImageAttributeName values
+	Ec2ImageAttributeNameDescription              = "description"
+	Ec2ImageAttributeNameKernel                   = "kernel"
+	Ec2ImageAttributeNameRamdisk                  = "ramdisk"
+	Ec2ImageAttributeNameLaunchpermission         = "launchPermission"
+	Ec2ImageAttributeNameProductcodes             = "productCodes"
+	Ec2ImageAttributeNameBlockdevicemapping       = "blockDeviceMapping"
+	Ec2ImageAttributeNameSriovnetsupport          = "sriovNetSupport"
+	Ec2ImageAttributeNameBootmode                 = "bootMode"
+	Ec2ImageAttributeNameTpmsupport               = "tpmSupport"
+	Ec2ImageAttributeNameUefidata                 = "uefiData"
+	Ec2ImageAttributeNameLastlaunchedtime         = "lastLaunchedTime"
+	Ec2ImageAttributeNameImdssupport              = "imdsSupport"
+	Ec2ImageAttributeNameDeregistrationprotection = "deregistrationProtection"
+
+	// ImageBlockPublicAccessDisabledState values
+	Ec2ImageBlockPublicAccessDisabledStateUnblocked = "unblocked"
+
+	// ImageBlockPublicAccessEnabledState values
+	Ec2ImageBlockPublicAccessEnabledStateBlockNewSharing = "block-new-sharing"
+
+	// ImageReferenceOptionName values
+	Ec2ImageReferenceOptionNameStateName    = "state-name"
+	Ec2ImageReferenceOptionNameVersionDepth = "version-depth"
+
+	// ImageReferenceResourceType values
+	Ec2ImageReferenceResourceTypeEc2Instance                 = "ec2:Instance"
+	Ec2ImageReferenceResourceTypeEc2Launchtemplate           = "ec2:LaunchTemplate"
+	Ec2ImageReferenceResourceTypeSsmParameter                = "ssm:Parameter"
+	Ec2ImageReferenceResourceTypeImagebuilderImagerecipe     = "imagebuilder:ImageRecipe"
+	Ec2ImageReferenceResourceTypeImagebuilderContainerrecipe = "imagebuilder:ContainerRecipe"
+
+	// ImageState values
+	Ec2ImageStatePending      = "pending"
+	Ec2ImageStateAvailable    = "available"
+	Ec2ImageStateInvalid      = "invalid"
+	Ec2ImageStateDeregistered = "deregistered"
+	Ec2ImageStateTransient    = "transient"
+	Ec2ImageStateFailed       = "failed"
+	Ec2ImageStateError        = "error"
+	Ec2ImageStateDisabled     = "disabled"
+
+	// ImageTypeValues values
+	Ec2ImageTypeValuesMachine = "machine"
+	Ec2ImageTypeValuesKernel  = "kernel"
+	Ec2ImageTypeValuesRamdisk = "ramdisk"
+
+	// ImdsSupportValues values
+	Ec2ImdsSupportValuesV20 = "v2.0"
+
+	// IngestionStatus values
+	Ec2IngestionStatusInitialIngestionInProgress = "initial-ingestion-in-progress"
+	Ec2IngestionStatusIngestionComplete          = "ingestion-complete"
+	Ec2IngestionStatusIngestionFailed            = "ingestion-failed"
+
+	// InitializationType values
+	Ec2InitializationTypeDefault         = "default"
+	Ec2InitializationTypeProvisionedRate = "provisioned-rate"
+	Ec2InitializationTypeVolumeCopy      = "volume-copy"
+
+	// InstanceAttributeName values
+	Ec2InstanceAttributeNameInstancetype                      = "instanceType"
+	Ec2InstanceAttributeNameKernel                            = "kernel"
+	Ec2InstanceAttributeNameRamdisk                           = "ramdisk"
+	Ec2InstanceAttributeNameUserdata                          = "userData"
+	Ec2InstanceAttributeNameDisableapitermination             = "disableApiTermination"
+	Ec2InstanceAttributeNameInstanceinitiatedshutdownbehavior = "instanceInitiatedShutdownBehavior"
+	Ec2InstanceAttributeNameRootdevicename                    = "rootDeviceName"
+	Ec2InstanceAttributeNameBlockdevicemapping                = "blockDeviceMapping"
+	Ec2InstanceAttributeNameProductcodes                      = "productCodes"
+	Ec2InstanceAttributeNameSourcedestcheck                   = "sourceDestCheck"
+	Ec2InstanceAttributeNameGroupset                          = "groupSet"
+	Ec2InstanceAttributeNameEbsoptimized                      = "ebsOptimized"
+	Ec2InstanceAttributeNameSriovnetsupport                   = "sriovNetSupport"
+	Ec2InstanceAttributeNameEnasupport                        = "enaSupport"
+	Ec2InstanceAttributeNameEnclaveoptions                    = "enclaveOptions"
+	Ec2InstanceAttributeNameDisableapistop                    = "disableApiStop"
+
+	// InstanceAutoRecoveryState values
+	Ec2InstanceAutoRecoveryStateDisabled = "disabled"
+	Ec2InstanceAutoRecoveryStateDefault  = "default"
+
+	// InstanceBandwidthWeighting values
+	Ec2InstanceBandwidthWeightingDefault = "default"
+	Ec2InstanceBandwidthWeightingVpc1    = "vpc-1"
+	Ec2InstanceBandwidthWeightingEbs1    = "ebs-1"
+
+	// InstanceBootModeValues values
+	Ec2InstanceBootModeValuesLegacyBios = "legacy-bios"
+	Ec2InstanceBootModeValuesUefi       = "uefi"
+
+	// InstanceEventWindowState values
+	Ec2InstanceEventWindowStateCreating = "creating"
+	Ec2InstanceEventWindowStateDeleting = "deleting"
+	Ec2InstanceEventWindowStateActive   = "active"
+	Ec2InstanceEventWindowStateDeleted  = "deleted"
+
+	// InstanceGeneration values
+	Ec2InstanceGenerationCurrent  = "current"
+	Ec2InstanceGenerationPrevious = "previous"
+
+	// InstanceHealthStatus values
+	Ec2InstanceHealthStatusHealthy   = "healthy"
+	Ec2InstanceHealthStatusUnhealthy = "unhealthy"
+
+	// InstanceInterruptionBehavior values
+	Ec2InstanceInterruptionBehaviorHibernate = "hibernate"
+	Ec2InstanceInterruptionBehaviorStop      = "stop"
+	Ec2InstanceInterruptionBehaviorTerminate = "terminate"
+
+	// InstanceLifecycle values
+	Ec2InstanceLifecycleSpot     = "spot"
+	Ec2InstanceLifecycleOnDemand = "on-demand"
+
+	// InstanceLifecycleType values
+	Ec2InstanceLifecycleTypeSpot                             = "spot"
+	Ec2InstanceLifecycleTypeScheduled                        = "scheduled"
+	Ec2InstanceLifecycleTypeCapacityBlock                    = "capacity-block"
+	Ec2InstanceLifecycleTypeInterruptibleCapacityReservation = "interruptible-capacity-reservation"
+
+	// InstanceMatchCriteria values
+	Ec2InstanceMatchCriteriaOpen     = "open"
+	Ec2InstanceMatchCriteriaTargeted = "targeted"
+
+	// InstanceMetadataEndpointState values
+	Ec2InstanceMetadataEndpointStateDisabled = "disabled"
+	Ec2InstanceMetadataEndpointStateEnabled  = "enabled"
+
+	// InstanceMetadataOptionsState values
+	Ec2InstanceMetadataOptionsStatePending = "pending"
+	Ec2InstanceMetadataOptionsStateApplied = "applied"
+
+	// InstanceMetadataProtocolState values
+	Ec2InstanceMetadataProtocolStateDisabled = "disabled"
+	Ec2InstanceMetadataProtocolStateEnabled  = "enabled"
+
+	// InstanceMetadataTagsState values
+	Ec2InstanceMetadataTagsStateDisabled = "disabled"
+	Ec2InstanceMetadataTagsStateEnabled  = "enabled"
+
+	// InstanceRebootMigrationState values
+	Ec2InstanceRebootMigrationStateDisabled = "disabled"
+	Ec2InstanceRebootMigrationStateDefault  = "default"
+
+	// InstanceStateName values
+	Ec2InstanceStateNamePending      = "pending"
+	Ec2InstanceStateNameRunning      = "running"
+	Ec2InstanceStateNameShuttingDown = "shutting-down"
+	Ec2InstanceStateNameTerminated   = "terminated"
+	Ec2InstanceStateNameStopping     = "stopping"
+	Ec2InstanceStateNameStopped      = "stopped"
+
+	// InstanceStorageEncryptionSupport values
+	Ec2InstanceStorageEncryptionSupportUnsupported = "unsupported"
+	Ec2InstanceStorageEncryptionSupportRequired    = "required"
+
+	// InstanceTypeHypervisor values
+	Ec2InstanceTypeHypervisorNitro = "nitro"
+	Ec2InstanceTypeHypervisorXen   = "xen"
+
+	// InterfacePermissionType values
+	Ec2InterfacePermissionTypeInstanceAttach = "INSTANCE-ATTACH"
+	Ec2InterfacePermissionTypeEipAssociate   = "EIP-ASSOCIATE"
+
+	// InterfaceProtocolType values
+	Ec2InterfaceProtocolTypeVlan = "VLAN"
+	Ec2InterfaceProtocolTypeGre  = "GRE"
+
+	// InternetGatewayBlockMode values
+	Ec2InternetGatewayBlockModeOff                = "off"
+	Ec2InternetGatewayBlockModeBlockBidirectional = "block-bidirectional"
+	Ec2InternetGatewayBlockModeBlockIngress       = "block-ingress"
+
+	// InternetGatewayExclusionMode values
+	Ec2InternetGatewayExclusionModeAllowBidirectional = "allow-bidirectional"
+	Ec2InternetGatewayExclusionModeAllowEgress        = "allow-egress"
+
+	// InterruptibleCapacityReservationAllocationStatus values
+	Ec2InterruptibleCapacityReservationAllocationStatusPending   = "pending"
+	Ec2InterruptibleCapacityReservationAllocationStatusActive    = "active"
+	Ec2InterruptibleCapacityReservationAllocationStatusUpdating  = "updating"
+	Ec2InterruptibleCapacityReservationAllocationStatusCanceling = "canceling"
+	Ec2InterruptibleCapacityReservationAllocationStatusCanceled  = "canceled"
+	Ec2InterruptibleCapacityReservationAllocationStatusFailed    = "failed"
+
+	// InterruptionType values
+	Ec2InterruptionTypeAdhoc = "adhoc"
+
+	// IpAddressType values
+	Ec2IpAddressTypeIpv4      = "ipv4"
+	Ec2IpAddressTypeDualstack = "dualstack"
+	Ec2IpAddressTypeIpv6      = "ipv6"
+
+	// IpSource values
+	Ec2IpSourceAmazon = "amazon"
+	Ec2IpSourceByoip  = "byoip"
+	Ec2IpSourceNone   = "none"
+
+	// IpamAddressHistoryResourceType values
+	Ec2IpamAddressHistoryResourceTypeEip              = "eip"
+	Ec2IpamAddressHistoryResourceTypeVpc              = "vpc"
+	Ec2IpamAddressHistoryResourceTypeSubnet           = "subnet"
+	Ec2IpamAddressHistoryResourceTypeNetworkInterface = "network-interface"
+	Ec2IpamAddressHistoryResourceTypeInstance         = "instance"
+
+	// IpamAssociatedResourceDiscoveryStatus values
+	Ec2IpamAssociatedResourceDiscoveryStatusActive   = "active"
+	Ec2IpamAssociatedResourceDiscoveryStatusNotFound = "not-found"
+
+	// IpamComplianceStatus values
+	Ec2IpamComplianceStatusCompliant    = "compliant"
+	Ec2IpamComplianceStatusNoncompliant = "noncompliant"
+	Ec2IpamComplianceStatusUnmanaged    = "unmanaged"
+	Ec2IpamComplianceStatusIgnored      = "ignored"
+
+	// IpamDiscoveryFailureCode values
+	Ec2IpamDiscoveryFailureCodeAssumeRoleFailure   = "assume-role-failure"
+	Ec2IpamDiscoveryFailureCodeThrottlingFailure   = "throttling-failure"
+	Ec2IpamDiscoveryFailureCodeUnauthorizedFailure = "unauthorized-failure"
+
+	// IpamExternalResourceVerificationTokenState values
+	Ec2IpamExternalResourceVerificationTokenStateCreateInProgress = "create-in-progress"
+	Ec2IpamExternalResourceVerificationTokenStateCreateComplete   = "create-complete"
+	Ec2IpamExternalResourceVerificationTokenStateCreateFailed     = "create-failed"
+	Ec2IpamExternalResourceVerificationTokenStateDeleteInProgress = "delete-in-progress"
+	Ec2IpamExternalResourceVerificationTokenStateDeleteComplete   = "delete-complete"
+	Ec2IpamExternalResourceVerificationTokenStateDeleteFailed     = "delete-failed"
+
+	// IpamManagementState values
+	Ec2IpamManagementStateManaged   = "managed"
+	Ec2IpamManagementStateUnmanaged = "unmanaged"
+	Ec2IpamManagementStateIgnored   = "ignored"
+
+	// IpamMeteredAccount values
+	Ec2IpamMeteredAccountIpamOwner     = "ipam-owner"
+	Ec2IpamMeteredAccountResourceOwner = "resource-owner"
+
+	// IpamNetworkInterfaceAttachmentStatus values
+	Ec2IpamNetworkInterfaceAttachmentStatusAvailable = "available"
+	Ec2IpamNetworkInterfaceAttachmentStatusInUse     = "in-use"
+
+	// IpamOverlapStatus values
+	Ec2IpamOverlapStatusOverlapping    = "overlapping"
+	Ec2IpamOverlapStatusNonoverlapping = "nonoverlapping"
+	Ec2IpamOverlapStatusIgnored        = "ignored"
+
+	// IpamPolicyManagedBy values
+	Ec2IpamPolicyManagedByAccount                       = "account"
+	Ec2IpamPolicyManagedByDelegatedAdministratorForIpam = "delegated-administrator-for-ipam"
+
+	// IpamPolicyResourceType values
+	Ec2IpamPolicyResourceTypeAlb  = "alb"
+	Ec2IpamPolicyResourceTypeEip  = "eip"
+	Ec2IpamPolicyResourceTypeRds  = "rds"
+	Ec2IpamPolicyResourceTypeRnat = "rnat"
+
+	// IpamPolicyState values
+	Ec2IpamPolicyStateCreateInProgress  = "create-in-progress"
+	Ec2IpamPolicyStateCreateComplete    = "create-complete"
+	Ec2IpamPolicyStateCreateFailed      = "create-failed"
+	Ec2IpamPolicyStateModifyInProgress  = "modify-in-progress"
+	Ec2IpamPolicyStateModifyComplete    = "modify-complete"
+	Ec2IpamPolicyStateModifyFailed      = "modify-failed"
+	Ec2IpamPolicyStateDeleteInProgress  = "delete-in-progress"
+	Ec2IpamPolicyStateDeleteComplete    = "delete-complete"
+	Ec2IpamPolicyStateDeleteFailed      = "delete-failed"
+	Ec2IpamPolicyStateIsolateInProgress = "isolate-in-progress"
+	Ec2IpamPolicyStateIsolateComplete   = "isolate-complete"
+	Ec2IpamPolicyStateRestoreInProgress = "restore-in-progress"
+
+	// IpamPoolAllocationResourceType values
+	Ec2IpamPoolAllocationResourceTypeIpamPool          = "ipam-pool"
+	Ec2IpamPoolAllocationResourceTypeVpc               = "vpc"
+	Ec2IpamPoolAllocationResourceTypeEc2PublicIpv4Pool = "ec2-public-ipv4-pool"
+	Ec2IpamPoolAllocationResourceTypeCustom            = "custom"
+	Ec2IpamPoolAllocationResourceTypeSubnet            = "subnet"
+	Ec2IpamPoolAllocationResourceTypeEip               = "eip"
+	Ec2IpamPoolAllocationResourceTypeAnycastIpList     = "anycast-ip-list"
+
+	// IpamPoolAwsService values
+	Ec2IpamPoolAwsServiceEc2            = "ec2"
+	Ec2IpamPoolAwsServiceGlobalServices = "global-services"
+
+	// IpamPoolCidrFailureCode values
+	Ec2IpamPoolCidrFailureCodeCidrNotAvailable = "cidr-not-available"
+	Ec2IpamPoolCidrFailureCodeLimitExceeded    = "limit-exceeded"
+
+	// IpamPoolCidrState values
+	Ec2IpamPoolCidrStatePendingProvision   = "pending-provision"
+	Ec2IpamPoolCidrStateProvisioned        = "provisioned"
+	Ec2IpamPoolCidrStateFailedProvision    = "failed-provision"
+	Ec2IpamPoolCidrStatePendingDeprovision = "pending-deprovision"
+	Ec2IpamPoolCidrStateDeprovisioned      = "deprovisioned"
+	Ec2IpamPoolCidrStateFailedDeprovision  = "failed-deprovision"
+	Ec2IpamPoolCidrStatePendingImport      = "pending-import"
+	Ec2IpamPoolCidrStateFailedImport       = "failed-import"
+
+	// IpamPoolPublicIpSource values
+	Ec2IpamPoolPublicIpSourceAmazon = "amazon"
+	Ec2IpamPoolPublicIpSourceByoip  = "byoip"
+
+	// IpamPoolSourceResourceType values
+	Ec2IpamPoolSourceResourceTypeVpc = "vpc"
+
+	// IpamPoolState values
+	Ec2IpamPoolStateCreateInProgress  = "create-in-progress"
+	Ec2IpamPoolStateCreateComplete    = "create-complete"
+	Ec2IpamPoolStateCreateFailed      = "create-failed"
+	Ec2IpamPoolStateModifyInProgress  = "modify-in-progress"
+	Ec2IpamPoolStateModifyComplete    = "modify-complete"
+	Ec2IpamPoolStateModifyFailed      = "modify-failed"
+	Ec2IpamPoolStateDeleteInProgress  = "delete-in-progress"
+	Ec2IpamPoolStateDeleteComplete    = "delete-complete"
+	Ec2IpamPoolStateDeleteFailed      = "delete-failed"
+	Ec2IpamPoolStateIsolateInProgress = "isolate-in-progress"
+	Ec2IpamPoolStateIsolateComplete   = "isolate-complete"
+	Ec2IpamPoolStateRestoreInProgress = "restore-in-progress"
+
+	// IpamPrefixListResolverRuleConditionOperation values
+	Ec2IpamPrefixListResolverRuleConditionOperationEquals    = "equals"
+	Ec2IpamPrefixListResolverRuleConditionOperationNotEquals = "not-equals"
+	Ec2IpamPrefixListResolverRuleConditionOperationSubnetOf  = "subnet-of"
+
+	// IpamPrefixListResolverRuleType values
+	Ec2IpamPrefixListResolverRuleTypeStaticCidr       = "static-cidr"
+	Ec2IpamPrefixListResolverRuleTypeIpamResourceCidr = "ipam-resource-cidr"
+	Ec2IpamPrefixListResolverRuleTypeIpamPoolCidr     = "ipam-pool-cidr"
+
+	// IpamPrefixListResolverState values
+	Ec2IpamPrefixListResolverStateCreateInProgress  = "create-in-progress"
+	Ec2IpamPrefixListResolverStateCreateComplete    = "create-complete"
+	Ec2IpamPrefixListResolverStateCreateFailed      = "create-failed"
+	Ec2IpamPrefixListResolverStateModifyInProgress  = "modify-in-progress"
+	Ec2IpamPrefixListResolverStateModifyComplete    = "modify-complete"
+	Ec2IpamPrefixListResolverStateModifyFailed      = "modify-failed"
+	Ec2IpamPrefixListResolverStateDeleteInProgress  = "delete-in-progress"
+	Ec2IpamPrefixListResolverStateDeleteComplete    = "delete-complete"
+	Ec2IpamPrefixListResolverStateDeleteFailed      = "delete-failed"
+	Ec2IpamPrefixListResolverStateIsolateInProgress = "isolate-in-progress"
+	Ec2IpamPrefixListResolverStateIsolateComplete   = "isolate-complete"
+	Ec2IpamPrefixListResolverStateRestoreInProgress = "restore-in-progress"
+
+	// IpamPrefixListResolverTargetState values
+	Ec2IpamPrefixListResolverTargetStateCreateInProgress  = "create-in-progress"
+	Ec2IpamPrefixListResolverTargetStateCreateComplete    = "create-complete"
+	Ec2IpamPrefixListResolverTargetStateCreateFailed      = "create-failed"
+	Ec2IpamPrefixListResolverTargetStateModifyInProgress  = "modify-in-progress"
+	Ec2IpamPrefixListResolverTargetStateModifyComplete    = "modify-complete"
+	Ec2IpamPrefixListResolverTargetStateModifyFailed      = "modify-failed"
+	Ec2IpamPrefixListResolverTargetStateSyncInProgress    = "sync-in-progress"
+	Ec2IpamPrefixListResolverTargetStateSyncComplete      = "sync-complete"
+	Ec2IpamPrefixListResolverTargetStateSyncFailed        = "sync-failed"
+	Ec2IpamPrefixListResolverTargetStateDeleteInProgress  = "delete-in-progress"
+	Ec2IpamPrefixListResolverTargetStateDeleteComplete    = "delete-complete"
+	Ec2IpamPrefixListResolverTargetStateDeleteFailed      = "delete-failed"
+	Ec2IpamPrefixListResolverTargetStateIsolateInProgress = "isolate-in-progress"
+	Ec2IpamPrefixListResolverTargetStateIsolateComplete   = "isolate-complete"
+	Ec2IpamPrefixListResolverTargetStateRestoreInProgress = "restore-in-progress"
+
+	// IpamPrefixListResolverVersionCreationStatus values
+	Ec2IpamPrefixListResolverVersionCreationStatusPending = "pending"
+	Ec2IpamPrefixListResolverVersionCreationStatusSuccess = "success"
+	Ec2IpamPrefixListResolverVersionCreationStatusFailure = "failure"
+
+	// IpamPublicAddressAssociationStatus values
+	Ec2IpamPublicAddressAssociationStatusAssociated    = "associated"
+	Ec2IpamPublicAddressAssociationStatusDisassociated = "disassociated"
+
+	// IpamPublicAddressAwsService values
+	Ec2IpamPublicAddressAwsServiceNatGateway                = "nat-gateway"
+	Ec2IpamPublicAddressAwsServiceDatabaseMigrationService  = "database-migration-service"
+	Ec2IpamPublicAddressAwsServiceRedshift                  = "redshift"
+	Ec2IpamPublicAddressAwsServiceElasticContainerService   = "elastic-container-service"
+	Ec2IpamPublicAddressAwsServiceRelationalDatabaseService = "relational-database-service"
+	Ec2IpamPublicAddressAwsServiceSiteToSiteVpn             = "site-to-site-vpn"
+	Ec2IpamPublicAddressAwsServiceLoadBalancer              = "load-balancer"
+	Ec2IpamPublicAddressAwsServiceGlobalAccelerator         = "global-accelerator"
+	Ec2IpamPublicAddressAwsServiceCloudfront                = "cloudfront"
+	Ec2IpamPublicAddressAwsServiceOther                     = "other"
+
+	// IpamPublicAddressType values
+	Ec2IpamPublicAddressTypeServiceManagedIp    = "service-managed-ip"
+	Ec2IpamPublicAddressTypeServiceManagedByoip = "service-managed-byoip"
+	Ec2IpamPublicAddressTypeAmazonOwnedEip      = "amazon-owned-eip"
+	Ec2IpamPublicAddressTypeAmazonOwnedContig   = "amazon-owned-contig"
+	Ec2IpamPublicAddressTypeByoip               = "byoip"
+	Ec2IpamPublicAddressTypeEc2PublicIp         = "ec2-public-ip"
+	Ec2IpamPublicAddressTypeAnycastIpListIp     = "anycast-ip-list-ip"
+
+	// IpamResourceCidrIpSource values
+	Ec2IpamResourceCidrIpSourceAmazon = "amazon"
+	Ec2IpamResourceCidrIpSourceByoip  = "byoip"
+	Ec2IpamResourceCidrIpSourceNone   = "none"
+
+	// IpamResourceDiscoveryAssociationState values
+	Ec2IpamResourceDiscoveryAssociationStateAssociateInProgress    = "associate-in-progress"
+	Ec2IpamResourceDiscoveryAssociationStateAssociateComplete      = "associate-complete"
+	Ec2IpamResourceDiscoveryAssociationStateAssociateFailed        = "associate-failed"
+	Ec2IpamResourceDiscoveryAssociationStateDisassociateInProgress = "disassociate-in-progress"
+	Ec2IpamResourceDiscoveryAssociationStateDisassociateComplete   = "disassociate-complete"
+	Ec2IpamResourceDiscoveryAssociationStateDisassociateFailed     = "disassociate-failed"
+	Ec2IpamResourceDiscoveryAssociationStateIsolateInProgress      = "isolate-in-progress"
+	Ec2IpamResourceDiscoveryAssociationStateIsolateComplete        = "isolate-complete"
+	Ec2IpamResourceDiscoveryAssociationStateRestoreInProgress      = "restore-in-progress"
+
+	// IpamResourceDiscoveryState values
+	Ec2IpamResourceDiscoveryStateCreateInProgress  = "create-in-progress"
+	Ec2IpamResourceDiscoveryStateCreateComplete    = "create-complete"
+	Ec2IpamResourceDiscoveryStateCreateFailed      = "create-failed"
+	Ec2IpamResourceDiscoveryStateModifyInProgress  = "modify-in-progress"
+	Ec2IpamResourceDiscoveryStateModifyComplete    = "modify-complete"
+	Ec2IpamResourceDiscoveryStateModifyFailed      = "modify-failed"
+	Ec2IpamResourceDiscoveryStateDeleteInProgress  = "delete-in-progress"
+	Ec2IpamResourceDiscoveryStateDeleteComplete    = "delete-complete"
+	Ec2IpamResourceDiscoveryStateDeleteFailed      = "delete-failed"
+	Ec2IpamResourceDiscoveryStateIsolateInProgress = "isolate-in-progress"
+	Ec2IpamResourceDiscoveryStateIsolateComplete   = "isolate-complete"
+	Ec2IpamResourceDiscoveryStateRestoreInProgress = "restore-in-progress"
+
+	// IpamResourceType values
+	Ec2IpamResourceTypeVpc            = "vpc"
+	Ec2IpamResourceTypeSubnet         = "subnet"
+	Ec2IpamResourceTypeEip            = "eip"
+	Ec2IpamResourceTypePublicIpv4Pool = "public-ipv4-pool"
+	Ec2IpamResourceTypeIpv6Pool       = "ipv6-pool"
+	Ec2IpamResourceTypeEni            = "eni"
+	Ec2IpamResourceTypeAnycastIpList  = "anycast-ip-list"
+
+	// IpamScopeExternalAuthorityType values
+	Ec2IpamScopeExternalAuthorityTypeInfoblox = "infoblox"
+
+	// IpamScopeState values
+	Ec2IpamScopeStateCreateInProgress  = "create-in-progress"
+	Ec2IpamScopeStateCreateComplete    = "create-complete"
+	Ec2IpamScopeStateCreateFailed      = "create-failed"
+	Ec2IpamScopeStateModifyInProgress  = "modify-in-progress"
+	Ec2IpamScopeStateModifyComplete    = "modify-complete"
+	Ec2IpamScopeStateModifyFailed      = "modify-failed"
+	Ec2IpamScopeStateDeleteInProgress  = "delete-in-progress"
+	Ec2IpamScopeStateDeleteComplete    = "delete-complete"
+	Ec2IpamScopeStateDeleteFailed      = "delete-failed"
+	Ec2IpamScopeStateIsolateInProgress = "isolate-in-progress"
+	Ec2IpamScopeStateIsolateComplete   = "isolate-complete"
+	Ec2IpamScopeStateRestoreInProgress = "restore-in-progress"
+
+	// IpamScopeType values
+	Ec2IpamScopeTypePublic  = "public"
+	Ec2IpamScopeTypePrivate = "private"
+
+	// IpamState values
+	Ec2IpamStateCreateInProgress  = "create-in-progress"
+	Ec2IpamStateCreateComplete    = "create-complete"
+	Ec2IpamStateCreateFailed      = "create-failed"
+	Ec2IpamStateModifyInProgress  = "modify-in-progress"
+	Ec2IpamStateModifyComplete    = "modify-complete"
+	Ec2IpamStateModifyFailed      = "modify-failed"
+	Ec2IpamStateDeleteInProgress  = "delete-in-progress"
+	Ec2IpamStateDeleteComplete    = "delete-complete"
+	Ec2IpamStateDeleteFailed      = "delete-failed"
+	Ec2IpamStateIsolateInProgress = "isolate-in-progress"
+	Ec2IpamStateIsolateComplete   = "isolate-complete"
+	Ec2IpamStateRestoreInProgress = "restore-in-progress"
+
+	// IpamTier values
+	Ec2IpamTierFree     = "free"
+	Ec2IpamTierAdvanced = "advanced"
+
+	// Ipv6AddressAttribute values
+	Ec2Ipv6AddressAttributePublic  = "public"
+	Ec2Ipv6AddressAttributePrivate = "private"
+
+	// Ipv6SupportValue values
+	Ec2Ipv6SupportValueEnable  = "enable"
+	Ec2Ipv6SupportValueDisable = "disable"
+
+	// KeyFormat values
+	Ec2KeyFormatPem = "pem"
+	Ec2KeyFormatPpk = "ppk"
+
+	// KeyType values
+	Ec2KeyTypeRsa     = "rsa"
+	Ec2KeyTypeEd25519 = "ed25519"
+
+	// LaunchTemplateAutoRecoveryState values
+	Ec2LaunchTemplateAutoRecoveryStateDefault  = "default"
+	Ec2LaunchTemplateAutoRecoveryStateDisabled = "disabled"
+
+	// LaunchTemplateErrorCode values
+	Ec2LaunchTemplateErrorCodeLaunchtemplateiddoesnotexist      = "launchTemplateIdDoesNotExist"
+	Ec2LaunchTemplateErrorCodeLaunchtemplateidmalformed         = "launchTemplateIdMalformed"
+	Ec2LaunchTemplateErrorCodeLaunchtemplatenamedoesnotexist    = "launchTemplateNameDoesNotExist"
+	Ec2LaunchTemplateErrorCodeLaunchtemplatenamemalformed       = "launchTemplateNameMalformed"
+	Ec2LaunchTemplateErrorCodeLaunchtemplateversiondoesnotexist = "launchTemplateVersionDoesNotExist"
+	Ec2LaunchTemplateErrorCodeUnexpectederror                   = "unexpectedError"
+
+	// LaunchTemplateHttpTokensState values
+	Ec2LaunchTemplateHttpTokensStateOptional = "optional"
+	Ec2LaunchTemplateHttpTokensStateRequired = "required"
+
+	// LaunchTemplateInstanceMetadataEndpointState values
+	Ec2LaunchTemplateInstanceMetadataEndpointStateDisabled = "disabled"
+	Ec2LaunchTemplateInstanceMetadataEndpointStateEnabled  = "enabled"
+
+	// LaunchTemplateInstanceMetadataOptionsState values
+	Ec2LaunchTemplateInstanceMetadataOptionsStatePending = "pending"
+	Ec2LaunchTemplateInstanceMetadataOptionsStateApplied = "applied"
+
+	// LaunchTemplateInstanceMetadataProtocolIpv6 values
+	Ec2LaunchTemplateInstanceMetadataProtocolIpv6Disabled = "disabled"
+	Ec2LaunchTemplateInstanceMetadataProtocolIpv6Enabled  = "enabled"
+
+	// LaunchTemplateInstanceMetadataTagsState values
+	Ec2LaunchTemplateInstanceMetadataTagsStateDisabled = "disabled"
+	Ec2LaunchTemplateInstanceMetadataTagsStateEnabled  = "enabled"
+
+	// ListingState values
+	Ec2ListingStateAvailable = "available"
+	Ec2ListingStateSold      = "sold"
+	Ec2ListingStateCancelled = "cancelled"
+	Ec2ListingStatePending   = "pending"
+
+	// ListingStatus values
+	Ec2ListingStatusActive    = "active"
+	Ec2ListingStatusPending   = "pending"
+	Ec2ListingStatusCancelled = "cancelled"
+	Ec2ListingStatusClosed    = "closed"
+
+	// LocalGatewayRouteState values
+	Ec2LocalGatewayRouteStatePending   = "pending"
+	Ec2LocalGatewayRouteStateActive    = "active"
+	Ec2LocalGatewayRouteStateBlackhole = "blackhole"
+	Ec2LocalGatewayRouteStateDeleting  = "deleting"
+	Ec2LocalGatewayRouteStateDeleted   = "deleted"
+
+	// LocalGatewayRouteTableMode values
+	Ec2LocalGatewayRouteTableModeDirectVpcRouting = "direct-vpc-routing"
+	Ec2LocalGatewayRouteTableModeCoip             = "coip"
+
+	// LocalGatewayRouteType values
+	Ec2LocalGatewayRouteTypeStatic     = "static"
+	Ec2LocalGatewayRouteTypePropagated = "propagated"
+
+	// LocalGatewayVirtualInterfaceConfigurationState values
+	Ec2LocalGatewayVirtualInterfaceConfigurationStatePending   = "pending"
+	Ec2LocalGatewayVirtualInterfaceConfigurationStateAvailable = "available"
+	Ec2LocalGatewayVirtualInterfaceConfigurationStateDeleting  = "deleting"
+	Ec2LocalGatewayVirtualInterfaceConfigurationStateDeleted   = "deleted"
+
+	// LocalGatewayVirtualInterfaceGroupConfigurationState values
+	Ec2LocalGatewayVirtualInterfaceGroupConfigurationStatePending    = "pending"
+	Ec2LocalGatewayVirtualInterfaceGroupConfigurationStateIncomplete = "incomplete"
+	Ec2LocalGatewayVirtualInterfaceGroupConfigurationStateAvailable  = "available"
+	Ec2LocalGatewayVirtualInterfaceGroupConfigurationStateDeleting   = "deleting"
+	Ec2LocalGatewayVirtualInterfaceGroupConfigurationStateDeleted    = "deleted"
+
+	// LocalStorage values
+	Ec2LocalStorageIncluded = "included"
+	Ec2LocalStorageRequired = "required"
+	Ec2LocalStorageExcluded = "excluded"
+
+	// LocalStorageType values
+	Ec2LocalStorageTypeHdd = "hdd"
+	Ec2LocalStorageTypeSsd = "ssd"
+
+	// LocationType values
+	Ec2LocationTypeRegion             = "region"
+	Ec2LocationTypeAvailabilityZone   = "availability-zone"
+	Ec2LocationTypeAvailabilityZoneId = "availability-zone-id"
+	Ec2LocationTypeOutpost            = "outpost"
+
+	// LockMode values
+	Ec2LockModeCompliance = "compliance"
+	Ec2LockModeGovernance = "governance"
+
+	// LockState values
+	Ec2LockStateCompliance        = "compliance"
+	Ec2LockStateGovernance        = "governance"
+	Ec2LockStateComplianceCooloff = "compliance-cooloff"
+	Ec2LockStateExpired           = "expired"
+
+	// LogDestinationType values
+	Ec2LogDestinationTypeCloudWatchLogs      = "cloud-watch-logs"
+	Ec2LogDestinationTypeS3                  = "s3"
+	Ec2LogDestinationTypeKinesisDataFirehose = "kinesis-data-firehose"
+
+	// MacModificationTaskState values
+	Ec2MacModificationTaskStateSuccessful = "successful"
+	Ec2MacModificationTaskStateFailed     = "failed"
+	Ec2MacModificationTaskStateInProgress = "in-progress"
+	Ec2MacModificationTaskStatePending    = "pending"
+
+	// MacModificationTaskType values
+	Ec2MacModificationTaskTypeSipModification           = "sip-modification"
+	Ec2MacModificationTaskTypeVolumeOwnershipDelegation = "volume-ownership-delegation"
+
+	// MacSystemIntegrityProtectionSettingStatus values
+	Ec2MacSystemIntegrityProtectionSettingStatusEnabled  = "enabled"
+	Ec2MacSystemIntegrityProtectionSettingStatusDisabled = "disabled"
+
+	// ManagedBy values
+	Ec2ManagedByAccount           = "account"
+	Ec2ManagedByDeclarativePolicy = "declarative-policy"
+
+	// MarketType values
+	Ec2MarketTypeSpot                             = "spot"
+	Ec2MarketTypeCapacityBlock                    = "capacity-block"
+	Ec2MarketTypeInterruptibleCapacityReservation = "interruptible-capacity-reservation"
+
+	// MembershipType values
+	Ec2MembershipTypeStatic = "static"
+	Ec2MembershipTypeIgmp   = "igmp"
+
+	// MetadataDefaultHttpTokensState values
+	Ec2MetadataDefaultHttpTokensStateOptional     = "optional"
+	Ec2MetadataDefaultHttpTokensStateRequired     = "required"
+	Ec2MetadataDefaultHttpTokensStateNoPreference = "no-preference"
+
+	// Metric values
+	Ec2MetricReservationTotalCapacityHrsVcpu       = "reservation-total-capacity-hrs-vcpu"
+	Ec2MetricReservationTotalCapacityHrsInst       = "reservation-total-capacity-hrs-inst"
+	Ec2MetricReservationMaxSizeVcpu                = "reservation-max-size-vcpu"
+	Ec2MetricReservationMaxSizeInst                = "reservation-max-size-inst"
+	Ec2MetricReservationMinSizeVcpu                = "reservation-min-size-vcpu"
+	Ec2MetricReservationMinSizeInst                = "reservation-min-size-inst"
+	Ec2MetricReservationUnusedTotalCapacityHrsVcpu = "reservation-unused-total-capacity-hrs-vcpu"
+	Ec2MetricReservationUnusedTotalCapacityHrsInst = "reservation-unused-total-capacity-hrs-inst"
+	Ec2MetricReservationUnusedTotalEstimatedCost   = "reservation-unused-total-estimated-cost"
+	Ec2MetricReservationMaxUnusedSizeVcpu          = "reservation-max-unused-size-vcpu"
+	Ec2MetricReservationMaxUnusedSizeInst          = "reservation-max-unused-size-inst"
+	Ec2MetricReservationMinUnusedSizeVcpu          = "reservation-min-unused-size-vcpu"
+	Ec2MetricReservationMinUnusedSizeInst          = "reservation-min-unused-size-inst"
+	Ec2MetricReservationMaxUtilization             = "reservation-max-utilization"
+	Ec2MetricReservationMinUtilization             = "reservation-min-utilization"
+	Ec2MetricReservationAvgUtilizationVcpu         = "reservation-avg-utilization-vcpu"
+	Ec2MetricReservationAvgUtilizationInst         = "reservation-avg-utilization-inst"
+	Ec2MetricReservationTotalCount                 = "reservation-total-count"
+	Ec2MetricReservationTotalEstimatedCost         = "reservation-total-estimated-cost"
+	Ec2MetricReservationAvgFutureSizeVcpu          = "reservation-avg-future-size-vcpu"
+	Ec2MetricReservationAvgFutureSizeInst          = "reservation-avg-future-size-inst"
+	Ec2MetricReservationMinFutureSizeVcpu          = "reservation-min-future-size-vcpu"
+	Ec2MetricReservationMinFutureSizeInst          = "reservation-min-future-size-inst"
+	Ec2MetricReservationMaxFutureSizeVcpu          = "reservation-max-future-size-vcpu"
+	Ec2MetricReservationMaxFutureSizeInst          = "reservation-max-future-size-inst"
+	Ec2MetricReservationAvgCommittedSizeVcpu       = "reservation-avg-committed-size-vcpu"
+	Ec2MetricReservationAvgCommittedSizeInst       = "reservation-avg-committed-size-inst"
+	Ec2MetricReservationMaxCommittedSizeVcpu       = "reservation-max-committed-size-vcpu"
+	Ec2MetricReservationMaxCommittedSizeInst       = "reservation-max-committed-size-inst"
+	Ec2MetricReservationMinCommittedSizeVcpu       = "reservation-min-committed-size-vcpu"
+	Ec2MetricReservationMinCommittedSizeInst       = "reservation-min-committed-size-inst"
+	Ec2MetricReservedTotalUsageHrsVcpu             = "reserved-total-usage-hrs-vcpu"
+	Ec2MetricReservedTotalUsageHrsInst             = "reserved-total-usage-hrs-inst"
+	Ec2MetricReservedTotalEstimatedCost            = "reserved-total-estimated-cost"
+	Ec2MetricUnreservedTotalUsageHrsVcpu           = "unreserved-total-usage-hrs-vcpu"
+	Ec2MetricUnreservedTotalUsageHrsInst           = "unreserved-total-usage-hrs-inst"
+	Ec2MetricUnreservedTotalEstimatedCost          = "unreserved-total-estimated-cost"
+	Ec2MetricSpotTotalUsageHrsVcpu                 = "spot-total-usage-hrs-vcpu"
+	Ec2MetricSpotTotalUsageHrsInst                 = "spot-total-usage-hrs-inst"
+	Ec2MetricSpotTotalEstimatedCost                = "spot-total-estimated-cost"
+	Ec2MetricSpotAvgRunTimeBeforeInterruptionInst  = "spot-avg-run-time-before-interruption-inst"
+	Ec2MetricSpotMaxRunTimeBeforeInterruptionInst  = "spot-max-run-time-before-interruption-inst"
+	Ec2MetricSpotMinRunTimeBeforeInterruptionInst  = "spot-min-run-time-before-interruption-inst"
+	Ec2MetricSpotTotalInterruptionsInst            = "spot-total-interruptions-inst"
+	Ec2MetricSpotTotalInterruptionsVcpu            = "spot-total-interruptions-vcpu"
+	Ec2MetricSpotTotalCountInst                    = "spot-total-count-inst"
+	Ec2MetricSpotTotalCountVcpu                    = "spot-total-count-vcpu"
+	Ec2MetricSpotInterruptionRateInst              = "spot-interruption-rate-inst"
+	Ec2MetricSpotInterruptionRateVcpu              = "spot-interruption-rate-vcpu"
+
+	// MetricType values
+	Ec2MetricTypeAggregateLatency = "aggregate-latency"
+
+	// ModifyAvailabilityZoneOptInStatus values
+	Ec2ModifyAvailabilityZoneOptInStatusOptedIn    = "opted-in"
+	Ec2ModifyAvailabilityZoneOptInStatusNotOptedIn = "not-opted-in"
+
+	// MonitoringState values
+	Ec2MonitoringStateDisabled  = "disabled"
+	Ec2MonitoringStateDisabling = "disabling"
+	Ec2MonitoringStateEnabled   = "enabled"
+	Ec2MonitoringStatePending   = "pending"
+
+	// MoveStatus values
+	Ec2MoveStatusMovingtovpc        = "movingToVpc"
+	Ec2MoveStatusRestoringtoclassic = "restoringToClassic"
+
+	// MulticastSupportValue values
+	Ec2MulticastSupportValueEnable  = "enable"
+	Ec2MulticastSupportValueDisable = "disable"
+
+	// NatGatewayAddressStatus values
+	Ec2NatGatewayAddressStatusAssigning      = "assigning"
+	Ec2NatGatewayAddressStatusUnassigning    = "unassigning"
+	Ec2NatGatewayAddressStatusAssociating    = "associating"
+	Ec2NatGatewayAddressStatusDisassociating = "disassociating"
+	Ec2NatGatewayAddressStatusSucceeded      = "succeeded"
+	Ec2NatGatewayAddressStatusFailed         = "failed"
+
+	// NatGatewayApplianceModifyState values
+	Ec2NatGatewayApplianceModifyStateModifying = "modifying"
+	Ec2NatGatewayApplianceModifyStateCompleted = "completed"
+	Ec2NatGatewayApplianceModifyStateFailed    = "failed"
+
+	// NatGatewayApplianceState values
+	Ec2NatGatewayApplianceStateAttaching    = "attaching"
+	Ec2NatGatewayApplianceStateAttached     = "attached"
+	Ec2NatGatewayApplianceStateDetaching    = "detaching"
+	Ec2NatGatewayApplianceStateDetached     = "detached"
+	Ec2NatGatewayApplianceStateAttachFailed = "attach-failed"
+	Ec2NatGatewayApplianceStateDetachFailed = "detach-failed"
+
+	// NatGatewayApplianceType values
+	Ec2NatGatewayApplianceTypeNetworkFirewallProxy = "network-firewall-proxy"
+
+	// NatGatewayState values
+	Ec2NatGatewayStatePending   = "pending"
+	Ec2NatGatewayStateFailed    = "failed"
+	Ec2NatGatewayStateAvailable = "available"
+	Ec2NatGatewayStateDeleting  = "deleting"
+	Ec2NatGatewayStateDeleted   = "deleted"
+
+	// NetworkInterfaceAttribute values
+	Ec2NetworkInterfaceAttributeDescription              = "description"
+	Ec2NetworkInterfaceAttributeGroupset                 = "groupSet"
+	Ec2NetworkInterfaceAttributeSourcedestcheck          = "sourceDestCheck"
+	Ec2NetworkInterfaceAttributeAttachment               = "attachment"
+	Ec2NetworkInterfaceAttributeAssociatepublicipaddress = "associatePublicIpAddress"
+
+	// NetworkInterfaceCreationType values
+	Ec2NetworkInterfaceCreationTypeEfa     = "efa"
+	Ec2NetworkInterfaceCreationTypeEfaOnly = "efa-only"
+	Ec2NetworkInterfaceCreationTypeBranch  = "branch"
+	Ec2NetworkInterfaceCreationTypeTrunk   = "trunk"
+
+	// NetworkInterfacePermissionStateCode values
+	Ec2NetworkInterfacePermissionStateCodePending  = "pending"
+	Ec2NetworkInterfacePermissionStateCodeGranted  = "granted"
+	Ec2NetworkInterfacePermissionStateCodeRevoking = "revoking"
+	Ec2NetworkInterfacePermissionStateCodeRevoked  = "revoked"
+
+	// NetworkInterfaceStatus values
+	Ec2NetworkInterfaceStatusAvailable  = "available"
+	Ec2NetworkInterfaceStatusAssociated = "associated"
+	Ec2NetworkInterfaceStatusAttaching  = "attaching"
+	Ec2NetworkInterfaceStatusInUse      = "in-use"
+	Ec2NetworkInterfaceStatusDetaching  = "detaching"
+
+	// NetworkInterfaceType values
+	Ec2NetworkInterfaceTypeInterface                     = "interface"
+	Ec2NetworkInterfaceTypeNatgateway                    = "natGateway"
+	Ec2NetworkInterfaceTypeEfa                           = "efa"
+	Ec2NetworkInterfaceTypeEfaOnly                       = "efa-only"
+	Ec2NetworkInterfaceTypeTrunk                         = "trunk"
+	Ec2NetworkInterfaceTypeLoadBalancer                  = "load_balancer"
+	Ec2NetworkInterfaceTypeNetworkLoadBalancer           = "network_load_balancer"
+	Ec2NetworkInterfaceTypeVpcEndpoint                   = "vpc_endpoint"
+	Ec2NetworkInterfaceTypeBranch                        = "branch"
+	Ec2NetworkInterfaceTypeTransitGateway                = "transit_gateway"
+	Ec2NetworkInterfaceTypeLambda                        = "lambda"
+	Ec2NetworkInterfaceTypeQuicksight                    = "quicksight"
+	Ec2NetworkInterfaceTypeGlobalAcceleratorManaged      = "global_accelerator_managed"
+	Ec2NetworkInterfaceTypeApiGatewayManaged             = "api_gateway_managed"
+	Ec2NetworkInterfaceTypeGatewayLoadBalancer           = "gateway_load_balancer"
+	Ec2NetworkInterfaceTypeGatewayLoadBalancerEndpoint   = "gateway_load_balancer_endpoint"
+	Ec2NetworkInterfaceTypeIotRulesManaged               = "iot_rules_managed"
+	Ec2NetworkInterfaceTypeAwsCodestarConnectionsManaged = "aws_codestar_connections_managed"
+
+	// NitroEnclavesSupport values
+	Ec2NitroEnclavesSupportUnsupported = "unsupported"
+	Ec2NitroEnclavesSupportSupported   = "supported"
+
+	// NitroTpmSupport values
+	Ec2NitroTpmSupportUnsupported = "unsupported"
+	Ec2NitroTpmSupportSupported   = "supported"
+
+	// OfferingClassType values
+	Ec2OfferingClassTypeStandard    = "standard"
+	Ec2OfferingClassTypeConvertible = "convertible"
+
+	// OfferingTypeValues values
+	Ec2OfferingTypeValuesHeavyUtilization  = "Heavy Utilization"
+	Ec2OfferingTypeValuesMediumUtilization = "Medium Utilization"
+	Ec2OfferingTypeValuesLightUtilization  = "Light Utilization"
+	Ec2OfferingTypeValuesNoUpfront         = "No Upfront"
+	Ec2OfferingTypeValuesPartialUpfront    = "Partial Upfront"
+	Ec2OfferingTypeValuesAllUpfront        = "All Upfront"
+
+	// OnDemandAllocationStrategy values
+	Ec2OnDemandAllocationStrategyLowestprice = "lowestPrice"
+	Ec2OnDemandAllocationStrategyPrioritized = "prioritized"
+
+	// OperationType values
+	Ec2OperationTypeAdd    = "add"
+	Ec2OperationTypeRemove = "remove"
+
+	// OutputFormat values
+	Ec2OutputFormatCsv     = "csv"
+	Ec2OutputFormatParquet = "parquet"
+
+	// PartitionLoadFrequency values
+	Ec2PartitionLoadFrequencyNone    = "none"
+	Ec2PartitionLoadFrequencyDaily   = "daily"
+	Ec2PartitionLoadFrequencyWeekly  = "weekly"
+	Ec2PartitionLoadFrequencyMonthly = "monthly"
+
+	// PayerResponsibility values
+	Ec2PayerResponsibilityServiceowner = "ServiceOwner"
+
+	// PaymentOption values
+	Ec2PaymentOptionAllupfront     = "AllUpfront"
+	Ec2PaymentOptionPartialupfront = "PartialUpfront"
+	Ec2PaymentOptionNoupfront      = "NoUpfront"
+
+	// PeriodType values
+	Ec2PeriodTypeFiveMinutes    = "five-minutes"
+	Ec2PeriodTypeFifteenMinutes = "fifteen-minutes"
+	Ec2PeriodTypeOneHour        = "one-hour"
+	Ec2PeriodTypeThreeHours     = "three-hours"
+	Ec2PeriodTypeOneDay         = "one-day"
+	Ec2PeriodTypeOneWeek        = "one-week"
+
+	// PermissionGroup values
+	Ec2PermissionGroupAll = "all"
+
+	// PhcSupport values
+	Ec2PhcSupportUnsupported = "unsupported"
+	Ec2PhcSupportSupported   = "supported"
+
+	// PlacementGroupState values
+	Ec2PlacementGroupStatePending   = "pending"
+	Ec2PlacementGroupStateAvailable = "available"
+	Ec2PlacementGroupStateDeleting  = "deleting"
+	Ec2PlacementGroupStateDeleted   = "deleted"
+
+	// PlacementGroupStrategy values
+	Ec2PlacementGroupStrategyCluster   = "cluster"
+	Ec2PlacementGroupStrategyPartition = "partition"
+	Ec2PlacementGroupStrategySpread    = "spread"
+
+	// PlacementStrategy values
+	Ec2PlacementStrategyCluster   = "cluster"
+	Ec2PlacementStrategySpread    = "spread"
+	Ec2PlacementStrategyPartition = "partition"
+
+	// PlatformValues values
+	Ec2PlatformValuesWindows = "Windows"
+
+	// PrefixListState values
+	Ec2PrefixListStateCreateInProgress  = "create-in-progress"
+	Ec2PrefixListStateCreateComplete    = "create-complete"
+	Ec2PrefixListStateCreateFailed      = "create-failed"
+	Ec2PrefixListStateModifyInProgress  = "modify-in-progress"
+	Ec2PrefixListStateModifyComplete    = "modify-complete"
+	Ec2PrefixListStateModifyFailed      = "modify-failed"
+	Ec2PrefixListStateRestoreInProgress = "restore-in-progress"
+	Ec2PrefixListStateRestoreComplete   = "restore-complete"
+	Ec2PrefixListStateRestoreFailed     = "restore-failed"
+	Ec2PrefixListStateDeleteInProgress  = "delete-in-progress"
+	Ec2PrefixListStateDeleteComplete    = "delete-complete"
+	Ec2PrefixListStateDeleteFailed      = "delete-failed"
+
+	// PrincipalType values
+	Ec2PrincipalTypeAll              = "All"
+	Ec2PrincipalTypeService          = "Service"
+	Ec2PrincipalTypeOrganizationunit = "OrganizationUnit"
+	Ec2PrincipalTypeAccount          = "Account"
+	Ec2PrincipalTypeUser             = "User"
+	Ec2PrincipalTypeRole             = "Role"
+
+	// ProductCodeValues values
+	Ec2ProductCodeValuesDevpay      = "devpay"
+	Ec2ProductCodeValuesMarketplace = "marketplace"
+
+	// Protocol values
+	Ec2ProtocolTcp = "tcp"
+	Ec2ProtocolUdp = "udp"
+
+	// ProtocolValue values
+	Ec2ProtocolValueGre = "gre"
+
+	// PublicIpDnsOption values
+	Ec2PublicIpDnsOptionPublicDualStackDnsName = "public-dual-stack-dns-name"
+	Ec2PublicIpDnsOptionPublicIpv4DnsName      = "public-ipv4-dns-name"
+	Ec2PublicIpDnsOptionPublicIpv6DnsName      = "public-ipv6-dns-name"
+
+	// RIProductDescription values
+	Ec2RIProductDescriptionLinuxUnix          = "Linux/UNIX"
+	Ec2RIProductDescriptionLinuxUnixAmazonVpc = "Linux/UNIX (Amazon VPC)"
+	Ec2RIProductDescriptionWindows            = "Windows"
+	Ec2RIProductDescriptionWindowsAmazonVpc   = "Windows (Amazon VPC)"
+
+	// RebootMigrationSupport values
+	Ec2RebootMigrationSupportUnsupported = "unsupported"
+	Ec2RebootMigrationSupportSupported   = "supported"
+
+	// RecurringChargeFrequency values
+	Ec2RecurringChargeFrequencyHourly = "Hourly"
+
+	// ReplaceRootVolumeTaskState values
+	Ec2ReplaceRootVolumeTaskStatePending        = "pending"
+	Ec2ReplaceRootVolumeTaskStateInProgress     = "in-progress"
+	Ec2ReplaceRootVolumeTaskStateFailing        = "failing"
+	Ec2ReplaceRootVolumeTaskStateSucceeded      = "succeeded"
+	Ec2ReplaceRootVolumeTaskStateFailed         = "failed"
+	Ec2ReplaceRootVolumeTaskStateFailedDetached = "failed-detached"
+
+	// ReplacementStrategy values
+	Ec2ReplacementStrategyLaunch                = "launch"
+	Ec2ReplacementStrategyLaunchBeforeTerminate = "launch-before-terminate"
+
+	// ReportInstanceReasonCodes values
+	Ec2ReportInstanceReasonCodesInstanceStuckInState     = "instance-stuck-in-state"
+	Ec2ReportInstanceReasonCodesUnresponsive             = "unresponsive"
+	Ec2ReportInstanceReasonCodesNotAcceptingCredentials  = "not-accepting-credentials"
+	Ec2ReportInstanceReasonCodesPasswordNotAvailable     = "password-not-available"
+	Ec2ReportInstanceReasonCodesPerformanceNetwork       = "performance-network"
+	Ec2ReportInstanceReasonCodesPerformanceInstanceStore = "performance-instance-store"
+	Ec2ReportInstanceReasonCodesPerformanceEbsVolume     = "performance-ebs-volume"
+	Ec2ReportInstanceReasonCodesPerformanceOther         = "performance-other"
+	Ec2ReportInstanceReasonCodesOther                    = "other"
+
+	// ReportState values
+	Ec2ReportStateRunning   = "running"
+	Ec2ReportStateCancelled = "cancelled"
+	Ec2ReportStateComplete  = "complete"
+	Ec2ReportStateError     = "error"
+
+	// ReportStatusType values
+	Ec2ReportStatusTypeOk       = "ok"
+	Ec2ReportStatusTypeImpaired = "impaired"
+
+	// ReservationEndDateType values
+	Ec2ReservationEndDateTypeLimited   = "limited"
+	Ec2ReservationEndDateTypeUnlimited = "unlimited"
+
+	// ReservationState values
+	Ec2ReservationStateActive         = "active"
+	Ec2ReservationStateExpired        = "expired"
+	Ec2ReservationStateCancelled      = "cancelled"
+	Ec2ReservationStateScheduled      = "scheduled"
+	Ec2ReservationStatePending        = "pending"
+	Ec2ReservationStateFailed         = "failed"
+	Ec2ReservationStateDelayed        = "delayed"
+	Ec2ReservationStateUnsupported    = "unsupported"
+	Ec2ReservationStatePaymentPending = "payment-pending"
+	Ec2ReservationStatePaymentFailed  = "payment-failed"
+	Ec2ReservationStateRetired        = "retired"
+
+	// ReservationType values
+	Ec2ReservationTypeCapacityBlock = "capacity-block"
+	Ec2ReservationTypeOdcr          = "odcr"
+
+	// ReservedInstanceState values
+	Ec2ReservedInstanceStatePaymentPending = "payment-pending"
+	Ec2ReservedInstanceStateActive         = "active"
+	Ec2ReservedInstanceStatePaymentFailed  = "payment-failed"
+	Ec2ReservedInstanceStateRetired        = "retired"
+	Ec2ReservedInstanceStateQueued         = "queued"
+	Ec2ReservedInstanceStateQueuedDeleted  = "queued-deleted"
+
+	// ResetFpgaImageAttributeName values
+	Ec2ResetFpgaImageAttributeNameLoadpermission = "loadPermission"
+
+	// ResetImageAttributeName values
+	Ec2ResetImageAttributeNameLaunchpermission = "launchPermission"
+
+	// ResourceType values
+	Ec2ResourceTypeCapacityReservation                                    = "capacity-reservation"
+	Ec2ResourceTypeClientVpnEndpoint                                      = "client-vpn-endpoint"
+	Ec2ResourceTypeCustomerGateway                                        = "customer-gateway"
+	Ec2ResourceTypeCarrierGateway                                         = "carrier-gateway"
+	Ec2ResourceTypeCoipPool                                               = "coip-pool"
+	Ec2ResourceTypeDeclarativePoliciesReport                              = "declarative-policies-report"
+	Ec2ResourceTypeDedicatedHost                                          = "dedicated-host"
+	Ec2ResourceTypeDhcpOptions                                            = "dhcp-options"
+	Ec2ResourceTypeEgressOnlyInternetGateway                              = "egress-only-internet-gateway"
+	Ec2ResourceTypeElasticIp                                              = "elastic-ip"
+	Ec2ResourceTypeElasticGpu                                             = "elastic-gpu"
+	Ec2ResourceTypeExportImageTask                                        = "export-image-task"
+	Ec2ResourceTypeExportInstanceTask                                     = "export-instance-task"
+	Ec2ResourceTypeFleet                                                  = "fleet"
+	Ec2ResourceTypeFpgaImage                                              = "fpga-image"
+	Ec2ResourceTypeHostReservation                                        = "host-reservation"
+	Ec2ResourceTypeImage                                                  = "image"
+	Ec2ResourceTypeImageUsageReport                                       = "image-usage-report"
+	Ec2ResourceTypeImportImageTask                                        = "import-image-task"
+	Ec2ResourceTypeImportSnapshotTask                                     = "import-snapshot-task"
+	Ec2ResourceTypeInstance                                               = "instance"
+	Ec2ResourceTypeInstanceEventWindow                                    = "instance-event-window"
+	Ec2ResourceTypeInternetGateway                                        = "internet-gateway"
+	Ec2ResourceTypeIpam                                                   = "ipam"
+	Ec2ResourceTypeIpamPool                                               = "ipam-pool"
+	Ec2ResourceTypeIpamScope                                              = "ipam-scope"
+	Ec2ResourceTypeIpv4poolEc2                                            = "ipv4pool-ec2"
+	Ec2ResourceTypeIpv6poolEc2                                            = "ipv6pool-ec2"
+	Ec2ResourceTypeKeyPair                                                = "key-pair"
+	Ec2ResourceTypeLaunchTemplate                                         = "launch-template"
+	Ec2ResourceTypeLocalGateway                                           = "local-gateway"
+	Ec2ResourceTypeLocalGatewayRouteTable                                 = "local-gateway-route-table"
+	Ec2ResourceTypeLocalGatewayVirtualInterface                           = "local-gateway-virtual-interface"
+	Ec2ResourceTypeLocalGatewayVirtualInterfaceGroup                      = "local-gateway-virtual-interface-group"
+	Ec2ResourceTypeLocalGatewayRouteTableVpcAssociation                   = "local-gateway-route-table-vpc-association"
+	Ec2ResourceTypeLocalGatewayRouteTableVirtualInterfaceGroupAssociation = "local-gateway-route-table-virtual-interface-group-association"
+	Ec2ResourceTypeNatgateway                                             = "natgateway"
+	Ec2ResourceTypeNetworkAcl                                             = "network-acl"
+	Ec2ResourceTypeNetworkInterface                                       = "network-interface"
+	Ec2ResourceTypeNetworkInsightsAnalysis                                = "network-insights-analysis"
+	Ec2ResourceTypeNetworkInsightsPath                                    = "network-insights-path"
+	Ec2ResourceTypeNetworkInsightsAccessScope                             = "network-insights-access-scope"
+	Ec2ResourceTypeNetworkInsightsAccessScopeAnalysis                     = "network-insights-access-scope-analysis"
+	Ec2ResourceTypeOutpostLag                                             = "outpost-lag"
+	Ec2ResourceTypePlacementGroup                                         = "placement-group"
+	Ec2ResourceTypePrefixList                                             = "prefix-list"
+	Ec2ResourceTypeReplaceRootVolumeTask                                  = "replace-root-volume-task"
+	Ec2ResourceTypeReservedInstances                                      = "reserved-instances"
+	Ec2ResourceTypeRouteTable                                             = "route-table"
+	Ec2ResourceTypeSecurityGroup                                          = "security-group"
+	Ec2ResourceTypeSecurityGroupRule                                      = "security-group-rule"
+	Ec2ResourceTypeServiceLinkVirtualInterface                            = "service-link-virtual-interface"
+	Ec2ResourceTypeSnapshot                                               = "snapshot"
+	Ec2ResourceTypeSpotFleetRequest                                       = "spot-fleet-request"
+	Ec2ResourceTypeSpotInstancesRequest                                   = "spot-instances-request"
+	Ec2ResourceTypeSubnet                                                 = "subnet"
+	Ec2ResourceTypeSubnetCidrReservation                                  = "subnet-cidr-reservation"
+	Ec2ResourceTypeTrafficMirrorFilter                                    = "traffic-mirror-filter"
+	Ec2ResourceTypeTrafficMirrorSession                                   = "traffic-mirror-session"
+	Ec2ResourceTypeTrafficMirrorTarget                                    = "traffic-mirror-target"
+	Ec2ResourceTypeTransitGateway                                         = "transit-gateway"
+	Ec2ResourceTypeTransitGatewayAttachment                               = "transit-gateway-attachment"
+	Ec2ResourceTypeTransitGatewayConnectPeer                              = "transit-gateway-connect-peer"
+	Ec2ResourceTypeTransitGatewayMulticastDomain                          = "transit-gateway-multicast-domain"
+	Ec2ResourceTypeTransitGatewayPolicyTable                              = "transit-gateway-policy-table"
+	Ec2ResourceTypeTransitGatewayMeteringPolicy                           = "transit-gateway-metering-policy"
+	Ec2ResourceTypeTransitGatewayRouteTable                               = "transit-gateway-route-table"
+	Ec2ResourceTypeTransitGatewayRouteTableAnnouncement                   = "transit-gateway-route-table-announcement"
+	Ec2ResourceTypeVolume                                                 = "volume"
+	Ec2ResourceTypeVpc                                                    = "vpc"
+	Ec2ResourceTypeVpcEndpoint                                            = "vpc-endpoint"
+	Ec2ResourceTypeVpcEndpointConnection                                  = "vpc-endpoint-connection"
+	Ec2ResourceTypeVpcEndpointService                                     = "vpc-endpoint-service"
+	Ec2ResourceTypeVpcEndpointServicePermission                           = "vpc-endpoint-service-permission"
+	Ec2ResourceTypeVpcPeeringConnection                                   = "vpc-peering-connection"
+	Ec2ResourceTypeVpnConnection                                          = "vpn-connection"
+	Ec2ResourceTypeVpnGateway                                             = "vpn-gateway"
+	Ec2ResourceTypeVpcFlowLog                                             = "vpc-flow-log"
+	Ec2ResourceTypeCapacityReservationFleet                               = "capacity-reservation-fleet"
+	Ec2ResourceTypeTrafficMirrorFilterRule                                = "traffic-mirror-filter-rule"
+	Ec2ResourceTypeVpcEndpointConnectionDeviceType                        = "vpc-endpoint-connection-device-type"
+	Ec2ResourceTypeVerifiedAccessInstance                                 = "verified-access-instance"
+	Ec2ResourceTypeVerifiedAccessGroup                                    = "verified-access-group"
+	Ec2ResourceTypeVerifiedAccessEndpoint                                 = "verified-access-endpoint"
+	Ec2ResourceTypeVerifiedAccessPolicy                                   = "verified-access-policy"
+	Ec2ResourceTypeVerifiedAccessTrustProvider                            = "verified-access-trust-provider"
+	Ec2ResourceTypeVpnConnectionDeviceType                                = "vpn-connection-device-type"
+	Ec2ResourceTypeVpcBlockPublicAccessExclusion                          = "vpc-block-public-access-exclusion"
+	Ec2ResourceTypeVpcEncryptionControl                                   = "vpc-encryption-control"
+	Ec2ResourceTypeRouteServer                                            = "route-server"
+	Ec2ResourceTypeRouteServerEndpoint                                    = "route-server-endpoint"
+	Ec2ResourceTypeRouteServerPeer                                        = "route-server-peer"
+	Ec2ResourceTypeIpamResourceDiscovery                                  = "ipam-resource-discovery"
+	Ec2ResourceTypeIpamResourceDiscoveryAssociation                       = "ipam-resource-discovery-association"
+	Ec2ResourceTypeInstanceConnectEndpoint                                = "instance-connect-endpoint"
+	Ec2ResourceTypeVerifiedAccessEndpointTarget                           = "verified-access-endpoint-target"
+	Ec2ResourceTypeIpamExternalResourceVerificationToken                  = "ipam-external-resource-verification-token"
+	Ec2ResourceTypeCapacityBlock                                          = "capacity-block"
+	Ec2ResourceTypeMacModificationTask                                    = "mac-modification-task"
+	Ec2ResourceTypeIpamPrefixListResolver                                 = "ipam-prefix-list-resolver"
+	Ec2ResourceTypeIpamPolicy                                             = "ipam-policy"
+	Ec2ResourceTypeIpamPrefixListResolverTarget                           = "ipam-prefix-list-resolver-target"
+	Ec2ResourceTypeCapacityManagerDataExport                              = "capacity-manager-data-export"
+	Ec2ResourceTypeVpnConcentrator                                        = "vpn-concentrator"
+
+	// RootDeviceType values
+	Ec2RootDeviceTypeEbs           = "ebs"
+	Ec2RootDeviceTypeInstanceStore = "instance-store"
+
+	// RouteOrigin values
+	Ec2RouteOriginCreateroutetable          = "CreateRouteTable"
+	Ec2RouteOriginCreateroute               = "CreateRoute"
+	Ec2RouteOriginEnablevgwroutepropagation = "EnableVgwRoutePropagation"
+	Ec2RouteOriginAdvertisement             = "Advertisement"
+
+	// RouteServerAssociationState values
+	Ec2RouteServerAssociationStateAssociating    = "associating"
+	Ec2RouteServerAssociationStateAssociated     = "associated"
+	Ec2RouteServerAssociationStateDisassociating = "disassociating"
+
+	// RouteServerBfdState values
+	Ec2RouteServerBfdStateUp   = "up"
+	Ec2RouteServerBfdStateDown = "down"
+
+	// RouteServerBgpState values
+	Ec2RouteServerBgpStateUp   = "up"
+	Ec2RouteServerBgpStateDown = "down"
+
+	// RouteServerEndpointState values
+	Ec2RouteServerEndpointStatePending      = "pending"
+	Ec2RouteServerEndpointStateAvailable    = "available"
+	Ec2RouteServerEndpointStateDeleting     = "deleting"
+	Ec2RouteServerEndpointStateDeleted      = "deleted"
+	Ec2RouteServerEndpointStateFailing      = "failing"
+	Ec2RouteServerEndpointStateFailed       = "failed"
+	Ec2RouteServerEndpointStateDeleteFailed = "delete-failed"
+
+	// RouteServerPeerLivenessMode values
+	Ec2RouteServerPeerLivenessModeBfd          = "bfd"
+	Ec2RouteServerPeerLivenessModeBgpKeepalive = "bgp-keepalive"
+
+	// RouteServerPeerState values
+	Ec2RouteServerPeerStatePending   = "pending"
+	Ec2RouteServerPeerStateAvailable = "available"
+	Ec2RouteServerPeerStateDeleting  = "deleting"
+	Ec2RouteServerPeerStateDeleted   = "deleted"
+	Ec2RouteServerPeerStateFailing   = "failing"
+	Ec2RouteServerPeerStateFailed    = "failed"
+
+	// RouteServerPersistRoutesAction values
+	Ec2RouteServerPersistRoutesActionEnable  = "enable"
+	Ec2RouteServerPersistRoutesActionDisable = "disable"
+	Ec2RouteServerPersistRoutesActionReset   = "reset"
+
+	// RouteServerPersistRoutesState values
+	Ec2RouteServerPersistRoutesStateEnabling  = "enabling"
+	Ec2RouteServerPersistRoutesStateEnabled   = "enabled"
+	Ec2RouteServerPersistRoutesStateResetting = "resetting"
+	Ec2RouteServerPersistRoutesStateDisabling = "disabling"
+	Ec2RouteServerPersistRoutesStateDisabled  = "disabled"
+	Ec2RouteServerPersistRoutesStateModifying = "modifying"
+
+	// RouteServerPropagationState values
+	Ec2RouteServerPropagationStatePending   = "pending"
+	Ec2RouteServerPropagationStateAvailable = "available"
+	Ec2RouteServerPropagationStateDeleting  = "deleting"
+
+	// RouteServerRouteInstallationStatus values
+	Ec2RouteServerRouteInstallationStatusInstalled = "installed"
+	Ec2RouteServerRouteInstallationStatusRejected  = "rejected"
+
+	// RouteServerRouteStatus values
+	Ec2RouteServerRouteStatusInRib = "in-rib"
+	Ec2RouteServerRouteStatusInFib = "in-fib"
+
+	// RouteServerState values
+	Ec2RouteServerStatePending   = "pending"
+	Ec2RouteServerStateAvailable = "available"
+	Ec2RouteServerStateModifying = "modifying"
+	Ec2RouteServerStateDeleting  = "deleting"
+	Ec2RouteServerStateDeleted   = "deleted"
+
+	// RouteState values
+	Ec2RouteStateActive    = "active"
+	Ec2RouteStateBlackhole = "blackhole"
+	Ec2RouteStateFiltered  = "filtered"
+
+	// RouteTableAssociationStateCode values
+	Ec2RouteTableAssociationStateCodeAssociating    = "associating"
+	Ec2RouteTableAssociationStateCodeAssociated     = "associated"
+	Ec2RouteTableAssociationStateCodeDisassociating = "disassociating"
+	Ec2RouteTableAssociationStateCodeDisassociated  = "disassociated"
+	Ec2RouteTableAssociationStateCodeFailed         = "failed"
+
+	// RuleAction values
+	Ec2RuleActionAllow = "allow"
+	Ec2RuleActionDeny  = "deny"
+
+	// SSEType values
+	Ec2SSETypeSseEbs = "sse-ebs"
+	Ec2SSETypeSseKms = "sse-kms"
+	Ec2SSETypeNone   = "none"
+
+	// Schedule values
+	Ec2ScheduleHourly = "hourly"
+
+	// SecurityGroupReferencingSupportValue values
+	Ec2SecurityGroupReferencingSupportValueEnable  = "enable"
+	Ec2SecurityGroupReferencingSupportValueDisable = "disable"
+
+	// SecurityGroupVpcAssociationState values
+	Ec2SecurityGroupVpcAssociationStateAssociating          = "associating"
+	Ec2SecurityGroupVpcAssociationStateAssociated           = "associated"
+	Ec2SecurityGroupVpcAssociationStateAssociationFailed    = "association-failed"
+	Ec2SecurityGroupVpcAssociationStateDisassociating       = "disassociating"
+	Ec2SecurityGroupVpcAssociationStateDisassociated        = "disassociated"
+	Ec2SecurityGroupVpcAssociationStateDisassociationFailed = "disassociation-failed"
+
+	// SelfServicePortal values
+	Ec2SelfServicePortalEnabled  = "enabled"
+	Ec2SelfServicePortalDisabled = "disabled"
+
+	// ServiceConnectivityType values
+	Ec2ServiceConnectivityTypeIpv4 = "ipv4"
+	Ec2ServiceConnectivityTypeIpv6 = "ipv6"
+
+	// ServiceLinkVirtualInterfaceConfigurationState values
+	Ec2ServiceLinkVirtualInterfaceConfigurationStatePending   = "pending"
+	Ec2ServiceLinkVirtualInterfaceConfigurationStateAvailable = "available"
+	Ec2ServiceLinkVirtualInterfaceConfigurationStateDeleting  = "deleting"
+	Ec2ServiceLinkVirtualInterfaceConfigurationStateDeleted   = "deleted"
+
+	// ServiceManaged values
+	Ec2ServiceManagedAlb  = "alb"
+	Ec2ServiceManagedNlb  = "nlb"
+	Ec2ServiceManagedRnat = "rnat"
+	Ec2ServiceManagedRds  = "rds"
+
+	// ServiceState values
+	Ec2ServiceStatePending   = "Pending"
+	Ec2ServiceStateAvailable = "Available"
+	Ec2ServiceStateDeleting  = "Deleting"
+	Ec2ServiceStateDeleted   = "Deleted"
+	Ec2ServiceStateFailed    = "Failed"
+
+	// ServiceType values
+	Ec2ServiceTypeInterface           = "Interface"
+	Ec2ServiceTypeGateway             = "Gateway"
+	Ec2ServiceTypeGatewayloadbalancer = "GatewayLoadBalancer"
+
+	// ShutdownBehavior values
+	Ec2ShutdownBehaviorStop      = "stop"
+	Ec2ShutdownBehaviorTerminate = "terminate"
+
+	// SnapshotAttributeName values
+	Ec2SnapshotAttributeNameProductcodes           = "productCodes"
+	Ec2SnapshotAttributeNameCreatevolumepermission = "createVolumePermission"
+
+	// SnapshotBlockPublicAccessState values
+	Ec2SnapshotBlockPublicAccessStateBlockAllSharing = "block-all-sharing"
+	Ec2SnapshotBlockPublicAccessStateBlockNewSharing = "block-new-sharing"
+	Ec2SnapshotBlockPublicAccessStateUnblocked       = "unblocked"
+
+	// SnapshotLocationEnum values
+	Ec2SnapshotLocationEnumRegional = "regional"
+	Ec2SnapshotLocationEnumLocal    = "local"
+
+	// SnapshotReturnCodes values
+	Ec2SnapshotReturnCodesSuccess            = "success"
+	Ec2SnapshotReturnCodesSkipped            = "skipped"
+	Ec2SnapshotReturnCodesMissingPermissions = "missing-permissions"
+	Ec2SnapshotReturnCodesInternalError      = "internal-error"
+	Ec2SnapshotReturnCodesClientError        = "client-error"
+
+	// SnapshotState values
+	Ec2SnapshotStatePending     = "pending"
+	Ec2SnapshotStateCompleted   = "completed"
+	Ec2SnapshotStateError       = "error"
+	Ec2SnapshotStateRecoverable = "recoverable"
+	Ec2SnapshotStateRecovering  = "recovering"
+
+	// SpotAllocationStrategy values
+	Ec2SpotAllocationStrategyLowestPrice                  = "lowest-price"
+	Ec2SpotAllocationStrategyDiversified                  = "diversified"
+	Ec2SpotAllocationStrategyCapacityOptimized            = "capacity-optimized"
+	Ec2SpotAllocationStrategyCapacityOptimizedPrioritized = "capacity-optimized-prioritized"
+	Ec2SpotAllocationStrategyPriceCapacityOptimized       = "price-capacity-optimized"
+
+	// SpotInstanceInterruptionBehavior values
+	Ec2SpotInstanceInterruptionBehaviorHibernate = "hibernate"
+	Ec2SpotInstanceInterruptionBehaviorStop      = "stop"
+	Ec2SpotInstanceInterruptionBehaviorTerminate = "terminate"
+
+	// SpotInstanceState values
+	Ec2SpotInstanceStateOpen      = "open"
+	Ec2SpotInstanceStateActive    = "active"
+	Ec2SpotInstanceStateClosed    = "closed"
+	Ec2SpotInstanceStateCancelled = "cancelled"
+	Ec2SpotInstanceStateFailed    = "failed"
+	Ec2SpotInstanceStateDisabled  = "disabled"
+
+	// SpotInstanceType values
+	Ec2SpotInstanceTypeOneTime    = "one-time"
+	Ec2SpotInstanceTypePersistent = "persistent"
+
+	// SpreadLevel values
+	Ec2SpreadLevelHost = "host"
+	Ec2SpreadLevelRack = "rack"
+
+	// SqlServerLicenseUsage values
+	Ec2SqlServerLicenseUsageFull   = "full"
+	Ec2SqlServerLicenseUsageWaived = "waived"
+
+	// State values
+	Ec2StatePendingacceptance = "PendingAcceptance"
+	Ec2StatePending           = "Pending"
+	Ec2StateAvailable         = "Available"
+	Ec2StateDeleting          = "Deleting"
+	Ec2StateDeleted           = "Deleted"
+	Ec2StateRejected          = "Rejected"
+	Ec2StateFailed            = "Failed"
+	Ec2StateExpired           = "Expired"
+	Ec2StatePartial           = "Partial"
+
+	// StaticSourcesSupportValue values
+	Ec2StaticSourcesSupportValueEnable  = "enable"
+	Ec2StaticSourcesSupportValueDisable = "disable"
+
+	// StatisticType values
+	Ec2StatisticTypeP50 = "p50"
+
+	// Status values
+	Ec2StatusMoveinprogress = "MoveInProgress"
+	Ec2StatusInvpc          = "InVpc"
+	Ec2StatusInclassic      = "InClassic"
+
+	// StatusName values
+	Ec2StatusNameReachability = "reachability"
+
+	// StatusType values
+	Ec2StatusTypePassed           = "passed"
+	Ec2StatusTypeFailed           = "failed"
+	Ec2StatusTypeInsufficientData = "insufficient-data"
+	Ec2StatusTypeInitializing     = "initializing"
+
+	// StorageTier values
+	Ec2StorageTierArchive  = "archive"
+	Ec2StorageTierStandard = "standard"
+
+	// SubnetCidrBlockStateCode values
+	Ec2SubnetCidrBlockStateCodeAssociating    = "associating"
+	Ec2SubnetCidrBlockStateCodeAssociated     = "associated"
+	Ec2SubnetCidrBlockStateCodeDisassociating = "disassociating"
+	Ec2SubnetCidrBlockStateCodeDisassociated  = "disassociated"
+	Ec2SubnetCidrBlockStateCodeFailing        = "failing"
+	Ec2SubnetCidrBlockStateCodeFailed         = "failed"
+
+	// SubnetCidrReservationType values
+	Ec2SubnetCidrReservationTypePrefix   = "prefix"
+	Ec2SubnetCidrReservationTypeExplicit = "explicit"
+
+	// SubnetState values
+	Ec2SubnetStatePending                    = "pending"
+	Ec2SubnetStateAvailable                  = "available"
+	Ec2SubnetStateUnavailable                = "unavailable"
+	Ec2SubnetStateFailed                     = "failed"
+	Ec2SubnetStateFailedInsufficientCapacity = "failed-insufficient-capacity"
+
+	// SummaryStatus values
+	Ec2SummaryStatusOk               = "ok"
+	Ec2SummaryStatusImpaired         = "impaired"
+	Ec2SummaryStatusInsufficientData = "insufficient-data"
+	Ec2SummaryStatusNotApplicable    = "not-applicable"
+	Ec2SummaryStatusInitializing     = "initializing"
+
+	// SupportedAdditionalProcessorFeature values
+	Ec2SupportedAdditionalProcessorFeatureAmdSevSnp = "amd-sev-snp"
+
+	// TargetCapacityUnitType values
+	Ec2TargetCapacityUnitTypeVcpu      = "vcpu"
+	Ec2TargetCapacityUnitTypeMemoryMib = "memory-mib"
+	Ec2TargetCapacityUnitTypeUnits     = "units"
+
+	// TargetStorageTier values
+	Ec2TargetStorageTierArchive = "archive"
+
+	// TelemetryStatus values
+	Ec2TelemetryStatusUp   = "UP"
+	Ec2TelemetryStatusDown = "DOWN"
+
+	// Tenancy values
+	Ec2TenancyDefault   = "default"
+	Ec2TenancyDedicated = "dedicated"
+	Ec2TenancyHost      = "host"
+
+	// TieringOperationStatus values
+	Ec2TieringOperationStatusArchivalInProgress         = "archival-in-progress"
+	Ec2TieringOperationStatusArchivalCompleted          = "archival-completed"
+	Ec2TieringOperationStatusArchivalFailed             = "archival-failed"
+	Ec2TieringOperationStatusTemporaryRestoreInProgress = "temporary-restore-in-progress"
+	Ec2TieringOperationStatusTemporaryRestoreCompleted  = "temporary-restore-completed"
+	Ec2TieringOperationStatusTemporaryRestoreFailed     = "temporary-restore-failed"
+	Ec2TieringOperationStatusPermanentRestoreInProgress = "permanent-restore-in-progress"
+	Ec2TieringOperationStatusPermanentRestoreCompleted  = "permanent-restore-completed"
+	Ec2TieringOperationStatusPermanentRestoreFailed     = "permanent-restore-failed"
+
+	// TokenState values
+	Ec2TokenStateValid   = "valid"
+	Ec2TokenStateExpired = "expired"
+
+	// TpmSupportValues values
+	Ec2TpmSupportValuesV20 = "v2.0"
+
+	// TrafficDirection values
+	Ec2TrafficDirectionIngress = "ingress"
+	Ec2TrafficDirectionEgress  = "egress"
+
+	// TrafficIpAddressType values
+	Ec2TrafficIpAddressTypeIpv4      = "ipv4"
+	Ec2TrafficIpAddressTypeIpv6      = "ipv6"
+	Ec2TrafficIpAddressTypeDualStack = "dual-stack"
+
+	// TrafficMirrorFilterRuleField values
+	Ec2TrafficMirrorFilterRuleFieldDestinationPortRange = "destination-port-range"
+	Ec2TrafficMirrorFilterRuleFieldSourcePortRange      = "source-port-range"
+	Ec2TrafficMirrorFilterRuleFieldProtocol             = "protocol"
+	Ec2TrafficMirrorFilterRuleFieldDescription          = "description"
+
+	// TrafficMirrorNetworkService values
+	Ec2TrafficMirrorNetworkServiceAmazonDns = "amazon-dns"
+
+	// TrafficMirrorRuleAction values
+	Ec2TrafficMirrorRuleActionAccept = "accept"
+	Ec2TrafficMirrorRuleActionReject = "reject"
+
+	// TrafficMirrorSessionField values
+	Ec2TrafficMirrorSessionFieldPacketLength     = "packet-length"
+	Ec2TrafficMirrorSessionFieldDescription      = "description"
+	Ec2TrafficMirrorSessionFieldVirtualNetworkId = "virtual-network-id"
+
+	// TrafficMirrorTargetType values
+	Ec2TrafficMirrorTargetTypeNetworkInterface            = "network-interface"
+	Ec2TrafficMirrorTargetTypeNetworkLoadBalancer         = "network-load-balancer"
+	Ec2TrafficMirrorTargetTypeGatewayLoadBalancerEndpoint = "gateway-load-balancer-endpoint"
+
+	// TrafficType values
+	Ec2TrafficTypeAccept = "ACCEPT"
+	Ec2TrafficTypeReject = "REJECT"
+	Ec2TrafficTypeAll    = "ALL"
+
+	// TransferType values
+	Ec2TransferTypeTimeBased = "time-based"
+	Ec2TransferTypeStandard  = "standard"
+
+	// TransitGatewayAssociationState values
+	Ec2TransitGatewayAssociationStateAssociating    = "associating"
+	Ec2TransitGatewayAssociationStateAssociated     = "associated"
+	Ec2TransitGatewayAssociationStateDisassociating = "disassociating"
+	Ec2TransitGatewayAssociationStateDisassociated  = "disassociated"
+
+	// TransitGatewayAttachmentResourceType values
+	Ec2TransitGatewayAttachmentResourceTypeVpc                  = "vpc"
+	Ec2TransitGatewayAttachmentResourceTypeVpn                  = "vpn"
+	Ec2TransitGatewayAttachmentResourceTypeVpnConcentrator      = "vpn-concentrator"
+	Ec2TransitGatewayAttachmentResourceTypeDirectConnectGateway = "direct-connect-gateway"
+	Ec2TransitGatewayAttachmentResourceTypeConnect              = "connect"
+	Ec2TransitGatewayAttachmentResourceTypePeering              = "peering"
+	Ec2TransitGatewayAttachmentResourceTypeTgwPeering           = "tgw-peering"
+	Ec2TransitGatewayAttachmentResourceTypeNetworkFunction      = "network-function"
+
+	// TransitGatewayAttachmentState values
+	Ec2TransitGatewayAttachmentStateInitiating        = "initiating"
+	Ec2TransitGatewayAttachmentStateInitiatingrequest = "initiatingRequest"
+	Ec2TransitGatewayAttachmentStatePendingacceptance = "pendingAcceptance"
+	Ec2TransitGatewayAttachmentStateRollingback       = "rollingBack"
+	Ec2TransitGatewayAttachmentStatePending           = "pending"
+	Ec2TransitGatewayAttachmentStateAvailable         = "available"
+	Ec2TransitGatewayAttachmentStateModifying         = "modifying"
+	Ec2TransitGatewayAttachmentStateDeleting          = "deleting"
+	Ec2TransitGatewayAttachmentStateDeleted           = "deleted"
+	Ec2TransitGatewayAttachmentStateFailed            = "failed"
+	Ec2TransitGatewayAttachmentStateRejected          = "rejected"
+	Ec2TransitGatewayAttachmentStateRejecting         = "rejecting"
+	Ec2TransitGatewayAttachmentStateFailing           = "failing"
+
+	// TransitGatewayConnectPeerState values
+	Ec2TransitGatewayConnectPeerStatePending   = "pending"
+	Ec2TransitGatewayConnectPeerStateAvailable = "available"
+	Ec2TransitGatewayConnectPeerStateDeleting  = "deleting"
+	Ec2TransitGatewayConnectPeerStateDeleted   = "deleted"
+
+	// TransitGatewayMeteringPayerType values
+	Ec2TransitGatewayMeteringPayerTypeSourceAttachmentOwner      = "source-attachment-owner"
+	Ec2TransitGatewayMeteringPayerTypeDestinationAttachmentOwner = "destination-attachment-owner"
+	Ec2TransitGatewayMeteringPayerTypeTransitGatewayOwner        = "transit-gateway-owner"
+
+	// TransitGatewayMeteringPolicyEntryState values
+	Ec2TransitGatewayMeteringPolicyEntryStateAvailable = "available"
+	Ec2TransitGatewayMeteringPolicyEntryStateDeleted   = "deleted"
+
+	// TransitGatewayMeteringPolicyState values
+	Ec2TransitGatewayMeteringPolicyStateAvailable = "available"
+	Ec2TransitGatewayMeteringPolicyStateDeleted   = "deleted"
+	Ec2TransitGatewayMeteringPolicyStatePending   = "pending"
+	Ec2TransitGatewayMeteringPolicyStateModifying = "modifying"
+	Ec2TransitGatewayMeteringPolicyStateDeleting  = "deleting"
+
+	// TransitGatewayMulitcastDomainAssociationState values
+	Ec2TransitGatewayMulitcastDomainAssociationStatePendingacceptance = "pendingAcceptance"
+	Ec2TransitGatewayMulitcastDomainAssociationStateAssociating       = "associating"
+	Ec2TransitGatewayMulitcastDomainAssociationStateAssociated        = "associated"
+	Ec2TransitGatewayMulitcastDomainAssociationStateDisassociating    = "disassociating"
+	Ec2TransitGatewayMulitcastDomainAssociationStateDisassociated     = "disassociated"
+	Ec2TransitGatewayMulitcastDomainAssociationStateRejected          = "rejected"
+	Ec2TransitGatewayMulitcastDomainAssociationStateFailed            = "failed"
+
+	// TransitGatewayMulticastDomainState values
+	Ec2TransitGatewayMulticastDomainStatePending   = "pending"
+	Ec2TransitGatewayMulticastDomainStateAvailable = "available"
+	Ec2TransitGatewayMulticastDomainStateDeleting  = "deleting"
+	Ec2TransitGatewayMulticastDomainStateDeleted   = "deleted"
+
+	// TransitGatewayPolicyTableState values
+	Ec2TransitGatewayPolicyTableStatePending   = "pending"
+	Ec2TransitGatewayPolicyTableStateAvailable = "available"
+	Ec2TransitGatewayPolicyTableStateDeleting  = "deleting"
+	Ec2TransitGatewayPolicyTableStateDeleted   = "deleted"
+
+	// TransitGatewayPrefixListReferenceState values
+	Ec2TransitGatewayPrefixListReferenceStatePending   = "pending"
+	Ec2TransitGatewayPrefixListReferenceStateAvailable = "available"
+	Ec2TransitGatewayPrefixListReferenceStateModifying = "modifying"
+	Ec2TransitGatewayPrefixListReferenceStateDeleting  = "deleting"
+
+	// TransitGatewayPropagationState values
+	Ec2TransitGatewayPropagationStateEnabling  = "enabling"
+	Ec2TransitGatewayPropagationStateEnabled   = "enabled"
+	Ec2TransitGatewayPropagationStateDisabling = "disabling"
+	Ec2TransitGatewayPropagationStateDisabled  = "disabled"
+
+	// TransitGatewayRouteState values
+	Ec2TransitGatewayRouteStatePending   = "pending"
+	Ec2TransitGatewayRouteStateActive    = "active"
+	Ec2TransitGatewayRouteStateBlackhole = "blackhole"
+	Ec2TransitGatewayRouteStateDeleting  = "deleting"
+	Ec2TransitGatewayRouteStateDeleted   = "deleted"
+
+	// TransitGatewayRouteTableAnnouncementDirection values
+	Ec2TransitGatewayRouteTableAnnouncementDirectionOutgoing = "outgoing"
+	Ec2TransitGatewayRouteTableAnnouncementDirectionIncoming = "incoming"
+
+	// TransitGatewayRouteTableAnnouncementState values
+	Ec2TransitGatewayRouteTableAnnouncementStateAvailable = "available"
+	Ec2TransitGatewayRouteTableAnnouncementStatePending   = "pending"
+	Ec2TransitGatewayRouteTableAnnouncementStateFailing   = "failing"
+	Ec2TransitGatewayRouteTableAnnouncementStateFailed    = "failed"
+	Ec2TransitGatewayRouteTableAnnouncementStateDeleting  = "deleting"
+	Ec2TransitGatewayRouteTableAnnouncementStateDeleted   = "deleted"
+
+	// TransitGatewayRouteTableState values
+	Ec2TransitGatewayRouteTableStatePending   = "pending"
+	Ec2TransitGatewayRouteTableStateAvailable = "available"
+	Ec2TransitGatewayRouteTableStateDeleting  = "deleting"
+	Ec2TransitGatewayRouteTableStateDeleted   = "deleted"
+
+	// TransitGatewayRouteType values
+	Ec2TransitGatewayRouteTypeStatic     = "static"
+	Ec2TransitGatewayRouteTypePropagated = "propagated"
+
+	// TransitGatewayState values
+	Ec2TransitGatewayStatePending   = "pending"
+	Ec2TransitGatewayStateAvailable = "available"
+	Ec2TransitGatewayStateModifying = "modifying"
+	Ec2TransitGatewayStateDeleting  = "deleting"
+	Ec2TransitGatewayStateDeleted   = "deleted"
+
+	// TransportProtocol values
+	Ec2TransportProtocolTcp = "tcp"
+	Ec2TransportProtocolUdp = "udp"
+
+	// TrustProviderType values
+	Ec2TrustProviderTypeUser   = "user"
+	Ec2TrustProviderTypeDevice = "device"
+
+	// TunnelInsideIpVersion values
+	Ec2TunnelInsideIpVersionIpv4 = "ipv4"
+	Ec2TunnelInsideIpVersionIpv6 = "ipv6"
+
+	// UnlimitedSupportedInstanceFamily values
+	Ec2UnlimitedSupportedInstanceFamilyT2  = "t2"
+	Ec2UnlimitedSupportedInstanceFamilyT3  = "t3"
+	Ec2UnlimitedSupportedInstanceFamilyT3a = "t3a"
+	Ec2UnlimitedSupportedInstanceFamilyT4g = "t4g"
+
+	// UnsuccessfulInstanceCreditSpecificationErrorCode values
+	Ec2UnsuccessfulInstanceCreditSpecificationErrorCodeInvalidinstanceidMalformed              = "InvalidInstanceID.Malformed"
+	Ec2UnsuccessfulInstanceCreditSpecificationErrorCodeInvalidinstanceidNotfound               = "InvalidInstanceID.NotFound"
+	Ec2UnsuccessfulInstanceCreditSpecificationErrorCodeIncorrectinstancestate                  = "IncorrectInstanceState"
+	Ec2UnsuccessfulInstanceCreditSpecificationErrorCodeInstancecreditspecificationNotsupported = "InstanceCreditSpecification.NotSupported"
+
+	// UsageClassType values
+	Ec2UsageClassTypeSpot          = "spot"
+	Ec2UsageClassTypeOnDemand      = "on-demand"
+	Ec2UsageClassTypeCapacityBlock = "capacity-block"
+
+	// UserTrustProviderType values
+	Ec2UserTrustProviderTypeIamIdentityCenter = "iam-identity-center"
+	Ec2UserTrustProviderTypeOidc              = "oidc"
+
+	// VerificationMethod values
+	Ec2VerificationMethodRemarksX509 = "remarks-x509"
+	Ec2VerificationMethodDnsToken    = "dns-token"
+
+	// VerifiedAccessEndpointAttachmentType values
+	Ec2VerifiedAccessEndpointAttachmentTypeVpc = "vpc"
+
+	// VerifiedAccessEndpointProtocol values
+	Ec2VerifiedAccessEndpointProtocolHttp  = "http"
+	Ec2VerifiedAccessEndpointProtocolHttps = "https"
+	Ec2VerifiedAccessEndpointProtocolTcp   = "tcp"
+
+	// VerifiedAccessEndpointStatusCode values
+	Ec2VerifiedAccessEndpointStatusCodePending  = "pending"
+	Ec2VerifiedAccessEndpointStatusCodeActive   = "active"
+	Ec2VerifiedAccessEndpointStatusCodeUpdating = "updating"
+	Ec2VerifiedAccessEndpointStatusCodeDeleting = "deleting"
+	Ec2VerifiedAccessEndpointStatusCodeDeleted  = "deleted"
+
+	// VerifiedAccessEndpointType values
+	Ec2VerifiedAccessEndpointTypeLoadBalancer     = "load-balancer"
+	Ec2VerifiedAccessEndpointTypeNetworkInterface = "network-interface"
+	Ec2VerifiedAccessEndpointTypeRds              = "rds"
+	Ec2VerifiedAccessEndpointTypeCidr             = "cidr"
+
+	// VerifiedAccessLogDeliveryStatusCode values
+	Ec2VerifiedAccessLogDeliveryStatusCodeSuccess = "success"
+	Ec2VerifiedAccessLogDeliveryStatusCodeFailed  = "failed"
+
+	// VirtualizationType values
+	Ec2VirtualizationTypeHvm         = "hvm"
+	Ec2VirtualizationTypeParavirtual = "paravirtual"
+
+	// VolumeAttachmentState values
+	Ec2VolumeAttachmentStateAttaching = "attaching"
+	Ec2VolumeAttachmentStateAttached  = "attached"
+	Ec2VolumeAttachmentStateDetaching = "detaching"
+	Ec2VolumeAttachmentStateDetached  = "detached"
+	Ec2VolumeAttachmentStateBusy      = "busy"
+
+	// VolumeAttributeName values
+	Ec2VolumeAttributeNameAutoenableio = "autoEnableIO"
+	Ec2VolumeAttributeNameProductcodes = "productCodes"
+
+	// VolumeModificationState values
+	Ec2VolumeModificationStateModifying  = "modifying"
+	Ec2VolumeModificationStateOptimizing = "optimizing"
+	Ec2VolumeModificationStateCompleted  = "completed"
+	Ec2VolumeModificationStateFailed     = "failed"
+
+	// VolumeState values
+	Ec2VolumeStateCreating  = "creating"
+	Ec2VolumeStateAvailable = "available"
+	Ec2VolumeStateInUse     = "in-use"
+	Ec2VolumeStateDeleting  = "deleting"
+	Ec2VolumeStateDeleted   = "deleted"
+	Ec2VolumeStateError     = "error"
+
+	// VolumeStatusInfoStatus values
+	Ec2VolumeStatusInfoStatusOk               = "ok"
+	Ec2VolumeStatusInfoStatusImpaired         = "impaired"
+	Ec2VolumeStatusInfoStatusInsufficientData = "insufficient-data"
+	Ec2VolumeStatusInfoStatusWarning          = "warning"
+
+	// VolumeStatusName values
+	Ec2VolumeStatusNameIoEnabled           = "io-enabled"
+	Ec2VolumeStatusNameIoPerformance       = "io-performance"
+	Ec2VolumeStatusNameInitializationState = "initialization-state"
+
 	// VolumeType values
 	Ec2VolumeTypeStandard = "standard"
 	Ec2VolumeTypeIo1      = "io1"
@@ -12,7 +2469,2998 @@ const (
 	Ec2VolumeTypeSc1      = "sc1"
 	Ec2VolumeTypeSt1      = "st1"
 	Ec2VolumeTypeGp3      = "gp3"
+
+	// VpcAttributeName values
+	Ec2VpcAttributeNameEnablednssupport                 = "enableDnsSupport"
+	Ec2VpcAttributeNameEnablednshostnames               = "enableDnsHostnames"
+	Ec2VpcAttributeNameEnablenetworkaddressusagemetrics = "enableNetworkAddressUsageMetrics"
+
+	// VpcBlockPublicAccessExclusionState values
+	Ec2VpcBlockPublicAccessExclusionStateCreateInProgress  = "create-in-progress"
+	Ec2VpcBlockPublicAccessExclusionStateCreateComplete    = "create-complete"
+	Ec2VpcBlockPublicAccessExclusionStateCreateFailed      = "create-failed"
+	Ec2VpcBlockPublicAccessExclusionStateUpdateInProgress  = "update-in-progress"
+	Ec2VpcBlockPublicAccessExclusionStateUpdateComplete    = "update-complete"
+	Ec2VpcBlockPublicAccessExclusionStateUpdateFailed      = "update-failed"
+	Ec2VpcBlockPublicAccessExclusionStateDeleteInProgress  = "delete-in-progress"
+	Ec2VpcBlockPublicAccessExclusionStateDeleteComplete    = "delete-complete"
+	Ec2VpcBlockPublicAccessExclusionStateDisableInProgress = "disable-in-progress"
+	Ec2VpcBlockPublicAccessExclusionStateDisableComplete   = "disable-complete"
+
+	// VpcBlockPublicAccessExclusionsAllowed values
+	Ec2VpcBlockPublicAccessExclusionsAllowedAllowed    = "allowed"
+	Ec2VpcBlockPublicAccessExclusionsAllowedNotAllowed = "not-allowed"
+
+	// VpcBlockPublicAccessState values
+	Ec2VpcBlockPublicAccessStateDefaultState     = "default-state"
+	Ec2VpcBlockPublicAccessStateUpdateInProgress = "update-in-progress"
+	Ec2VpcBlockPublicAccessStateUpdateComplete   = "update-complete"
+
+	// VpcCidrBlockStateCode values
+	Ec2VpcCidrBlockStateCodeAssociating    = "associating"
+	Ec2VpcCidrBlockStateCodeAssociated     = "associated"
+	Ec2VpcCidrBlockStateCodeDisassociating = "disassociating"
+	Ec2VpcCidrBlockStateCodeDisassociated  = "disassociated"
+	Ec2VpcCidrBlockStateCodeFailing        = "failing"
+	Ec2VpcCidrBlockStateCodeFailed         = "failed"
+
+	// VpcEncryptionControlExclusionState values
+	Ec2VpcEncryptionControlExclusionStateEnabling  = "enabling"
+	Ec2VpcEncryptionControlExclusionStateEnabled   = "enabled"
+	Ec2VpcEncryptionControlExclusionStateDisabling = "disabling"
+	Ec2VpcEncryptionControlExclusionStateDisabled  = "disabled"
+
+	// VpcEncryptionControlExclusionStateInput values
+	Ec2VpcEncryptionControlExclusionStateInputEnable  = "enable"
+	Ec2VpcEncryptionControlExclusionStateInputDisable = "disable"
+
+	// VpcEncryptionControlMode values
+	Ec2VpcEncryptionControlModeMonitor = "monitor"
+	Ec2VpcEncryptionControlModeEnforce = "enforce"
+
+	// VpcEncryptionControlState values
+	Ec2VpcEncryptionControlStateEnforceInProgress = "enforce-in-progress"
+	Ec2VpcEncryptionControlStateMonitorInProgress = "monitor-in-progress"
+	Ec2VpcEncryptionControlStateEnforceFailed     = "enforce-failed"
+	Ec2VpcEncryptionControlStateMonitorFailed     = "monitor-failed"
+	Ec2VpcEncryptionControlStateDeleting          = "deleting"
+	Ec2VpcEncryptionControlStateDeleted           = "deleted"
+	Ec2VpcEncryptionControlStateAvailable         = "available"
+	Ec2VpcEncryptionControlStateCreating          = "creating"
+	Ec2VpcEncryptionControlStateDeleteFailed      = "delete-failed"
+
+	// VpcEndpointType values
+	Ec2VpcEndpointTypeInterface           = "Interface"
+	Ec2VpcEndpointTypeGateway             = "Gateway"
+	Ec2VpcEndpointTypeGatewayloadbalancer = "GatewayLoadBalancer"
+	Ec2VpcEndpointTypeResource            = "Resource"
+	Ec2VpcEndpointTypeServicenetwork      = "ServiceNetwork"
+
+	// VpcPeeringConnectionStateReasonCode values
+	Ec2VpcPeeringConnectionStateReasonCodeInitiatingRequest = "initiating-request"
+	Ec2VpcPeeringConnectionStateReasonCodePendingAcceptance = "pending-acceptance"
+	Ec2VpcPeeringConnectionStateReasonCodeActive            = "active"
+	Ec2VpcPeeringConnectionStateReasonCodeDeleted           = "deleted"
+	Ec2VpcPeeringConnectionStateReasonCodeRejected          = "rejected"
+	Ec2VpcPeeringConnectionStateReasonCodeFailed            = "failed"
+	Ec2VpcPeeringConnectionStateReasonCodeExpired           = "expired"
+	Ec2VpcPeeringConnectionStateReasonCodeProvisioning      = "provisioning"
+	Ec2VpcPeeringConnectionStateReasonCodeDeleting          = "deleting"
+
+	// VpcState values
+	Ec2VpcStatePending   = "pending"
+	Ec2VpcStateAvailable = "available"
+
+	// VpcTenancy values
+	Ec2VpcTenancyDefault = "default"
+
+	// VpnConcentratorType values
+	Ec2VpnConcentratorTypeIpsec1 = "ipsec.1"
+
+	// VpnEcmpSupportValue values
+	Ec2VpnEcmpSupportValueEnable  = "enable"
+	Ec2VpnEcmpSupportValueDisable = "disable"
+
+	// VpnProtocol values
+	Ec2VpnProtocolOpenvpn = "openvpn"
+
+	// VpnState values
+	Ec2VpnStatePending   = "pending"
+	Ec2VpnStateAvailable = "available"
+	Ec2VpnStateDeleting  = "deleting"
+	Ec2VpnStateDeleted   = "deleted"
+
+	// VpnStaticRouteSource values
+	Ec2VpnStaticRouteSourceStatic = "Static"
+
+	// VpnTunnelBandwidth values
+	Ec2VpnTunnelBandwidthStandard = "standard"
+	Ec2VpnTunnelBandwidthLarge    = "large"
+
+	// VpnTunnelProvisioningStatus values
+	Ec2VpnTunnelProvisioningStatusAvailable = "available"
+	Ec2VpnTunnelProvisioningStatusPending   = "pending"
+	Ec2VpnTunnelProvisioningStatusFailed    = "failed"
+
+	// WeekDay values
+	Ec2WeekDaySunday    = "sunday"
+	Ec2WeekDayMonday    = "monday"
+	Ec2WeekDayTuesday   = "tuesday"
+	Ec2WeekDayWednesday = "wednesday"
+	Ec2WeekDayThursday  = "thursday"
+	Ec2WeekDayFriday    = "friday"
+	Ec2WeekDaySaturday  = "saturday"
+
+	// scope values
+	Ec2scopeAvailabilityZone = "Availability Zone"
+	Ec2scopeRegion           = "Region"
 )
+
+var ec2AcceleratorManufacturerValues = []string{
+	"amazon-web-services",
+	"amd",
+	"nvidia",
+	"xilinx",
+	"habana",
+}
+
+var ec2AcceleratorNameValues = []string{
+	"a100",
+	"inferentia",
+	"k520",
+	"k80",
+	"m60",
+	"radeon-pro-v520",
+	"t4",
+	"vu9p",
+	"v100",
+	"a10g",
+	"h100",
+	"t4g",
+	"l40s",
+	"l4",
+	"gaudi-hl-205",
+	"inferentia2",
+	"trainium",
+	"trainium2",
+	"u30",
+}
+
+var ec2AcceleratorTypeValues = []string{
+	"gpu",
+	"fpga",
+	"inference",
+	"media",
+}
+
+var ec2AccountAttributeNameValues = []string{
+	"supported-platforms",
+	"default-vpc",
+}
+
+var ec2ActivityStatusValues = []string{
+	"error",
+	"pending_fulfillment",
+	"pending_termination",
+	"fulfilled",
+}
+
+var ec2AddressAttributeNameValues = []string{
+	"domain-name",
+}
+
+var ec2AddressFamilyValues = []string{
+	"ipv4",
+	"ipv6",
+}
+
+var ec2AddressTransferStatusValues = []string{
+	"pending",
+	"disabled",
+	"accepted",
+}
+
+var ec2AffinityValues = []string{
+	"default",
+	"host",
+}
+
+var ec2AllocationStateValues = []string{
+	"available",
+	"under-assessment",
+	"permanent-failure",
+	"released",
+	"released-permanent-failure",
+	"pending",
+}
+
+var ec2AllocationStrategyValues = []string{
+	"lowestPrice",
+	"diversified",
+	"capacityOptimized",
+	"capacityOptimizedPrioritized",
+	"priceCapacityOptimized",
+}
+
+var ec2AllocationTypeValues = []string{
+	"used",
+	"future",
+}
+
+var ec2AllowedImagesSettingsDisabledStateValues = []string{
+	"disabled",
+}
+
+var ec2AllowedImagesSettingsEnabledStateValues = []string{
+	"enabled",
+	"audit-mode",
+}
+
+var ec2AllowsMultipleInstanceTypesValues = []string{
+	"on",
+	"off",
+}
+
+var ec2AmdSevSnpSpecificationValues = []string{
+	"enabled",
+	"disabled",
+}
+
+var ec2AnalysisStatusValues = []string{
+	"running",
+	"succeeded",
+	"failed",
+}
+
+var ec2ApplianceModeSupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2ArchitectureTypeValues = []string{
+	"i386",
+	"x86_64",
+	"arm64",
+	"x86_64_mac",
+	"arm64_mac",
+}
+
+var ec2ArchitectureValuesValues = []string{
+	"i386",
+	"x86_64",
+	"arm64",
+	"x86_64_mac",
+	"arm64_mac",
+}
+
+var ec2AsnAssociationStateValues = []string{
+	"disassociated",
+	"failed-disassociation",
+	"failed-association",
+	"pending-disassociation",
+	"pending-association",
+	"associated",
+}
+
+var ec2AsnStateValues = []string{
+	"deprovisioned",
+	"failed-deprovision",
+	"failed-provision",
+	"pending-deprovision",
+	"pending-provision",
+	"provisioned",
+}
+
+var ec2AssociatedNetworkTypeValues = []string{
+	"vpc",
+}
+
+var ec2AssociationStatusCodeValues = []string{
+	"associating",
+	"associated",
+	"association-failed",
+	"disassociating",
+	"disassociated",
+}
+
+var ec2AttachmentLimitTypeValues = []string{
+	"shared",
+	"dedicated",
+}
+
+var ec2AttachmentStatusValues = []string{
+	"attaching",
+	"attached",
+	"detaching",
+	"detached",
+}
+
+var ec2AutoAcceptSharedAssociationsValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2AutoAcceptSharedAttachmentsValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2AutoPlacementValues = []string{
+	"on",
+	"off",
+}
+
+var ec2AutoProvisionZonesStateValues = []string{
+	"enabled",
+	"disabled",
+}
+
+var ec2AutoScalingIpsStateValues = []string{
+	"enabled",
+	"disabled",
+}
+
+var ec2AvailabilityModeValues = []string{
+	"zonal",
+	"regional",
+}
+
+var ec2AvailabilityZoneOptInStatusValues = []string{
+	"opt-in-not-required",
+	"opted-in",
+	"not-opted-in",
+}
+
+var ec2AvailabilityZoneStateValues = []string{
+	"available",
+	"information",
+	"impaired",
+	"unavailable",
+	"constrained",
+}
+
+var ec2BandwidthWeightingTypeValues = []string{
+	"default",
+	"vpc-1",
+	"ebs-1",
+}
+
+var ec2BareMetalValues = []string{
+	"included",
+	"required",
+	"excluded",
+}
+
+var ec2BatchStateValues = []string{
+	"submitted",
+	"active",
+	"cancelled",
+	"failed",
+	"cancelled_running",
+	"cancelled_terminating",
+	"modifying",
+}
+
+var ec2BgpStatusValues = []string{
+	"up",
+	"down",
+}
+
+var ec2BlockPublicAccessModeValues = []string{
+	"off",
+	"block-bidirectional",
+	"block-ingress",
+}
+
+var ec2BootModeTypeValues = []string{
+	"legacy-bios",
+	"uefi",
+}
+
+var ec2BootModeValuesValues = []string{
+	"legacy-bios",
+	"uefi",
+	"uefi-preferred",
+}
+
+var ec2BundleTaskStateValues = []string{
+	"pending",
+	"waiting-for-shutdown",
+	"bundling",
+	"storing",
+	"cancelling",
+	"complete",
+	"failed",
+}
+
+var ec2BurstablePerformanceValues = []string{
+	"included",
+	"required",
+	"excluded",
+}
+
+var ec2ByoipCidrStateValues = []string{
+	"advertised",
+	"deprovisioned",
+	"failed-deprovision",
+	"failed-provision",
+	"pending-advertising",
+	"pending-deprovision",
+	"pending-provision",
+	"pending-withdrawal",
+	"provisioned",
+	"provisioned-not-publicly-advertisable",
+}
+
+var ec2CallerRoleValues = []string{
+	"odcr-owner",
+	"unused-reservation-billing-owner",
+}
+
+var ec2CancelBatchErrorCodeValues = []string{
+	"fleetRequestIdDoesNotExist",
+	"fleetRequestIdMalformed",
+	"fleetRequestNotInCancellableState",
+	"unexpectedError",
+}
+
+var ec2CancelSpotInstanceRequestStateValues = []string{
+	"active",
+	"open",
+	"closed",
+	"cancelled",
+	"completed",
+}
+
+var ec2CapacityBlockExtensionStatusValues = []string{
+	"payment-pending",
+	"payment-failed",
+	"payment-succeeded",
+}
+
+var ec2CapacityBlockInterconnectStatusValues = []string{
+	"ok",
+	"impaired",
+	"insufficient-data",
+}
+
+var ec2CapacityBlockResourceStateValues = []string{
+	"active",
+	"expired",
+	"unavailable",
+	"cancelled",
+	"failed",
+	"scheduled",
+	"payment-pending",
+	"payment-failed",
+}
+
+var ec2CapacityManagerDataExportStatusValues = []string{
+	"pending",
+	"in-progress",
+	"delivered",
+	"failed",
+}
+
+var ec2CapacityManagerStatusValues = []string{
+	"enabled",
+	"disabled",
+}
+
+var ec2CapacityReservationBillingRequestStatusValues = []string{
+	"pending",
+	"accepted",
+	"rejected",
+	"cancelled",
+	"revoked",
+	"expired",
+}
+
+var ec2CapacityReservationDeliveryPreferenceValues = []string{
+	"fixed",
+	"incremental",
+}
+
+var ec2CapacityReservationFleetStateValues = []string{
+	"submitted",
+	"modifying",
+	"active",
+	"partially_fulfilled",
+	"expiring",
+	"expired",
+	"cancelling",
+	"cancelled",
+	"failed",
+}
+
+var ec2CapacityReservationInstancePlatformValues = []string{
+	"Linux/UNIX",
+	"Red Hat Enterprise Linux",
+	"SUSE Linux",
+	"Windows",
+	"Windows with SQL Server",
+	"Windows with SQL Server Enterprise",
+	"Windows with SQL Server Standard",
+	"Windows with SQL Server Web",
+	"Linux with SQL Server Standard",
+	"Linux with SQL Server Web",
+	"Linux with SQL Server Enterprise",
+	"RHEL with SQL Server Standard",
+	"RHEL with SQL Server Enterprise",
+	"RHEL with SQL Server Web",
+	"RHEL with HA",
+	"RHEL with HA and SQL Server Standard",
+	"RHEL with HA and SQL Server Enterprise",
+	"Ubuntu Pro",
+}
+
+var ec2CapacityReservationPreferenceValues = []string{
+	"capacity-reservations-only",
+	"open",
+	"none",
+}
+
+var ec2CapacityReservationStateValues = []string{
+	"active",
+	"expired",
+	"cancelled",
+	"pending",
+	"failed",
+	"scheduled",
+	"payment-pending",
+	"payment-failed",
+	"assessing",
+	"delayed",
+	"unsupported",
+	"unavailable",
+}
+
+var ec2CapacityReservationTenancyValues = []string{
+	"default",
+	"dedicated",
+}
+
+var ec2CapacityReservationTypeValues = []string{
+	"default",
+	"capacity-block",
+}
+
+var ec2CapacityTenancyValues = []string{
+	"default",
+	"dedicated",
+}
+
+var ec2CarrierGatewayStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2ClientCertificateRevocationListStatusCodeValues = []string{
+	"pending",
+	"active",
+}
+
+var ec2ClientVpnAuthenticationTypeValues = []string{
+	"certificate-authentication",
+	"directory-service-authentication",
+	"federated-authentication",
+}
+
+var ec2ClientVpnAuthorizationRuleStatusCodeValues = []string{
+	"authorizing",
+	"active",
+	"failed",
+	"revoking",
+}
+
+var ec2ClientVpnConnectionStatusCodeValues = []string{
+	"active",
+	"failed-to-terminate",
+	"terminating",
+	"terminated",
+}
+
+var ec2ClientVpnEndpointAttributeStatusCodeValues = []string{
+	"applying",
+	"applied",
+}
+
+var ec2ClientVpnEndpointStatusCodeValues = []string{
+	"pending-associate",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2ClientVpnRouteStatusCodeValues = []string{
+	"creating",
+	"active",
+	"failed",
+	"deleting",
+}
+
+var ec2ComparisonValues = []string{
+	"equals",
+	"in",
+}
+
+var ec2ConnectionNotificationStateValues = []string{
+	"Enabled",
+	"Disabled",
+}
+
+var ec2ConnectionNotificationTypeValues = []string{
+	"Topic",
+}
+
+var ec2ConnectivityTypeValues = []string{
+	"private",
+	"public",
+}
+
+var ec2ContainerFormatValues = []string{
+	"ova",
+}
+
+var ec2ConversionTaskStateValues = []string{
+	"active",
+	"cancelling",
+	"cancelled",
+	"completed",
+}
+
+var ec2CopyTagsFromSourceValues = []string{
+	"volume",
+}
+
+var ec2CpuManufacturerValues = []string{
+	"intel",
+	"amd",
+	"amazon-web-services",
+	"apple",
+}
+
+var ec2CurrencyCodeValuesValues = []string{
+	"USD",
+}
+
+var ec2DatafeedSubscriptionStateValues = []string{
+	"Active",
+	"Inactive",
+}
+
+var ec2DefaultInstanceMetadataEndpointStateValues = []string{
+	"disabled",
+	"enabled",
+	"no-preference",
+}
+
+var ec2DefaultInstanceMetadataTagsStateValues = []string{
+	"disabled",
+	"enabled",
+	"no-preference",
+}
+
+var ec2DefaultRouteTableAssociationValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2DefaultRouteTablePropagationValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2DefaultTargetCapacityTypeValues = []string{
+	"spot",
+	"on-demand",
+	"capacity-block",
+}
+
+var ec2DeleteFleetErrorCodeValues = []string{
+	"fleetIdDoesNotExist",
+	"fleetIdMalformed",
+	"fleetNotInDeletableState",
+	"unexpectedError",
+}
+
+var ec2DeleteQueuedReservedInstancesErrorCodeValues = []string{
+	"reserved-instances-id-invalid",
+	"reserved-instances-not-in-queued-state",
+	"unexpected-error",
+}
+
+var ec2DestinationFileFormatValues = []string{
+	"plain-text",
+	"parquet",
+}
+
+var ec2DeviceTrustProviderTypeValues = []string{
+	"jamf",
+	"crowdstrike",
+	"jumpcloud",
+}
+
+var ec2DeviceTypeValues = []string{
+	"ebs",
+	"instance-store",
+}
+
+var ec2DiskImageFormatValues = []string{
+	"VMDK",
+	"RAW",
+	"VHD",
+}
+
+var ec2DiskTypeValues = []string{
+	"hdd",
+	"ssd",
+}
+
+var ec2DnsNameStateValues = []string{
+	"pendingVerification",
+	"verified",
+	"failed",
+}
+
+var ec2DnsRecordIpTypeValues = []string{
+	"ipv4",
+	"dualstack",
+	"ipv6",
+	"service-defined",
+}
+
+var ec2DnsSupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2DomainTypeValues = []string{
+	"vpc",
+	"standard",
+}
+
+var ec2DynamicRoutingValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2EbsEncryptionSupportValues = []string{
+	"unsupported",
+	"supported",
+}
+
+var ec2EbsNvmeSupportValues = []string{
+	"unsupported",
+	"supported",
+	"required",
+}
+
+var ec2EbsOptimizedSupportValues = []string{
+	"unsupported",
+	"supported",
+	"default",
+}
+
+var ec2Ec2InstanceConnectEndpointStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"update-in-progress",
+	"update-complete",
+	"update-failed",
+}
+
+var ec2EkPubKeyFormatValues = []string{
+	"der",
+	"tpmt",
+}
+
+var ec2EkPubKeyTypeValues = []string{
+	"rsa-2048",
+	"ecc-sec-p384",
+}
+
+var ec2ElasticGpuStateValues = []string{
+	"ATTACHED",
+}
+
+var ec2ElasticGpuStatusValues = []string{
+	"OK",
+	"IMPAIRED",
+}
+
+var ec2EnaSupportValues = []string{
+	"unsupported",
+	"supported",
+	"required",
+}
+
+var ec2EncryptionStateValueValues = []string{
+	"enabling",
+	"enabled",
+	"disabling",
+	"disabled",
+}
+
+var ec2EncryptionSupportOptionValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2EndDateTypeValues = []string{
+	"unlimited",
+	"limited",
+}
+
+var ec2EndpointIpAddressTypeValues = []string{
+	"ipv4",
+	"ipv6",
+	"dual-stack",
+}
+
+var ec2EphemeralNvmeSupportValues = []string{
+	"unsupported",
+	"supported",
+	"required",
+}
+
+var ec2EventCodeValues = []string{
+	"instance-reboot",
+	"system-reboot",
+	"system-maintenance",
+	"instance-retirement",
+	"instance-stop",
+}
+
+var ec2EventTypeValues = []string{
+	"instanceChange",
+	"fleetRequestChange",
+	"error",
+	"information",
+}
+
+var ec2ExcessCapacityTerminationPolicyValues = []string{
+	"noTermination",
+	"default",
+}
+
+var ec2ExportEnvironmentValues = []string{
+	"citrix",
+	"vmware",
+	"microsoft",
+}
+
+var ec2ExportTaskStateValues = []string{
+	"active",
+	"cancelling",
+	"cancelled",
+	"completed",
+}
+
+var ec2FastLaunchResourceTypeValues = []string{
+	"snapshot",
+}
+
+var ec2FastLaunchStateCodeValues = []string{
+	"enabling",
+	"enabling-failed",
+	"enabled",
+	"enabled-failed",
+	"disabling",
+	"disabling-failed",
+}
+
+var ec2FastSnapshotRestoreStateCodeValues = []string{
+	"enabling",
+	"optimizing",
+	"enabled",
+	"disabling",
+	"disabled",
+}
+
+var ec2FilterByDimensionValues = []string{
+	"resource-region",
+	"availability-zone-id",
+	"account-id",
+	"instance-family",
+	"instance-type",
+	"instance-platform",
+	"reservation-arn",
+	"reservation-id",
+	"reservation-type",
+	"reservation-create-timestamp",
+	"reservation-start-timestamp",
+	"reservation-end-timestamp",
+	"reservation-end-date-type",
+	"tenancy",
+	"reservation-state",
+	"reservation-instance-match-criteria",
+	"reservation-unused-financial-owner",
+}
+
+var ec2FindingsFoundValues = []string{
+	"true",
+	"false",
+	"unknown",
+}
+
+var ec2FleetActivityStatusValues = []string{
+	"error",
+	"pending_fulfillment",
+	"pending_termination",
+	"fulfilled",
+}
+
+var ec2FleetCapacityReservationTenancyValues = []string{
+	"default",
+}
+
+var ec2FleetCapacityReservationUsageStrategyValues = []string{
+	"use-capacity-reservations-first",
+}
+
+var ec2FleetEventTypeValues = []string{
+	"instance-change",
+	"fleet-change",
+	"service-error",
+}
+
+var ec2FleetExcessCapacityTerminationPolicyValues = []string{
+	"no-termination",
+	"termination",
+}
+
+var ec2FleetInstanceMatchCriteriaValues = []string{
+	"open",
+}
+
+var ec2FleetOnDemandAllocationStrategyValues = []string{
+	"lowest-price",
+	"prioritized",
+}
+
+var ec2FleetReplacementStrategyValues = []string{
+	"launch",
+	"launch-before-terminate",
+}
+
+var ec2FleetStateCodeValues = []string{
+	"submitted",
+	"active",
+	"deleted",
+	"failed",
+	"deleted_running",
+	"deleted_terminating",
+	"modifying",
+}
+
+var ec2FleetTypeValues = []string{
+	"request",
+	"maintain",
+	"instant",
+}
+
+var ec2FlexibleEnaQueuesSupportValues = []string{
+	"unsupported",
+	"supported",
+}
+
+var ec2FlowLogsResourceTypeValues = []string{
+	"VPC",
+	"Subnet",
+	"NetworkInterface",
+	"TransitGateway",
+	"TransitGatewayAttachment",
+	"RegionalNatGateway",
+}
+
+var ec2FpgaImageAttributeNameValues = []string{
+	"description",
+	"name",
+	"loadPermission",
+	"productCodes",
+}
+
+var ec2FpgaImageStateCodeValues = []string{
+	"pending",
+	"failed",
+	"available",
+	"unavailable",
+}
+
+var ec2GatewayAssociationStateValues = []string{
+	"associated",
+	"not-associated",
+	"associating",
+	"disassociating",
+}
+
+var ec2GatewayTypeValues = []string{
+	"ipsec.1",
+}
+
+var ec2GroupByValues = []string{
+	"resource-region",
+	"availability-zone-id",
+	"account-id",
+	"instance-family",
+	"instance-type",
+	"instance-platform",
+	"reservation-arn",
+	"reservation-id",
+	"reservation-type",
+	"reservation-create-timestamp",
+	"reservation-start-timestamp",
+	"reservation-end-timestamp",
+	"reservation-end-date-type",
+	"tenancy",
+	"reservation-state",
+	"reservation-instance-match-criteria",
+	"reservation-unused-financial-owner",
+}
+
+var ec2HaStatusValues = []string{
+	"processing",
+	"active",
+	"standby",
+	"invalid",
+}
+
+var ec2HostMaintenanceValues = []string{
+	"on",
+	"off",
+}
+
+var ec2HostRecoveryValues = []string{
+	"on",
+	"off",
+}
+
+var ec2HostTenancyValues = []string{
+	"default",
+	"dedicated",
+	"host",
+}
+
+var ec2HostnameTypeValues = []string{
+	"ip-name",
+	"resource-name",
+}
+
+var ec2HttpTokensStateValues = []string{
+	"optional",
+	"required",
+}
+
+var ec2HypervisorTypeValues = []string{
+	"ovm",
+	"xen",
+}
+
+var ec2IamInstanceProfileAssociationStateValues = []string{
+	"associating",
+	"associated",
+	"disassociating",
+	"disassociated",
+}
+
+var ec2Igmpv2SupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2ImageAttributeNameValues = []string{
+	"description",
+	"kernel",
+	"ramdisk",
+	"launchPermission",
+	"productCodes",
+	"blockDeviceMapping",
+	"sriovNetSupport",
+	"bootMode",
+	"tpmSupport",
+	"uefiData",
+	"lastLaunchedTime",
+	"imdsSupport",
+	"deregistrationProtection",
+}
+
+var ec2ImageBlockPublicAccessDisabledStateValues = []string{
+	"unblocked",
+}
+
+var ec2ImageBlockPublicAccessEnabledStateValues = []string{
+	"block-new-sharing",
+}
+
+var ec2ImageReferenceOptionNameValues = []string{
+	"state-name",
+	"version-depth",
+}
+
+var ec2ImageReferenceResourceTypeValues = []string{
+	"ec2:Instance",
+	"ec2:LaunchTemplate",
+	"ssm:Parameter",
+	"imagebuilder:ImageRecipe",
+	"imagebuilder:ContainerRecipe",
+}
+
+var ec2ImageStateValues = []string{
+	"pending",
+	"available",
+	"invalid",
+	"deregistered",
+	"transient",
+	"failed",
+	"error",
+	"disabled",
+}
+
+var ec2ImageTypeValuesValues = []string{
+	"machine",
+	"kernel",
+	"ramdisk",
+}
+
+var ec2ImdsSupportValuesValues = []string{
+	"v2.0",
+}
+
+var ec2IngestionStatusValues = []string{
+	"initial-ingestion-in-progress",
+	"ingestion-complete",
+	"ingestion-failed",
+}
+
+var ec2InitializationTypeValues = []string{
+	"default",
+	"provisioned-rate",
+	"volume-copy",
+}
+
+var ec2InstanceAttributeNameValues = []string{
+	"instanceType",
+	"kernel",
+	"ramdisk",
+	"userData",
+	"disableApiTermination",
+	"instanceInitiatedShutdownBehavior",
+	"rootDeviceName",
+	"blockDeviceMapping",
+	"productCodes",
+	"sourceDestCheck",
+	"groupSet",
+	"ebsOptimized",
+	"sriovNetSupport",
+	"enaSupport",
+	"enclaveOptions",
+	"disableApiStop",
+}
+
+var ec2InstanceAutoRecoveryStateValues = []string{
+	"disabled",
+	"default",
+}
+
+var ec2InstanceBandwidthWeightingValues = []string{
+	"default",
+	"vpc-1",
+	"ebs-1",
+}
+
+var ec2InstanceBootModeValuesValues = []string{
+	"legacy-bios",
+	"uefi",
+}
+
+var ec2InstanceEventWindowStateValues = []string{
+	"creating",
+	"deleting",
+	"active",
+	"deleted",
+}
+
+var ec2InstanceGenerationValues = []string{
+	"current",
+	"previous",
+}
+
+var ec2InstanceHealthStatusValues = []string{
+	"healthy",
+	"unhealthy",
+}
+
+var ec2InstanceInterruptionBehaviorValues = []string{
+	"hibernate",
+	"stop",
+	"terminate",
+}
+
+var ec2InstanceLifecycleValues = []string{
+	"spot",
+	"on-demand",
+}
+
+var ec2InstanceLifecycleTypeValues = []string{
+	"spot",
+	"scheduled",
+	"capacity-block",
+	"interruptible-capacity-reservation",
+}
+
+var ec2InstanceMatchCriteriaValues = []string{
+	"open",
+	"targeted",
+}
+
+var ec2InstanceMetadataEndpointStateValues = []string{
+	"disabled",
+	"enabled",
+}
+
+var ec2InstanceMetadataOptionsStateValues = []string{
+	"pending",
+	"applied",
+}
+
+var ec2InstanceMetadataProtocolStateValues = []string{
+	"disabled",
+	"enabled",
+}
+
+var ec2InstanceMetadataTagsStateValues = []string{
+	"disabled",
+	"enabled",
+}
+
+var ec2InstanceRebootMigrationStateValues = []string{
+	"disabled",
+	"default",
+}
+
+var ec2InstanceStateNameValues = []string{
+	"pending",
+	"running",
+	"shutting-down",
+	"terminated",
+	"stopping",
+	"stopped",
+}
+
+var ec2InstanceStorageEncryptionSupportValues = []string{
+	"unsupported",
+	"required",
+}
+
+var ec2InstanceTypeHypervisorValues = []string{
+	"nitro",
+	"xen",
+}
+
+var ec2InterfacePermissionTypeValues = []string{
+	"INSTANCE-ATTACH",
+	"EIP-ASSOCIATE",
+}
+
+var ec2InterfaceProtocolTypeValues = []string{
+	"VLAN",
+	"GRE",
+}
+
+var ec2InternetGatewayBlockModeValues = []string{
+	"off",
+	"block-bidirectional",
+	"block-ingress",
+}
+
+var ec2InternetGatewayExclusionModeValues = []string{
+	"allow-bidirectional",
+	"allow-egress",
+}
+
+var ec2InterruptibleCapacityReservationAllocationStatusValues = []string{
+	"pending",
+	"active",
+	"updating",
+	"canceling",
+	"canceled",
+	"failed",
+}
+
+var ec2InterruptionTypeValues = []string{
+	"adhoc",
+}
+
+var ec2IpAddressTypeValues = []string{
+	"ipv4",
+	"dualstack",
+	"ipv6",
+}
+
+var ec2IpSourceValues = []string{
+	"amazon",
+	"byoip",
+	"none",
+}
+
+var ec2IpamAddressHistoryResourceTypeValues = []string{
+	"eip",
+	"vpc",
+	"subnet",
+	"network-interface",
+	"instance",
+}
+
+var ec2IpamAssociatedResourceDiscoveryStatusValues = []string{
+	"active",
+	"not-found",
+}
+
+var ec2IpamComplianceStatusValues = []string{
+	"compliant",
+	"noncompliant",
+	"unmanaged",
+	"ignored",
+}
+
+var ec2IpamDiscoveryFailureCodeValues = []string{
+	"assume-role-failure",
+	"throttling-failure",
+	"unauthorized-failure",
+}
+
+var ec2IpamExternalResourceVerificationTokenStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+}
+
+var ec2IpamManagementStateValues = []string{
+	"managed",
+	"unmanaged",
+	"ignored",
+}
+
+var ec2IpamMeteredAccountValues = []string{
+	"ipam-owner",
+	"resource-owner",
+}
+
+var ec2IpamNetworkInterfaceAttachmentStatusValues = []string{
+	"available",
+	"in-use",
+}
+
+var ec2IpamOverlapStatusValues = []string{
+	"overlapping",
+	"nonoverlapping",
+	"ignored",
+}
+
+var ec2IpamPolicyManagedByValues = []string{
+	"account",
+	"delegated-administrator-for-ipam",
+}
+
+var ec2IpamPolicyResourceTypeValues = []string{
+	"alb",
+	"eip",
+	"rds",
+	"rnat",
+}
+
+var ec2IpamPolicyStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamPoolAllocationResourceTypeValues = []string{
+	"ipam-pool",
+	"vpc",
+	"ec2-public-ipv4-pool",
+	"custom",
+	"subnet",
+	"eip",
+	"anycast-ip-list",
+}
+
+var ec2IpamPoolAwsServiceValues = []string{
+	"ec2",
+	"global-services",
+}
+
+var ec2IpamPoolCidrFailureCodeValues = []string{
+	"cidr-not-available",
+	"limit-exceeded",
+}
+
+var ec2IpamPoolCidrStateValues = []string{
+	"pending-provision",
+	"provisioned",
+	"failed-provision",
+	"pending-deprovision",
+	"deprovisioned",
+	"failed-deprovision",
+	"pending-import",
+	"failed-import",
+}
+
+var ec2IpamPoolPublicIpSourceValues = []string{
+	"amazon",
+	"byoip",
+}
+
+var ec2IpamPoolSourceResourceTypeValues = []string{
+	"vpc",
+}
+
+var ec2IpamPoolStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamPrefixListResolverRuleConditionOperationValues = []string{
+	"equals",
+	"not-equals",
+	"subnet-of",
+}
+
+var ec2IpamPrefixListResolverRuleTypeValues = []string{
+	"static-cidr",
+	"ipam-resource-cidr",
+	"ipam-pool-cidr",
+}
+
+var ec2IpamPrefixListResolverStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamPrefixListResolverTargetStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"sync-in-progress",
+	"sync-complete",
+	"sync-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamPrefixListResolverVersionCreationStatusValues = []string{
+	"pending",
+	"success",
+	"failure",
+}
+
+var ec2IpamPublicAddressAssociationStatusValues = []string{
+	"associated",
+	"disassociated",
+}
+
+var ec2IpamPublicAddressAwsServiceValues = []string{
+	"nat-gateway",
+	"database-migration-service",
+	"redshift",
+	"elastic-container-service",
+	"relational-database-service",
+	"site-to-site-vpn",
+	"load-balancer",
+	"global-accelerator",
+	"cloudfront",
+	"other",
+}
+
+var ec2IpamPublicAddressTypeValues = []string{
+	"service-managed-ip",
+	"service-managed-byoip",
+	"amazon-owned-eip",
+	"amazon-owned-contig",
+	"byoip",
+	"ec2-public-ip",
+	"anycast-ip-list-ip",
+}
+
+var ec2IpamResourceCidrIpSourceValues = []string{
+	"amazon",
+	"byoip",
+	"none",
+}
+
+var ec2IpamResourceDiscoveryAssociationStateValues = []string{
+	"associate-in-progress",
+	"associate-complete",
+	"associate-failed",
+	"disassociate-in-progress",
+	"disassociate-complete",
+	"disassociate-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamResourceDiscoveryStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamResourceTypeValues = []string{
+	"vpc",
+	"subnet",
+	"eip",
+	"public-ipv4-pool",
+	"ipv6-pool",
+	"eni",
+	"anycast-ip-list",
+}
+
+var ec2IpamScopeExternalAuthorityTypeValues = []string{
+	"infoblox",
+}
+
+var ec2IpamScopeStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamScopeTypeValues = []string{
+	"public",
+	"private",
+}
+
+var ec2IpamStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+	"isolate-in-progress",
+	"isolate-complete",
+	"restore-in-progress",
+}
+
+var ec2IpamTierValues = []string{
+	"free",
+	"advanced",
+}
+
+var ec2Ipv6AddressAttributeValues = []string{
+	"public",
+	"private",
+}
+
+var ec2Ipv6SupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2KeyFormatValues = []string{
+	"pem",
+	"ppk",
+}
+
+var ec2KeyTypeValues = []string{
+	"rsa",
+	"ed25519",
+}
+
+var ec2LaunchTemplateAutoRecoveryStateValues = []string{
+	"default",
+	"disabled",
+}
+
+var ec2LaunchTemplateErrorCodeValues = []string{
+	"launchTemplateIdDoesNotExist",
+	"launchTemplateIdMalformed",
+	"launchTemplateNameDoesNotExist",
+	"launchTemplateNameMalformed",
+	"launchTemplateVersionDoesNotExist",
+	"unexpectedError",
+}
+
+var ec2LaunchTemplateHttpTokensStateValues = []string{
+	"optional",
+	"required",
+}
+
+var ec2LaunchTemplateInstanceMetadataEndpointStateValues = []string{
+	"disabled",
+	"enabled",
+}
+
+var ec2LaunchTemplateInstanceMetadataOptionsStateValues = []string{
+	"pending",
+	"applied",
+}
+
+var ec2LaunchTemplateInstanceMetadataProtocolIpv6Values = []string{
+	"disabled",
+	"enabled",
+}
+
+var ec2LaunchTemplateInstanceMetadataTagsStateValues = []string{
+	"disabled",
+	"enabled",
+}
+
+var ec2ListingStateValues = []string{
+	"available",
+	"sold",
+	"cancelled",
+	"pending",
+}
+
+var ec2ListingStatusValues = []string{
+	"active",
+	"pending",
+	"cancelled",
+	"closed",
+}
+
+var ec2LocalGatewayRouteStateValues = []string{
+	"pending",
+	"active",
+	"blackhole",
+	"deleting",
+	"deleted",
+}
+
+var ec2LocalGatewayRouteTableModeValues = []string{
+	"direct-vpc-routing",
+	"coip",
+}
+
+var ec2LocalGatewayRouteTypeValues = []string{
+	"static",
+	"propagated",
+}
+
+var ec2LocalGatewayVirtualInterfaceConfigurationStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2LocalGatewayVirtualInterfaceGroupConfigurationStateValues = []string{
+	"pending",
+	"incomplete",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2LocalStorageValues = []string{
+	"included",
+	"required",
+	"excluded",
+}
+
+var ec2LocalStorageTypeValues = []string{
+	"hdd",
+	"ssd",
+}
+
+var ec2LocationTypeValues = []string{
+	"region",
+	"availability-zone",
+	"availability-zone-id",
+	"outpost",
+}
+
+var ec2LockModeValues = []string{
+	"compliance",
+	"governance",
+}
+
+var ec2LockStateValues = []string{
+	"compliance",
+	"governance",
+	"compliance-cooloff",
+	"expired",
+}
+
+var ec2LogDestinationTypeValues = []string{
+	"cloud-watch-logs",
+	"s3",
+	"kinesis-data-firehose",
+}
+
+var ec2MacModificationTaskStateValues = []string{
+	"successful",
+	"failed",
+	"in-progress",
+	"pending",
+}
+
+var ec2MacModificationTaskTypeValues = []string{
+	"sip-modification",
+	"volume-ownership-delegation",
+}
+
+var ec2MacSystemIntegrityProtectionSettingStatusValues = []string{
+	"enabled",
+	"disabled",
+}
+
+var ec2ManagedByValues = []string{
+	"account",
+	"declarative-policy",
+}
+
+var ec2MarketTypeValues = []string{
+	"spot",
+	"capacity-block",
+	"interruptible-capacity-reservation",
+}
+
+var ec2MembershipTypeValues = []string{
+	"static",
+	"igmp",
+}
+
+var ec2MetadataDefaultHttpTokensStateValues = []string{
+	"optional",
+	"required",
+	"no-preference",
+}
+
+var ec2MetricValues = []string{
+	"reservation-total-capacity-hrs-vcpu",
+	"reservation-total-capacity-hrs-inst",
+	"reservation-max-size-vcpu",
+	"reservation-max-size-inst",
+	"reservation-min-size-vcpu",
+	"reservation-min-size-inst",
+	"reservation-unused-total-capacity-hrs-vcpu",
+	"reservation-unused-total-capacity-hrs-inst",
+	"reservation-unused-total-estimated-cost",
+	"reservation-max-unused-size-vcpu",
+	"reservation-max-unused-size-inst",
+	"reservation-min-unused-size-vcpu",
+	"reservation-min-unused-size-inst",
+	"reservation-max-utilization",
+	"reservation-min-utilization",
+	"reservation-avg-utilization-vcpu",
+	"reservation-avg-utilization-inst",
+	"reservation-total-count",
+	"reservation-total-estimated-cost",
+	"reservation-avg-future-size-vcpu",
+	"reservation-avg-future-size-inst",
+	"reservation-min-future-size-vcpu",
+	"reservation-min-future-size-inst",
+	"reservation-max-future-size-vcpu",
+	"reservation-max-future-size-inst",
+	"reservation-avg-committed-size-vcpu",
+	"reservation-avg-committed-size-inst",
+	"reservation-max-committed-size-vcpu",
+	"reservation-max-committed-size-inst",
+	"reservation-min-committed-size-vcpu",
+	"reservation-min-committed-size-inst",
+	"reserved-total-usage-hrs-vcpu",
+	"reserved-total-usage-hrs-inst",
+	"reserved-total-estimated-cost",
+	"unreserved-total-usage-hrs-vcpu",
+	"unreserved-total-usage-hrs-inst",
+	"unreserved-total-estimated-cost",
+	"spot-total-usage-hrs-vcpu",
+	"spot-total-usage-hrs-inst",
+	"spot-total-estimated-cost",
+	"spot-avg-run-time-before-interruption-inst",
+	"spot-max-run-time-before-interruption-inst",
+	"spot-min-run-time-before-interruption-inst",
+	"spot-total-interruptions-inst",
+	"spot-total-interruptions-vcpu",
+	"spot-total-count-inst",
+	"spot-total-count-vcpu",
+	"spot-interruption-rate-inst",
+	"spot-interruption-rate-vcpu",
+}
+
+var ec2MetricTypeValues = []string{
+	"aggregate-latency",
+}
+
+var ec2ModifyAvailabilityZoneOptInStatusValues = []string{
+	"opted-in",
+	"not-opted-in",
+}
+
+var ec2MonitoringStateValues = []string{
+	"disabled",
+	"disabling",
+	"enabled",
+	"pending",
+}
+
+var ec2MoveStatusValues = []string{
+	"movingToVpc",
+	"restoringToClassic",
+}
+
+var ec2MulticastSupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2NatGatewayAddressStatusValues = []string{
+	"assigning",
+	"unassigning",
+	"associating",
+	"disassociating",
+	"succeeded",
+	"failed",
+}
+
+var ec2NatGatewayApplianceModifyStateValues = []string{
+	"modifying",
+	"completed",
+	"failed",
+}
+
+var ec2NatGatewayApplianceStateValues = []string{
+	"attaching",
+	"attached",
+	"detaching",
+	"detached",
+	"attach-failed",
+	"detach-failed",
+}
+
+var ec2NatGatewayApplianceTypeValues = []string{
+	"network-firewall-proxy",
+}
+
+var ec2NatGatewayStateValues = []string{
+	"pending",
+	"failed",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2NetworkInterfaceAttributeValues = []string{
+	"description",
+	"groupSet",
+	"sourceDestCheck",
+	"attachment",
+	"associatePublicIpAddress",
+}
+
+var ec2NetworkInterfaceCreationTypeValues = []string{
+	"efa",
+	"efa-only",
+	"branch",
+	"trunk",
+}
+
+var ec2NetworkInterfacePermissionStateCodeValues = []string{
+	"pending",
+	"granted",
+	"revoking",
+	"revoked",
+}
+
+var ec2NetworkInterfaceStatusValues = []string{
+	"available",
+	"associated",
+	"attaching",
+	"in-use",
+	"detaching",
+}
+
+var ec2NetworkInterfaceTypeValues = []string{
+	"interface",
+	"natGateway",
+	"efa",
+	"efa-only",
+	"trunk",
+	"load_balancer",
+	"network_load_balancer",
+	"vpc_endpoint",
+	"branch",
+	"transit_gateway",
+	"lambda",
+	"quicksight",
+	"global_accelerator_managed",
+	"api_gateway_managed",
+	"gateway_load_balancer",
+	"gateway_load_balancer_endpoint",
+	"iot_rules_managed",
+	"aws_codestar_connections_managed",
+}
+
+var ec2NitroEnclavesSupportValues = []string{
+	"unsupported",
+	"supported",
+}
+
+var ec2NitroTpmSupportValues = []string{
+	"unsupported",
+	"supported",
+}
+
+var ec2OfferingClassTypeValues = []string{
+	"standard",
+	"convertible",
+}
+
+var ec2OfferingTypeValuesValues = []string{
+	"Heavy Utilization",
+	"Medium Utilization",
+	"Light Utilization",
+	"No Upfront",
+	"Partial Upfront",
+	"All Upfront",
+}
+
+var ec2OnDemandAllocationStrategyValues = []string{
+	"lowestPrice",
+	"prioritized",
+}
+
+var ec2OperationTypeValues = []string{
+	"add",
+	"remove",
+}
+
+var ec2OutputFormatValues = []string{
+	"csv",
+	"parquet",
+}
+
+var ec2PartitionLoadFrequencyValues = []string{
+	"none",
+	"daily",
+	"weekly",
+	"monthly",
+}
+
+var ec2PayerResponsibilityValues = []string{
+	"ServiceOwner",
+}
+
+var ec2PaymentOptionValues = []string{
+	"AllUpfront",
+	"PartialUpfront",
+	"NoUpfront",
+}
+
+var ec2PeriodTypeValues = []string{
+	"five-minutes",
+	"fifteen-minutes",
+	"one-hour",
+	"three-hours",
+	"one-day",
+	"one-week",
+}
+
+var ec2PermissionGroupValues = []string{
+	"all",
+}
+
+var ec2PhcSupportValues = []string{
+	"unsupported",
+	"supported",
+}
+
+var ec2PlacementGroupStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2PlacementGroupStrategyValues = []string{
+	"cluster",
+	"partition",
+	"spread",
+}
+
+var ec2PlacementStrategyValues = []string{
+	"cluster",
+	"spread",
+	"partition",
+}
+
+var ec2PlatformValuesValues = []string{
+	"Windows",
+}
+
+var ec2PrefixListStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"modify-in-progress",
+	"modify-complete",
+	"modify-failed",
+	"restore-in-progress",
+	"restore-complete",
+	"restore-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"delete-failed",
+}
+
+var ec2PrincipalTypeValues = []string{
+	"All",
+	"Service",
+	"OrganizationUnit",
+	"Account",
+	"User",
+	"Role",
+}
+
+var ec2ProductCodeValuesValues = []string{
+	"devpay",
+	"marketplace",
+}
+
+var ec2ProtocolValues = []string{
+	"tcp",
+	"udp",
+}
+
+var ec2ProtocolValueValues = []string{
+	"gre",
+}
+
+var ec2PublicIpDnsOptionValues = []string{
+	"public-dual-stack-dns-name",
+	"public-ipv4-dns-name",
+	"public-ipv6-dns-name",
+}
+
+var ec2RIProductDescriptionValues = []string{
+	"Linux/UNIX",
+	"Linux/UNIX (Amazon VPC)",
+	"Windows",
+	"Windows (Amazon VPC)",
+}
+
+var ec2RebootMigrationSupportValues = []string{
+	"unsupported",
+	"supported",
+}
+
+var ec2RecurringChargeFrequencyValues = []string{
+	"Hourly",
+}
+
+var ec2ReplaceRootVolumeTaskStateValues = []string{
+	"pending",
+	"in-progress",
+	"failing",
+	"succeeded",
+	"failed",
+	"failed-detached",
+}
+
+var ec2ReplacementStrategyValues = []string{
+	"launch",
+	"launch-before-terminate",
+}
+
+var ec2ReportInstanceReasonCodesValues = []string{
+	"instance-stuck-in-state",
+	"unresponsive",
+	"not-accepting-credentials",
+	"password-not-available",
+	"performance-network",
+	"performance-instance-store",
+	"performance-ebs-volume",
+	"performance-other",
+	"other",
+}
+
+var ec2ReportStateValues = []string{
+	"running",
+	"cancelled",
+	"complete",
+	"error",
+}
+
+var ec2ReportStatusTypeValues = []string{
+	"ok",
+	"impaired",
+}
+
+var ec2ReservationEndDateTypeValues = []string{
+	"limited",
+	"unlimited",
+}
+
+var ec2ReservationStateValues = []string{
+	"active",
+	"expired",
+	"cancelled",
+	"scheduled",
+	"pending",
+	"failed",
+	"delayed",
+	"unsupported",
+	"payment-pending",
+	"payment-failed",
+	"retired",
+}
+
+var ec2ReservationTypeValues = []string{
+	"capacity-block",
+	"odcr",
+}
+
+var ec2ReservedInstanceStateValues = []string{
+	"payment-pending",
+	"active",
+	"payment-failed",
+	"retired",
+	"queued",
+	"queued-deleted",
+}
+
+var ec2ResetFpgaImageAttributeNameValues = []string{
+	"loadPermission",
+}
+
+var ec2ResetImageAttributeNameValues = []string{
+	"launchPermission",
+}
+
+var ec2ResourceTypeValues = []string{
+	"capacity-reservation",
+	"client-vpn-endpoint",
+	"customer-gateway",
+	"carrier-gateway",
+	"coip-pool",
+	"declarative-policies-report",
+	"dedicated-host",
+	"dhcp-options",
+	"egress-only-internet-gateway",
+	"elastic-ip",
+	"elastic-gpu",
+	"export-image-task",
+	"export-instance-task",
+	"fleet",
+	"fpga-image",
+	"host-reservation",
+	"image",
+	"image-usage-report",
+	"import-image-task",
+	"import-snapshot-task",
+	"instance",
+	"instance-event-window",
+	"internet-gateway",
+	"ipam",
+	"ipam-pool",
+	"ipam-scope",
+	"ipv4pool-ec2",
+	"ipv6pool-ec2",
+	"key-pair",
+	"launch-template",
+	"local-gateway",
+	"local-gateway-route-table",
+	"local-gateway-virtual-interface",
+	"local-gateway-virtual-interface-group",
+	"local-gateway-route-table-vpc-association",
+	"local-gateway-route-table-virtual-interface-group-association",
+	"natgateway",
+	"network-acl",
+	"network-interface",
+	"network-insights-analysis",
+	"network-insights-path",
+	"network-insights-access-scope",
+	"network-insights-access-scope-analysis",
+	"outpost-lag",
+	"placement-group",
+	"prefix-list",
+	"replace-root-volume-task",
+	"reserved-instances",
+	"route-table",
+	"security-group",
+	"security-group-rule",
+	"service-link-virtual-interface",
+	"snapshot",
+	"spot-fleet-request",
+	"spot-instances-request",
+	"subnet",
+	"subnet-cidr-reservation",
+	"traffic-mirror-filter",
+	"traffic-mirror-session",
+	"traffic-mirror-target",
+	"transit-gateway",
+	"transit-gateway-attachment",
+	"transit-gateway-connect-peer",
+	"transit-gateway-multicast-domain",
+	"transit-gateway-policy-table",
+	"transit-gateway-metering-policy",
+	"transit-gateway-route-table",
+	"transit-gateway-route-table-announcement",
+	"volume",
+	"vpc",
+	"vpc-endpoint",
+	"vpc-endpoint-connection",
+	"vpc-endpoint-service",
+	"vpc-endpoint-service-permission",
+	"vpc-peering-connection",
+	"vpn-connection",
+	"vpn-gateway",
+	"vpc-flow-log",
+	"capacity-reservation-fleet",
+	"traffic-mirror-filter-rule",
+	"vpc-endpoint-connection-device-type",
+	"verified-access-instance",
+	"verified-access-group",
+	"verified-access-endpoint",
+	"verified-access-policy",
+	"verified-access-trust-provider",
+	"vpn-connection-device-type",
+	"vpc-block-public-access-exclusion",
+	"vpc-encryption-control",
+	"route-server",
+	"route-server-endpoint",
+	"route-server-peer",
+	"ipam-resource-discovery",
+	"ipam-resource-discovery-association",
+	"instance-connect-endpoint",
+	"verified-access-endpoint-target",
+	"ipam-external-resource-verification-token",
+	"capacity-block",
+	"mac-modification-task",
+	"ipam-prefix-list-resolver",
+	"ipam-policy",
+	"ipam-prefix-list-resolver-target",
+	"capacity-manager-data-export",
+	"vpn-concentrator",
+}
+
+var ec2RootDeviceTypeValues = []string{
+	"ebs",
+	"instance-store",
+}
+
+var ec2RouteOriginValues = []string{
+	"CreateRouteTable",
+	"CreateRoute",
+	"EnableVgwRoutePropagation",
+	"Advertisement",
+}
+
+var ec2RouteServerAssociationStateValues = []string{
+	"associating",
+	"associated",
+	"disassociating",
+}
+
+var ec2RouteServerBfdStateValues = []string{
+	"up",
+	"down",
+}
+
+var ec2RouteServerBgpStateValues = []string{
+	"up",
+	"down",
+}
+
+var ec2RouteServerEndpointStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+	"failing",
+	"failed",
+	"delete-failed",
+}
+
+var ec2RouteServerPeerLivenessModeValues = []string{
+	"bfd",
+	"bgp-keepalive",
+}
+
+var ec2RouteServerPeerStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+	"failing",
+	"failed",
+}
+
+var ec2RouteServerPersistRoutesActionValues = []string{
+	"enable",
+	"disable",
+	"reset",
+}
+
+var ec2RouteServerPersistRoutesStateValues = []string{
+	"enabling",
+	"enabled",
+	"resetting",
+	"disabling",
+	"disabled",
+	"modifying",
+}
+
+var ec2RouteServerPropagationStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+}
+
+var ec2RouteServerRouteInstallationStatusValues = []string{
+	"installed",
+	"rejected",
+}
+
+var ec2RouteServerRouteStatusValues = []string{
+	"in-rib",
+	"in-fib",
+}
+
+var ec2RouteServerStateValues = []string{
+	"pending",
+	"available",
+	"modifying",
+	"deleting",
+	"deleted",
+}
+
+var ec2RouteStateValues = []string{
+	"active",
+	"blackhole",
+	"filtered",
+}
+
+var ec2RouteTableAssociationStateCodeValues = []string{
+	"associating",
+	"associated",
+	"disassociating",
+	"disassociated",
+	"failed",
+}
+
+var ec2RuleActionValues = []string{
+	"allow",
+	"deny",
+}
+
+var ec2SSETypeValues = []string{
+	"sse-ebs",
+	"sse-kms",
+	"none",
+}
+
+var ec2ScheduleValues = []string{
+	"hourly",
+}
+
+var ec2SecurityGroupReferencingSupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2SecurityGroupVpcAssociationStateValues = []string{
+	"associating",
+	"associated",
+	"association-failed",
+	"disassociating",
+	"disassociated",
+	"disassociation-failed",
+}
+
+var ec2SelfServicePortalValues = []string{
+	"enabled",
+	"disabled",
+}
+
+var ec2ServiceConnectivityTypeValues = []string{
+	"ipv4",
+	"ipv6",
+}
+
+var ec2ServiceLinkVirtualInterfaceConfigurationStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2ServiceManagedValues = []string{
+	"alb",
+	"nlb",
+	"rnat",
+	"rds",
+}
+
+var ec2ServiceStateValues = []string{
+	"Pending",
+	"Available",
+	"Deleting",
+	"Deleted",
+	"Failed",
+}
+
+var ec2ServiceTypeValues = []string{
+	"Interface",
+	"Gateway",
+	"GatewayLoadBalancer",
+}
+
+var ec2ShutdownBehaviorValues = []string{
+	"stop",
+	"terminate",
+}
+
+var ec2SnapshotAttributeNameValues = []string{
+	"productCodes",
+	"createVolumePermission",
+}
+
+var ec2SnapshotBlockPublicAccessStateValues = []string{
+	"block-all-sharing",
+	"block-new-sharing",
+	"unblocked",
+}
+
+var ec2SnapshotLocationEnumValues = []string{
+	"regional",
+	"local",
+}
+
+var ec2SnapshotReturnCodesValues = []string{
+	"success",
+	"skipped",
+	"missing-permissions",
+	"internal-error",
+	"client-error",
+}
+
+var ec2SnapshotStateValues = []string{
+	"pending",
+	"completed",
+	"error",
+	"recoverable",
+	"recovering",
+}
+
+var ec2SpotAllocationStrategyValues = []string{
+	"lowest-price",
+	"diversified",
+	"capacity-optimized",
+	"capacity-optimized-prioritized",
+	"price-capacity-optimized",
+}
+
+var ec2SpotInstanceInterruptionBehaviorValues = []string{
+	"hibernate",
+	"stop",
+	"terminate",
+}
+
+var ec2SpotInstanceStateValues = []string{
+	"open",
+	"active",
+	"closed",
+	"cancelled",
+	"failed",
+	"disabled",
+}
+
+var ec2SpotInstanceTypeValues = []string{
+	"one-time",
+	"persistent",
+}
+
+var ec2SpreadLevelValues = []string{
+	"host",
+	"rack",
+}
+
+var ec2SqlServerLicenseUsageValues = []string{
+	"full",
+	"waived",
+}
+
+var ec2StateValues = []string{
+	"PendingAcceptance",
+	"Pending",
+	"Available",
+	"Deleting",
+	"Deleted",
+	"Rejected",
+	"Failed",
+	"Expired",
+	"Partial",
+}
+
+var ec2StaticSourcesSupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2StatisticTypeValues = []string{
+	"p50",
+}
+
+var ec2StatusValues = []string{
+	"MoveInProgress",
+	"InVpc",
+	"InClassic",
+}
+
+var ec2StatusNameValues = []string{
+	"reachability",
+}
+
+var ec2StatusTypeValues = []string{
+	"passed",
+	"failed",
+	"insufficient-data",
+	"initializing",
+}
+
+var ec2StorageTierValues = []string{
+	"archive",
+	"standard",
+}
+
+var ec2SubnetCidrBlockStateCodeValues = []string{
+	"associating",
+	"associated",
+	"disassociating",
+	"disassociated",
+	"failing",
+	"failed",
+}
+
+var ec2SubnetCidrReservationTypeValues = []string{
+	"prefix",
+	"explicit",
+}
+
+var ec2SubnetStateValues = []string{
+	"pending",
+	"available",
+	"unavailable",
+	"failed",
+	"failed-insufficient-capacity",
+}
+
+var ec2SummaryStatusValues = []string{
+	"ok",
+	"impaired",
+	"insufficient-data",
+	"not-applicable",
+	"initializing",
+}
+
+var ec2SupportedAdditionalProcessorFeatureValues = []string{
+	"amd-sev-snp",
+}
+
+var ec2TargetCapacityUnitTypeValues = []string{
+	"vcpu",
+	"memory-mib",
+	"units",
+}
+
+var ec2TargetStorageTierValues = []string{
+	"archive",
+}
+
+var ec2TelemetryStatusValues = []string{
+	"UP",
+	"DOWN",
+}
+
+var ec2TenancyValues = []string{
+	"default",
+	"dedicated",
+	"host",
+}
+
+var ec2TieringOperationStatusValues = []string{
+	"archival-in-progress",
+	"archival-completed",
+	"archival-failed",
+	"temporary-restore-in-progress",
+	"temporary-restore-completed",
+	"temporary-restore-failed",
+	"permanent-restore-in-progress",
+	"permanent-restore-completed",
+	"permanent-restore-failed",
+}
+
+var ec2TokenStateValues = []string{
+	"valid",
+	"expired",
+}
+
+var ec2TpmSupportValuesValues = []string{
+	"v2.0",
+}
+
+var ec2TrafficDirectionValues = []string{
+	"ingress",
+	"egress",
+}
+
+var ec2TrafficIpAddressTypeValues = []string{
+	"ipv4",
+	"ipv6",
+	"dual-stack",
+}
+
+var ec2TrafficMirrorFilterRuleFieldValues = []string{
+	"destination-port-range",
+	"source-port-range",
+	"protocol",
+	"description",
+}
+
+var ec2TrafficMirrorNetworkServiceValues = []string{
+	"amazon-dns",
+}
+
+var ec2TrafficMirrorRuleActionValues = []string{
+	"accept",
+	"reject",
+}
+
+var ec2TrafficMirrorSessionFieldValues = []string{
+	"packet-length",
+	"description",
+	"virtual-network-id",
+}
+
+var ec2TrafficMirrorTargetTypeValues = []string{
+	"network-interface",
+	"network-load-balancer",
+	"gateway-load-balancer-endpoint",
+}
+
+var ec2TrafficTypeValues = []string{
+	"ACCEPT",
+	"REJECT",
+	"ALL",
+}
+
+var ec2TransferTypeValues = []string{
+	"time-based",
+	"standard",
+}
+
+var ec2TransitGatewayAssociationStateValues = []string{
+	"associating",
+	"associated",
+	"disassociating",
+	"disassociated",
+}
+
+var ec2TransitGatewayAttachmentResourceTypeValues = []string{
+	"vpc",
+	"vpn",
+	"vpn-concentrator",
+	"direct-connect-gateway",
+	"connect",
+	"peering",
+	"tgw-peering",
+	"network-function",
+}
+
+var ec2TransitGatewayAttachmentStateValues = []string{
+	"initiating",
+	"initiatingRequest",
+	"pendingAcceptance",
+	"rollingBack",
+	"pending",
+	"available",
+	"modifying",
+	"deleting",
+	"deleted",
+	"failed",
+	"rejected",
+	"rejecting",
+	"failing",
+}
+
+var ec2TransitGatewayConnectPeerStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2TransitGatewayMeteringPayerTypeValues = []string{
+	"source-attachment-owner",
+	"destination-attachment-owner",
+	"transit-gateway-owner",
+}
+
+var ec2TransitGatewayMeteringPolicyEntryStateValues = []string{
+	"available",
+	"deleted",
+}
+
+var ec2TransitGatewayMeteringPolicyStateValues = []string{
+	"available",
+	"deleted",
+	"pending",
+	"modifying",
+	"deleting",
+}
+
+var ec2TransitGatewayMulitcastDomainAssociationStateValues = []string{
+	"pendingAcceptance",
+	"associating",
+	"associated",
+	"disassociating",
+	"disassociated",
+	"rejected",
+	"failed",
+}
+
+var ec2TransitGatewayMulticastDomainStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2TransitGatewayPolicyTableStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2TransitGatewayPrefixListReferenceStateValues = []string{
+	"pending",
+	"available",
+	"modifying",
+	"deleting",
+}
+
+var ec2TransitGatewayPropagationStateValues = []string{
+	"enabling",
+	"enabled",
+	"disabling",
+	"disabled",
+}
+
+var ec2TransitGatewayRouteStateValues = []string{
+	"pending",
+	"active",
+	"blackhole",
+	"deleting",
+	"deleted",
+}
+
+var ec2TransitGatewayRouteTableAnnouncementDirectionValues = []string{
+	"outgoing",
+	"incoming",
+}
+
+var ec2TransitGatewayRouteTableAnnouncementStateValues = []string{
+	"available",
+	"pending",
+	"failing",
+	"failed",
+	"deleting",
+	"deleted",
+}
+
+var ec2TransitGatewayRouteTableStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2TransitGatewayRouteTypeValues = []string{
+	"static",
+	"propagated",
+}
+
+var ec2TransitGatewayStateValues = []string{
+	"pending",
+	"available",
+	"modifying",
+	"deleting",
+	"deleted",
+}
+
+var ec2TransportProtocolValues = []string{
+	"tcp",
+	"udp",
+}
+
+var ec2TrustProviderTypeValues = []string{
+	"user",
+	"device",
+}
+
+var ec2TunnelInsideIpVersionValues = []string{
+	"ipv4",
+	"ipv6",
+}
+
+var ec2UnlimitedSupportedInstanceFamilyValues = []string{
+	"t2",
+	"t3",
+	"t3a",
+	"t4g",
+}
+
+var ec2UnsuccessfulInstanceCreditSpecificationErrorCodeValues = []string{
+	"InvalidInstanceID.Malformed",
+	"InvalidInstanceID.NotFound",
+	"IncorrectInstanceState",
+	"InstanceCreditSpecification.NotSupported",
+}
+
+var ec2UsageClassTypeValues = []string{
+	"spot",
+	"on-demand",
+	"capacity-block",
+}
+
+var ec2UserTrustProviderTypeValues = []string{
+	"iam-identity-center",
+	"oidc",
+}
+
+var ec2VerificationMethodValues = []string{
+	"remarks-x509",
+	"dns-token",
+}
+
+var ec2VerifiedAccessEndpointAttachmentTypeValues = []string{
+	"vpc",
+}
+
+var ec2VerifiedAccessEndpointProtocolValues = []string{
+	"http",
+	"https",
+	"tcp",
+}
+
+var ec2VerifiedAccessEndpointStatusCodeValues = []string{
+	"pending",
+	"active",
+	"updating",
+	"deleting",
+	"deleted",
+}
+
+var ec2VerifiedAccessEndpointTypeValues = []string{
+	"load-balancer",
+	"network-interface",
+	"rds",
+	"cidr",
+}
+
+var ec2VerifiedAccessLogDeliveryStatusCodeValues = []string{
+	"success",
+	"failed",
+}
+
+var ec2VirtualizationTypeValues = []string{
+	"hvm",
+	"paravirtual",
+}
+
+var ec2VolumeAttachmentStateValues = []string{
+	"attaching",
+	"attached",
+	"detaching",
+	"detached",
+	"busy",
+}
+
+var ec2VolumeAttributeNameValues = []string{
+	"autoEnableIO",
+	"productCodes",
+}
+
+var ec2VolumeModificationStateValues = []string{
+	"modifying",
+	"optimizing",
+	"completed",
+	"failed",
+}
+
+var ec2VolumeStateValues = []string{
+	"creating",
+	"available",
+	"in-use",
+	"deleting",
+	"deleted",
+	"error",
+}
+
+var ec2VolumeStatusInfoStatusValues = []string{
+	"ok",
+	"impaired",
+	"insufficient-data",
+	"warning",
+}
+
+var ec2VolumeStatusNameValues = []string{
+	"io-enabled",
+	"io-performance",
+	"initialization-state",
+}
 
 var ec2VolumeTypeValues = []string{
 	"standard",
@@ -24,16 +5472,1456 @@ var ec2VolumeTypeValues = []string{
 	"gp3",
 }
 
+var ec2VpcAttributeNameValues = []string{
+	"enableDnsSupport",
+	"enableDnsHostnames",
+	"enableNetworkAddressUsageMetrics",
+}
+
+var ec2VpcBlockPublicAccessExclusionStateValues = []string{
+	"create-in-progress",
+	"create-complete",
+	"create-failed",
+	"update-in-progress",
+	"update-complete",
+	"update-failed",
+	"delete-in-progress",
+	"delete-complete",
+	"disable-in-progress",
+	"disable-complete",
+}
+
+var ec2VpcBlockPublicAccessExclusionsAllowedValues = []string{
+	"allowed",
+	"not-allowed",
+}
+
+var ec2VpcBlockPublicAccessStateValues = []string{
+	"default-state",
+	"update-in-progress",
+	"update-complete",
+}
+
+var ec2VpcCidrBlockStateCodeValues = []string{
+	"associating",
+	"associated",
+	"disassociating",
+	"disassociated",
+	"failing",
+	"failed",
+}
+
+var ec2VpcEncryptionControlExclusionStateValues = []string{
+	"enabling",
+	"enabled",
+	"disabling",
+	"disabled",
+}
+
+var ec2VpcEncryptionControlExclusionStateInputValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2VpcEncryptionControlModeValues = []string{
+	"monitor",
+	"enforce",
+}
+
+var ec2VpcEncryptionControlStateValues = []string{
+	"enforce-in-progress",
+	"monitor-in-progress",
+	"enforce-failed",
+	"monitor-failed",
+	"deleting",
+	"deleted",
+	"available",
+	"creating",
+	"delete-failed",
+}
+
+var ec2VpcEndpointTypeValues = []string{
+	"Interface",
+	"Gateway",
+	"GatewayLoadBalancer",
+	"Resource",
+	"ServiceNetwork",
+}
+
+var ec2VpcPeeringConnectionStateReasonCodeValues = []string{
+	"initiating-request",
+	"pending-acceptance",
+	"active",
+	"deleted",
+	"rejected",
+	"failed",
+	"expired",
+	"provisioning",
+	"deleting",
+}
+
+var ec2VpcStateValues = []string{
+	"pending",
+	"available",
+}
+
+var ec2VpcTenancyValues = []string{
+	"default",
+}
+
+var ec2VpnConcentratorTypeValues = []string{
+	"ipsec.1",
+}
+
+var ec2VpnEcmpSupportValueValues = []string{
+	"enable",
+	"disable",
+}
+
+var ec2VpnProtocolValues = []string{
+	"openvpn",
+}
+
+var ec2VpnStateValues = []string{
+	"pending",
+	"available",
+	"deleting",
+	"deleted",
+}
+
+var ec2VpnStaticRouteSourceValues = []string{
+	"Static",
+}
+
+var ec2VpnTunnelBandwidthValues = []string{
+	"standard",
+	"large",
+}
+
+var ec2VpnTunnelProvisioningStatusValues = []string{
+	"available",
+	"pending",
+	"failed",
+}
+
+var ec2WeekDayValues = []string{
+	"sunday",
+	"monday",
+	"tuesday",
+	"wednesday",
+	"thursday",
+	"friday",
+	"saturday",
+}
+
+var ec2scopeValues = []string{
+	"Availability Zone",
+	"Region",
+}
+
 func getEc2Enum(name string) []string {
 	switch name {
+	case "AcceleratorManufacturer":
+		return ec2AcceleratorManufacturerValues
+	case "AcceleratorName":
+		return ec2AcceleratorNameValues
+	case "AcceleratorType":
+		return ec2AcceleratorTypeValues
+	case "AccountAttributeName":
+		return ec2AccountAttributeNameValues
+	case "ActivityStatus":
+		return ec2ActivityStatusValues
+	case "AddressAttributeName":
+		return ec2AddressAttributeNameValues
+	case "AddressFamily":
+		return ec2AddressFamilyValues
+	case "AddressTransferStatus":
+		return ec2AddressTransferStatusValues
+	case "Affinity":
+		return ec2AffinityValues
+	case "AllocationState":
+		return ec2AllocationStateValues
+	case "AllocationStrategy":
+		return ec2AllocationStrategyValues
+	case "AllocationType":
+		return ec2AllocationTypeValues
+	case "AllowedImagesSettingsDisabledState":
+		return ec2AllowedImagesSettingsDisabledStateValues
+	case "AllowedImagesSettingsEnabledState":
+		return ec2AllowedImagesSettingsEnabledStateValues
+	case "AllowsMultipleInstanceTypes":
+		return ec2AllowsMultipleInstanceTypesValues
+	case "AmdSevSnpSpecification":
+		return ec2AmdSevSnpSpecificationValues
+	case "AnalysisStatus":
+		return ec2AnalysisStatusValues
+	case "ApplianceModeSupportValue":
+		return ec2ApplianceModeSupportValueValues
+	case "ArchitectureType":
+		return ec2ArchitectureTypeValues
+	case "ArchitectureValues":
+		return ec2ArchitectureValuesValues
+	case "AsnAssociationState":
+		return ec2AsnAssociationStateValues
+	case "AsnState":
+		return ec2AsnStateValues
+	case "AssociatedNetworkType":
+		return ec2AssociatedNetworkTypeValues
+	case "AssociationStatusCode":
+		return ec2AssociationStatusCodeValues
+	case "AttachmentLimitType":
+		return ec2AttachmentLimitTypeValues
+	case "AttachmentStatus":
+		return ec2AttachmentStatusValues
+	case "AutoAcceptSharedAssociationsValue":
+		return ec2AutoAcceptSharedAssociationsValueValues
+	case "AutoAcceptSharedAttachmentsValue":
+		return ec2AutoAcceptSharedAttachmentsValueValues
+	case "AutoPlacement":
+		return ec2AutoPlacementValues
+	case "AutoProvisionZonesState":
+		return ec2AutoProvisionZonesStateValues
+	case "AutoScalingIpsState":
+		return ec2AutoScalingIpsStateValues
+	case "AvailabilityMode":
+		return ec2AvailabilityModeValues
+	case "AvailabilityZoneOptInStatus":
+		return ec2AvailabilityZoneOptInStatusValues
+	case "AvailabilityZoneState":
+		return ec2AvailabilityZoneStateValues
+	case "BandwidthWeightingType":
+		return ec2BandwidthWeightingTypeValues
+	case "BareMetal":
+		return ec2BareMetalValues
+	case "BatchState":
+		return ec2BatchStateValues
+	case "BgpStatus":
+		return ec2BgpStatusValues
+	case "BlockPublicAccessMode":
+		return ec2BlockPublicAccessModeValues
+	case "BootModeType":
+		return ec2BootModeTypeValues
+	case "BootModeValues":
+		return ec2BootModeValuesValues
+	case "BundleTaskState":
+		return ec2BundleTaskStateValues
+	case "BurstablePerformance":
+		return ec2BurstablePerformanceValues
+	case "ByoipCidrState":
+		return ec2ByoipCidrStateValues
+	case "CallerRole":
+		return ec2CallerRoleValues
+	case "CancelBatchErrorCode":
+		return ec2CancelBatchErrorCodeValues
+	case "CancelSpotInstanceRequestState":
+		return ec2CancelSpotInstanceRequestStateValues
+	case "CapacityBlockExtensionStatus":
+		return ec2CapacityBlockExtensionStatusValues
+	case "CapacityBlockInterconnectStatus":
+		return ec2CapacityBlockInterconnectStatusValues
+	case "CapacityBlockResourceState":
+		return ec2CapacityBlockResourceStateValues
+	case "CapacityManagerDataExportStatus":
+		return ec2CapacityManagerDataExportStatusValues
+	case "CapacityManagerStatus":
+		return ec2CapacityManagerStatusValues
+	case "CapacityReservationBillingRequestStatus":
+		return ec2CapacityReservationBillingRequestStatusValues
+	case "CapacityReservationDeliveryPreference":
+		return ec2CapacityReservationDeliveryPreferenceValues
+	case "CapacityReservationFleetState":
+		return ec2CapacityReservationFleetStateValues
+	case "CapacityReservationInstancePlatform":
+		return ec2CapacityReservationInstancePlatformValues
+	case "CapacityReservationPreference":
+		return ec2CapacityReservationPreferenceValues
+	case "CapacityReservationState":
+		return ec2CapacityReservationStateValues
+	case "CapacityReservationTenancy":
+		return ec2CapacityReservationTenancyValues
+	case "CapacityReservationType":
+		return ec2CapacityReservationTypeValues
+	case "CapacityTenancy":
+		return ec2CapacityTenancyValues
+	case "CarrierGatewayState":
+		return ec2CarrierGatewayStateValues
+	case "ClientCertificateRevocationListStatusCode":
+		return ec2ClientCertificateRevocationListStatusCodeValues
+	case "ClientVpnAuthenticationType":
+		return ec2ClientVpnAuthenticationTypeValues
+	case "ClientVpnAuthorizationRuleStatusCode":
+		return ec2ClientVpnAuthorizationRuleStatusCodeValues
+	case "ClientVpnConnectionStatusCode":
+		return ec2ClientVpnConnectionStatusCodeValues
+	case "ClientVpnEndpointAttributeStatusCode":
+		return ec2ClientVpnEndpointAttributeStatusCodeValues
+	case "ClientVpnEndpointStatusCode":
+		return ec2ClientVpnEndpointStatusCodeValues
+	case "ClientVpnRouteStatusCode":
+		return ec2ClientVpnRouteStatusCodeValues
+	case "Comparison":
+		return ec2ComparisonValues
+	case "ConnectionNotificationState":
+		return ec2ConnectionNotificationStateValues
+	case "ConnectionNotificationType":
+		return ec2ConnectionNotificationTypeValues
+	case "ConnectivityType":
+		return ec2ConnectivityTypeValues
+	case "ContainerFormat":
+		return ec2ContainerFormatValues
+	case "ConversionTaskState":
+		return ec2ConversionTaskStateValues
+	case "CopyTagsFromSource":
+		return ec2CopyTagsFromSourceValues
+	case "CpuManufacturer":
+		return ec2CpuManufacturerValues
+	case "CurrencyCodeValues":
+		return ec2CurrencyCodeValuesValues
+	case "DatafeedSubscriptionState":
+		return ec2DatafeedSubscriptionStateValues
+	case "DefaultInstanceMetadataEndpointState":
+		return ec2DefaultInstanceMetadataEndpointStateValues
+	case "DefaultInstanceMetadataTagsState":
+		return ec2DefaultInstanceMetadataTagsStateValues
+	case "DefaultRouteTableAssociationValue":
+		return ec2DefaultRouteTableAssociationValueValues
+	case "DefaultRouteTablePropagationValue":
+		return ec2DefaultRouteTablePropagationValueValues
+	case "DefaultTargetCapacityType":
+		return ec2DefaultTargetCapacityTypeValues
+	case "DeleteFleetErrorCode":
+		return ec2DeleteFleetErrorCodeValues
+	case "DeleteQueuedReservedInstancesErrorCode":
+		return ec2DeleteQueuedReservedInstancesErrorCodeValues
+	case "DestinationFileFormat":
+		return ec2DestinationFileFormatValues
+	case "DeviceTrustProviderType":
+		return ec2DeviceTrustProviderTypeValues
+	case "DeviceType":
+		return ec2DeviceTypeValues
+	case "DiskImageFormat":
+		return ec2DiskImageFormatValues
+	case "DiskType":
+		return ec2DiskTypeValues
+	case "DnsNameState":
+		return ec2DnsNameStateValues
+	case "DnsRecordIpType":
+		return ec2DnsRecordIpTypeValues
+	case "DnsSupportValue":
+		return ec2DnsSupportValueValues
+	case "DomainType":
+		return ec2DomainTypeValues
+	case "DynamicRoutingValue":
+		return ec2DynamicRoutingValueValues
+	case "EbsEncryptionSupport":
+		return ec2EbsEncryptionSupportValues
+	case "EbsNvmeSupport":
+		return ec2EbsNvmeSupportValues
+	case "EbsOptimizedSupport":
+		return ec2EbsOptimizedSupportValues
+	case "Ec2InstanceConnectEndpointState":
+		return ec2Ec2InstanceConnectEndpointStateValues
+	case "EkPubKeyFormat":
+		return ec2EkPubKeyFormatValues
+	case "EkPubKeyType":
+		return ec2EkPubKeyTypeValues
+	case "ElasticGpuState":
+		return ec2ElasticGpuStateValues
+	case "ElasticGpuStatus":
+		return ec2ElasticGpuStatusValues
+	case "EnaSupport":
+		return ec2EnaSupportValues
+	case "EncryptionStateValue":
+		return ec2EncryptionStateValueValues
+	case "EncryptionSupportOptionValue":
+		return ec2EncryptionSupportOptionValueValues
+	case "EndDateType":
+		return ec2EndDateTypeValues
+	case "EndpointIpAddressType":
+		return ec2EndpointIpAddressTypeValues
+	case "EphemeralNvmeSupport":
+		return ec2EphemeralNvmeSupportValues
+	case "EventCode":
+		return ec2EventCodeValues
+	case "EventType":
+		return ec2EventTypeValues
+	case "ExcessCapacityTerminationPolicy":
+		return ec2ExcessCapacityTerminationPolicyValues
+	case "ExportEnvironment":
+		return ec2ExportEnvironmentValues
+	case "ExportTaskState":
+		return ec2ExportTaskStateValues
+	case "FastLaunchResourceType":
+		return ec2FastLaunchResourceTypeValues
+	case "FastLaunchStateCode":
+		return ec2FastLaunchStateCodeValues
+	case "FastSnapshotRestoreStateCode":
+		return ec2FastSnapshotRestoreStateCodeValues
+	case "FilterByDimension":
+		return ec2FilterByDimensionValues
+	case "FindingsFound":
+		return ec2FindingsFoundValues
+	case "FleetActivityStatus":
+		return ec2FleetActivityStatusValues
+	case "FleetCapacityReservationTenancy":
+		return ec2FleetCapacityReservationTenancyValues
+	case "FleetCapacityReservationUsageStrategy":
+		return ec2FleetCapacityReservationUsageStrategyValues
+	case "FleetEventType":
+		return ec2FleetEventTypeValues
+	case "FleetExcessCapacityTerminationPolicy":
+		return ec2FleetExcessCapacityTerminationPolicyValues
+	case "FleetInstanceMatchCriteria":
+		return ec2FleetInstanceMatchCriteriaValues
+	case "FleetOnDemandAllocationStrategy":
+		return ec2FleetOnDemandAllocationStrategyValues
+	case "FleetReplacementStrategy":
+		return ec2FleetReplacementStrategyValues
+	case "FleetStateCode":
+		return ec2FleetStateCodeValues
+	case "FleetType":
+		return ec2FleetTypeValues
+	case "FlexibleEnaQueuesSupport":
+		return ec2FlexibleEnaQueuesSupportValues
+	case "FlowLogsResourceType":
+		return ec2FlowLogsResourceTypeValues
+	case "FpgaImageAttributeName":
+		return ec2FpgaImageAttributeNameValues
+	case "FpgaImageStateCode":
+		return ec2FpgaImageStateCodeValues
+	case "GatewayAssociationState":
+		return ec2GatewayAssociationStateValues
+	case "GatewayType":
+		return ec2GatewayTypeValues
+	case "GroupBy":
+		return ec2GroupByValues
+	case "HaStatus":
+		return ec2HaStatusValues
+	case "HostMaintenance":
+		return ec2HostMaintenanceValues
+	case "HostRecovery":
+		return ec2HostRecoveryValues
+	case "HostTenancy":
+		return ec2HostTenancyValues
+	case "HostnameType":
+		return ec2HostnameTypeValues
+	case "HttpTokensState":
+		return ec2HttpTokensStateValues
+	case "HypervisorType":
+		return ec2HypervisorTypeValues
+	case "IamInstanceProfileAssociationState":
+		return ec2IamInstanceProfileAssociationStateValues
+	case "Igmpv2SupportValue":
+		return ec2Igmpv2SupportValueValues
+	case "ImageAttributeName":
+		return ec2ImageAttributeNameValues
+	case "ImageBlockPublicAccessDisabledState":
+		return ec2ImageBlockPublicAccessDisabledStateValues
+	case "ImageBlockPublicAccessEnabledState":
+		return ec2ImageBlockPublicAccessEnabledStateValues
+	case "ImageReferenceOptionName":
+		return ec2ImageReferenceOptionNameValues
+	case "ImageReferenceResourceType":
+		return ec2ImageReferenceResourceTypeValues
+	case "ImageState":
+		return ec2ImageStateValues
+	case "ImageTypeValues":
+		return ec2ImageTypeValuesValues
+	case "ImdsSupportValues":
+		return ec2ImdsSupportValuesValues
+	case "IngestionStatus":
+		return ec2IngestionStatusValues
+	case "InitializationType":
+		return ec2InitializationTypeValues
+	case "InstanceAttributeName":
+		return ec2InstanceAttributeNameValues
+	case "InstanceAutoRecoveryState":
+		return ec2InstanceAutoRecoveryStateValues
+	case "InstanceBandwidthWeighting":
+		return ec2InstanceBandwidthWeightingValues
+	case "InstanceBootModeValues":
+		return ec2InstanceBootModeValuesValues
+	case "InstanceEventWindowState":
+		return ec2InstanceEventWindowStateValues
+	case "InstanceGeneration":
+		return ec2InstanceGenerationValues
+	case "InstanceHealthStatus":
+		return ec2InstanceHealthStatusValues
+	case "InstanceInterruptionBehavior":
+		return ec2InstanceInterruptionBehaviorValues
+	case "InstanceLifecycle":
+		return ec2InstanceLifecycleValues
+	case "InstanceLifecycleType":
+		return ec2InstanceLifecycleTypeValues
+	case "InstanceMatchCriteria":
+		return ec2InstanceMatchCriteriaValues
+	case "InstanceMetadataEndpointState":
+		return ec2InstanceMetadataEndpointStateValues
+	case "InstanceMetadataOptionsState":
+		return ec2InstanceMetadataOptionsStateValues
+	case "InstanceMetadataProtocolState":
+		return ec2InstanceMetadataProtocolStateValues
+	case "InstanceMetadataTagsState":
+		return ec2InstanceMetadataTagsStateValues
+	case "InstanceRebootMigrationState":
+		return ec2InstanceRebootMigrationStateValues
+	case "InstanceStateName":
+		return ec2InstanceStateNameValues
+	case "InstanceStorageEncryptionSupport":
+		return ec2InstanceStorageEncryptionSupportValues
+	case "InstanceTypeHypervisor":
+		return ec2InstanceTypeHypervisorValues
+	case "InterfacePermissionType":
+		return ec2InterfacePermissionTypeValues
+	case "InterfaceProtocolType":
+		return ec2InterfaceProtocolTypeValues
+	case "InternetGatewayBlockMode":
+		return ec2InternetGatewayBlockModeValues
+	case "InternetGatewayExclusionMode":
+		return ec2InternetGatewayExclusionModeValues
+	case "InterruptibleCapacityReservationAllocationStatus":
+		return ec2InterruptibleCapacityReservationAllocationStatusValues
+	case "InterruptionType":
+		return ec2InterruptionTypeValues
+	case "IpAddressType":
+		return ec2IpAddressTypeValues
+	case "IpSource":
+		return ec2IpSourceValues
+	case "IpamAddressHistoryResourceType":
+		return ec2IpamAddressHistoryResourceTypeValues
+	case "IpamAssociatedResourceDiscoveryStatus":
+		return ec2IpamAssociatedResourceDiscoveryStatusValues
+	case "IpamComplianceStatus":
+		return ec2IpamComplianceStatusValues
+	case "IpamDiscoveryFailureCode":
+		return ec2IpamDiscoveryFailureCodeValues
+	case "IpamExternalResourceVerificationTokenState":
+		return ec2IpamExternalResourceVerificationTokenStateValues
+	case "IpamManagementState":
+		return ec2IpamManagementStateValues
+	case "IpamMeteredAccount":
+		return ec2IpamMeteredAccountValues
+	case "IpamNetworkInterfaceAttachmentStatus":
+		return ec2IpamNetworkInterfaceAttachmentStatusValues
+	case "IpamOverlapStatus":
+		return ec2IpamOverlapStatusValues
+	case "IpamPolicyManagedBy":
+		return ec2IpamPolicyManagedByValues
+	case "IpamPolicyResourceType":
+		return ec2IpamPolicyResourceTypeValues
+	case "IpamPolicyState":
+		return ec2IpamPolicyStateValues
+	case "IpamPoolAllocationResourceType":
+		return ec2IpamPoolAllocationResourceTypeValues
+	case "IpamPoolAwsService":
+		return ec2IpamPoolAwsServiceValues
+	case "IpamPoolCidrFailureCode":
+		return ec2IpamPoolCidrFailureCodeValues
+	case "IpamPoolCidrState":
+		return ec2IpamPoolCidrStateValues
+	case "IpamPoolPublicIpSource":
+		return ec2IpamPoolPublicIpSourceValues
+	case "IpamPoolSourceResourceType":
+		return ec2IpamPoolSourceResourceTypeValues
+	case "IpamPoolState":
+		return ec2IpamPoolStateValues
+	case "IpamPrefixListResolverRuleConditionOperation":
+		return ec2IpamPrefixListResolverRuleConditionOperationValues
+	case "IpamPrefixListResolverRuleType":
+		return ec2IpamPrefixListResolverRuleTypeValues
+	case "IpamPrefixListResolverState":
+		return ec2IpamPrefixListResolverStateValues
+	case "IpamPrefixListResolverTargetState":
+		return ec2IpamPrefixListResolverTargetStateValues
+	case "IpamPrefixListResolverVersionCreationStatus":
+		return ec2IpamPrefixListResolverVersionCreationStatusValues
+	case "IpamPublicAddressAssociationStatus":
+		return ec2IpamPublicAddressAssociationStatusValues
+	case "IpamPublicAddressAwsService":
+		return ec2IpamPublicAddressAwsServiceValues
+	case "IpamPublicAddressType":
+		return ec2IpamPublicAddressTypeValues
+	case "IpamResourceCidrIpSource":
+		return ec2IpamResourceCidrIpSourceValues
+	case "IpamResourceDiscoveryAssociationState":
+		return ec2IpamResourceDiscoveryAssociationStateValues
+	case "IpamResourceDiscoveryState":
+		return ec2IpamResourceDiscoveryStateValues
+	case "IpamResourceType":
+		return ec2IpamResourceTypeValues
+	case "IpamScopeExternalAuthorityType":
+		return ec2IpamScopeExternalAuthorityTypeValues
+	case "IpamScopeState":
+		return ec2IpamScopeStateValues
+	case "IpamScopeType":
+		return ec2IpamScopeTypeValues
+	case "IpamState":
+		return ec2IpamStateValues
+	case "IpamTier":
+		return ec2IpamTierValues
+	case "Ipv6AddressAttribute":
+		return ec2Ipv6AddressAttributeValues
+	case "Ipv6SupportValue":
+		return ec2Ipv6SupportValueValues
+	case "KeyFormat":
+		return ec2KeyFormatValues
+	case "KeyType":
+		return ec2KeyTypeValues
+	case "LaunchTemplateAutoRecoveryState":
+		return ec2LaunchTemplateAutoRecoveryStateValues
+	case "LaunchTemplateErrorCode":
+		return ec2LaunchTemplateErrorCodeValues
+	case "LaunchTemplateHttpTokensState":
+		return ec2LaunchTemplateHttpTokensStateValues
+	case "LaunchTemplateInstanceMetadataEndpointState":
+		return ec2LaunchTemplateInstanceMetadataEndpointStateValues
+	case "LaunchTemplateInstanceMetadataOptionsState":
+		return ec2LaunchTemplateInstanceMetadataOptionsStateValues
+	case "LaunchTemplateInstanceMetadataProtocolIpv6":
+		return ec2LaunchTemplateInstanceMetadataProtocolIpv6Values
+	case "LaunchTemplateInstanceMetadataTagsState":
+		return ec2LaunchTemplateInstanceMetadataTagsStateValues
+	case "ListingState":
+		return ec2ListingStateValues
+	case "ListingStatus":
+		return ec2ListingStatusValues
+	case "LocalGatewayRouteState":
+		return ec2LocalGatewayRouteStateValues
+	case "LocalGatewayRouteTableMode":
+		return ec2LocalGatewayRouteTableModeValues
+	case "LocalGatewayRouteType":
+		return ec2LocalGatewayRouteTypeValues
+	case "LocalGatewayVirtualInterfaceConfigurationState":
+		return ec2LocalGatewayVirtualInterfaceConfigurationStateValues
+	case "LocalGatewayVirtualInterfaceGroupConfigurationState":
+		return ec2LocalGatewayVirtualInterfaceGroupConfigurationStateValues
+	case "LocalStorage":
+		return ec2LocalStorageValues
+	case "LocalStorageType":
+		return ec2LocalStorageTypeValues
+	case "LocationType":
+		return ec2LocationTypeValues
+	case "LockMode":
+		return ec2LockModeValues
+	case "LockState":
+		return ec2LockStateValues
+	case "LogDestinationType":
+		return ec2LogDestinationTypeValues
+	case "MacModificationTaskState":
+		return ec2MacModificationTaskStateValues
+	case "MacModificationTaskType":
+		return ec2MacModificationTaskTypeValues
+	case "MacSystemIntegrityProtectionSettingStatus":
+		return ec2MacSystemIntegrityProtectionSettingStatusValues
+	case "ManagedBy":
+		return ec2ManagedByValues
+	case "MarketType":
+		return ec2MarketTypeValues
+	case "MembershipType":
+		return ec2MembershipTypeValues
+	case "MetadataDefaultHttpTokensState":
+		return ec2MetadataDefaultHttpTokensStateValues
+	case "Metric":
+		return ec2MetricValues
+	case "MetricType":
+		return ec2MetricTypeValues
+	case "ModifyAvailabilityZoneOptInStatus":
+		return ec2ModifyAvailabilityZoneOptInStatusValues
+	case "MonitoringState":
+		return ec2MonitoringStateValues
+	case "MoveStatus":
+		return ec2MoveStatusValues
+	case "MulticastSupportValue":
+		return ec2MulticastSupportValueValues
+	case "NatGatewayAddressStatus":
+		return ec2NatGatewayAddressStatusValues
+	case "NatGatewayApplianceModifyState":
+		return ec2NatGatewayApplianceModifyStateValues
+	case "NatGatewayApplianceState":
+		return ec2NatGatewayApplianceStateValues
+	case "NatGatewayApplianceType":
+		return ec2NatGatewayApplianceTypeValues
+	case "NatGatewayState":
+		return ec2NatGatewayStateValues
+	case "NetworkInterfaceAttribute":
+		return ec2NetworkInterfaceAttributeValues
+	case "NetworkInterfaceCreationType":
+		return ec2NetworkInterfaceCreationTypeValues
+	case "NetworkInterfacePermissionStateCode":
+		return ec2NetworkInterfacePermissionStateCodeValues
+	case "NetworkInterfaceStatus":
+		return ec2NetworkInterfaceStatusValues
+	case "NetworkInterfaceType":
+		return ec2NetworkInterfaceTypeValues
+	case "NitroEnclavesSupport":
+		return ec2NitroEnclavesSupportValues
+	case "NitroTpmSupport":
+		return ec2NitroTpmSupportValues
+	case "OfferingClassType":
+		return ec2OfferingClassTypeValues
+	case "OfferingTypeValues":
+		return ec2OfferingTypeValuesValues
+	case "OnDemandAllocationStrategy":
+		return ec2OnDemandAllocationStrategyValues
+	case "OperationType":
+		return ec2OperationTypeValues
+	case "OutputFormat":
+		return ec2OutputFormatValues
+	case "PartitionLoadFrequency":
+		return ec2PartitionLoadFrequencyValues
+	case "PayerResponsibility":
+		return ec2PayerResponsibilityValues
+	case "PaymentOption":
+		return ec2PaymentOptionValues
+	case "PeriodType":
+		return ec2PeriodTypeValues
+	case "PermissionGroup":
+		return ec2PermissionGroupValues
+	case "PhcSupport":
+		return ec2PhcSupportValues
+	case "PlacementGroupState":
+		return ec2PlacementGroupStateValues
+	case "PlacementGroupStrategy":
+		return ec2PlacementGroupStrategyValues
+	case "PlacementStrategy":
+		return ec2PlacementStrategyValues
+	case "PlatformValues":
+		return ec2PlatformValuesValues
+	case "PrefixListState":
+		return ec2PrefixListStateValues
+	case "PrincipalType":
+		return ec2PrincipalTypeValues
+	case "ProductCodeValues":
+		return ec2ProductCodeValuesValues
+	case "Protocol":
+		return ec2ProtocolValues
+	case "ProtocolValue":
+		return ec2ProtocolValueValues
+	case "PublicIpDnsOption":
+		return ec2PublicIpDnsOptionValues
+	case "RIProductDescription":
+		return ec2RIProductDescriptionValues
+	case "RebootMigrationSupport":
+		return ec2RebootMigrationSupportValues
+	case "RecurringChargeFrequency":
+		return ec2RecurringChargeFrequencyValues
+	case "ReplaceRootVolumeTaskState":
+		return ec2ReplaceRootVolumeTaskStateValues
+	case "ReplacementStrategy":
+		return ec2ReplacementStrategyValues
+	case "ReportInstanceReasonCodes":
+		return ec2ReportInstanceReasonCodesValues
+	case "ReportState":
+		return ec2ReportStateValues
+	case "ReportStatusType":
+		return ec2ReportStatusTypeValues
+	case "ReservationEndDateType":
+		return ec2ReservationEndDateTypeValues
+	case "ReservationState":
+		return ec2ReservationStateValues
+	case "ReservationType":
+		return ec2ReservationTypeValues
+	case "ReservedInstanceState":
+		return ec2ReservedInstanceStateValues
+	case "ResetFpgaImageAttributeName":
+		return ec2ResetFpgaImageAttributeNameValues
+	case "ResetImageAttributeName":
+		return ec2ResetImageAttributeNameValues
+	case "ResourceType":
+		return ec2ResourceTypeValues
+	case "RootDeviceType":
+		return ec2RootDeviceTypeValues
+	case "RouteOrigin":
+		return ec2RouteOriginValues
+	case "RouteServerAssociationState":
+		return ec2RouteServerAssociationStateValues
+	case "RouteServerBfdState":
+		return ec2RouteServerBfdStateValues
+	case "RouteServerBgpState":
+		return ec2RouteServerBgpStateValues
+	case "RouteServerEndpointState":
+		return ec2RouteServerEndpointStateValues
+	case "RouteServerPeerLivenessMode":
+		return ec2RouteServerPeerLivenessModeValues
+	case "RouteServerPeerState":
+		return ec2RouteServerPeerStateValues
+	case "RouteServerPersistRoutesAction":
+		return ec2RouteServerPersistRoutesActionValues
+	case "RouteServerPersistRoutesState":
+		return ec2RouteServerPersistRoutesStateValues
+	case "RouteServerPropagationState":
+		return ec2RouteServerPropagationStateValues
+	case "RouteServerRouteInstallationStatus":
+		return ec2RouteServerRouteInstallationStatusValues
+	case "RouteServerRouteStatus":
+		return ec2RouteServerRouteStatusValues
+	case "RouteServerState":
+		return ec2RouteServerStateValues
+	case "RouteState":
+		return ec2RouteStateValues
+	case "RouteTableAssociationStateCode":
+		return ec2RouteTableAssociationStateCodeValues
+	case "RuleAction":
+		return ec2RuleActionValues
+	case "SSEType":
+		return ec2SSETypeValues
+	case "Schedule":
+		return ec2ScheduleValues
+	case "SecurityGroupReferencingSupportValue":
+		return ec2SecurityGroupReferencingSupportValueValues
+	case "SecurityGroupVpcAssociationState":
+		return ec2SecurityGroupVpcAssociationStateValues
+	case "SelfServicePortal":
+		return ec2SelfServicePortalValues
+	case "ServiceConnectivityType":
+		return ec2ServiceConnectivityTypeValues
+	case "ServiceLinkVirtualInterfaceConfigurationState":
+		return ec2ServiceLinkVirtualInterfaceConfigurationStateValues
+	case "ServiceManaged":
+		return ec2ServiceManagedValues
+	case "ServiceState":
+		return ec2ServiceStateValues
+	case "ServiceType":
+		return ec2ServiceTypeValues
+	case "ShutdownBehavior":
+		return ec2ShutdownBehaviorValues
+	case "SnapshotAttributeName":
+		return ec2SnapshotAttributeNameValues
+	case "SnapshotBlockPublicAccessState":
+		return ec2SnapshotBlockPublicAccessStateValues
+	case "SnapshotLocationEnum":
+		return ec2SnapshotLocationEnumValues
+	case "SnapshotReturnCodes":
+		return ec2SnapshotReturnCodesValues
+	case "SnapshotState":
+		return ec2SnapshotStateValues
+	case "SpotAllocationStrategy":
+		return ec2SpotAllocationStrategyValues
+	case "SpotInstanceInterruptionBehavior":
+		return ec2SpotInstanceInterruptionBehaviorValues
+	case "SpotInstanceState":
+		return ec2SpotInstanceStateValues
+	case "SpotInstanceType":
+		return ec2SpotInstanceTypeValues
+	case "SpreadLevel":
+		return ec2SpreadLevelValues
+	case "SqlServerLicenseUsage":
+		return ec2SqlServerLicenseUsageValues
+	case "State":
+		return ec2StateValues
+	case "StaticSourcesSupportValue":
+		return ec2StaticSourcesSupportValueValues
+	case "StatisticType":
+		return ec2StatisticTypeValues
+	case "Status":
+		return ec2StatusValues
+	case "StatusName":
+		return ec2StatusNameValues
+	case "StatusType":
+		return ec2StatusTypeValues
+	case "StorageTier":
+		return ec2StorageTierValues
+	case "SubnetCidrBlockStateCode":
+		return ec2SubnetCidrBlockStateCodeValues
+	case "SubnetCidrReservationType":
+		return ec2SubnetCidrReservationTypeValues
+	case "SubnetState":
+		return ec2SubnetStateValues
+	case "SummaryStatus":
+		return ec2SummaryStatusValues
+	case "SupportedAdditionalProcessorFeature":
+		return ec2SupportedAdditionalProcessorFeatureValues
+	case "TargetCapacityUnitType":
+		return ec2TargetCapacityUnitTypeValues
+	case "TargetStorageTier":
+		return ec2TargetStorageTierValues
+	case "TelemetryStatus":
+		return ec2TelemetryStatusValues
+	case "Tenancy":
+		return ec2TenancyValues
+	case "TieringOperationStatus":
+		return ec2TieringOperationStatusValues
+	case "TokenState":
+		return ec2TokenStateValues
+	case "TpmSupportValues":
+		return ec2TpmSupportValuesValues
+	case "TrafficDirection":
+		return ec2TrafficDirectionValues
+	case "TrafficIpAddressType":
+		return ec2TrafficIpAddressTypeValues
+	case "TrafficMirrorFilterRuleField":
+		return ec2TrafficMirrorFilterRuleFieldValues
+	case "TrafficMirrorNetworkService":
+		return ec2TrafficMirrorNetworkServiceValues
+	case "TrafficMirrorRuleAction":
+		return ec2TrafficMirrorRuleActionValues
+	case "TrafficMirrorSessionField":
+		return ec2TrafficMirrorSessionFieldValues
+	case "TrafficMirrorTargetType":
+		return ec2TrafficMirrorTargetTypeValues
+	case "TrafficType":
+		return ec2TrafficTypeValues
+	case "TransferType":
+		return ec2TransferTypeValues
+	case "TransitGatewayAssociationState":
+		return ec2TransitGatewayAssociationStateValues
+	case "TransitGatewayAttachmentResourceType":
+		return ec2TransitGatewayAttachmentResourceTypeValues
+	case "TransitGatewayAttachmentState":
+		return ec2TransitGatewayAttachmentStateValues
+	case "TransitGatewayConnectPeerState":
+		return ec2TransitGatewayConnectPeerStateValues
+	case "TransitGatewayMeteringPayerType":
+		return ec2TransitGatewayMeteringPayerTypeValues
+	case "TransitGatewayMeteringPolicyEntryState":
+		return ec2TransitGatewayMeteringPolicyEntryStateValues
+	case "TransitGatewayMeteringPolicyState":
+		return ec2TransitGatewayMeteringPolicyStateValues
+	case "TransitGatewayMulitcastDomainAssociationState":
+		return ec2TransitGatewayMulitcastDomainAssociationStateValues
+	case "TransitGatewayMulticastDomainState":
+		return ec2TransitGatewayMulticastDomainStateValues
+	case "TransitGatewayPolicyTableState":
+		return ec2TransitGatewayPolicyTableStateValues
+	case "TransitGatewayPrefixListReferenceState":
+		return ec2TransitGatewayPrefixListReferenceStateValues
+	case "TransitGatewayPropagationState":
+		return ec2TransitGatewayPropagationStateValues
+	case "TransitGatewayRouteState":
+		return ec2TransitGatewayRouteStateValues
+	case "TransitGatewayRouteTableAnnouncementDirection":
+		return ec2TransitGatewayRouteTableAnnouncementDirectionValues
+	case "TransitGatewayRouteTableAnnouncementState":
+		return ec2TransitGatewayRouteTableAnnouncementStateValues
+	case "TransitGatewayRouteTableState":
+		return ec2TransitGatewayRouteTableStateValues
+	case "TransitGatewayRouteType":
+		return ec2TransitGatewayRouteTypeValues
+	case "TransitGatewayState":
+		return ec2TransitGatewayStateValues
+	case "TransportProtocol":
+		return ec2TransportProtocolValues
+	case "TrustProviderType":
+		return ec2TrustProviderTypeValues
+	case "TunnelInsideIpVersion":
+		return ec2TunnelInsideIpVersionValues
+	case "UnlimitedSupportedInstanceFamily":
+		return ec2UnlimitedSupportedInstanceFamilyValues
+	case "UnsuccessfulInstanceCreditSpecificationErrorCode":
+		return ec2UnsuccessfulInstanceCreditSpecificationErrorCodeValues
+	case "UsageClassType":
+		return ec2UsageClassTypeValues
+	case "UserTrustProviderType":
+		return ec2UserTrustProviderTypeValues
+	case "VerificationMethod":
+		return ec2VerificationMethodValues
+	case "VerifiedAccessEndpointAttachmentType":
+		return ec2VerifiedAccessEndpointAttachmentTypeValues
+	case "VerifiedAccessEndpointProtocol":
+		return ec2VerifiedAccessEndpointProtocolValues
+	case "VerifiedAccessEndpointStatusCode":
+		return ec2VerifiedAccessEndpointStatusCodeValues
+	case "VerifiedAccessEndpointType":
+		return ec2VerifiedAccessEndpointTypeValues
+	case "VerifiedAccessLogDeliveryStatusCode":
+		return ec2VerifiedAccessLogDeliveryStatusCodeValues
+	case "VirtualizationType":
+		return ec2VirtualizationTypeValues
+	case "VolumeAttachmentState":
+		return ec2VolumeAttachmentStateValues
+	case "VolumeAttributeName":
+		return ec2VolumeAttributeNameValues
+	case "VolumeModificationState":
+		return ec2VolumeModificationStateValues
+	case "VolumeState":
+		return ec2VolumeStateValues
+	case "VolumeStatusInfoStatus":
+		return ec2VolumeStatusInfoStatusValues
+	case "VolumeStatusName":
+		return ec2VolumeStatusNameValues
 	case "VolumeType":
 		return ec2VolumeTypeValues
+	case "VpcAttributeName":
+		return ec2VpcAttributeNameValues
+	case "VpcBlockPublicAccessExclusionState":
+		return ec2VpcBlockPublicAccessExclusionStateValues
+	case "VpcBlockPublicAccessExclusionsAllowed":
+		return ec2VpcBlockPublicAccessExclusionsAllowedValues
+	case "VpcBlockPublicAccessState":
+		return ec2VpcBlockPublicAccessStateValues
+	case "VpcCidrBlockStateCode":
+		return ec2VpcCidrBlockStateCodeValues
+	case "VpcEncryptionControlExclusionState":
+		return ec2VpcEncryptionControlExclusionStateValues
+	case "VpcEncryptionControlExclusionStateInput":
+		return ec2VpcEncryptionControlExclusionStateInputValues
+	case "VpcEncryptionControlMode":
+		return ec2VpcEncryptionControlModeValues
+	case "VpcEncryptionControlState":
+		return ec2VpcEncryptionControlStateValues
+	case "VpcEndpointType":
+		return ec2VpcEndpointTypeValues
+	case "VpcPeeringConnectionStateReasonCode":
+		return ec2VpcPeeringConnectionStateReasonCodeValues
+	case "VpcState":
+		return ec2VpcStateValues
+	case "VpcTenancy":
+		return ec2VpcTenancyValues
+	case "VpnConcentratorType":
+		return ec2VpnConcentratorTypeValues
+	case "VpnEcmpSupportValue":
+		return ec2VpnEcmpSupportValueValues
+	case "VpnProtocol":
+		return ec2VpnProtocolValues
+	case "VpnState":
+		return ec2VpnStateValues
+	case "VpnStaticRouteSource":
+		return ec2VpnStaticRouteSourceValues
+	case "VpnTunnelBandwidth":
+		return ec2VpnTunnelBandwidthValues
+	case "VpnTunnelProvisioningStatus":
+		return ec2VpnTunnelProvisioningStatusValues
+	case "WeekDay":
+		return ec2WeekDayValues
+	case "scope":
+		return ec2scopeValues
 	}
 	return nil
 }
 
 func getEc2EnumNames() []string {
 	return []string{
+		"AcceleratorManufacturer",
+		"AcceleratorName",
+		"AcceleratorType",
+		"AccountAttributeName",
+		"ActivityStatus",
+		"AddressAttributeName",
+		"AddressFamily",
+		"AddressTransferStatus",
+		"Affinity",
+		"AllocationState",
+		"AllocationStrategy",
+		"AllocationType",
+		"AllowedImagesSettingsDisabledState",
+		"AllowedImagesSettingsEnabledState",
+		"AllowsMultipleInstanceTypes",
+		"AmdSevSnpSpecification",
+		"AnalysisStatus",
+		"ApplianceModeSupportValue",
+		"ArchitectureType",
+		"ArchitectureValues",
+		"AsnAssociationState",
+		"AsnState",
+		"AssociatedNetworkType",
+		"AssociationStatusCode",
+		"AttachmentLimitType",
+		"AttachmentStatus",
+		"AutoAcceptSharedAssociationsValue",
+		"AutoAcceptSharedAttachmentsValue",
+		"AutoPlacement",
+		"AutoProvisionZonesState",
+		"AutoScalingIpsState",
+		"AvailabilityMode",
+		"AvailabilityZoneOptInStatus",
+		"AvailabilityZoneState",
+		"BandwidthWeightingType",
+		"BareMetal",
+		"BatchState",
+		"BgpStatus",
+		"BlockPublicAccessMode",
+		"BootModeType",
+		"BootModeValues",
+		"BundleTaskState",
+		"BurstablePerformance",
+		"ByoipCidrState",
+		"CallerRole",
+		"CancelBatchErrorCode",
+		"CancelSpotInstanceRequestState",
+		"CapacityBlockExtensionStatus",
+		"CapacityBlockInterconnectStatus",
+		"CapacityBlockResourceState",
+		"CapacityManagerDataExportStatus",
+		"CapacityManagerStatus",
+		"CapacityReservationBillingRequestStatus",
+		"CapacityReservationDeliveryPreference",
+		"CapacityReservationFleetState",
+		"CapacityReservationInstancePlatform",
+		"CapacityReservationPreference",
+		"CapacityReservationState",
+		"CapacityReservationTenancy",
+		"CapacityReservationType",
+		"CapacityTenancy",
+		"CarrierGatewayState",
+		"ClientCertificateRevocationListStatusCode",
+		"ClientVpnAuthenticationType",
+		"ClientVpnAuthorizationRuleStatusCode",
+		"ClientVpnConnectionStatusCode",
+		"ClientVpnEndpointAttributeStatusCode",
+		"ClientVpnEndpointStatusCode",
+		"ClientVpnRouteStatusCode",
+		"Comparison",
+		"ConnectionNotificationState",
+		"ConnectionNotificationType",
+		"ConnectivityType",
+		"ContainerFormat",
+		"ConversionTaskState",
+		"CopyTagsFromSource",
+		"CpuManufacturer",
+		"CurrencyCodeValues",
+		"DatafeedSubscriptionState",
+		"DefaultInstanceMetadataEndpointState",
+		"DefaultInstanceMetadataTagsState",
+		"DefaultRouteTableAssociationValue",
+		"DefaultRouteTablePropagationValue",
+		"DefaultTargetCapacityType",
+		"DeleteFleetErrorCode",
+		"DeleteQueuedReservedInstancesErrorCode",
+		"DestinationFileFormat",
+		"DeviceTrustProviderType",
+		"DeviceType",
+		"DiskImageFormat",
+		"DiskType",
+		"DnsNameState",
+		"DnsRecordIpType",
+		"DnsSupportValue",
+		"DomainType",
+		"DynamicRoutingValue",
+		"EbsEncryptionSupport",
+		"EbsNvmeSupport",
+		"EbsOptimizedSupport",
+		"Ec2InstanceConnectEndpointState",
+		"EkPubKeyFormat",
+		"EkPubKeyType",
+		"ElasticGpuState",
+		"ElasticGpuStatus",
+		"EnaSupport",
+		"EncryptionStateValue",
+		"EncryptionSupportOptionValue",
+		"EndDateType",
+		"EndpointIpAddressType",
+		"EphemeralNvmeSupport",
+		"EventCode",
+		"EventType",
+		"ExcessCapacityTerminationPolicy",
+		"ExportEnvironment",
+		"ExportTaskState",
+		"FastLaunchResourceType",
+		"FastLaunchStateCode",
+		"FastSnapshotRestoreStateCode",
+		"FilterByDimension",
+		"FindingsFound",
+		"FleetActivityStatus",
+		"FleetCapacityReservationTenancy",
+		"FleetCapacityReservationUsageStrategy",
+		"FleetEventType",
+		"FleetExcessCapacityTerminationPolicy",
+		"FleetInstanceMatchCriteria",
+		"FleetOnDemandAllocationStrategy",
+		"FleetReplacementStrategy",
+		"FleetStateCode",
+		"FleetType",
+		"FlexibleEnaQueuesSupport",
+		"FlowLogsResourceType",
+		"FpgaImageAttributeName",
+		"FpgaImageStateCode",
+		"GatewayAssociationState",
+		"GatewayType",
+		"GroupBy",
+		"HaStatus",
+		"HostMaintenance",
+		"HostRecovery",
+		"HostTenancy",
+		"HostnameType",
+		"HttpTokensState",
+		"HypervisorType",
+		"IamInstanceProfileAssociationState",
+		"Igmpv2SupportValue",
+		"ImageAttributeName",
+		"ImageBlockPublicAccessDisabledState",
+		"ImageBlockPublicAccessEnabledState",
+		"ImageReferenceOptionName",
+		"ImageReferenceResourceType",
+		"ImageState",
+		"ImageTypeValues",
+		"ImdsSupportValues",
+		"IngestionStatus",
+		"InitializationType",
+		"InstanceAttributeName",
+		"InstanceAutoRecoveryState",
+		"InstanceBandwidthWeighting",
+		"InstanceBootModeValues",
+		"InstanceEventWindowState",
+		"InstanceGeneration",
+		"InstanceHealthStatus",
+		"InstanceInterruptionBehavior",
+		"InstanceLifecycle",
+		"InstanceLifecycleType",
+		"InstanceMatchCriteria",
+		"InstanceMetadataEndpointState",
+		"InstanceMetadataOptionsState",
+		"InstanceMetadataProtocolState",
+		"InstanceMetadataTagsState",
+		"InstanceRebootMigrationState",
+		"InstanceStateName",
+		"InstanceStorageEncryptionSupport",
+		"InstanceTypeHypervisor",
+		"InterfacePermissionType",
+		"InterfaceProtocolType",
+		"InternetGatewayBlockMode",
+		"InternetGatewayExclusionMode",
+		"InterruptibleCapacityReservationAllocationStatus",
+		"InterruptionType",
+		"IpAddressType",
+		"IpSource",
+		"IpamAddressHistoryResourceType",
+		"IpamAssociatedResourceDiscoveryStatus",
+		"IpamComplianceStatus",
+		"IpamDiscoveryFailureCode",
+		"IpamExternalResourceVerificationTokenState",
+		"IpamManagementState",
+		"IpamMeteredAccount",
+		"IpamNetworkInterfaceAttachmentStatus",
+		"IpamOverlapStatus",
+		"IpamPolicyManagedBy",
+		"IpamPolicyResourceType",
+		"IpamPolicyState",
+		"IpamPoolAllocationResourceType",
+		"IpamPoolAwsService",
+		"IpamPoolCidrFailureCode",
+		"IpamPoolCidrState",
+		"IpamPoolPublicIpSource",
+		"IpamPoolSourceResourceType",
+		"IpamPoolState",
+		"IpamPrefixListResolverRuleConditionOperation",
+		"IpamPrefixListResolverRuleType",
+		"IpamPrefixListResolverState",
+		"IpamPrefixListResolverTargetState",
+		"IpamPrefixListResolverVersionCreationStatus",
+		"IpamPublicAddressAssociationStatus",
+		"IpamPublicAddressAwsService",
+		"IpamPublicAddressType",
+		"IpamResourceCidrIpSource",
+		"IpamResourceDiscoveryAssociationState",
+		"IpamResourceDiscoveryState",
+		"IpamResourceType",
+		"IpamScopeExternalAuthorityType",
+		"IpamScopeState",
+		"IpamScopeType",
+		"IpamState",
+		"IpamTier",
+		"Ipv6AddressAttribute",
+		"Ipv6SupportValue",
+		"KeyFormat",
+		"KeyType",
+		"LaunchTemplateAutoRecoveryState",
+		"LaunchTemplateErrorCode",
+		"LaunchTemplateHttpTokensState",
+		"LaunchTemplateInstanceMetadataEndpointState",
+		"LaunchTemplateInstanceMetadataOptionsState",
+		"LaunchTemplateInstanceMetadataProtocolIpv6",
+		"LaunchTemplateInstanceMetadataTagsState",
+		"ListingState",
+		"ListingStatus",
+		"LocalGatewayRouteState",
+		"LocalGatewayRouteTableMode",
+		"LocalGatewayRouteType",
+		"LocalGatewayVirtualInterfaceConfigurationState",
+		"LocalGatewayVirtualInterfaceGroupConfigurationState",
+		"LocalStorage",
+		"LocalStorageType",
+		"LocationType",
+		"LockMode",
+		"LockState",
+		"LogDestinationType",
+		"MacModificationTaskState",
+		"MacModificationTaskType",
+		"MacSystemIntegrityProtectionSettingStatus",
+		"ManagedBy",
+		"MarketType",
+		"MembershipType",
+		"MetadataDefaultHttpTokensState",
+		"Metric",
+		"MetricType",
+		"ModifyAvailabilityZoneOptInStatus",
+		"MonitoringState",
+		"MoveStatus",
+		"MulticastSupportValue",
+		"NatGatewayAddressStatus",
+		"NatGatewayApplianceModifyState",
+		"NatGatewayApplianceState",
+		"NatGatewayApplianceType",
+		"NatGatewayState",
+		"NetworkInterfaceAttribute",
+		"NetworkInterfaceCreationType",
+		"NetworkInterfacePermissionStateCode",
+		"NetworkInterfaceStatus",
+		"NetworkInterfaceType",
+		"NitroEnclavesSupport",
+		"NitroTpmSupport",
+		"OfferingClassType",
+		"OfferingTypeValues",
+		"OnDemandAllocationStrategy",
+		"OperationType",
+		"OutputFormat",
+		"PartitionLoadFrequency",
+		"PayerResponsibility",
+		"PaymentOption",
+		"PeriodType",
+		"PermissionGroup",
+		"PhcSupport",
+		"PlacementGroupState",
+		"PlacementGroupStrategy",
+		"PlacementStrategy",
+		"PlatformValues",
+		"PrefixListState",
+		"PrincipalType",
+		"ProductCodeValues",
+		"Protocol",
+		"ProtocolValue",
+		"PublicIpDnsOption",
+		"RIProductDescription",
+		"RebootMigrationSupport",
+		"RecurringChargeFrequency",
+		"ReplaceRootVolumeTaskState",
+		"ReplacementStrategy",
+		"ReportInstanceReasonCodes",
+		"ReportState",
+		"ReportStatusType",
+		"ReservationEndDateType",
+		"ReservationState",
+		"ReservationType",
+		"ReservedInstanceState",
+		"ResetFpgaImageAttributeName",
+		"ResetImageAttributeName",
+		"ResourceType",
+		"RootDeviceType",
+		"RouteOrigin",
+		"RouteServerAssociationState",
+		"RouteServerBfdState",
+		"RouteServerBgpState",
+		"RouteServerEndpointState",
+		"RouteServerPeerLivenessMode",
+		"RouteServerPeerState",
+		"RouteServerPersistRoutesAction",
+		"RouteServerPersistRoutesState",
+		"RouteServerPropagationState",
+		"RouteServerRouteInstallationStatus",
+		"RouteServerRouteStatus",
+		"RouteServerState",
+		"RouteState",
+		"RouteTableAssociationStateCode",
+		"RuleAction",
+		"SSEType",
+		"Schedule",
+		"SecurityGroupReferencingSupportValue",
+		"SecurityGroupVpcAssociationState",
+		"SelfServicePortal",
+		"ServiceConnectivityType",
+		"ServiceLinkVirtualInterfaceConfigurationState",
+		"ServiceManaged",
+		"ServiceState",
+		"ServiceType",
+		"ShutdownBehavior",
+		"SnapshotAttributeName",
+		"SnapshotBlockPublicAccessState",
+		"SnapshotLocationEnum",
+		"SnapshotReturnCodes",
+		"SnapshotState",
+		"SpotAllocationStrategy",
+		"SpotInstanceInterruptionBehavior",
+		"SpotInstanceState",
+		"SpotInstanceType",
+		"SpreadLevel",
+		"SqlServerLicenseUsage",
+		"State",
+		"StaticSourcesSupportValue",
+		"StatisticType",
+		"Status",
+		"StatusName",
+		"StatusType",
+		"StorageTier",
+		"SubnetCidrBlockStateCode",
+		"SubnetCidrReservationType",
+		"SubnetState",
+		"SummaryStatus",
+		"SupportedAdditionalProcessorFeature",
+		"TargetCapacityUnitType",
+		"TargetStorageTier",
+		"TelemetryStatus",
+		"Tenancy",
+		"TieringOperationStatus",
+		"TokenState",
+		"TpmSupportValues",
+		"TrafficDirection",
+		"TrafficIpAddressType",
+		"TrafficMirrorFilterRuleField",
+		"TrafficMirrorNetworkService",
+		"TrafficMirrorRuleAction",
+		"TrafficMirrorSessionField",
+		"TrafficMirrorTargetType",
+		"TrafficType",
+		"TransferType",
+		"TransitGatewayAssociationState",
+		"TransitGatewayAttachmentResourceType",
+		"TransitGatewayAttachmentState",
+		"TransitGatewayConnectPeerState",
+		"TransitGatewayMeteringPayerType",
+		"TransitGatewayMeteringPolicyEntryState",
+		"TransitGatewayMeteringPolicyState",
+		"TransitGatewayMulitcastDomainAssociationState",
+		"TransitGatewayMulticastDomainState",
+		"TransitGatewayPolicyTableState",
+		"TransitGatewayPrefixListReferenceState",
+		"TransitGatewayPropagationState",
+		"TransitGatewayRouteState",
+		"TransitGatewayRouteTableAnnouncementDirection",
+		"TransitGatewayRouteTableAnnouncementState",
+		"TransitGatewayRouteTableState",
+		"TransitGatewayRouteType",
+		"TransitGatewayState",
+		"TransportProtocol",
+		"TrustProviderType",
+		"TunnelInsideIpVersion",
+		"UnlimitedSupportedInstanceFamily",
+		"UnsuccessfulInstanceCreditSpecificationErrorCode",
+		"UsageClassType",
+		"UserTrustProviderType",
+		"VerificationMethod",
+		"VerifiedAccessEndpointAttachmentType",
+		"VerifiedAccessEndpointProtocol",
+		"VerifiedAccessEndpointStatusCode",
+		"VerifiedAccessEndpointType",
+		"VerifiedAccessLogDeliveryStatusCode",
+		"VirtualizationType",
+		"VolumeAttachmentState",
+		"VolumeAttributeName",
+		"VolumeModificationState",
+		"VolumeState",
+		"VolumeStatusInfoStatus",
+		"VolumeStatusName",
 		"VolumeType",
+		"VpcAttributeName",
+		"VpcBlockPublicAccessExclusionState",
+		"VpcBlockPublicAccessExclusionsAllowed",
+		"VpcBlockPublicAccessState",
+		"VpcCidrBlockStateCode",
+		"VpcEncryptionControlExclusionState",
+		"VpcEncryptionControlExclusionStateInput",
+		"VpcEncryptionControlMode",
+		"VpcEncryptionControlState",
+		"VpcEndpointType",
+		"VpcPeeringConnectionStateReasonCode",
+		"VpcState",
+		"VpcTenancy",
+		"VpnConcentratorType",
+		"VpnEcmpSupportValue",
+		"VpnProtocol",
+		"VpnState",
+		"VpnStaticRouteSource",
+		"VpnTunnelBandwidth",
+		"VpnTunnelProvisioningStatus",
+		"WeekDay",
+		"scope",
 	}
 }

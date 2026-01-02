@@ -4,10 +4,12 @@ package enums
 
 // Acm enum constants
 const (
-	// ValidationMethod values
-	AcmValidationMethodEmail = "EMAIL"
-	AcmValidationMethodDns   = "DNS"
-	AcmValidationMethodHttp  = "HTTP"
+	// CertificateExport values
+	AcmCertificateExportEnabled  = "ENABLED"
+	AcmCertificateExportDisabled = "DISABLED"
+
+	// CertificateManagedBy values
+	AcmCertificateManagedByCloudfront = "CLOUDFRONT"
 
 	// CertificateStatus values
 	AcmCertificateStatusPendingValidation  = "PENDING_VALIDATION"
@@ -17,12 +19,122 @@ const (
 	AcmCertificateStatusValidationTimedOut = "VALIDATION_TIMED_OUT"
 	AcmCertificateStatusRevoked            = "REVOKED"
 	AcmCertificateStatusFailed             = "FAILED"
+
+	// CertificateTransparencyLoggingPreference values
+	AcmCertificateTransparencyLoggingPreferenceEnabled  = "ENABLED"
+	AcmCertificateTransparencyLoggingPreferenceDisabled = "DISABLED"
+
+	// CertificateType values
+	AcmCertificateTypeImported     = "IMPORTED"
+	AcmCertificateTypeAmazonIssued = "AMAZON_ISSUED"
+	AcmCertificateTypePrivate      = "PRIVATE"
+
+	// DomainStatus values
+	AcmDomainStatusPendingValidation = "PENDING_VALIDATION"
+	AcmDomainStatusSuccess           = "SUCCESS"
+	AcmDomainStatusFailed            = "FAILED"
+
+	// ExtendedKeyUsageName values
+	AcmExtendedKeyUsageNameTlsWebServerAuthentication = "TLS_WEB_SERVER_AUTHENTICATION"
+	AcmExtendedKeyUsageNameTlsWebClientAuthentication = "TLS_WEB_CLIENT_AUTHENTICATION"
+	AcmExtendedKeyUsageNameCodeSigning                = "CODE_SIGNING"
+	AcmExtendedKeyUsageNameEmailProtection            = "EMAIL_PROTECTION"
+	AcmExtendedKeyUsageNameTimeStamping               = "TIME_STAMPING"
+	AcmExtendedKeyUsageNameOcspSigning                = "OCSP_SIGNING"
+	AcmExtendedKeyUsageNameIpsecEndSystem             = "IPSEC_END_SYSTEM"
+	AcmExtendedKeyUsageNameIpsecTunnel                = "IPSEC_TUNNEL"
+	AcmExtendedKeyUsageNameIpsecUser                  = "IPSEC_USER"
+	AcmExtendedKeyUsageNameAny                        = "ANY"
+	AcmExtendedKeyUsageNameNone                       = "NONE"
+	AcmExtendedKeyUsageNameCustom                     = "CUSTOM"
+
+	// FailureReason values
+	AcmFailureReasonNoAvailableContacts            = "NO_AVAILABLE_CONTACTS"
+	AcmFailureReasonAdditionalVerificationRequired = "ADDITIONAL_VERIFICATION_REQUIRED"
+	AcmFailureReasonDomainNotAllowed               = "DOMAIN_NOT_ALLOWED"
+	AcmFailureReasonInvalidPublicDomain            = "INVALID_PUBLIC_DOMAIN"
+	AcmFailureReasonDomainValidationDenied         = "DOMAIN_VALIDATION_DENIED"
+	AcmFailureReasonCaaError                       = "CAA_ERROR"
+	AcmFailureReasonPcaLimitExceeded               = "PCA_LIMIT_EXCEEDED"
+	AcmFailureReasonPcaInvalidArn                  = "PCA_INVALID_ARN"
+	AcmFailureReasonPcaInvalidState                = "PCA_INVALID_STATE"
+	AcmFailureReasonPcaRequestFailed               = "PCA_REQUEST_FAILED"
+	AcmFailureReasonPcaNameConstraintsValidation   = "PCA_NAME_CONSTRAINTS_VALIDATION"
+	AcmFailureReasonPcaResourceNotFound            = "PCA_RESOURCE_NOT_FOUND"
+	AcmFailureReasonPcaInvalidArgs                 = "PCA_INVALID_ARGS"
+	AcmFailureReasonPcaInvalidDuration             = "PCA_INVALID_DURATION"
+	AcmFailureReasonPcaAccessDenied                = "PCA_ACCESS_DENIED"
+	AcmFailureReasonSlrNotFound                    = "SLR_NOT_FOUND"
+	AcmFailureReasonOther                          = "OTHER"
+
+	// KeyAlgorithm values
+	AcmKeyAlgorithmRsa1024      = "RSA_1024"
+	AcmKeyAlgorithmRsa2048      = "RSA_2048"
+	AcmKeyAlgorithmRsa3072      = "RSA_3072"
+	AcmKeyAlgorithmRsa4096      = "RSA_4096"
+	AcmKeyAlgorithmEcPrime256v1 = "EC_prime256v1"
+	AcmKeyAlgorithmEcSecp384r1  = "EC_secp384r1"
+	AcmKeyAlgorithmEcSecp521r1  = "EC_secp521r1"
+
+	// KeyUsageName values
+	AcmKeyUsageNameDigitalSignature   = "DIGITAL_SIGNATURE"
+	AcmKeyUsageNameNonRepudiation     = "NON_REPUDIATION"
+	AcmKeyUsageNameKeyEncipherment    = "KEY_ENCIPHERMENT"
+	AcmKeyUsageNameDataEncipherment   = "DATA_ENCIPHERMENT"
+	AcmKeyUsageNameKeyAgreement       = "KEY_AGREEMENT"
+	AcmKeyUsageNameCertificateSigning = "CERTIFICATE_SIGNING"
+	AcmKeyUsageNameCrlSigning         = "CRL_SIGNING"
+	AcmKeyUsageNameEncipherOnly       = "ENCIPHER_ONLY"
+	AcmKeyUsageNameDecipherOnly       = "DECIPHER_ONLY"
+	AcmKeyUsageNameAny                = "ANY"
+	AcmKeyUsageNameCustom             = "CUSTOM"
+
+	// RecordType values
+	AcmRecordTypeCname = "CNAME"
+
+	// RenewalEligibility values
+	AcmRenewalEligibilityEligible   = "ELIGIBLE"
+	AcmRenewalEligibilityIneligible = "INELIGIBLE"
+
+	// RenewalStatus values
+	AcmRenewalStatusPendingAutoRenewal = "PENDING_AUTO_RENEWAL"
+	AcmRenewalStatusPendingValidation  = "PENDING_VALIDATION"
+	AcmRenewalStatusSuccess            = "SUCCESS"
+	AcmRenewalStatusFailed             = "FAILED"
+
+	// RevocationReason values
+	AcmRevocationReasonUnspecified          = "UNSPECIFIED"
+	AcmRevocationReasonKeyCompromise        = "KEY_COMPROMISE"
+	AcmRevocationReasonCaCompromise         = "CA_COMPROMISE"
+	AcmRevocationReasonAffiliationChanged   = "AFFILIATION_CHANGED"
+	AcmRevocationReasonSuperceded           = "SUPERCEDED"
+	AcmRevocationReasonSuperseded           = "SUPERSEDED"
+	AcmRevocationReasonCessationOfOperation = "CESSATION_OF_OPERATION"
+	AcmRevocationReasonCertificateHold      = "CERTIFICATE_HOLD"
+	AcmRevocationReasonRemoveFromCrl        = "REMOVE_FROM_CRL"
+	AcmRevocationReasonPrivilegeWithdrawn   = "PRIVILEGE_WITHDRAWN"
+	AcmRevocationReasonAACompromise         = "A_A_COMPROMISE"
+
+	// SortBy values
+	AcmSortByCreatedAt = "CREATED_AT"
+
+	// SortOrder values
+	AcmSortOrderAscending  = "ASCENDING"
+	AcmSortOrderDescending = "DESCENDING"
+
+	// ValidationMethod values
+	AcmValidationMethodEmail = "EMAIL"
+	AcmValidationMethodDns   = "DNS"
+	AcmValidationMethodHttp  = "HTTP"
 )
 
-var acmValidationMethodValues = []string{
-	"EMAIL",
-	"DNS",
-	"HTTP",
+var acmCertificateExportValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var acmCertificateManagedByValues = []string{
+	"CLOUDFRONT",
 }
 
 var acmCertificateStatusValues = []string{
@@ -35,19 +147,185 @@ var acmCertificateStatusValues = []string{
 	"FAILED",
 }
 
+var acmCertificateTransparencyLoggingPreferenceValues = []string{
+	"ENABLED",
+	"DISABLED",
+}
+
+var acmCertificateTypeValues = []string{
+	"IMPORTED",
+	"AMAZON_ISSUED",
+	"PRIVATE",
+}
+
+var acmDomainStatusValues = []string{
+	"PENDING_VALIDATION",
+	"SUCCESS",
+	"FAILED",
+}
+
+var acmExtendedKeyUsageNameValues = []string{
+	"TLS_WEB_SERVER_AUTHENTICATION",
+	"TLS_WEB_CLIENT_AUTHENTICATION",
+	"CODE_SIGNING",
+	"EMAIL_PROTECTION",
+	"TIME_STAMPING",
+	"OCSP_SIGNING",
+	"IPSEC_END_SYSTEM",
+	"IPSEC_TUNNEL",
+	"IPSEC_USER",
+	"ANY",
+	"NONE",
+	"CUSTOM",
+}
+
+var acmFailureReasonValues = []string{
+	"NO_AVAILABLE_CONTACTS",
+	"ADDITIONAL_VERIFICATION_REQUIRED",
+	"DOMAIN_NOT_ALLOWED",
+	"INVALID_PUBLIC_DOMAIN",
+	"DOMAIN_VALIDATION_DENIED",
+	"CAA_ERROR",
+	"PCA_LIMIT_EXCEEDED",
+	"PCA_INVALID_ARN",
+	"PCA_INVALID_STATE",
+	"PCA_REQUEST_FAILED",
+	"PCA_NAME_CONSTRAINTS_VALIDATION",
+	"PCA_RESOURCE_NOT_FOUND",
+	"PCA_INVALID_ARGS",
+	"PCA_INVALID_DURATION",
+	"PCA_ACCESS_DENIED",
+	"SLR_NOT_FOUND",
+	"OTHER",
+}
+
+var acmKeyAlgorithmValues = []string{
+	"RSA_1024",
+	"RSA_2048",
+	"RSA_3072",
+	"RSA_4096",
+	"EC_prime256v1",
+	"EC_secp384r1",
+	"EC_secp521r1",
+}
+
+var acmKeyUsageNameValues = []string{
+	"DIGITAL_SIGNATURE",
+	"NON_REPUDIATION",
+	"KEY_ENCIPHERMENT",
+	"DATA_ENCIPHERMENT",
+	"KEY_AGREEMENT",
+	"CERTIFICATE_SIGNING",
+	"CRL_SIGNING",
+	"ENCIPHER_ONLY",
+	"DECIPHER_ONLY",
+	"ANY",
+	"CUSTOM",
+}
+
+var acmRecordTypeValues = []string{
+	"CNAME",
+}
+
+var acmRenewalEligibilityValues = []string{
+	"ELIGIBLE",
+	"INELIGIBLE",
+}
+
+var acmRenewalStatusValues = []string{
+	"PENDING_AUTO_RENEWAL",
+	"PENDING_VALIDATION",
+	"SUCCESS",
+	"FAILED",
+}
+
+var acmRevocationReasonValues = []string{
+	"UNSPECIFIED",
+	"KEY_COMPROMISE",
+	"CA_COMPROMISE",
+	"AFFILIATION_CHANGED",
+	"SUPERCEDED",
+	"SUPERSEDED",
+	"CESSATION_OF_OPERATION",
+	"CERTIFICATE_HOLD",
+	"REMOVE_FROM_CRL",
+	"PRIVILEGE_WITHDRAWN",
+	"A_A_COMPROMISE",
+}
+
+var acmSortByValues = []string{
+	"CREATED_AT",
+}
+
+var acmSortOrderValues = []string{
+	"ASCENDING",
+	"DESCENDING",
+}
+
+var acmValidationMethodValues = []string{
+	"EMAIL",
+	"DNS",
+	"HTTP",
+}
+
 func getAcmEnum(name string) []string {
 	switch name {
-	case "ValidationMethod":
-		return acmValidationMethodValues
+	case "CertificateExport":
+		return acmCertificateExportValues
+	case "CertificateManagedBy":
+		return acmCertificateManagedByValues
 	case "CertificateStatus":
 		return acmCertificateStatusValues
+	case "CertificateTransparencyLoggingPreference":
+		return acmCertificateTransparencyLoggingPreferenceValues
+	case "CertificateType":
+		return acmCertificateTypeValues
+	case "DomainStatus":
+		return acmDomainStatusValues
+	case "ExtendedKeyUsageName":
+		return acmExtendedKeyUsageNameValues
+	case "FailureReason":
+		return acmFailureReasonValues
+	case "KeyAlgorithm":
+		return acmKeyAlgorithmValues
+	case "KeyUsageName":
+		return acmKeyUsageNameValues
+	case "RecordType":
+		return acmRecordTypeValues
+	case "RenewalEligibility":
+		return acmRenewalEligibilityValues
+	case "RenewalStatus":
+		return acmRenewalStatusValues
+	case "RevocationReason":
+		return acmRevocationReasonValues
+	case "SortBy":
+		return acmSortByValues
+	case "SortOrder":
+		return acmSortOrderValues
+	case "ValidationMethod":
+		return acmValidationMethodValues
 	}
 	return nil
 }
 
 func getAcmEnumNames() []string {
 	return []string{
-		"ValidationMethod",
+		"CertificateExport",
+		"CertificateManagedBy",
 		"CertificateStatus",
+		"CertificateTransparencyLoggingPreference",
+		"CertificateType",
+		"DomainStatus",
+		"ExtendedKeyUsageName",
+		"FailureReason",
+		"KeyAlgorithm",
+		"KeyUsageName",
+		"RecordType",
+		"RenewalEligibility",
+		"RenewalStatus",
+		"RevocationReason",
+		"SortBy",
+		"SortOrder",
+		"ValidationMethod",
 	}
 }

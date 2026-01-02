@@ -4,6 +4,79 @@ package enums
 
 // Elbv2 enum constants
 const (
+	// ActionTypeEnum values
+	Elbv2ActionTypeEnumForward             = "forward"
+	Elbv2ActionTypeEnumAuthenticateOidc    = "authenticate-oidc"
+	Elbv2ActionTypeEnumAuthenticateCognito = "authenticate-cognito"
+	Elbv2ActionTypeEnumRedirect            = "redirect"
+	Elbv2ActionTypeEnumFixedResponse       = "fixed-response"
+	Elbv2ActionTypeEnumJwtValidation       = "jwt-validation"
+
+	// AdvertiseTrustStoreCaNamesEnum values
+	Elbv2AdvertiseTrustStoreCaNamesEnumOn  = "on"
+	Elbv2AdvertiseTrustStoreCaNamesEnumOff = "off"
+
+	// AnomalyResultEnum values
+	Elbv2AnomalyResultEnumAnomalous = "anomalous"
+	Elbv2AnomalyResultEnumNormal    = "normal"
+
+	// AuthenticateCognitoActionConditionalBehaviorEnum values
+	Elbv2AuthenticateCognitoActionConditionalBehaviorEnumDeny         = "deny"
+	Elbv2AuthenticateCognitoActionConditionalBehaviorEnumAllow        = "allow"
+	Elbv2AuthenticateCognitoActionConditionalBehaviorEnumAuthenticate = "authenticate"
+
+	// AuthenticateOidcActionConditionalBehaviorEnum values
+	Elbv2AuthenticateOidcActionConditionalBehaviorEnumDeny         = "deny"
+	Elbv2AuthenticateOidcActionConditionalBehaviorEnumAllow        = "allow"
+	Elbv2AuthenticateOidcActionConditionalBehaviorEnumAuthenticate = "authenticate"
+
+	// CapacityReservationStateEnum values
+	Elbv2CapacityReservationStateEnumProvisioned = "provisioned"
+	Elbv2CapacityReservationStateEnumPending     = "pending"
+	Elbv2CapacityReservationStateEnumRebalancing = "rebalancing"
+	Elbv2CapacityReservationStateEnumFailed      = "failed"
+
+	// DescribeTargetHealthInputIncludeEnum values
+	Elbv2DescribeTargetHealthInputIncludeEnumAnomalydetection = "AnomalyDetection"
+	Elbv2DescribeTargetHealthInputIncludeEnumAll              = "All"
+
+	// EnablePrefixForIpv6SourceNatEnum values
+	Elbv2EnablePrefixForIpv6SourceNatEnumOn  = "on"
+	Elbv2EnablePrefixForIpv6SourceNatEnumOff = "off"
+
+	// EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum values
+	Elbv2EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumOn  = "on"
+	Elbv2EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumOff = "off"
+
+	// IpAddressType values
+	Elbv2IpAddressTypeIpv4                       = "ipv4"
+	Elbv2IpAddressTypeDualstack                  = "dualstack"
+	Elbv2IpAddressTypeDualstackWithoutPublicIpv4 = "dualstack-without-public-ipv4"
+
+	// JwtValidationActionAdditionalClaimFormatEnum values
+	Elbv2JwtValidationActionAdditionalClaimFormatEnumSingleString         = "single-string"
+	Elbv2JwtValidationActionAdditionalClaimFormatEnumStringArray          = "string-array"
+	Elbv2JwtValidationActionAdditionalClaimFormatEnumSpaceSeparatedValues = "space-separated-values"
+
+	// LoadBalancerSchemeEnum values
+	Elbv2LoadBalancerSchemeEnumInternetFacing = "internet-facing"
+	Elbv2LoadBalancerSchemeEnumInternal       = "internal"
+
+	// LoadBalancerStateEnum values
+	Elbv2LoadBalancerStateEnumActive         = "active"
+	Elbv2LoadBalancerStateEnumProvisioning   = "provisioning"
+	Elbv2LoadBalancerStateEnumActiveImpaired = "active_impaired"
+	Elbv2LoadBalancerStateEnumFailed         = "failed"
+
+	// LoadBalancerTypeEnum values
+	Elbv2LoadBalancerTypeEnumApplication = "application"
+	Elbv2LoadBalancerTypeEnumNetwork     = "network"
+	Elbv2LoadBalancerTypeEnumGateway     = "gateway"
+
+	// MitigationInEffectEnum values
+	Elbv2MitigationInEffectEnumYes = "yes"
+	Elbv2MitigationInEffectEnumNo  = "no"
+
 	// ProtocolEnum values
 	Elbv2ProtocolEnumHttp    = "HTTP"
 	Elbv2ProtocolEnumHttps   = "HTTPS"
@@ -15,12 +88,161 @@ const (
 	Elbv2ProtocolEnumQuic    = "QUIC"
 	Elbv2ProtocolEnumTcpQuic = "TCP_QUIC"
 
+	// RedirectActionStatusCodeEnum values
+	Elbv2RedirectActionStatusCodeEnumHttp301 = "HTTP_301"
+	Elbv2RedirectActionStatusCodeEnumHttp302 = "HTTP_302"
+
+	// RemoveIpamPoolEnum values
+	Elbv2RemoveIpamPoolEnumIpv4 = "ipv4"
+
+	// RevocationType values
+	Elbv2RevocationTypeCrl = "CRL"
+
+	// TargetAdministrativeOverrideReasonEnum values
+	Elbv2TargetAdministrativeOverrideReasonEnumAdministrativeoverrideUnknown                  = "AdministrativeOverride.Unknown"
+	Elbv2TargetAdministrativeOverrideReasonEnumAdministrativeoverrideNooverride               = "AdministrativeOverride.NoOverride"
+	Elbv2TargetAdministrativeOverrideReasonEnumAdministrativeoverrideZonalshiftactive         = "AdministrativeOverride.ZonalShiftActive"
+	Elbv2TargetAdministrativeOverrideReasonEnumAdministrativeoverrideZonalshiftdelegatedtodns = "AdministrativeOverride.ZonalShiftDelegatedToDns"
+
+	// TargetAdministrativeOverrideStateEnum values
+	Elbv2TargetAdministrativeOverrideStateEnumUnknown                  = "unknown"
+	Elbv2TargetAdministrativeOverrideStateEnumNoOverride               = "no_override"
+	Elbv2TargetAdministrativeOverrideStateEnumZonalShiftActive         = "zonal_shift_active"
+	Elbv2TargetAdministrativeOverrideStateEnumZonalShiftDelegatedToDns = "zonal_shift_delegated_to_dns"
+
+	// TargetGroupIpAddressTypeEnum values
+	Elbv2TargetGroupIpAddressTypeEnumIpv4 = "ipv4"
+	Elbv2TargetGroupIpAddressTypeEnumIpv6 = "ipv6"
+
+	// TargetHealthReasonEnum values
+	Elbv2TargetHealthReasonEnumElbRegistrationinprogress      = "Elb.RegistrationInProgress"
+	Elbv2TargetHealthReasonEnumElbInitialhealthchecking       = "Elb.InitialHealthChecking"
+	Elbv2TargetHealthReasonEnumTargetResponsecodemismatch     = "Target.ResponseCodeMismatch"
+	Elbv2TargetHealthReasonEnumTargetTimeout                  = "Target.Timeout"
+	Elbv2TargetHealthReasonEnumTargetFailedhealthchecks       = "Target.FailedHealthChecks"
+	Elbv2TargetHealthReasonEnumTargetNotregistered            = "Target.NotRegistered"
+	Elbv2TargetHealthReasonEnumTargetNotinuse                 = "Target.NotInUse"
+	Elbv2TargetHealthReasonEnumTargetDeregistrationinprogress = "Target.DeregistrationInProgress"
+	Elbv2TargetHealthReasonEnumTargetInvalidstate             = "Target.InvalidState"
+	Elbv2TargetHealthReasonEnumTargetIpunusable               = "Target.IpUnusable"
+	Elbv2TargetHealthReasonEnumTargetHealthcheckdisabled      = "Target.HealthCheckDisabled"
+	Elbv2TargetHealthReasonEnumElbInternalerror               = "Elb.InternalError"
+
+	// TargetHealthStateEnum values
+	Elbv2TargetHealthStateEnumInitial           = "initial"
+	Elbv2TargetHealthStateEnumHealthy           = "healthy"
+	Elbv2TargetHealthStateEnumUnhealthy         = "unhealthy"
+	Elbv2TargetHealthStateEnumUnhealthyDraining = "unhealthy.draining"
+	Elbv2TargetHealthStateEnumUnused            = "unused"
+	Elbv2TargetHealthStateEnumDraining          = "draining"
+	Elbv2TargetHealthStateEnumUnavailable       = "unavailable"
+
 	// TargetTypeEnum values
 	Elbv2TargetTypeEnumInstance = "instance"
 	Elbv2TargetTypeEnumIp       = "ip"
 	Elbv2TargetTypeEnumLambda   = "lambda"
 	Elbv2TargetTypeEnumAlb      = "alb"
+
+	// TransformTypeEnum values
+	Elbv2TransformTypeEnumHostHeaderRewrite = "host-header-rewrite"
+	Elbv2TransformTypeEnumUrlRewrite        = "url-rewrite"
+
+	// TrustStoreAssociationStatusEnum values
+	Elbv2TrustStoreAssociationStatusEnumActive  = "active"
+	Elbv2TrustStoreAssociationStatusEnumRemoved = "removed"
+
+	// TrustStoreStatus values
+	Elbv2TrustStoreStatusActive   = "ACTIVE"
+	Elbv2TrustStoreStatusCreating = "CREATING"
 )
+
+var elbv2ActionTypeEnumValues = []string{
+	"forward",
+	"authenticate-oidc",
+	"authenticate-cognito",
+	"redirect",
+	"fixed-response",
+	"jwt-validation",
+}
+
+var elbv2AdvertiseTrustStoreCaNamesEnumValues = []string{
+	"on",
+	"off",
+}
+
+var elbv2AnomalyResultEnumValues = []string{
+	"anomalous",
+	"normal",
+}
+
+var elbv2AuthenticateCognitoActionConditionalBehaviorEnumValues = []string{
+	"deny",
+	"allow",
+	"authenticate",
+}
+
+var elbv2AuthenticateOidcActionConditionalBehaviorEnumValues = []string{
+	"deny",
+	"allow",
+	"authenticate",
+}
+
+var elbv2CapacityReservationStateEnumValues = []string{
+	"provisioned",
+	"pending",
+	"rebalancing",
+	"failed",
+}
+
+var elbv2DescribeTargetHealthInputIncludeEnumValues = []string{
+	"AnomalyDetection",
+	"All",
+}
+
+var elbv2EnablePrefixForIpv6SourceNatEnumValues = []string{
+	"on",
+	"off",
+}
+
+var elbv2EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumValues = []string{
+	"on",
+	"off",
+}
+
+var elbv2IpAddressTypeValues = []string{
+	"ipv4",
+	"dualstack",
+	"dualstack-without-public-ipv4",
+}
+
+var elbv2JwtValidationActionAdditionalClaimFormatEnumValues = []string{
+	"single-string",
+	"string-array",
+	"space-separated-values",
+}
+
+var elbv2LoadBalancerSchemeEnumValues = []string{
+	"internet-facing",
+	"internal",
+}
+
+var elbv2LoadBalancerStateEnumValues = []string{
+	"active",
+	"provisioning",
+	"active_impaired",
+	"failed",
+}
+
+var elbv2LoadBalancerTypeEnumValues = []string{
+	"application",
+	"network",
+	"gateway",
+}
+
+var elbv2MitigationInEffectEnumValues = []string{
+	"yes",
+	"no",
+}
 
 var elbv2ProtocolEnumValues = []string{
 	"HTTP",
@@ -34,6 +256,63 @@ var elbv2ProtocolEnumValues = []string{
 	"TCP_QUIC",
 }
 
+var elbv2RedirectActionStatusCodeEnumValues = []string{
+	"HTTP_301",
+	"HTTP_302",
+}
+
+var elbv2RemoveIpamPoolEnumValues = []string{
+	"ipv4",
+}
+
+var elbv2RevocationTypeValues = []string{
+	"CRL",
+}
+
+var elbv2TargetAdministrativeOverrideReasonEnumValues = []string{
+	"AdministrativeOverride.Unknown",
+	"AdministrativeOverride.NoOverride",
+	"AdministrativeOverride.ZonalShiftActive",
+	"AdministrativeOverride.ZonalShiftDelegatedToDns",
+}
+
+var elbv2TargetAdministrativeOverrideStateEnumValues = []string{
+	"unknown",
+	"no_override",
+	"zonal_shift_active",
+	"zonal_shift_delegated_to_dns",
+}
+
+var elbv2TargetGroupIpAddressTypeEnumValues = []string{
+	"ipv4",
+	"ipv6",
+}
+
+var elbv2TargetHealthReasonEnumValues = []string{
+	"Elb.RegistrationInProgress",
+	"Elb.InitialHealthChecking",
+	"Target.ResponseCodeMismatch",
+	"Target.Timeout",
+	"Target.FailedHealthChecks",
+	"Target.NotRegistered",
+	"Target.NotInUse",
+	"Target.DeregistrationInProgress",
+	"Target.InvalidState",
+	"Target.IpUnusable",
+	"Target.HealthCheckDisabled",
+	"Elb.InternalError",
+}
+
+var elbv2TargetHealthStateEnumValues = []string{
+	"initial",
+	"healthy",
+	"unhealthy",
+	"unhealthy.draining",
+	"unused",
+	"draining",
+	"unavailable",
+}
+
 var elbv2TargetTypeEnumValues = []string{
 	"instance",
 	"ip",
@@ -41,19 +320,112 @@ var elbv2TargetTypeEnumValues = []string{
 	"alb",
 }
 
+var elbv2TransformTypeEnumValues = []string{
+	"host-header-rewrite",
+	"url-rewrite",
+}
+
+var elbv2TrustStoreAssociationStatusEnumValues = []string{
+	"active",
+	"removed",
+}
+
+var elbv2TrustStoreStatusValues = []string{
+	"ACTIVE",
+	"CREATING",
+}
+
 func getElbv2Enum(name string) []string {
 	switch name {
+	case "ActionTypeEnum":
+		return elbv2ActionTypeEnumValues
+	case "AdvertiseTrustStoreCaNamesEnum":
+		return elbv2AdvertiseTrustStoreCaNamesEnumValues
+	case "AnomalyResultEnum":
+		return elbv2AnomalyResultEnumValues
+	case "AuthenticateCognitoActionConditionalBehaviorEnum":
+		return elbv2AuthenticateCognitoActionConditionalBehaviorEnumValues
+	case "AuthenticateOidcActionConditionalBehaviorEnum":
+		return elbv2AuthenticateOidcActionConditionalBehaviorEnumValues
+	case "CapacityReservationStateEnum":
+		return elbv2CapacityReservationStateEnumValues
+	case "DescribeTargetHealthInputIncludeEnum":
+		return elbv2DescribeTargetHealthInputIncludeEnumValues
+	case "EnablePrefixForIpv6SourceNatEnum":
+		return elbv2EnablePrefixForIpv6SourceNatEnumValues
+	case "EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum":
+		return elbv2EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumValues
+	case "IpAddressType":
+		return elbv2IpAddressTypeValues
+	case "JwtValidationActionAdditionalClaimFormatEnum":
+		return elbv2JwtValidationActionAdditionalClaimFormatEnumValues
+	case "LoadBalancerSchemeEnum":
+		return elbv2LoadBalancerSchemeEnumValues
+	case "LoadBalancerStateEnum":
+		return elbv2LoadBalancerStateEnumValues
+	case "LoadBalancerTypeEnum":
+		return elbv2LoadBalancerTypeEnumValues
+	case "MitigationInEffectEnum":
+		return elbv2MitigationInEffectEnumValues
 	case "ProtocolEnum":
 		return elbv2ProtocolEnumValues
+	case "RedirectActionStatusCodeEnum":
+		return elbv2RedirectActionStatusCodeEnumValues
+	case "RemoveIpamPoolEnum":
+		return elbv2RemoveIpamPoolEnumValues
+	case "RevocationType":
+		return elbv2RevocationTypeValues
+	case "TargetAdministrativeOverrideReasonEnum":
+		return elbv2TargetAdministrativeOverrideReasonEnumValues
+	case "TargetAdministrativeOverrideStateEnum":
+		return elbv2TargetAdministrativeOverrideStateEnumValues
+	case "TargetGroupIpAddressTypeEnum":
+		return elbv2TargetGroupIpAddressTypeEnumValues
+	case "TargetHealthReasonEnum":
+		return elbv2TargetHealthReasonEnumValues
+	case "TargetHealthStateEnum":
+		return elbv2TargetHealthStateEnumValues
 	case "TargetTypeEnum":
 		return elbv2TargetTypeEnumValues
+	case "TransformTypeEnum":
+		return elbv2TransformTypeEnumValues
+	case "TrustStoreAssociationStatusEnum":
+		return elbv2TrustStoreAssociationStatusEnumValues
+	case "TrustStoreStatus":
+		return elbv2TrustStoreStatusValues
 	}
 	return nil
 }
 
 func getElbv2EnumNames() []string {
 	return []string{
+		"ActionTypeEnum",
+		"AdvertiseTrustStoreCaNamesEnum",
+		"AnomalyResultEnum",
+		"AuthenticateCognitoActionConditionalBehaviorEnum",
+		"AuthenticateOidcActionConditionalBehaviorEnum",
+		"CapacityReservationStateEnum",
+		"DescribeTargetHealthInputIncludeEnum",
+		"EnablePrefixForIpv6SourceNatEnum",
+		"EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum",
+		"IpAddressType",
+		"JwtValidationActionAdditionalClaimFormatEnum",
+		"LoadBalancerSchemeEnum",
+		"LoadBalancerStateEnum",
+		"LoadBalancerTypeEnum",
+		"MitigationInEffectEnum",
 		"ProtocolEnum",
+		"RedirectActionStatusCodeEnum",
+		"RemoveIpamPoolEnum",
+		"RevocationType",
+		"TargetAdministrativeOverrideReasonEnum",
+		"TargetAdministrativeOverrideStateEnum",
+		"TargetGroupIpAddressTypeEnum",
+		"TargetHealthReasonEnum",
+		"TargetHealthStateEnum",
 		"TargetTypeEnum",
+		"TransformTypeEnum",
+		"TrustStoreAssociationStatusEnum",
+		"TrustStoreStatus",
 	}
 }
