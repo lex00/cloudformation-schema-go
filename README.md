@@ -1,6 +1,6 @@
 # cloudformation-schema-go
 
-Go types for CloudFormation specifications, intrinsic functions, template parsing, and enum validation.
+Go types for CloudFormation specifications, intrinsic functions, template parsing, enum validation, and code generation utilities.
 
 Shared foundation for:
 - [wetwire-aws](https://github.com/lex00/wetwire-aws) - Declarative IaC in Go
@@ -15,8 +15,14 @@ CloudFormation Resource Specification types and fetching.
 ```go
 import "github.com/lex00/cloudformation-schema-go/spec"
 
-// Download and cache the CF spec
-cfSpec, err := spec.FetchSpec()
+// Download and cache the CF spec (use nil for defaults)
+cfSpec, err := spec.FetchSpec(nil)
+
+// Or with custom options
+cfSpec, err := spec.FetchSpec(&spec.FetchOptions{
+    CacheDir: "/custom/cache",
+    MaxAge:   24 * time.Hour,
+})
 
 // Look up resource types
 bucket := cfSpec.GetResourceType("AWS::S3::Bucket")
@@ -72,6 +78,35 @@ runtime := enums.LambdaRuntimePython312
 // Validate enum values
 allowed := enums.GetAllowedValues("lambda", "Runtime")
 valid := enums.IsValidValue("lambda", "Runtime", "python3.12")
+```
+
+### codegen/
+
+Utilities for code generation: case conversion, identifier sanitization, and topological sorting.
+
+```go
+import "github.com/lex00/cloudformation-schema-go/codegen"
+
+// Case conversion
+codegen.ToSnakeCase("BucketName")     // "bucket_name"
+codegen.ToPascalCase("bucket_name")   // "BucketName"
+
+// Go keyword handling
+codegen.IsGoKeyword("type")           // true
+codegen.IsGoKeyword("bucket")         // false
+
+// Identifier sanitization (ensures valid Go identifiers)
+codegen.SanitizeGoIdentifier("123start")   // "_123start"
+codegen.SanitizeGoIdentifier("with-dash")  // "withdash"
+codegen.SanitizeGoIdentifier("type")       // "type_"
+
+// Topological sort for dependency ordering
+nodes := []string{"A", "B", "C"}
+deps := map[string][]string{"A": {"B"}, "B": {"C"}, "C": {}}
+sorted := codegen.TopologicalSort(nodes, func(n string) []string {
+    return deps[n]
+})
+// Result: ["C", "B", "A"] (dependencies first)
 ```
 
 ## Installation
