@@ -1,237 +1,103 @@
-// enumgen generates enum constants from aws-sdk-go-v2 service packages.
+// enumgen generates enum constants from enums.json (extracted from botocore).
 //
 // Usage:
 //
 //	go run ./cmd/enumgen
 //
 // This will generate enums/*.go files with constants and lookup functions.
+// The enums.json file must be generated first by running:
+//
+//	python scripts/extract_enums.py
 package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"go/format"
 	"os"
 	"path/filepath"
-	"reflect"
 	"sort"
 	"strings"
 	"text/template"
-
-	// Import service types packages
-	"github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
-	ec2types "github.com/aws/aws-sdk-go-v2/service/ec2/types"
-	ecstypes "github.com/aws/aws-sdk-go-v2/service/ecs/types"
-	lambdatypes "github.com/aws/aws-sdk-go-v2/service/lambda/types"
-	s3types "github.com/aws/aws-sdk-go-v2/service/s3/types"
 )
 
 var outputDir = flag.String("output", "enums", "output directory for generated files")
 
-// ServiceEnums defines which enums to extract from each service.
-type ServiceEnums struct {
-	Service    string
-	CFNService string // CloudFormation service name if different
-	EnumTypes  []EnumExtractor
+// EnumsJSON is the structure of enums.json
+type EnumsJSON struct {
+	Services map[string]map[string]EnumType `json:"services"`
 }
 
-// EnumExtractor extracts values from a typed enum.
-type EnumExtractor struct {
-	Name   string
-	Values func() []string
+// EnumType represents an enum type in the JSON
+type EnumType struct {
+	Name   string      `json:"name"`
+	Values []EnumValue `json:"values"`
 }
 
-// priorityServices lists services to generate enums for.
-var priorityServices = []ServiceEnums{
-	{
-		Service: "lambda",
-		EnumTypes: []EnumExtractor{
-			{"Runtime", lambdaRuntimeValues},
-			{"Architecture", lambdaArchitectureValues},
-			{"PackageType", lambdaPackageTypeValues},
-		},
+// EnumValue represents a single enum value
+type EnumValue struct {
+	Value  string `json:"value"`
+	GoName string `json:"goName"`
+	PyName string `json:"pyName"`
+}
+
+// priorityServices lists which services and enums to generate Go constants for.
+// We don't generate for all 400+ services to keep binary size reasonable.
+// Service names must match botocore service names (e.g., "elbv2" not "elasticloadbalancingv2").
+var priorityServices = map[string][]string{
+	"lambda": {
+		"Runtime",
+		"Architecture",
+		"PackageType",
 	},
-	{
-		Service: "ec2",
-		EnumTypes: []EnumExtractor{
-			{"InstanceType", ec2InstanceTypeValues},
-			{"VolumeType", ec2VolumeTypeValues},
-		},
+	"ec2": {
+		"VolumeType",
+		// Note: InstanceType is not an enum in botocore (just strings)
 	},
-	{
-		Service: "ecs",
-		EnumTypes: []EnumExtractor{
-			{"LaunchType", ecsLaunchTypeValues},
-			{"SchedulingStrategy", ecsSchedulingStrategyValues},
-		},
+	"ecs": {
+		"LaunchType",
+		"SchedulingStrategy",
+		"NetworkMode",
 	},
-	{
-		Service: "rds",
-		EnumTypes: []EnumExtractor{
-			{"DBInstanceClass", rdsDBInstanceClassValues},
-			{"EngineType", rdsEngineTypeValues},
-		},
+	"s3": {
+		"StorageClass",
+		"ObjectCannedACL",
+		"BucketCannedACL",
+		"ServerSideEncryption",
+		"ObjectLockRetentionMode",
+		"BucketVersioningStatus",
+		"Protocol",
 	},
-	{
-		Service: "s3",
-		EnumTypes: []EnumExtractor{
-			{"StorageClass", s3StorageClassValues},
-			{"ObjectCannedACL", s3ObjectCannedACLValues},
-			{"BucketCannedACL", s3BucketCannedACLValues},
-		},
+	"dynamodb": {
+		"BillingMode",
+		"StreamViewType",
+		"TableClass",
 	},
-	{
-		Service: "dynamodb",
-		EnumTypes: []EnumExtractor{
-			{"BillingMode", dynamodbBillingModeValues},
-			{"StreamViewType", dynamodbStreamViewTypeValues},
-			{"TableClass", dynamodbTableClassValues},
-		},
+	"apigateway": {
+		"IntegrationType",
+	},
+	"elbv2": {
+		"ProtocolEnum",
+		"TargetTypeEnum",
+	},
+	"logs": {
+		"LogGroupClass",
+	},
+	"acm": {
+		"ValidationMethod",
+		"CertificateStatus",
+	},
+	"events": {
+		"RuleState",
 	},
 }
 
-// Wrapper functions to get string values from typed enums
-func lambdaRuntimeValues() []string {
-	vals := lambdatypes.Runtime("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func lambdaArchitectureValues() []string {
-	vals := lambdatypes.Architecture("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func lambdaPackageTypeValues() []string {
-	vals := lambdatypes.PackageType("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func ec2InstanceTypeValues() []string {
-	vals := ec2types.InstanceType("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func ec2VolumeTypeValues() []string {
-	vals := ec2types.VolumeType("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func ecsLaunchTypeValues() []string {
-	vals := ecstypes.LaunchType("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func ecsSchedulingStrategyValues() []string {
-	vals := ecstypes.SchedulingStrategy("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func rdsDBInstanceClassValues() []string {
-	// RDS doesn't have a direct Values() enum, use common ones
-	return []string{
-		"db.t3.micro", "db.t3.small", "db.t3.medium", "db.t3.large",
-		"db.t3.xlarge", "db.t3.2xlarge",
-		"db.r5.large", "db.r5.xlarge", "db.r5.2xlarge", "db.r5.4xlarge",
-		"db.m5.large", "db.m5.xlarge", "db.m5.2xlarge", "db.m5.4xlarge",
-	}
-}
-
-func rdsEngineTypeValues() []string {
-	// Common RDS engine types
-	return []string{
-		"mysql", "postgres", "mariadb", "oracle-ee", "oracle-se2",
-		"sqlserver-ee", "sqlserver-se", "sqlserver-ex", "sqlserver-web",
-		"aurora", "aurora-mysql", "aurora-postgresql",
-	}
-}
-
-func s3StorageClassValues() []string {
-	vals := s3types.StorageClass("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func s3ObjectCannedACLValues() []string {
-	vals := s3types.ObjectCannedACL("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func s3BucketCannedACLValues() []string {
-	vals := s3types.BucketCannedACL("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func dynamodbBillingModeValues() []string {
-	vals := types.BillingMode("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func dynamodbStreamViewTypeValues() []string {
-	vals := types.StreamViewType("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-func dynamodbTableClassValues() []string {
-	vals := types.TableClass("").Values()
-	result := make([]string, len(vals))
-	for i, v := range vals {
-		result[i] = string(v)
-	}
-	return result
-}
-
-// EnumData represents data for generating a service enum file.
-type EnumData struct {
+// ServiceData represents data for generating a service enum file.
+type ServiceData struct {
 	Service     string
-	ServiceName string // Capitalized service name
+	ServiceName string // Capitalized service name for Go
 	Enums       []EnumInfo
 }
 
@@ -250,93 +116,106 @@ type ConstantInfo struct {
 func main() {
 	flag.Parse()
 
-	if err := os.MkdirAll(*outputDir, 0755); err != nil {
-		fmt.Fprintf(os.Stderr, "failed to create output directory: %v\n", err)
+	// Load enums.json
+	// When run via go generate from enums/, outputDir is "enums" but we're already in enums/
+	// so look for enums.json in the current directory first, then adjust outputDir
+	actualOutputDir := *outputDir
+	enumsPath := filepath.Join(actualOutputDir, "enums.json")
+	if _, err := os.Stat(enumsPath); os.IsNotExist(err) {
+		// Try looking in current directory (for go generate case)
+		if _, err := os.Stat("enums.json"); err == nil {
+			enumsPath = "enums.json"
+			actualOutputDir = "." // Write to current directory
+		}
+	}
+	data, err := os.ReadFile(enumsPath)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "failed to read %s: %v\n", enumsPath, err)
+		fmt.Fprintf(os.Stderr, "hint: run 'python scripts/extract_enums.py' first\n")
+		os.Exit(1)
+	}
+
+	var enums EnumsJSON
+	if err := json.Unmarshal(data, &enums); err != nil {
+		fmt.Fprintf(os.Stderr, "failed to parse enums.json: %v\n", err)
 		os.Exit(1)
 	}
 
 	var allServices []string
 	serviceEnumNames := make(map[string][]string)
 
-	for _, svc := range priorityServices {
-		data := extractServiceEnums(svc)
-		if len(data.Enums) == 0 {
+	for service, enumNames := range priorityServices {
+		serviceEnums, ok := enums.Services[service]
+		if !ok {
+			fmt.Printf("Warning: service %s not found in enums.json\n", service)
 			continue
 		}
 
-		allServices = append(allServices, svc.Service)
-		for _, e := range data.Enums {
-			serviceEnumNames[svc.Service] = append(serviceEnumNames[svc.Service], e.Name)
+		svcData := ServiceData{
+			Service:     service,
+			ServiceName: capitalize(service),
 		}
 
-		if err := generateServiceFile(data); err != nil {
-			fmt.Fprintf(os.Stderr, "failed to generate %s: %v\n", svc.Service, err)
+		for _, enumName := range enumNames {
+			enumType, ok := serviceEnums[enumName]
+			if !ok {
+				fmt.Printf("Warning: enum %s.%s not found in enums.json\n", service, enumName)
+				continue
+			}
+
+			info := EnumInfo{Name: enumName}
+			for _, v := range enumType.Values {
+				info.Constants = append(info.Constants, ConstantInfo{
+					Name:  v.GoName,
+					Value: v.Value,
+				})
+			}
+			svcData.Enums = append(svcData.Enums, info)
+			serviceEnumNames[service] = append(serviceEnumNames[service], enumName)
+		}
+
+		if len(svcData.Enums) == 0 {
+			continue
+		}
+
+		allServices = append(allServices, service)
+
+		if err := generateServiceFile(svcData, actualOutputDir); err != nil {
+			fmt.Fprintf(os.Stderr, "failed to generate %s: %v\n", service, err)
 			os.Exit(1)
 		}
-		fmt.Printf("Generated enums/%s.go\n", svc.Service)
+		fmt.Printf("Generated %s/%s.go\n", actualOutputDir, service)
 	}
 
-	if err := generateLookupFile(allServices, serviceEnumNames); err != nil {
+	if err := generateLookupFile(allServices, serviceEnumNames, enums, actualOutputDir); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to generate lookup.go: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("Generated enums/lookup.go\n")
-}
-
-func extractServiceEnums(svc ServiceEnums) EnumData {
-	data := EnumData{
-		Service:     svc.Service,
-		ServiceName: capitalize(svc.Service),
-	}
-
-	for _, extractor := range svc.EnumTypes {
-		values := extractor.Values()
-		if len(values) == 0 {
-			continue
-		}
-
-		info := EnumInfo{Name: extractor.Name}
-		for _, v := range values {
-			constName := toConstName(svc.Service, extractor.Name, v)
-			info.Constants = append(info.Constants, ConstantInfo{
-				Name:  constName,
-				Value: v,
-			})
-		}
-		data.Enums = append(data.Enums, info)
-	}
-
-	return data
-}
-
-func toConstName(service, enumName, value string) string {
-	// Convert value to valid Go identifier
-	// e.g., "python3.12" -> "Python312", "t3.micro" -> "T3Micro"
-	name := capitalize(service) + enumName
-
-	// Replace dots with nothing, capitalize after
-	parts := strings.Split(value, ".")
-	for _, part := range parts {
-		// Replace hyphens and underscores, capitalize
-		subparts := strings.FieldsFunc(part, func(r rune) bool {
-			return r == '-' || r == '_'
-		})
-		for _, sp := range subparts {
-			name += capitalize(sp)
-		}
-	}
-
-	return name
+	fmt.Printf("Generated %s/lookup.go\n", actualOutputDir)
 }
 
 func capitalize(s string) string {
 	if s == "" {
 		return s
 	}
-	return strings.ToUpper(s[:1]) + s[1:]
+	// Handle service names that need special casing
+	switch s {
+	case "ec2":
+		return "Ec2"
+	case "ecs":
+		return "Ecs"
+	case "rds":
+		return "Rds"
+	case "s3":
+		return "S3"
+	case "acm":
+		return "Acm"
+	default:
+		return strings.ToUpper(s[:1]) + s[1:]
+	}
 }
 
-const serviceTemplate = `// Code generated by enumgen. DO NOT EDIT.
+const serviceTemplate = `// Code generated by enumgen from enums.json. DO NOT EDIT.
 
 package enums
 
@@ -377,7 +256,7 @@ func get{{.ServiceName}}EnumNames() []string {
 }
 `
 
-func generateServiceFile(data EnumData) error {
+func generateServiceFile(data ServiceData, outputDir string) error {
 	tmpl, err := template.New("service").Parse(serviceTemplate)
 	if err != nil {
 		return err
@@ -394,11 +273,11 @@ func generateServiceFile(data EnumData) error {
 		formatted = buf.Bytes()
 	}
 
-	path := filepath.Join(*outputDir, data.Service+".go")
+	path := filepath.Join(outputDir, data.Service+".go")
 	return os.WriteFile(path, formatted, 0644)
 }
 
-const lookupTemplate = `// Code generated by enumgen. DO NOT EDIT.
+const lookupTemplate = `// Code generated by enumgen from enums.json. DO NOT EDIT.
 
 package enums
 
@@ -451,7 +330,7 @@ type LookupData struct {
 	Services []string
 }
 
-func generateLookupFile(services []string, enumNames map[string][]string) error {
+func generateLookupFile(services []string, enumNames map[string][]string, allEnums EnumsJSON, outputDir string) error {
 	sort.Strings(services)
 
 	funcMap := template.FuncMap{
@@ -475,9 +354,6 @@ func generateLookupFile(services []string, enumNames map[string][]string) error 
 		formatted = buf.Bytes()
 	}
 
-	path := filepath.Join(*outputDir, "lookup.go")
+	path := filepath.Join(outputDir, "lookup.go")
 	return os.WriteFile(path, formatted, 0644)
 }
-
-// Ensure we're actually using reflect to avoid unused import
-var _ = reflect.TypeOf(nil)
