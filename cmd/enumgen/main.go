@@ -117,7 +117,13 @@ func main() {
 	flag.Parse()
 
 	// Load enums.json
+	// When run via go generate from enums/, outputDir is "enums" but we're already in enums/
+	// so look for enums.json in the current directory first, then fall back to outputDir/enums.json
 	enumsPath := filepath.Join(*outputDir, "enums.json")
+	if _, err := os.Stat(enumsPath); os.IsNotExist(err) {
+		// Try looking in current directory (for go generate case)
+		enumsPath = "enums.json"
+	}
 	data, err := os.ReadFile(enumsPath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to read %s: %v\n", enumsPath, err)

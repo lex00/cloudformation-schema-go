@@ -25,12 +25,12 @@ var PropertyEnumMapping = map[string]map[string]string{
 		"NetworkMode":        "NetworkMode",
 	},
 	"s3": {
-		"StorageClass":   "StorageClass",
-		"AccessControl":  "BucketCannedACL",
-		"SSEAlgorithm":   "ServerSideEncryption",
-		"Mode":           "ObjectLockRetentionMode",
-		"Status":         "BucketVersioningStatus",
-		"Protocol":       "Protocol",
+		"StorageClass":    "StorageClass",
+		"AccessControl":   "BucketCannedACL",
+		"SSEAlgorithm":    "ServerSideEncryption",
+		"Mode":            "ObjectLockRetentionMode",
+		"Status":          "BucketVersioningStatus",
+		"Protocol":        "Protocol",
 		"ObjectCannedAcl": "ObjectCannedACL",
 	},
 	"dynamodb": {
@@ -49,8 +49,8 @@ var PropertyEnumMapping = map[string]map[string]string{
 		"LogGroupClass": "LogGroupClass",
 	},
 	"acm": {
-		"ValidationMethod":    "ValidationMethod",
-		"CertificateStatus":   "CertificateStatus",
+		"ValidationMethod":  "ValidationMethod",
+		"CertificateStatus": "CertificateStatus",
 	},
 	"events": {
 		"State": "RuleState",
