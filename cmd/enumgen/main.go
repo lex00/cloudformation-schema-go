@@ -118,11 +118,15 @@ func main() {
 
 	// Load enums.json
 	// When run via go generate from enums/, outputDir is "enums" but we're already in enums/
-	// so look for enums.json in the current directory first, then fall back to outputDir/enums.json
-	enumsPath := filepath.Join(*outputDir, "enums.json")
+	// so look for enums.json in the current directory first, then adjust outputDir
+	actualOutputDir := *outputDir
+	enumsPath := filepath.Join(actualOutputDir, "enums.json")
 	if _, err := os.Stat(enumsPath); os.IsNotExist(err) {
 		// Try looking in current directory (for go generate case)
-		enumsPath = "enums.json"
+		if _, err := os.Stat("enums.json"); err == nil {
+			enumsPath = "enums.json"
+			actualOutputDir = "." // Write to current directory
+		}
 	}
 	data, err := os.ReadFile(enumsPath)
 	if err != nil {
@@ -176,18 +180,18 @@ func main() {
 
 		allServices = append(allServices, service)
 
-		if err := generateServiceFile(svcData); err != nil {
+		if err := generateServiceFile(svcData, actualOutputDir); err != nil {
 			fmt.Fprintf(os.Stderr, "failed to generate %s: %v\n", service, err)
 			os.Exit(1)
 		}
-		fmt.Printf("Generated enums/%s.go\n", service)
+		fmt.Printf("Generated %s/%s.go\n", actualOutputDir, service)
 	}
 
-	if err := generateLookupFile(allServices, serviceEnumNames, enums); err != nil {
+	if err := generateLookupFile(allServices, serviceEnumNames, enums, actualOutputDir); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to generate lookup.go: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("Generated enums/lookup.go\n")
+	fmt.Printf("Generated %s/lookup.go\n", actualOutputDir)
 }
 
 func capitalize(s string) string {
@@ -252,7 +256,7 @@ func get{{.ServiceName}}EnumNames() []string {
 }
 `
 
-func generateServiceFile(data ServiceData) error {
+func generateServiceFile(data ServiceData, outputDir string) error {
 	tmpl, err := template.New("service").Parse(serviceTemplate)
 	if err != nil {
 		return err
@@ -269,7 +273,7 @@ func generateServiceFile(data ServiceData) error {
 		formatted = buf.Bytes()
 	}
 
-	path := filepath.Join(*outputDir, data.Service+".go")
+	path := filepath.Join(outputDir, data.Service+".go")
 	return os.WriteFile(path, formatted, 0644)
 }
 
@@ -326,7 +330,7 @@ type LookupData struct {
 	Services []string
 }
 
-func generateLookupFile(services []string, enumNames map[string][]string, allEnums EnumsJSON) error {
+func generateLookupFile(services []string, enumNames map[string][]string, allEnums EnumsJSON, outputDir string) error {
 	sort.Strings(services)
 
 	funcMap := template.FuncMap{
@@ -350,6 +354,6 @@ func generateLookupFile(services []string, enumNames map[string][]string, allEnu
 		formatted = buf.Bytes()
 	}
 
-	path := filepath.Join(*outputDir, "lookup.go")
+	path := filepath.Join(outputDir, "lookup.go")
 	return os.WriteFile(path, formatted, 0644)
 }
