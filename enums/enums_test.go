@@ -130,29 +130,51 @@ func TestConstants(t *testing.T) {
 			enums.LambdaArchitectureArm64, "arm64")
 	}
 
-	if enums.S3StorageClassSTANDARD != "STANDARD" {
-		t.Errorf("S3StorageClassSTANDARD = %q, want %q",
-			enums.S3StorageClassSTANDARD, "STANDARD")
+	if enums.S3StorageClassStandard != "STANDARD" {
+		t.Errorf("S3StorageClassStandard = %q, want %q",
+			enums.S3StorageClassStandard, "STANDARD")
 	}
 }
 
-func TestEC2InstanceTypes(t *testing.T) {
-	values := enums.GetAllowedValues("ec2", "InstanceType")
+func TestEC2VolumeType(t *testing.T) {
+	values := enums.GetAllowedValues("ec2", "VolumeType")
 	if values == nil {
-		t.Fatal("expected InstanceType values, got nil")
+		t.Fatal("expected VolumeType values, got nil")
 	}
 
-	// EC2 has many instance types
-	if len(values) < 100 {
-		t.Errorf("expected at least 100 instance types, got %d", len(values))
-	}
-
-	// Check for common types
-	commonTypes := []string{"t3.micro", "t3.small", "m5.large"}
+	// Check for common volume types
+	commonTypes := []string{"gp2", "gp3", "io1", "io2", "standard"}
 	for _, ct := range commonTypes {
-		if !enums.IsValidValue("ec2", "InstanceType", ct) {
-			t.Errorf("expected %s to be a valid instance type", ct)
+		if !enums.IsValidValue("ec2", "VolumeType", ct) {
+			t.Errorf("expected %s to be a valid VolumeType", ct)
 		}
+	}
+}
+
+func TestGetEnumForProperty(t *testing.T) {
+	tests := []struct {
+		service      string
+		propertyName string
+		want         string
+	}{
+		{"lambda", "Runtime", "Runtime"},
+		{"lambda", "PackageType", "PackageType"},
+		{"s3", "StorageClass", "StorageClass"},
+		{"s3", "AccessControl", "BucketCannedACL"},
+		{"s3", "SSEAlgorithm", "ServerSideEncryption"},
+		{"dynamodb", "BillingMode", "BillingMode"},
+		{"lambda", "NonexistentProperty", ""},
+		{"nonexistent", "Runtime", ""},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.service+"/"+tt.propertyName, func(t *testing.T) {
+			got := enums.GetEnumForProperty(tt.service, tt.propertyName)
+			if got != tt.want {
+				t.Errorf("GetEnumForProperty(%q, %q) = %q, want %q",
+					tt.service, tt.propertyName, got, tt.want)
+			}
+		})
 	}
 }
 
