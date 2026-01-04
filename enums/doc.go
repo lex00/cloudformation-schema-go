@@ -10,6 +10,11 @@
 //	allowed := enums.GetAllowedValues("lambda", "Runtime")
 //	valid := enums.IsValidValue("lambda", "Runtime", "python3.12")
 //
+// Discovery functions list available services and enums:
+//
+//	services := enums.Services()           // all services with enums
+//	names := enums.GetEnumNames("lambda")  // all enum names for a service
+//
 // Regenerate from the latest SDK:
 //
 //	go generate ./enums/...

@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"time"
 )
 
 // DefaultSpecURL is the URL for the CloudFormation Resource Specification.
@@ -21,6 +22,9 @@ type FetchOptions struct {
 	Force bool
 	// CacheDir is the directory to cache the spec. Defaults to system temp dir.
 	CacheDir string
+	// MaxAge is the maximum age of the cached spec before re-downloading.
+	// If zero, the cache never expires (unless Force is true).
+	MaxAge time.Duration
 	// Quiet suppresses progress output.
 	Quiet bool
 }
@@ -42,13 +46,19 @@ func FetchSpec(opts *FetchOptions) (*Spec, error) {
 
 	// Check for cached spec
 	if !opts.Force {
-		if data, err := os.ReadFile(cachePath); err == nil {
-			var spec Spec
-			if err := json.Unmarshal(data, &spec); err == nil {
-				if !opts.Quiet {
-					fmt.Println("Using cached spec...")
+		if info, err := os.Stat(cachePath); err == nil {
+			// Check if cache has expired
+			cacheValid := opts.MaxAge == 0 || time.Since(info.ModTime()) < opts.MaxAge
+			if cacheValid {
+				if data, err := os.ReadFile(cachePath); err == nil {
+					var spec Spec
+					if err := json.Unmarshal(data, &spec); err == nil {
+						if !opts.Quiet {
+							fmt.Println("Using cached spec...")
+						}
+						return &spec, nil
+					}
 				}
-				return &spec, nil
 			}
 		}
 	}

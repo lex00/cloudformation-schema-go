@@ -13,7 +13,10 @@ Shared foundation for:
 CloudFormation Resource Specification types and fetching.
 
 ```go
-import "github.com/lex00/cloudformation-schema-go/spec"
+import (
+    "time"
+    "github.com/lex00/cloudformation-schema-go/spec"
+)
 
 // Download and cache the CF spec (use nil for defaults)
 cfSpec, err := spec.FetchSpec(nil)
@@ -21,7 +24,7 @@ cfSpec, err := spec.FetchSpec(nil)
 // Or with custom options
 cfSpec, err := spec.FetchSpec(&spec.FetchOptions{
     CacheDir: "/custom/cache",
-    MaxAge:   24 * time.Hour,
+    MaxAge:   24 * time.Hour,  // Re-download if cache older than 24h
 })
 
 // Look up resource types
@@ -78,6 +81,12 @@ runtime := enums.LambdaRuntimePython312
 // Validate enum values
 allowed := enums.GetAllowedValues("lambda", "Runtime")
 valid := enums.IsValidValue("lambda", "Runtime", "python3.12")
+
+// List all services with enums
+services := enums.Services()  // ["accessanalyzer", "acm", ...]
+
+// List all enum names for a service
+enumNames := enums.GetEnumNames("lambda")  // ["Architecture", "Runtime", ...]
 ```
 
 ### codegen/
