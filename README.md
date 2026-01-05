@@ -1,5 +1,10 @@
 # cloudformation-schema-go
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/lex00/cloudformation-schema-go.svg)](https://pkg.go.dev/github.com/lex00/cloudformation-schema-go)
+[![CI](https://github.com/lex00/cloudformation-schema-go/actions/workflows/ci.yml/badge.svg)](https://github.com/lex00/cloudformation-schema-go/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/lex00/cloudformation-schema-go)](https://goreportcard.com/report/github.com/lex00/cloudformation-schema-go)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Go types for CloudFormation specifications, intrinsic functions, template parsing, enum validation, and code generation utilities.
 
 Shared foundation for:
